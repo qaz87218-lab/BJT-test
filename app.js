@@ -2,6 +2,7 @@
   const KNOW = window.BJT_KNOWLEDGE || [];
   const QUESTIONS = window.BJT_QUESTIONS || [];
   const OPTION_DETAILS = window.BJT_OPTION_DETAILS || {};
+  const ARTICLE_DETAILS = window.BJT_ARTICLE_DETAILS || {};
   const QMAP = Object.fromEntries(QUESTIONS.map(q=>[q.id,q]));
   const KMAP = Object.fromEntries(KNOW.map(k=>[k.id,k]));
   const STORAGE='bjtDeepStateV1';
@@ -26,6 +27,7 @@
   let currentPrepared=null;
   let currentAnswered=false;
   let currentSelectedOriginalIndex=null;
+  let articleFocusId=null;
 
   function loadState(){
     try{
@@ -60,6 +62,7 @@
     dashboard:['總覽','用原題建立知識網，再用延伸題反覆鞏固。'],
     practice:['刷題','原題、延伸題、錯題與間隔複習。'],
     knowledge:['知識庫','每一道題的相關敬語、文法、詞彙與閱讀策略。'],
+    articles:['文章詳解',`集中閱讀 ${Object.keys(ARTICLE_DETAILS).length} 篇文章：假名、翻譯、結構、陷阱與四選項詳解。`],
     mistakes:['錯題簿','集中處理答錯、標記不熟與低正確率題目。'],
     settings:['設定 / 備份','學習紀錄只存在這台裝置，可隨時匯出。']
   }[view]}
@@ -69,7 +72,7 @@
     document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
     const [t,s]=titleMap(view);document.getElementById('pageTitle').textContent=t;document.getElementById('pageSubtitle').textContent=s;
     document.getElementById('sidebar').classList.remove('open');
-    if(view==='dashboard')renderDashboard(); if(view==='practice')renderPractice(); if(view==='knowledge')renderKnowledge(); if(view==='mistakes')renderMistakes(); if(view==='settings')renderSettings();
+    if(view==='dashboard')renderDashboard(); if(view==='practice')renderPractice(); if(view==='knowledge')renderKnowledge(); if(view==='articles')renderArticles(); if(view==='mistakes')renderMistakes(); if(view==='settings')renderSettings();
   }
 
   function renderDashboard(){
@@ -281,18 +284,14 @@
   function getChoiceDetail(q, originalIndex){
     const manual=OPTION_DETAILS[q.id];
     const isCorrect=originalIndex===q.answer;
-    if(manual && manual[originalIndex]) return {type:isCorrect?'正確用法':inferWrongType(q,q.options[originalIndex]),detail:manual[originalIndex],manual:true};
-    const option=q.options[originalIndex];
-    const hint=optionUsageHint(option);
-    if(isCorrect){
-      return {type:'正確用法',detail:`${hint?hint+' ':''}${q.explanation}`,manual:false};
+    if(manual && manual[originalIndex]){
+      return {type:isCorrect?'正確用法':inferWrongType(q,q.options[originalIndex]),detail:manual[originalIndex],manual:true};
     }
-    let reason='這個選項本身可能在其他句型或情境成立，但它的語意、文法功能或角色方向與本題不一致。';
-    if(q.category==='閱讀'||q.category.startsWith('閱讀')) reason='閱讀題不能只看選項裡是否出現文章單字；此選項沒有回答題目真正詢問的主旨、用件、順序、人物關係或數據結論。';
-    if(q.category==='固定搭配'||q.category==='慣用語') reason='本題考固定搭配／慣用語；這個組合不是題幹所需的慣用搭配，或雖是日文詞彙但搭配對象不同。';
-    if(q.category==='敬語'||q.category==='授受') reason='敬語題要先確認「誰做動作、誰受益、誰是ウチ／ソト」；此選項的敬語方向、授受方向或謙讓／尊敬層級與題幹不一致。';
-    if(q.category==='文法') reason='這個文法形式可能存在，但它表達的邏輯（條件、原因、反差、意志、規定等）和題幹要求不同。';
-    return {type:inferWrongType(q,option),detail:`${hint?hint+' ':''}${reason} 正解「${q.options[q.answer]}」的理由：${q.explanation}`,manual:false};
+    return {
+      type:'資料完整性錯誤',
+      detail:'資料完整性錯誤：此題缺少這個選項的獨立詳解。請勿以通用模板代替。',
+      manual:false
+    };
   }
   function renderAllChoiceDetails(q){
     return q.options.map((text,i)=>{const d=getChoiceDetail(q,i);const ok=i===q.answer;return `<div class="choice-detail ${ok?'is-correct':'is-wrong'}"><div class="choice-detail-head"><span class="choice-no">${i+1}</span><strong>${esc(text)}</strong><span class="choice-badge">${ok?'正解':esc(d.type)}</span></div><p>${esc(d.detail)}</p></div>`}).join('');
@@ -309,6 +308,7 @@
       <div class="actions detail-actions"><button class="btn" id="allDetailsBtn" aria-expanded="false">詳解四個選項</button></div>
       <div id="allChoiceDetails" class="all-choice-details" hidden>${renderAllChoiceDetails(q)}</div>
       ${related.length?`<div class="reading-box"><b>關聯知識與讀音</b>${related.map(k=>`<div><strong>${esc(k.title)}</strong>${state.settings.showReadings&&k.reading?` <span class="small">（${esc(k.reading)}）</span>`:''}<br><span class="small">${esc(k.summary)}</span></div>`).join('<br>')}</div>`:''}
+      ${q.passage&&ARTICLE_DETAILS[q.id]?`<div class="article-jump"><b>這是一題文章閱讀題</b><span>文章詳解保留全文假名、中文翻譯、閱讀結構、陷阱與解題策略。</span><button class="btn" id="articleDetailBtn">查看這篇文章的完整詳解</button></div>`:''}
       <div class="actions"><button class="btn bad" data-rate="again">再學一次</button><button class="btn warn" data-rate="hard">困難</button><button class="btn good" data-rate="good">普通</button><button class="btn primary" data-rate="easy">熟練</button></div>
       <div class="actions"><button class="btn" id="relatedBtn">再出一題關聯題</button><button class="btn primary" id="nextBtn">${session.index+1>=session.ids.length?'看結果':'下一題'}</button></div></div>`;
     document.querySelectorAll('[data-rate]').forEach(b=>b.addEventListener('click',()=>rateCurrent(b.dataset.rate)));
@@ -316,6 +316,8 @@
     document.getElementById('relatedBtn').addEventListener('click',injectRelatedQuestion);
     const allBtn=document.getElementById('allDetailsBtn'), allBox=document.getElementById('allChoiceDetails');
     allBtn.addEventListener('click',()=>{const open=allBox.hidden;allBox.hidden=!open;allBtn.setAttribute('aria-expanded',String(open));allBtn.textContent=open?'收起四個選項詳解':'詳解四個選項';});
+    const articleBtn=document.getElementById('articleDetailBtn');
+    if(articleBtn) articleBtn.addEventListener('click',()=>openArticle(q.id));
   }
   function rateCurrent(rate){
     const q=currentPrepared,p=progressOf(q.id),now=Date.now(); const days={again:0,hard:1,good:3,easy:10}[rate];
@@ -343,6 +345,81 @@
   function renderKCard(k){return `<article class="card knowledge-card"><div class="tag-list"><span class="tag">${esc(k.category)}</span>${(k.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><h3>${esc(k.title)}</h3>${state.settings.showReadings&&k.reading?`<div class="reading">讀音：${esc(k.reading)}</div>`:''}<p><b>${esc(k.summary)}</b></p><p>${esc(k.detail)}</p><div class="example">例：${esc(k.example)}</div>${k.contrast?`<div class="contrast">易混點：${esc(k.contrast)}</div>`:''}<div style="margin-top:14px"><label class="small">我的筆記</label><textarea class="note" data-note="${k.id}" placeholder="寫下你自己的記憶方式、錯因或例句…">${esc(state.notes[k.id]||'')}</textarea></div><div class="actions"><button class="btn" data-practice-tag="${k.id}">只刷這個知識點</button></div></article>`}
   function bindNotes(){document.querySelectorAll('[data-note]').forEach(t=>t.addEventListener('change',()=>{state.notes[t.dataset.note]=t.value;saveState();toast('筆記已保存')}));document.querySelectorAll('[data-practice-tag]').forEach(b=>b.addEventListener('click',()=>startTagSession(b.dataset.practiceTag)))}
   function startTagSession(tag){const list=QUESTIONS.filter(q=>(q.tags||[]).includes(tag));if(!list.length){toast('此知識點暫無題目');return}session={mode:'tag',ids:shuffle(list).map(q=>q.id),index:0,correct:0,wrong:0};currentPrepared=null;currentAnswered=false;currentSelectedOriginalIndex=null;switchView('practice')}
+
+  function articleRecords(){
+    return Object.values(ARTICLE_DETAILS).map(a=>({...a,question:QMAP[a.question_id]})).filter(a=>a.question);
+  }
+  function openArticle(qid){
+    if(!ARTICLE_DETAILS[qid]){toast('這題目前沒有文章詳解。');return}
+    articleFocusId=qid;
+    switchView('articles');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function practiceOne(qid){
+    if(!QMAP[qid]){toast('找不到對應題目。');return}
+    session={mode:'one',ids:[qid],index:0,correct:0,wrong:0};
+    currentPrepared=null;currentAnswered=false;currentSelectedOriginalIndex=null;
+    switchView('practice');
+  }
+  function articleArrayBlock(title,items,cls=''){
+    const list=(items||[]).filter(Boolean);
+    if(!list.length)return '';
+    return `<section class="article-study-block ${cls}"><h3>${esc(title)}</h3><ul>${list.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>`;
+  }
+  function renderArticles(){
+    const root=document.getElementById('view-articles');
+    const records=articleRecords();
+    if(articleFocusId && ARTICLE_DETAILS[articleFocusId]){
+      const a=ARTICLE_DETAILS[articleFocusId], q=QMAP[articleFocusId];
+      if(!q){articleFocusId=null;renderArticles();return}
+      const vocab=(a.vocabulary||[]).filter(x=>x&&x.surface&&x.reading);
+      root.innerHTML=`
+        <div class="article-detail-top"><button class="btn" id="articleBackBtn">← 回文章列表</button><span class="small">${esc(q.source)} · ${esc(q.category)} · ${esc(q.id)}</span></div>
+        <article class="card article-detail-card">
+          <div class="tag-list"><span class="tag">文章題</span><span class="tag">${esc(q.category)}</span><span class="tag">${esc(q.source)}</span></div>
+          <h2>${esc(a.title||q.stem)}</h2>
+          <p class="article-help">括號內為讀音輔助。正文之外，下方另整理本文重要漢字／詞彙讀音。</p>
+          <section class="article-study-block"><h3>① 原文＋假名</h3><div class="article-annotated">${esc(a.annotated_passage||q.passage)}</div></section>
+          <section class="article-study-block article-translation"><h3>② 完整中文翻譯</h3><div>${esc(a.translation_zh_tw||'')}</div></section>
+          <div class="article-analysis-grid">
+            <section class="article-study-block"><h3>③ 文章目的</h3><p>${esc(a.purpose||'')}</p></section>
+            <section class="article-study-block"><h3>④ 文章結構</h3><p>${esc(a.structure||'')}</p></section>
+          </div>
+          ${articleArrayBlock('⑤ 關鍵判讀',a.key_points,'article-keypoints')}
+          ${articleArrayBlock('⑥ 容易誤判的地方',a.traps,'article-traps')}
+          <section class="article-study-block article-strategy"><h3>⑦ 解題方式</h3><p>${esc(a.strategy||'')}</p></section>
+          <section class="article-study-block"><h3>⑧ 漢字／重要詞彙讀音</h3><div class="vocab-grid">${vocab.map(v=>`<div class="vocab-item"><strong>${esc(v.surface)}</strong><span>（${esc(v.reading)}）</span></div>`).join('')||'<span class="small">—</span>'}</div></section>
+          <section class="article-study-block linked-question"><h3>⑨ 對應題目</h3><div class="stem article-stem">${esc(q.stem)}</div><div class="article-answer"><b>正確答案：</b>${q.answer+1}. ${esc(q.options[q.answer])}</div><div class="main-explain"><b>本題核心解析</b><p>${esc(q.explanation)}</p></div><div class="actions"><button class="btn primary" id="articlePracticeBtn">直接練這一題</button></div></section>
+          <section class="article-study-block"><h3>⑩ 四個選項完整詳解</h3><div class="all-choice-details article-choice-details">${renderAllChoiceDetails(q)}</div></section>
+        </article>`;
+      document.getElementById('articleBackBtn').onclick=()=>{articleFocusId=null;renderArticles();window.scrollTo({top:0,behavior:'smooth'})};
+      document.getElementById('articlePracticeBtn').onclick=()=>practiceOne(q.id);
+      return;
+    }
+    root.innerHTML=`
+      <div class="card article-intro"><h2>文章詳解</h2><p>這裡集中 ${records.length} 題有完整文章的題目。每篇保留原文、讀音、繁體中文翻譯、文章結構、閱讀陷阱、解題策略，以及四個選項的完整解析。</p></div>
+      <div class="toolbar article-toolbar"><input class="input" id="articleSearch" placeholder="搜尋文章、題目、詞彙，例如：領収書、提携、研修…"><select class="select" id="articleSource"><option value="">全部來源</option><option value="原題">原題</option><option value="延伸">延伸題</option></select></div>
+      <div id="articleList" class="article-list"></div>`;
+    const draw=()=>{
+      const kw=document.getElementById('articleSearch').value.trim().toLowerCase();
+      const source=document.getElementById('articleSource').value;
+      const list=records.filter(a=>{
+        const q=a.question;
+        const hay=[a.title,a.annotated_passage,a.translation_zh_tw,a.purpose,a.structure,a.strategy,...(a.key_points||[]),...(a.traps||[]),...(a.vocabulary||[]).flatMap(v=>[v.surface,v.reading]),q.stem,q.category,q.source].join(' ').toLowerCase();
+        return (!source||q.source===source)&&(!kw||hay.includes(kw));
+      });
+      document.getElementById('articleList').innerHTML=list.map(a=>{
+        const q=a.question;
+        const excerpt=(a.translation_zh_tw||'').slice(0,145)+(String(a.translation_zh_tw||'').length>145?'…':'');
+        return `<article class="card article-list-card"><div class="article-list-meta"><span class="tag">${esc(q.source)}</span><span class="tag">${esc(q.category)}</span><span class="small">${esc(q.id)}</span></div><h3>${esc(a.title||q.stem)}</h3><p>${esc(excerpt)}</p><div class="vocab-preview">${(a.vocabulary||[]).slice(0,5).map(v=>`<span>${esc(v.surface)}（${esc(v.reading)}）</span>`).join('')}</div><div class="actions"><button class="btn primary" data-open-article="${esc(q.id)}">查看文章詳解</button><button class="btn" data-practice-article="${esc(q.id)}">直接練題</button></div></article>`;
+      }).join('')||'<div class="card empty">找不到符合條件的文章。</div>';
+      document.querySelectorAll('[data-open-article]').forEach(b=>b.onclick=()=>openArticle(b.dataset.openArticle));
+      document.querySelectorAll('[data-practice-article]').forEach(b=>b.onclick=()=>practiceOne(b.dataset.practiceArticle));
+    };
+    document.getElementById('articleSearch').addEventListener('input',draw);
+    document.getElementById('articleSource').addEventListener('change',draw);
+    draw();
+  }
 
   function renderMistakes(){
     const list=weakQuestions().sort((a,b)=>{const pa=progressOf(a.id),pb=progressOf(b.id);return (pb.wrong||0)-(pa.wrong||0)});const root=document.getElementById('view-mistakes');
