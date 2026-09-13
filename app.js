@@ -3,8 +3,14 @@
   const QUESTIONS = window.BJT_QUESTIONS || [];
   const OPTION_DETAILS = window.BJT_OPTION_DETAILS || {};
   const ARTICLE_DETAILS = window.BJT_ARTICLE_DETAILS || {};
+  const BUSINESS_COURSE = window.BJT_BUSINESS_COURSE || {chapters:[]};
+  const LESSON_DB = window.BJT_LESSON_DB || {modules:[],lessons:[]};
+  const MODULES = LESSON_DB.modules || [];
+  const LESSONS = LESSON_DB.lessons || [];
+  const BUSINESS_QUESTIONS = QUESTIONS.filter(q=>q.course==='practical_business');
   const QMAP = Object.fromEntries(QUESTIONS.map(q=>[q.id,q]));
   const KMAP = Object.fromEntries(KNOW.map(k=>[k.id,k]));
+  const LMAP = Object.fromEntries(LESSONS.map(l=>[l.id,l]));
   const STORAGE='bjtDeepStateV1';
   const APP_TIME_ZONE='Asia/Tokyo';
   const today=(d=new Date())=>{
@@ -18,9 +24,10 @@
     }
   };
   const defaultState={
-    progress:{}, favorites:[], weak:[], notes:{},
+    progress:{}, favorites:[], weak:[], notes:{}, errorTags:{},
+    learning:{lessons:{}},
     daily:{date:today(),count:0},
-    settings:{shuffleOptions:true, extensionSize:30, mixedSize:30, showReadings:true}
+    settings:{shuffleOptions:true, extensionSize:30, mixedSize:30, showReadings:true, showTranslations:true, includeBusinessInMixed:false}
   };
   let state=loadState();
   let session=null;
@@ -28,13 +35,18 @@
   let currentAnswered=false;
   let currentSelectedOriginalIndex=null;
   let articleFocusId=null;
+  let lessonFocusId=null;
+  let lessonModuleFilter=null;
+  let lessonQuizDraft={};
+  let lessonQuizResult=null;
 
   function loadState(){
     try{
       const raw=JSON.parse(localStorage.getItem(STORAGE)||'null');
       const s={...defaultState,...(raw||{})};
       s.settings={...defaultState.settings,...(s.settings||{})};
-      s.progress=s.progress||{}; s.favorites=s.favorites||[]; s.weak=s.weak||[]; s.notes=s.notes||{};
+      s.progress=s.progress||{}; s.favorites=s.favorites||[]; s.weak=s.weak||[]; s.notes=s.notes||{}; s.errorTags=s.errorTags||{};
+      s.learning=s.learning||{lessons:{}}; s.learning.lessons=s.learning.lessons||{};
       if(!s.daily || s.daily.date!==today()) s.daily={date:today(),count:0};
       return s;
     }catch(e){return structuredClone(defaultState)}
@@ -51,6 +63,82 @@
   function updateToday(){document.getElementById('todayStat').textContent=`今日 ${state.daily.count||0} 題`}
   function pct(a,b){return b?Math.round(a/b*100):0}
   function progressOf(id){return state.progress[id]||{attempts:0,correct:0,wrong:0,streak:0,lastCorrect:null,lastAt:null,due:0}}
+  const LESSON_STATUS=[
+    {key:'not_started',label:'未開始',level:0},
+    {key:'learning',label:'學習中',level:1},
+    {key:'read',label:'已閱讀',level:2},
+    {key:'understood',label:'已理解',level:3},
+    {key:'applied',label:'能應用',level:4},
+    {key:'mastered',label:'已掌握',level:5}
+  ];
+  function ensureLessonState(id){
+    state.learning=state.learning||{lessons:{}}; state.learning.lessons=state.learning.lessons||{};
+    if(!state.learning.lessons[id]) state.learning.lessons[id]={openedAt:null,readAt:null,quickAttempts:0,bestScore:0,lastScore:0,lastQuickAt:null,passedAt:null,dueAt:0,reviewed48h:false,practiceRuns:0,bestPracticeScore:0};
+    return state.learning.lessons[id];
+  }
+  function lessonState(id){return (state.learning&&state.learning.lessons&&state.learning.lessons[id])||{openedAt:null,readAt:null,quickAttempts:0,bestScore:0,lastScore:0,lastQuickAt:null,passedAt:null,dueAt:0,reviewed48h:false,practiceRuns:0,bestPracticeScore:0}}
+  function validLessonQuestionIds(l){return [...new Set((((l||{}).links||{}).questionIds||[]))].filter(id=>QMAP[id])}
+  function validLessonKnowledgeIds(l){return [...new Set((((l||{}).links||{}).knowledgePointIds||[]))].filter(id=>KMAP[id])}
+  function validLessonArticleIds(l){return [...new Set((((l||{}).links||{}).articleIds||[]))].filter(id=>ARTICLE_DETAILS[id]&&QMAP[id])}
+  function moduleQuestionIds(moduleId){const m=MODULES.find(x=>x.id===moduleId);if(!m)return[];return [...new Set((m.lessonIds||[]).flatMap(id=>validLessonQuestionIds(LMAP[id])))];}
+  function lessonPracticeIds(l){const direct=validLessonQuestionIds(l);if(direct.length)return direct;return shuffle(moduleQuestionIds(l.moduleId)).slice(0,20)}
+  function linkedLessonStats(l){
+    const ids=validLessonQuestionIds(l); let attempts=0,correct=0,attempted=0;
+    ids.forEach(id=>{const p=progressOf(id);attempts+=p.attempts||0;correct+=p.correct||0;if((p.attempts||0)>0)attempted++;});
+    return {ids,total:ids.length,attempted,attempts,correct,accuracy:pct(correct,attempts)};
+  }
+  function lessonStatus(l){
+    const ls=lessonState(l.id), qs=linkedLessonStats(l); const threshold=Number(l.quickCheckThreshold||.8);
+    let level=0;
+    if(ls.openedAt) level=1;
+    if(ls.readAt) level=2;
+    if((ls.bestScore||0)>=threshold) level=3;
+    const enoughPractice=(ls.bestPracticeScore||0)>=.7 || (qs.total>0 && qs.attempted>=Math.min(3,qs.total) && qs.accuracy>=70) || (qs.total===0 && !!ls.reviewed48h);
+    if(level>=3 && enoughPractice) level=4;
+    if(level>=4 && ls.reviewed48h) level=5;
+    return {...LESSON_STATUS[level],lessonState:ls,questionStats:qs};
+  }
+  function dueLessonReviews(){const now=Date.now();return LESSONS.filter(l=>{const x=lessonState(l.id);return !!x.passedAt&&!x.reviewed48h&&(x.dueAt||0)>0&&(x.dueAt||0)<=now})}
+  function systemStats(){
+    const statuses=LESSONS.map(lessonStatus); return {
+      total:LESSONS.length,
+      opened:statuses.filter(x=>x.level>=1).length,
+      read:statuses.filter(x=>x.level>=2).length,
+      understood:statuses.filter(x=>x.level>=3).length,
+      applied:statuses.filter(x=>x.level>=4).length,
+      mastered:statuses.filter(x=>x.level>=5).length,
+      due:dueLessonReviews().length
+    };
+  }
+  function moduleStats(m){const lessons=(m.lessonIds||[]).map(id=>LMAP[id]).filter(Boolean);const ss=lessons.map(lessonStatus);return {total:lessons.length,read:ss.filter(x=>x.level>=2).length,understood:ss.filter(x=>x.level>=3).length,mastered:ss.filter(x=>x.level>=5).length}}
+  function errorTagList(){return [
+    ['REL','人物關係'],['KEIGO','敬語方向'],['NEG','否定範圍'],['CHG','資訊變更'],['NUM','數字日期'],['INT','意圖語用'],['VOC','詞彙'],['GRM','文法'],['ACTION','下一步'],['COND','條件限制'],['SPEED','時間不足']
+  ]}
+  function toggleErrorTag(qid,tag){const list=state.errorTags[qid]||[];const i=list.indexOf(tag);if(i>=0)list.splice(i,1);else list.push(tag);state.errorTags[qid]=list;saveState();showFeedback();}
+  function businessRoleMeta(q){
+    if(!q||q.course!=='practical_business')return null;
+    const s=String(q.passage||'');
+    let relation='商務情境';
+    if(/客先|取引先|顧客|先方|御社|社外/.test(s)) relation='社外：我方 ↔ 對方';
+    else if(/社内|同僚|上司|部下|後輩|新人/.test(s)) relation='社內：依上下／同僚關係判斷';
+    else if(/電話/.test(s)) relation='電話：先確認我方／對方與下一步責任';
+    else if(/会議|意見/.test(s)) relation='會議：追蹤發言者、論點與最後合意';
+    return {relation,core:q.coreKnowledge||'場面判断',chapter:q.chapterTitle||''};
+  }
+  function businessMistakeHint(q,idx){
+    if(!q||q.course!=='practical_business'||!Number.isInteger(idx))return '';
+    const opt=q.options[idx]||'';
+    if(q.chapter===1 && /おっしゃ|いらっしゃ|様|先生/.test(opt)) return '你可能看到職稱或敬稱就直覺使用尊敬語；但社外敬語要先看這個人是我方還是對方，不是職位越高就一定抬高。';
+    if(q.chapter===2) return '你可能只抓到電話裡的一個關鍵字，卻沒有確認「現在人在哪裡、誰要回電、要傳什麼」這三件事。';
+    if(q.chapter===3) return '你可能只看「事情有沒有說到」，忽略了對象、期限與負擔感；依賴題要同時判斷內容和語氣。';
+    if(q.chapter===4) return '你可能只抓到價格或數量其中一項；訂購題通常要把品番、數量、價格、納期、納品先一起核對。';
+    if(q.chapter===5) return '你可能把禮貌客套或「再確認」誤當成確定答應；邀請題要分清受諾、拒否、保留與社交性表達。';
+    if(q.chapter===6) return '你可能把「請求許可」「請對方做事」和「禁止」混在一起；先看誰要做動作，再判斷句型功能。';
+    if(q.chapter===7) return '你可能只看內容是否合理，沒有看建議的強度；商務建議要避免把助言說成命令或人格批評。';
+    if(q.chapter===8) return '你可能把傳聞、予定、見込み或未確認資訊當成已確定事實；報告題要特別看資訊確度。';
+    if(q.chapter===9) return '你可能被某一句數字或情緒表達吸引；意見題要找最後結論、理由與根據之間的關係。';
+    return '你可能只記住某一句「同意／反對」，但會議題要追蹤誰對哪個論點表態，以及最後哪些事項已決定、哪些仍保留。';
+  }
   function totalStats(){
     let attempts=0,correct=0,answered=0,mastered=0,wrongSet=0;
     Object.values(state.progress).forEach(p=>{attempts+=p.attempts||0;correct+=p.correct||0;if(p.attempts)answered++;if((p.streak||0)>=3)mastered++;if((p.wrong||0)>0)wrongSet++;});
@@ -59,10 +147,12 @@
   function dueQuestions(){const now=Date.now();return QUESTIONS.filter(q=>{const p=progressOf(q.id);return p.attempts>0 && (p.due||0)<=now;})}
   function weakQuestions(){return QUESTIONS.filter(q=>{const p=progressOf(q.id);return state.weak.includes(q.id)||(p.wrong||0)>(p.correct||0)||(p.lastCorrect===false);})}
   function titleMap(view){return {
-    dashboard:['總覽','用原題建立知識網，再用延伸題反覆鞏固。'],
+    dashboard:['總覽','從系統課程建立框架，再用題庫、文章與實用商務反覆驗證。'],
+    system:['系統學習',`${MODULES.length} 模組 × ${LESSONS.length} 課：學習 → Quick Check → 題庫應用 → 48h 重做。`],
     practice:['刷題','原題、延伸題、錯題與間隔複習。'],
     knowledge:['知識庫','每一道題的相關敬語、文法、詞彙與閱讀策略。'],
     articles:['文章詳解',`集中閱讀 ${Object.keys(ARTICLE_DETAILS).length} 篇文章：假名、翻譯、結構、陷阱與四選項詳解。`],
+    business:['實用商務',`10 章 × 20 題：按情境建立真正可用的商務日語。`],
     mistakes:['錯題簿','集中處理答錯、標記不熟與低正確率題目。'],
     settings:['設定 / 備份','學習紀錄只存在這台裝置，可隨時匯出。']
   }[view]}
@@ -72,49 +162,122 @@
     document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
     const [t,s]=titleMap(view);document.getElementById('pageTitle').textContent=t;document.getElementById('pageSubtitle').textContent=s;
     document.getElementById('sidebar').classList.remove('open');
-    if(view==='dashboard')renderDashboard(); if(view==='practice')renderPractice(); if(view==='knowledge')renderKnowledge(); if(view==='articles')renderArticles(); if(view==='mistakes')renderMistakes(); if(view==='settings')renderSettings();
+    if(view==='dashboard')renderDashboard(); if(view==='system')renderSystem(); if(view==='practice')renderPractice(); if(view==='knowledge')renderKnowledge(); if(view==='articles')renderArticles(); if(view==='business')renderBusiness(); if(view==='mistakes')renderMistakes(); if(view==='settings')renderSettings();
   }
 
   function renderDashboard(){
-    const st=totalStats(); const orig=QUESTIONS.filter(q=>q.source==='原題').length; const ext=QUESTIONS.length-orig; const due=dueQuestions().length; const weak=weakQuestions().length;
+    const st=totalStats(); const sys=systemStats(); const orig=QUESTIONS.filter(q=>q.source==='原題').length; const business=BUSINESS_QUESTIONS.length; const ext=QUESTIONS.filter(q=>q.source==='延伸').length; const due=dueQuestions().length; const weak=weakQuestions().length;
     document.getElementById('view-dashboard').innerHTML=`
       <div class="grid stats-grid">
-        <div class="card stat"><span>題庫總量</span><strong>${QUESTIONS.length}</strong><small>${orig} 原題／原題型 + ${ext} 延伸題</small></div>
+        <div class="card stat"><span>題庫總量</span><strong>${QUESTIONS.length}</strong><small>${orig} 原題／原題型 + ${ext} 延伸題 + ${business} 實用商務</small></div>
         <div class="card stat"><span>累積作答</span><strong>${st.attempts}</strong><small>已接觸 ${st.answered} 題</small></div>
         <div class="card stat"><span>正確率</span><strong>${st.accuracy}%</strong><small>${st.correct} 題答對</small></div>
-        <div class="card stat"><span>已熟練</span><strong>${st.mastered}</strong><small>連續答對 3 次以上</small></div>
+        <div class="card stat"><span>系統課程</span><strong>${sys.understood}/${sys.total}</strong><small>已理解 · ${sys.mastered} 課已掌握</small></div>
       </div>
       <div class="card hero">
         <h2>不是只背答案，而是把每題拆成可遷移的知識。</h2>
         <p>目前已整理 ${KNOW.length} 個核心知識點。每道原題答完後會連到相關文法、敬語方向、固定搭配、商務詞彙與閱讀策略，再用針對同一考點設計的應用題、近義辨析與情境題反覆抽問。</p>
         <div class="quick-actions">
-          <button class="btn primary" data-start="mixed">開始綜合 30 題</button>
+          <button class="btn primary" data-start="system">進入系統學習</button>
+          <button class="btn" data-start="mixed">開始綜合 30 題</button>
           <button class="btn" data-start="original">重刷全部原題</button>
           <button class="btn ${due?'warn':''}" data-start="due">今日到期複習 (${due})</button>
           <button class="btn ${weak?'bad':''}" data-start="weak">弱點題 (${weak})</button>
+          <button class="btn ${sys.due?'warn':''}" data-start="system">48h 課程複習 (${sys.due})</button>
         </div>
       </div>
       <div class="section-title"><div><h2>練習模式</h2><p>依目的切換，不用每次從頭刷。</p></div></div>
       <div class="grid mode-grid">
+        ${modeCard('system','系統學習',`${LESSONS.length} 課／${sys.understood} 課已理解`,'先建立 BJT 的人物關係、敬語、交涉、聽解、讀解與高階語用框架。')}
         ${modeCard('original','原題重現',`${orig} 題完整跑一輪`,'保留這串對話中的考點與原題型，先確認基本判斷。')}
         ${modeCard('extension','知識點延伸',`${ext} 題中隨機 ${state.settings.extensionSize} 題`,'把原題內的敬語、語彙、文法轉成新問法，防止只記答案位置。')}
         ${modeCard('mixed','綜合混合',`隨機 ${state.settings.mixedSize} 題`,'原題與延伸題混合，適合日常刷題。')}
         ${modeCard('weak','弱點集中',`${weak} 題`,'答錯較多、最近答錯或手動標記不熟的題目。')}
         ${modeCard('due','間隔複習',`${due} 題到期`,'依答題結果安排複習；答錯會更快再次出現。')}
         ${modeCard('knowledge','知識卡模式',`${KNOW.length} 個知識點`,'直接從概念、讀音、例句與易混點建立系統化記憶。')}
+        ${modeCard('business','實用商務課程','10 章 × 20 題','按寒暄、電話、依賴、注文、會議等商務情境分章練習。')}
       </div>
       <div class="section-title"><div><h2>目前學習進度</h2><p>熟練標準：同一題連續答對 3 次。</p></div><span class="small">${st.mastered}/${QUESTIONS.length}</span></div>
       <div class="card progress-row"><div class="progress"><i style="width:${pct(st.mastered,QUESTIONS.length)}%"></i></div><b>${pct(st.mastered,QUESTIONS.length)}%</b></div>`;
     bindStartButtons();
   }
+
+  function openLesson(id){
+    const l=LMAP[id];if(!l){toast('找不到這一課。');return}
+    const ls=ensureLessonState(id);if(!ls.openedAt)ls.openedAt=Date.now();saveState();
+    lessonFocusId=id;lessonQuizResult=null;lessonQuizDraft[id]=lessonQuizDraft[id]||{};renderSystem();window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function formatDateTime(ts){if(!ts)return '—';try{return new Intl.DateTimeFormat('zh-TW',{timeZone:APP_TIME_ZONE,month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(ts))}catch(e){return new Date(ts).toLocaleString()}}
+  function lessonDigestHTML(l){
+    const dig=l.sourceDigest||[];if(!dig.length)return '';
+    return `<details class="lesson-digest"><summary>展開深度講義整合內容（${dig.length} 節來源）</summary>${dig.map(sec=>`<section class="lesson-digest-section"><div class="lesson-digest-head"><b>${esc(sec.section||'補充內容')}</b><span>${esc(sec.source||'')}</span></div>${(sec.blocks||[]).map(block=>{
+      if(block.type==='table'&&Array.isArray(block.rows))return `<div class="lesson-table-wrap"><table class="lesson-table">${block.rows.map((row,ri)=>`<tr>${row.map(cell=>`<${ri===0?'th':'td'}>${esc(cell)}</${ri===0?'th':'td'}>`).join('')}</tr>`).join('')}</table></div>`;
+      return `<p>${esc(block.text||'')}</p>`;
+    }).join('')}</section>`).join('')}</details>`;
+  }
+  function markLessonRead(id){const ls=ensureLessonState(id);ls.openedAt=ls.openedAt||Date.now();ls.readAt=Date.now();saveState();renderSystem();toast('已標記為閱讀完成')}
+  function startLessonPractice(id){const l=LMAP[id];if(!l)return;const direct=validLessonQuestionIds(l),ids=lessonPracticeIds(l);if(!ids.length){toast('這個模組目前沒有可用題目。');return}session={mode:'lesson',originLessonId:id,lessonPracticeScope:direct.length?'direct':'module',ids:shuffle(ids),index:0,correct:0,wrong:0};currentPrepared=null;currentAnswered=false;currentSelectedOriginalIndex=null;switchView('practice')}
+  function submitLessonQuiz(id){
+    const l=LMAP[id];if(!l)return;const checks=l.quickChecks||[], draft=lessonQuizDraft[id]||{};
+    if(checks.some((_,i)=>!Number.isInteger(draft[i]))){toast('請先回答全部 Quick Check。');return}
+    let correct=0;checks.forEach((q,i)=>{if(draft[i]===q.answer)correct++});const score=checks.length?correct/checks.length:1;const pass=score>=Number(l.quickCheckThreshold||.8);const now=Date.now();const ls=ensureLessonState(id);
+    ls.openedAt=ls.openedAt||now;ls.quickAttempts=(ls.quickAttempts||0)+1;ls.lastScore=score;ls.bestScore=Math.max(ls.bestScore||0,score);ls.lastQuickAt=now;
+    if(pass){ls.readAt=ls.readAt||now;if(ls.passedAt&&ls.dueAt&&now>=ls.dueAt){ls.reviewed48h=true;ls.dueAt=0}else if(!ls.passedAt){ls.passedAt=now;ls.dueAt=now+48*3600000;}}
+    state.learning.lessons[id]=ls;saveState();lessonQuizResult={lessonId:id,answers:{...draft},score,pass};renderSystem();toast(pass?'Quick Check 通過':'未達 80%，看解析後再試一次');
+  }
+  function resetLessonQuiz(id){lessonQuizDraft[id]={};lessonQuizResult=null;renderSystem()}
+  function renderLessonQuickCheck(l){
+    const checks=l.quickChecks||[], draft=lessonQuizDraft[l.id]||{}, result=lessonQuizResult&&lessonQuizResult.lessonId===l.id?lessonQuizResult:null, ls=lessonState(l.id);
+    if(!checks.length)return '<div class="card lesson-block"><h3>Quick Check</h3><p class="small">本課目前沒有課內測驗。</p></div>';
+    return `<section class="card lesson-block lesson-quiz"><div class="lesson-section-head"><div><span class="lesson-kicker">QUICK CHECK</span><h3>理解確認</h3></div><span class="status-badge">最佳 ${Math.round((ls.bestScore||0)*100)}%</span></div>${checks.map((q,qi)=>`<div class="lesson-qc"><b>Q${qi+1}. ${esc(q.q)}</b><div class="lesson-qc-options">${(q.options||[]).map((opt,oi)=>{const sel=draft[qi]===oi;const ok=result&&oi===q.answer;const wrong=result&&sel&&oi!==q.answer;return `<button class="lesson-qc-opt ${sel?'selected':''} ${ok?'correct':''} ${wrong?'wrong':''}" data-lq="${qi}" data-lo="${oi}" ${result?'disabled':''}>${oi+1}. ${esc(opt)}</button>`}).join('')}</div>${result?`<div class="lesson-qc-explain ${result.answers[qi]===q.answer?'ok':'ng'}"><b>${result.answers[qi]===q.answer?'✓ 正確':'✕ 正解：'+(q.answer+1)}</b><span>${esc(q.explain||'')}</span></div>`:''}</div>`).join('')}<div class="actions">${result?`<button class="btn" id="retryLessonQuiz">重新作答</button><span class="lesson-quiz-score ${result.pass?'pass':'fail'}">${Math.round(result.score*100)}% · ${result.pass?'通過':'未通過'}</span>`:`<button class="btn primary" id="submitLessonQuiz">送出 Quick Check</button>`}</div></section>`;
+  }
+  function renderLessonDetail(l){
+    const root=document.getElementById('view-system'), st=lessonStatus(l), ls=st.lessonState, qstats=st.questionStats;
+    const kids=validLessonKnowledgeIds(l), aids=validLessonArticleIds(l), qids=validLessonQuestionIds(l), practiceIds=lessonPracticeIds(l);
+    root.innerHTML=`<div class="lesson-detail-top"><button class="btn" id="lessonBackBtn">← 回系統學習</button><div class="lesson-display-toggles"><button class="btn" id="toggleLessonReading">讀音 ${state.settings.showReadings?'ON':'OFF'}</button><button class="btn" id="toggleLessonZh">中文 ${state.settings.showTranslations?'ON':'OFF'}</button></div></div>
+      <article class="card lesson-hero"><div class="lesson-meta"><span class="module-badge">${esc(l.moduleId)}</span><span class="status-badge status-${st.key}">${esc(st.label)}</span>${(l.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><h2>${esc(l.title_zh)}</h2><p class="lesson-ja-title">${esc(l.title_ja||'')}</p><div class="lesson-progress-summary"><div><b>Quick Check</b><span>${Math.round((ls.bestScore||0)*100)}%</span></div><div><b>對應題庫</b><span>${qstats.attempted}/${qstats.total} 題</span></div><div><b>題庫正確率</b><span>${qstats.accuracy}%</span></div><div><b>48h 重做</b><span>${ls.reviewed48h?'完成':(ls.dueAt?formatDateTime(ls.dueAt):'未排程')}</span></div></div><div class="actions"><button class="btn primary" id="markLessonRead">${ls.readAt?'重新標記閱讀':'標記已閱讀'}</button><button class="btn" id="lessonPracticeBtn" ${practiceIds.length?'':'disabled'}>${qids.length?`練習對應題 (${qids.length})`:`練習本模組題 (${practiceIds.length})`}</button></div></article>
+      <div class="lesson-columns"><div class="lesson-main">
+        <section class="card lesson-block"><span class="lesson-kicker">GOALS</span><h3>學習目標</h3><ul>${(l.learningGoals||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>
+        <section class="card lesson-block rules-block"><span class="lesson-kicker">【規則】</span><h3>核心規則</h3><ul>${(l.coreRules||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>
+        ${(l.examples||[]).length?`<section class="card lesson-block"><span class="lesson-kicker">EXAMPLES</span><h3>例句與判讀</h3><div class="lesson-examples">${l.examples.map((e,i)=>`<div class="lesson-example"><b>例 ${i+1}</b><div class="lesson-example-ja">${esc(state.settings.showReadings&&e.reading?e.reading:e.ja||'')}</div>${state.settings.showTranslations&&e.zh?`<div class="lesson-example-zh">${esc(e.zh)}</div>`:''}</div>`).join('')}</div></section>`:''}
+        ${(l.commonMistakes||[]).length?`<section class="card lesson-block warning-block"><span class="lesson-kicker">PITFALLS</span><h3>常見錯誤</h3><ul>${l.commonMistakes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>`:''}
+        ${lessonDigestHTML(l)}
+        ${renderLessonQuickCheck(l)}
+      </div><aside class="lesson-side">
+        ${(l.decisionFlow||[]).length?`<section class="card lesson-side-card"><h3>判斷流程</h3>${l.decisionFlow.map(x=>`<p>${esc(x)}</p>`).join('')}</section>`:''}
+        ${(l.bjtHowTested||[]).length?`<section class="card lesson-side-card cue-block"><h3>【高價值線索】BJT 怎麼考</h3>${l.bjtHowTested.map(x=>`<p>${esc(x)}</p>`).join('')}</section>`:''}
+        <section class="card lesson-side-card"><h3>對應知識卡</h3>${kids.length?kids.slice(0,8).map(id=>{const k=KMAP[id];return `<div class="lesson-linked-k"><b>${esc(k.title)}</b><span>${esc(k.summary)}</span><button class="text-btn" data-lesson-k="${esc(id)}">刷這個知識點</button></div>`}).join(''):'<p class="small">本課目前沒有直接映射知識卡。</p>'}</section>
+        <section class="card lesson-side-card"><h3>對應文章</h3>${aids.length?aids.slice(0,8).map(id=>`<button class="lesson-link-btn" data-lesson-a="${esc(id)}">${esc((ARTICLE_DETAILS[id]||{}).title||QMAP[id].stem)}</button>`).join(''):'<p class="small">本課目前沒有直接對應文章。</p>'}</section>
+        <section class="card lesson-side-card"><h3>題庫應用</h3><p class="small">映射只使用目前題庫中實際存在的 ID；視為「相關練習推薦」，不把它宣稱成唯一一對一考點。</p>${qids.length?`<div class="lesson-related-list">${qids.slice(0,8).map(id=>{const q=QMAP[id];return `<button class="lesson-related-q" data-lesson-q="${esc(id)}"><span>${esc(q.source)}</span>${esc(q.stem)}</button>`}).join('')}</div>${qids.length>8?`<div class="small">另有 ${qids.length-8} 題，可按「練習對應題」完整練習。</div>`:''}`:'<p class="small">本課先以教材＋Quick Check 建立能力，尚無直接題庫映射。</p>'}</section>
+      </aside></div>`;
+    document.getElementById('lessonBackBtn').onclick=()=>{lessonFocusId=null;lessonQuizResult=null;renderSystem();window.scrollTo({top:0,behavior:'smooth'})};
+    document.getElementById('toggleLessonReading').onclick=()=>{state.settings.showReadings=!state.settings.showReadings;saveState();renderSystem()};
+    document.getElementById('toggleLessonZh').onclick=()=>{state.settings.showTranslations=!state.settings.showTranslations;saveState();renderSystem()};
+    document.getElementById('markLessonRead').onclick=()=>markLessonRead(l.id);document.getElementById('lessonPracticeBtn').onclick=()=>startLessonPractice(l.id);
+    document.querySelectorAll('[data-lq]').forEach(b=>b.onclick=()=>{lessonQuizDraft[l.id]=lessonQuizDraft[l.id]||{};lessonQuizDraft[l.id][Number(b.dataset.lq)]=Number(b.dataset.lo);lessonQuizResult=null;renderSystem()});
+    const submit=document.getElementById('submitLessonQuiz');if(submit)submit.onclick=()=>submitLessonQuiz(l.id);const retry=document.getElementById('retryLessonQuiz');if(retry)retry.onclick=()=>resetLessonQuiz(l.id);
+    document.querySelectorAll('[data-lesson-k]').forEach(b=>b.onclick=()=>startTagSession(b.dataset.lessonK));document.querySelectorAll('[data-lesson-a]').forEach(b=>b.onclick=()=>openArticle(b.dataset.lessonA));document.querySelectorAll('[data-lesson-q]').forEach(b=>b.onclick=()=>practiceOne(b.dataset.lessonQ));
+  }
+  function renderSystem(){
+    const root=document.getElementById('view-system');if(lessonFocusId&&LMAP[lessonFocusId]){renderLessonDetail(LMAP[lessonFocusId]);return}
+    const stats=systemStats();const selected=lessonModuleFilter||MODULES[0]?.id;const mod=MODULES.find(m=>m.id===selected)||MODULES[0];const lessons=(mod?.lessonIds||[]).map(id=>LMAP[id]).filter(Boolean);
+    root.innerHTML=`<div class="card system-hero"><div><span class="tag">SYSTEMATIC LEARNING</span><h2>BJT 深度系統學習</h2><p>以 8 模組 50 課建立知識框架。每課依序完成教材、Quick Check、對應題庫與 48 小時後重做；不是只把 Word 講義貼進 App。</p></div><div class="system-hero-count"><strong>${LESSONS.length}</strong><span>課</span></div></div>
+      <div class="grid stats-grid system-stats"><div class="card stat"><span>已閱讀</span><strong>${stats.read}</strong><small>${pct(stats.read,stats.total)}%</small></div><div class="card stat"><span>已理解</span><strong>${stats.understood}</strong><small>Quick Check ≥ 80%</small></div><div class="card stat"><span>能應用</span><strong>${stats.applied}</strong><small>對應題庫達標</small></div><div class="card stat"><span>48h 待複習</span><strong>${stats.due}</strong><small>${stats.mastered} 課已掌握</small></div></div>
+      <div class="section-title"><div><h2>8 個模組</h2><p>先選模組，再依序完成每一課。</p></div></div><div class="system-module-grid">${MODULES.map(m=>{const ms=moduleStats(m);return `<button class="system-module-card ${m.id===selected?'active':''}" data-system-module="${esc(m.id)}"><span>${esc(m.id)}</span><h3>${esc(m.title_zh)}</h3><p>${esc(m.title_ja||'')}</p><div class="progress"><i style="width:${pct(ms.understood,ms.total)}%"></i></div><small>${ms.understood}/${ms.total} 已理解 · ${ms.mastered} 已掌握</small></button>`}).join('')}</div>
+      <div class="section-title"><div><h2>${esc(mod?.id||'')}｜${esc(mod?.title_zh||'')}</h2><p>${lessons.length} 課 · 點擊課程進入完整教材。</p></div>${stats.due?`<button class="btn warn" id="openDueLesson">開始 48h 複習</button>`:''}</div><div class="system-lesson-list">${lessons.map((l,i)=>{const st=lessonStatus(l),ls=st.lessonState;return `<button class="card system-lesson-row" data-system-lesson="${esc(l.id)}"><div class="lesson-index">${String(i+1).padStart(2,'0')}</div><div class="lesson-row-main"><div class="lesson-row-title"><b>${esc(l.title_zh)}</b><span class="status-badge status-${st.key}">${esc(st.label)}</span></div><span>${esc(l.title_ja||'')}</span><div class="lesson-row-meta"><small>Quick ${Math.round((ls.bestScore||0)*100)}%</small><small>題庫 ${st.questionStats.attempted}/${st.questionStats.total}</small><small>正確率 ${st.questionStats.accuracy}%</small>${ls.dueAt&&!ls.reviewed48h?`<small>48h：${formatDateTime(ls.dueAt)}</small>`:''}</div></div><span class="lesson-arrow">→</span></button>`}).join('')}</div>`;
+    document.querySelectorAll('[data-system-module]').forEach(b=>b.onclick=()=>{lessonModuleFilter=b.dataset.systemModule;renderSystem()});document.querySelectorAll('[data-system-lesson]').forEach(b=>b.onclick=()=>openLesson(b.dataset.systemLesson));
+    const dueBtn=document.getElementById('openDueLesson');if(dueBtn)dueBtn.onclick=()=>{const due=dueLessonReviews()[0];if(due)openLesson(due.id)};
+  }
+
   function modeCard(mode,title,meta,desc){return `<button class="mode-card" data-start="${mode}"><h3>${esc(title)}</h3><p>${esc(desc)}</p><div class="meta">${esc(meta)}</div></button>`}
-  function bindStartButtons(){document.querySelectorAll('[data-start]').forEach(b=>b.addEventListener('click',()=>{const m=b.dataset.start;if(m==='knowledge'){switchView('knowledge');return}startSession(m)}))}
+  function bindStartButtons(){document.querySelectorAll('[data-start]').forEach(b=>b.addEventListener('click',()=>{const m=b.dataset.start;if(m==='system'){switchView('system');return}if(m==='knowledge'){switchView('knowledge');return}if(m==='business'){switchView('business');return}startSession(m)}))}
 
   function startSession(mode){
     let list=[];
     if(mode==='original') list=QUESTIONS.filter(q=>q.source==='原題');
     if(mode==='extension') list=shuffle(QUESTIONS.filter(q=>q.source==='延伸')).slice(0,state.settings.extensionSize);
-    if(mode==='mixed') list=shuffle(QUESTIONS).slice(0,state.settings.mixedSize);
+    if(mode==='mixed'){const pool=state.settings.includeBusinessInMixed?QUESTIONS:QUESTIONS.filter(q=>q.course!=='practical_business');list=shuffle(pool).slice(0,state.settings.mixedSize);}
+    if(String(mode).startsWith('business-ch')){const ch=Number(String(mode).replace('business-ch',''));list=BUSINESS_QUESTIONS.filter(q=>q.chapter===ch);}
     if(mode==='weak') list=shuffle(weakQuestions());
     if(mode==='due') list=shuffle(dueQuestions());
     if(!list.length){toast(mode==='weak'?'目前沒有弱點題。':'目前沒有到期複習題。');switchView('practice');return}
@@ -131,9 +294,10 @@
     const root=document.getElementById('view-practice');
     if(!session){
       root.innerHTML=`<div class="section-title"><div><h2>選擇刷題方式</h2><p>原題先打底，延伸題負責把知識變成真正會用。</p></div></div><div class="grid mode-grid">
+        ${modeCard('system','系統學習',`${LESSONS.length} 課／${systemStats().understood} 課已理解`,'先建立 BJT 的人物關係、敬語、交涉、聽解、讀解與高階語用框架。')}
         ${modeCard('original','原題重現','完整題組','本串題目與等價文字版原題型。')}
-        ${modeCard('extension','知識點延伸','隨機抽題','71 個知識點皆有針對性延伸題；干擾選項限定在同一語義／文法範圍。')}
-        ${modeCard('mixed','綜合混合','日常模式','原題 + 延伸題混合。')}
+        ${modeCard('extension','知識點延伸','隨機抽題','既有 BJT 知識點皆有針對性延伸題；干擾選項限定在同一語義／文法範圍。')}
+        ${modeCard('mixed','綜合混合','日常模式','原題 + 延伸題混合；可在設定決定是否加入 200 題實用商務。')}
         ${modeCard('weak','弱點集中',`${weakQuestions().length} 題`,'只練最近答錯、錯多於對、或手動標記的題。')}
         ${modeCard('due','間隔複習',`${dueQuestions().length} 題`,'到期題集中複習。')}
         ${modeCard('knowledge','先看知識卡',`${KNOW.length} 張`,'先理解再刷題。')}
@@ -147,10 +311,10 @@
       <div class="card practice-panel">
         <div class="practice-head"><span class="q-number">第 ${session.index+1} / ${session.ids.length} 題 · ${esc(q.category)}</span><span class="q-source">${esc(q.source)}</span></div>
         <div class="progress"><i style="width:${pct(session.index,session.ids.length)}%"></i></div>
-        ${q.passage?`<div class="reading-passage"><div class="reading-passage-head"><span>閱讀文章</span><small>請先讀完整前文，再回答下方問題</small></div><div class="reading-passage-text">${esc(q.passage)}</div></div>`:''}
+        ${q.passage?`<div class="reading-passage ${q.course==='practical_business'?'business-scenario':''}"><div class="reading-passage-head"><span>${q.course==='practical_business'?'情境':'閱讀文章'}</span><small>${q.course==='practical_business'?'先確認人物關係與發話目的':'請先讀完整前文，再回答下方問題'}</small></div><div class="reading-passage-text">${esc(state.settings.showReadings&&q.readingPassage?q.readingPassage:q.passage)}</div></div>`:''}
         ${(q.assets||[]).length?`<div class="question-assets">${q.assets.map((src,i)=>`<figure><img src="${esc(src)}" alt="題目資料 ${i+1}" loading="lazy"><figcaption>題目資料 ${i+1}</figcaption></figure>`).join('')}</div>`:''}
         <div class="stem">${esc(q.stem)}</div>
-        <div class="options">${currentPrepared.preparedOptions.map((o,i)=>`<button class="option" data-opt="${i}"><span class="key">${i+1}</span><span>${esc(o.text)}</span></button>`).join('')}</div>
+        <div class="options">${currentPrepared.preparedOptions.map((o,i)=>`<button class="option" data-opt="${i}"><span class="key">${i+1}</span><span>${esc(state.settings.showReadings&&q.readingOptions?q.readingOptions[o.originalIndex]:o.text)}</span></button>`).join('')}</div>
         <div id="feedback"></div>
       </div>
       <aside class="grid">
@@ -158,7 +322,7 @@
           <div class="mini-item"><b>作答 ${p.attempts} 次</b><small>答對 ${p.correct}／答錯 ${p.wrong}／連續答對 ${p.streak}</small></div>
           <div class="mini-item"><b>關聯知識 ${related.length} 個</b><small>${related.map(k=>k.title).join('、')||'—'}</small></div>
         </div><div class="actions"><button class="btn" id="favBtn">${fav?'★ 已收藏':'☆ 收藏'}</button><button class="btn ${weak?'warn':''}" id="weakBtn">${weak?'已標記不熟':'標記不熟'}</button></div></div>
-        <div class="card side-card"><h3>答題原則</h3><p class="small">敬語先看「誰做動作」；閱讀先找「作者真正要你做什麼」；固定搭配不要只靠中文直覺。</p></div>
+        ${q.course==='practical_business'&&businessRoleMeta(q)?`<div class="card side-card role-card"><h3>角色／場景圖</h3><div class="role-flow"><span>我方</span><b>⇄</b><span>對方／關係人</span></div><p class="small"><b>${esc(businessRoleMeta(q).relation)}</b><br>核心：${esc(businessRoleMeta(q).core)}</p></div>`:''}<div class="card side-card"><h3>答題原則</h3><p class="small">敬語先看「誰做動作」；閱讀先找「作者真正要你做什麼」；固定搭配不要只靠中文直覺。</p></div>
       </aside>
     </div>`;
     document.querySelectorAll('.option').forEach(b=>b.addEventListener('click',()=>answerQuestion(Number(b.dataset.opt))));
@@ -303,15 +467,16 @@
     const selectedIdx=currentSelectedOriginalIndex;
     const selectedWrong = !correct && Number.isInteger(selectedIdx) ? getChoiceDetail(q,selectedIdx) : null;
     fb.innerHTML=`<div class="explanation"><h3>${correct?'✓ 正確':'✕ 這題要修正'}</h3>
-      ${selectedWrong?`<div class="wrong-choice-explain"><div class="wrong-choice-title">你選的「${esc(q.options[selectedIdx])}」為什麼不行？</div><span class="wrong-reason-tag">${esc(selectedWrong.type)}</span><p>${esc(selectedWrong.detail)}</p></div>`:''}
+      ${selectedWrong?`<div class="wrong-choice-explain"><div class="wrong-choice-title">你選的「${esc(q.options[selectedIdx])}」為什麼不行？</div><span class="wrong-reason-tag">${esc(selectedWrong.type)}</span><p>${esc(selectedWrong.detail)}</p>${q.course==='practical_business'?`<div class="mistake-why"><b>你可能卡在這裡：</b>${esc(businessMistakeHint(q,selectedIdx))}</div>`:''}<div class="error-tag-box"><b>錯因標籤（可複選）</b><div>${errorTagList().map(([code,label])=>`<button class="error-tag ${(state.errorTags[q.id]||[]).includes(code)?'active':''}" data-error-tag="${code}">${code} ${label}</button>`).join('')}</div></div></div>`:''}
       <div class="main-explain"><b>本題核心解析</b><p>${esc(q.explanation)}</p></div>
       <div class="actions detail-actions"><button class="btn" id="allDetailsBtn" aria-expanded="false">詳解四個選項</button></div>
       <div id="allChoiceDetails" class="all-choice-details" hidden>${renderAllChoiceDetails(q)}</div>
       ${related.length?`<div class="reading-box"><b>關聯知識與讀音</b>${related.map(k=>`<div><strong>${esc(k.title)}</strong>${state.settings.showReadings&&k.reading?` <span class="small">（${esc(k.reading)}）</span>`:''}<br><span class="small">${esc(k.summary)}</span></div>`).join('<br>')}</div>`:''}
       ${q.passage&&ARTICLE_DETAILS[q.id]?`<div class="article-jump"><b>這是一題文章閱讀題</b><span>文章詳解保留全文假名、中文翻譯、閱讀結構、陷阱與解題策略。</span><button class="btn" id="articleDetailBtn">查看這篇文章的完整詳解</button></div>`:''}
+      ${q.course==='practical_business'?`<div class="business-analysis-box"><b>情境解析</b><span>${esc(q.readingPassage||q.passage)}</span><p><strong>核心：</strong>${esc(q.coreKnowledge||'場面判断')}　<strong>本章：</strong>${esc(q.chapterTitle||'')}</p><p>${esc(q.trap||'先判斷人物關係、資訊確定度與說話者真正目的。')}</p></div>`:''}
       <div class="actions"><button class="btn bad" data-rate="again">再學一次</button><button class="btn warn" data-rate="hard">困難</button><button class="btn good" data-rate="good">普通</button><button class="btn primary" data-rate="easy">熟練</button></div>
       <div class="actions"><button class="btn" id="relatedBtn">再出一題關聯題</button><button class="btn primary" id="nextBtn">${session.index+1>=session.ids.length?'看結果':'下一題'}</button></div></div>`;
-    document.querySelectorAll('[data-rate]').forEach(b=>b.addEventListener('click',()=>rateCurrent(b.dataset.rate)));
+    document.querySelectorAll('[data-rate]').forEach(b=>b.addEventListener('click',()=>rateCurrent(b.dataset.rate)));document.querySelectorAll('[data-error-tag]').forEach(b=>b.addEventListener('click',()=>toggleErrorTag(q.id,b.dataset.errorTag)));
     document.getElementById('nextBtn').addEventListener('click',nextQuestion);
     document.getElementById('relatedBtn').addEventListener('click',injectRelatedQuestion);
     const allBtn=document.getElementById('allDetailsBtn'), allBox=document.getElementById('allChoiceDetails');
@@ -330,8 +495,10 @@
     const pick=shuffle(candidates)[0]; session.ids.splice(session.index+1,0,pick.id);toast('已把關聯題加入下一題。')
   }
   function renderSessionEnd(root){
-    const total=session.correct+session.wrong; root.innerHTML=`<div class="card hero"><h2>本輪完成</h2><p>答對 ${session.correct}／${total}，正確率 ${pct(session.correct,total)}%。錯題已自動進入弱點追蹤，並依熟練度安排下次複習。</p><div class="quick-actions"><button class="btn primary" id="restartMixed">再刷綜合題</button><button class="btn" id="reviewWrong">立刻刷弱點題</button><button class="btn" id="backDash">回總覽</button></div></div>`;
-    document.getElementById('restartMixed').onclick=()=>startSession('mixed');document.getElementById('reviewWrong').onclick=()=>startSession('weak');document.getElementById('backDash').onclick=()=>{session=null;switchView('dashboard')};
+    const total=session.correct+session.wrong; const origin=session.originLessonId;
+    if(origin&&!session.lessonResultRecorded){const ls=ensureLessonState(origin),score=total?session.correct/total:0;ls.practiceRuns=(ls.practiceRuns||0)+1;ls.bestPracticeScore=Math.max(ls.bestPracticeScore||0,score);state.learning.lessons[origin]=ls;session.lessonResultRecorded=true;saveState();}
+    root.innerHTML=`<div class="card hero"><h2>本輪完成</h2><p>答對 ${session.correct}／${total}，正確率 ${pct(session.correct,total)}%。錯題已自動進入弱點追蹤，並依熟練度安排下次複習。${origin&&session.lessonPracticeScope==='module'?' 本課沒有直接一對一題目，因此本輪使用同模組相關題進行應用訓練。':''}</p><div class="quick-actions">${origin?'<button class="btn primary" id="backLesson">回系統課程</button>':'<button class="btn primary" id="restartMixed">再刷綜合題</button>'}<button class="btn" id="reviewWrong">立刻刷弱點題</button><button class="btn" id="backDash">回總覽</button></div></div>`;
+    const restart=document.getElementById('restartMixed');if(restart)restart.onclick=()=>startSession('mixed');const backLesson=document.getElementById('backLesson');if(backLesson)backLesson.onclick=()=>{session=null;lessonFocusId=origin;switchView('system')};document.getElementById('reviewWrong').onclick=()=>startSession('weak');document.getElementById('backDash').onclick=()=>{session=null;switchView('dashboard')};
   }
   function toggleFav(id){const i=state.favorites.indexOf(id);if(i>=0)state.favorites.splice(i,1);else state.favorites.push(id);saveState();renderPractice()}
   function toggleWeak(id){const i=state.weak.indexOf(id);if(i>=0)state.weak.splice(i,1);else state.weak.push(id);saveState();renderPractice()}
@@ -421,28 +588,55 @@
     draw();
   }
 
+
+  function businessProgress(ch){
+    const list=BUSINESS_QUESTIONS.filter(q=>q.chapter===ch);let attempts=0,correct=0,done=0;
+    list.forEach(q=>{const p=progressOf(q.id);attempts+=p.attempts||0;correct+=p.correct||0;if((p.attempts||0)>0)done++;});
+    return {total:list.length,done,attempts,correct,accuracy:pct(correct,attempts)};
+  }
+  function renderBusiness(){
+    const root=document.getElementById('view-business');
+    const chapters=BUSINESS_COURSE.chapters||[];
+    root.innerHTML=`<div class="card business-hero"><div><span class="tag">NEW COURSE</span><h2>實用商務日語｜10 章情境訓練</h2><p>這 200 題獨立保留為課程，不會把原本 BJT 題庫的學習脈絡打散。每章 20 題；答題後可查看四選項本義、錯誤原因、情境解析與相關知識卡。</p></div><div class="business-course-stat"><strong>${BUSINESS_QUESTIONS.length}</strong><span>題</span></div></div>
+      <div class="business-chapter-grid">${chapters.map(ch=>{const p=businessProgress(ch.chapter);const cards=(ch.knowledgeCards||[]).map(id=>KMAP[id]).filter(Boolean);return `<article class="card business-chapter-card"><div class="chapter-no">CH ${String(ch.chapter).padStart(2,'0')}</div><h3>${esc(ch.title)}</h3><p>${esc(ch.zh||'')}</p><div class="chapter-progress"><div class="progress"><i style="width:${pct(p.done,p.total)}%"></i></div><span>${p.done}/${p.total} 題 · 正確率 ${p.accuracy}%</span></div><div class="chapter-kps">${cards.map(k=>`<div class="chapter-kp"><strong>${esc(k.title.replace('實用商務｜',''))}</strong><span>${esc(k.summary)}</span></div>`).join('')}</div><div class="actions"><button class="btn primary" data-business-ch="${ch.chapter}">開始本章 20 題</button><button class="btn" data-business-review="${ch.chapter}">查看本章題目</button></div></article>`}).join('')}</div>
+      <div id="businessQuestionList"></div>`;
+    document.querySelectorAll('[data-business-ch]').forEach(b=>b.onclick=()=>startSession('business-ch'+b.dataset.businessCh));
+    document.querySelectorAll('[data-business-review]').forEach(b=>b.onclick=()=>renderBusinessQuestionList(Number(b.dataset.businessReview)));
+  }
+  function renderBusinessQuestionList(ch){
+    const box=document.getElementById('businessQuestionList');if(!box)return;
+    const meta=(BUSINESS_COURSE.chapters||[]).find(x=>x.chapter===ch)||{};
+    const list=BUSINESS_QUESTIONS.filter(q=>q.chapter===ch);
+    box.innerHTML=`<div class="section-title"><div><h2>CH ${String(ch).padStart(2,'0')}｜${esc(meta.title||'')}</h2><p>${esc(meta.zh||'')}：可直接挑題，也可從章首開始完整練習。</p></div><button class="btn primary" data-start-business-list="${ch}">完整練本章</button></div><div class="business-question-list">${list.map((q,i)=>{const p=progressOf(q.id);return `<article class="card business-question-item"><div><span class="small">${i+1}/20 · ${esc(q.coreKnowledge||'')}</span><h3>${esc(state.settings.showReadings&&q.readingPassage?q.readingPassage:q.passage)}</h3><p>${esc(q.stem)}</p><div class="small">作答 ${p.attempts||0} 次 · 正確 ${p.correct||0} · 錯誤 ${p.wrong||0}</div></div><button class="btn" data-business-one="${esc(q.id)}">練這題</button></article>`}).join('')}</div>`;
+    box.querySelector('[data-start-business-list]').onclick=()=>startSession('business-ch'+ch);
+    box.querySelectorAll('[data-business-one]').forEach(b=>b.onclick=()=>practiceOne(b.dataset.businessOne));
+    box.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
   function renderMistakes(){
     const list=weakQuestions().sort((a,b)=>{const pa=progressOf(a.id),pb=progressOf(b.id);return (pb.wrong||0)-(pa.wrong||0)});const root=document.getElementById('view-mistakes');
     if(!list.length){root.innerHTML='<div class="card empty">目前沒有錯題或標記不熟的題目。繼續刷題後會自動整理到這裡。</div>';return}
-    root.innerHTML=`<div class="card"><div class="section-title" style="margin-top:0"><div><h2>${list.length} 題需要處理</h2><p>依答錯次數排序。</p></div><button class="btn primary" id="startWeakNow">開始刷錯題</button></div><div style="overflow:auto"><table class="table"><thead><tr><th>題目</th><th>分類</th><th>對 / 錯</th><th>操作</th></tr></thead><tbody>${list.map(q=>{const p=progressOf(q.id);return `<tr><td>${esc(q.stem)}</td><td>${esc(q.category)}</td><td>${p.correct||0} / ${p.wrong||0}</td><td><button class="btn" data-one="${q.id}">練這題</button></td></tr>`}).join('')}</tbody></table></div></div>`;
+    root.innerHTML=`<div class="card"><div class="section-title" style="margin-top:0"><div><h2>${list.length} 題需要處理</h2><p>依答錯次數排序；已標記的錯因會一起保留。</p></div><button class="btn primary" id="startWeakNow">開始刷錯題</button></div><div style="overflow:auto"><table class="table"><thead><tr><th>題目</th><th>分類</th><th>錯因</th><th>對 / 錯</th><th>操作</th></tr></thead><tbody>${list.map(q=>{const p=progressOf(q.id),tags=state.errorTags[q.id]||[];return `<tr><td>${esc(q.stem)}</td><td>${esc(q.category)}</td><td>${tags.length?tags.map(x=>`<span class="tag">${esc(x)}</span>`).join(' '):'—'}</td><td>${p.correct||0} / ${p.wrong||0}</td><td><button class="btn" data-one="${q.id}">練這題</button></td></tr>`}).join('')}</tbody></table></div></div>`;
     document.getElementById('startWeakNow').onclick=()=>startSession('weak');document.querySelectorAll('[data-one]').forEach(b=>b.onclick=()=>{session={mode:'one',ids:[b.dataset.one],index:0,correct:0,wrong:0};currentPrepared=null;currentAnswered=false;currentSelectedOriginalIndex=null;switchView('practice')});
   }
 
   function renderSettings(){const root=document.getElementById('view-settings');root.innerHTML=`<div class="grid settings-grid">
     <div class="card"><h2>刷題設定</h2>
       <div class="setting-row"><div><b>選項隨機</b><div class="small">避免記答案位置。</div></div><input id="shuffleSet" type="checkbox" ${state.settings.shuffleOptions?'checked':''}></div>
-      <div class="setting-row"><div><b>顯示平假名讀音</b><div class="small">在知識卡與答題解析顯示讀音。</div></div><input id="readingSet" type="checkbox" ${state.settings.showReadings?'checked':''}></div>
+      <div class="setting-row"><div><b>顯示平假名讀音</b><div class="small">在知識卡、文章、實用商務與系統課程顯示括號讀音。</div></div><input id="readingSet" type="checkbox" ${state.settings.showReadings?'checked':''}></div>
+      <div class="setting-row"><div><b>系統課程顯示中文</b><div class="small">例句保留日文，並可切換繁體中文翻譯。</div></div><input id="translationSet" type="checkbox" ${state.settings.showTranslations?'checked':''}></div>
+      <div class="setting-row"><div><b>綜合題包含實用商務</b><div class="small">關閉後，綜合混合只抽原本 BJT 題庫。</div></div><input id="businessMixSet" type="checkbox" ${state.settings.includeBusinessInMixed?'checked':''}></div>
       <div class="setting-row"><div><b>延伸題每輪</b></div><select class="select" id="extSize">${[10,20,30,50,80].map(n=>`<option ${n===state.settings.extensionSize?'selected':''}>${n}</option>`).join('')}</select></div>
       <div class="setting-row"><div><b>綜合題每輪</b></div><select class="select" id="mixSize">${[10,20,30,50,80].map(n=>`<option ${n===state.settings.mixedSize?'selected':''}>${n}</option>`).join('')}</select></div>
     </div>
-    <div class="card"><h2>備份與還原</h2><p class="small">進度、錯題、收藏與個人筆記都保存在瀏覽器 localStorage。換裝置前建議匯出。</p><div class="actions"><button class="btn primary" id="exportBtn">匯出學習紀錄</button><button class="btn" id="importBtn">匯入紀錄</button></div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><button class="btn danger" id="resetBtn">清除全部學習紀錄</button></div>
-    <div class="card"><h2>題庫內容</h2><p>知識點：<b>${KNOW.length}</b></p><p>題目：<b>${QUESTIONS.length}</b></p><p>原題／原題型：<b>${QUESTIONS.filter(q=>q.source==='原題').length}</b></p><p>延伸題：<b>${QUESTIONS.filter(q=>q.source==='延伸').length}</b></p></div>
+    <div class="card"><h2>備份與還原</h2><p class="small">題目進度、系統課程、錯因標籤、收藏與個人筆記都保存在瀏覽器 localStorage。換裝置前建議匯出。</p><div class="actions"><button class="btn primary" id="exportBtn">匯出學習紀錄</button><button class="btn" id="importBtn">匯入紀錄</button></div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><button class="btn danger" id="resetBtn">清除全部學習紀錄</button></div>
+    <div class="card"><h2>題庫內容</h2><p>知識點：<b>${KNOW.length}</b></p><p>題目：<b>${QUESTIONS.length}</b></p><p>原題／原題型：<b>${QUESTIONS.filter(q=>q.source==='原題').length}</b></p><p>延伸題：<b>${QUESTIONS.filter(q=>q.source==='延伸').length}</b></p><p>實用商務課程：<b>${BUSINESS_QUESTIONS.length}</b></p><p>系統學習：<b>${MODULES.length} 模組／${LESSONS.length} 課／${LESSONS.reduce((n,l)=>n+(l.quickChecks||[]).length,0)} Quick Check</b></p></div>
     <div class="card"><h2>學習規則</h2><p class="small">答錯：1 小時內再複習；連對 1 次：約 1 天；連對 2 次：約 3 天；連對 3 次以上：約 7 天。你也可以在每題解析後手動評分，重新調整間隔。</p></div>
   </div>`;
-    document.getElementById('shuffleSet').onchange=e=>{state.settings.shuffleOptions=e.target.checked;saveState()};document.getElementById('readingSet').onchange=e=>{state.settings.showReadings=e.target.checked;saveState()};document.getElementById('extSize').onchange=e=>{state.settings.extensionSize=Number(e.target.value);saveState()};document.getElementById('mixSize').onchange=e=>{state.settings.mixedSize=Number(e.target.value);saveState()};document.getElementById('exportBtn').onclick=exportState;document.getElementById('importBtn').onclick=()=>document.getElementById('importFile').click();document.getElementById('resetBtn').onclick=()=>{if(confirm('確定清除所有作答紀錄、筆記、收藏與錯題標記？')){localStorage.removeItem(STORAGE);state=loadState();session=null;toast('已清除');renderSettings()}};
+    document.getElementById('shuffleSet').onchange=e=>{state.settings.shuffleOptions=e.target.checked;saveState()};document.getElementById('readingSet').onchange=e=>{state.settings.showReadings=e.target.checked;saveState()};document.getElementById('translationSet').onchange=e=>{state.settings.showTranslations=e.target.checked;saveState()};document.getElementById('businessMixSet').onchange=e=>{state.settings.includeBusinessInMixed=e.target.checked;saveState()};document.getElementById('extSize').onchange=e=>{state.settings.extensionSize=Number(e.target.value);saveState()};document.getElementById('mixSize').onchange=e=>{state.settings.mixedSize=Number(e.target.value);saveState()};document.getElementById('exportBtn').onclick=exportState;document.getElementById('importBtn').onclick=()=>document.getElementById('importFile').click();document.getElementById('resetBtn').onclick=()=>{if(confirm('確定清除所有作答紀錄、系統課程進度、筆記、收藏與錯題標記？')){localStorage.removeItem(STORAGE);state=loadState();session=null;toast('已清除');renderSettings()}};
   }
   function exportState(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`BJT學習紀錄_${today()}.json`;a.click();URL.revokeObjectURL(a.href)}
-  function importState(file){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);state={...defaultState,...d,settings:{...defaultState.settings,...(d.settings||{})}};saveState();toast('匯入完成');renderSettings()}catch(e){alert('檔案格式不正確')}};r.readAsText(file)}
+  function importState(file){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);state={...defaultState,...d,settings:{...defaultState.settings,...(d.settings||{})}};state.learning=state.learning||{lessons:{}};state.learning.lessons=state.learning.lessons||{};state.errorTags=state.errorTags||{};saveState();toast('匯入完成');renderSettings()}catch(e){alert('檔案格式不正確')}};r.readAsText(file)}
 
   document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.view)));
   document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));
