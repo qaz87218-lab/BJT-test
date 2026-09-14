@@ -1,5 +1,9 @@
 # BJT 深度學習刷題 App — v13 LISTENING EXPANSION
 
+## v13 media clean update
+- Replaced all 10 Section 2 listening question images with logo-cleaned versions.
+- Question content, audio, answers, explanations, IDs, progress storage, and reference answer images are unchanged.
+- Service Worker core/media cache names were bumped so previously cached question images are refreshed after deployment.
 ## v13 新增
 - 正式新增「🎧 聽力題庫」，目前匯入 `BJT_JPLUS_SECTION2_001` 共 10 題 J+ 看圖聽解真題。
 - 每題完整保留：題目圖片、MP3 音檔、四個發話選項、正解、繁中解析、四選項解析、核心知識與原始答案參考頁。
