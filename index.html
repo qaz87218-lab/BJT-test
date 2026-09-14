@@ -17,17 +17,20 @@
         <div><strong>BJT 深度學習</strong><small>商務日語刷題系統</small></div>
       </div>
       <nav>
-        <button class="nav-btn active" data-view="dashboard">總覽</button>
-        <button class="nav-btn" data-view="system">📚 系統學習 <span class="nav-new">NEW</span></button>
-        <button class="nav-btn" data-view="practice">刷題</button>
-        <button class="nav-btn" data-view="knowledge">知識庫</button>
-        <button class="nav-btn" data-view="articles">文章詳解</button>
-        <button class="nav-btn" data-view="business">💼 實用商務 <span class="nav-new">NEW</span></button>
+        <button class="nav-btn active" data-view="dashboard" data-feature="dashboard">總覽</button>
+        <button class="nav-btn" data-view="system" data-feature="system">📚 系統學習</button>
+        <button class="nav-btn" data-view="practice" data-feature="practice">刷題</button>
+        <button class="nav-btn" data-view="listening" data-feature="listening">🎧 聽力題庫</button>
+        <button class="nav-btn" data-view="battle" data-feature="battle">⚔️ BJT BATTLE</button>
+        <button class="nav-btn" data-view="titles" data-feature="titles">🏆 稱號殿堂</button>
+        <button class="nav-btn" data-view="knowledge" data-feature="knowledge">知識庫</button>
+        <button class="nav-btn" data-view="articles" data-feature="articles">文章詳解</button>
+        <button class="nav-btn" data-view="business" data-feature="business">💼 實用商務</button>
         <button class="nav-btn" data-view="mistakes">錯題簿</button>
         <button class="nav-btn" data-view="settings">設定 / 備份</button>
       </nav>
       <div class="sidebar-foot">
-        <small>資料來源：本串 BJT 題目 + 延伸知識點</small>
+        <small>資料來源：多串 BJT 真題 + 延伸知識點</small>
       </div>
     </aside>
 
@@ -41,6 +44,9 @@
       <section id="view-dashboard" class="view active"></section>
       <section id="view-system" class="view"></section>
       <section id="view-practice" class="view"></section>
+      <section id="view-listening" class="view"></section>
+      <section id="view-battle" class="view"></section>
+      <section id="view-titles" class="view"></section>
       <section id="view-knowledge" class="view"></section>
       <section id="view-articles" class="view"></section>
       <section id="view-business" class="view"></section>
@@ -50,6 +56,11 @@
   </div>
 
   <div id="toast" class="toast" role="status"></div>
+  <div id="gameOverlay" class="game-overlay" aria-live="polite"></div>
+  <div id="questionMapModal" class="modal-backdrop" hidden></div>
+  <div id="lessonNavModal" class="modal-backdrop sheet-backdrop" hidden></div>
+  <div id="titleDetailModal" class="modal-backdrop sheet-backdrop" hidden></div>
+  <div id="imageViewerModal" class="modal-backdrop image-viewer-backdrop" hidden></div>
   <input id="importFile" type="file" accept="application/json" hidden />
 
   <script src="data.js"></script>
@@ -57,6 +68,8 @@
   <script src="article_details.js"></script>
   <script src="business_course.js"></script>
   <script src="lessons.js"></script>
+  <script src="game_data.js"></script>
+  <script src="listening_data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

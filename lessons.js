@@ -1,7 +1,7 @@
 window.BJT_LESSON_DB = {
-  "version": "2.0-merged",
+  "version": "2.2-merged-qpack-listening-20260914",
   "title": "BJT 深度系統學習 Lesson Database v2 MERGED",
-  "status": "content_merged_ready_for_app",
+  "status": "content_merged_ready_for_app_link_audited_with_listening_20260914",
   "sourcePolicy": {
     "primary": "使用者提供的《BJT J1+ 深度學習講義｜重構版》",
     "supplement": "原始《BJT 最終整理》中的情境化案例；僅在不與重構版校正衝突時吸收",
@@ -1239,7 +1239,9 @@ window.BJT_LESSON_DB = {
           "PBJ-C01-Q17",
           "PBJ-C01-Q18",
           "PBJ-C01-Q19",
-          "PBJ-C01-Q20"
+          "PBJ-C01-Q20",
+          "BJT-O-0076",
+          "BJT-O-0082"
         ],
         "articleIds": [],
         "practicalIds": [
@@ -1264,7 +1266,9 @@ window.BJT_LESSON_DB = {
           "PBJ-C01-Q19",
           "PBJ-C01-Q20"
         ],
-        "listeningIds": []
+        "listeningIds": [
+          "BJT_JP_S2_06"
+        ]
       },
       "linkAuditRequired": true,
       "contentStatus": "merged_content_ready",
@@ -1517,11 +1521,14 @@ window.BJT_LESSON_DB = {
           "PBJ-C01-Q17",
           "PBJ-C01-Q18",
           "PBJ-C01-Q19",
-          "PBJ-C01-Q20"
+          "PBJ-C01-Q20",
+          "BJT-O-0075"
         ],
         "articleIds": [],
         "practicalIds": [],
-        "listeningIds": []
+        "listeningIds": [
+          "BJT_JP_S2_09"
+        ]
       },
       "linkAuditRequired": true,
       "contentStatus": "merged_content_ready",
@@ -1719,7 +1726,10 @@ window.BJT_LESSON_DB = {
           "d43",
           "a10",
           "BJT-O-0064",
-          "BJT-E-0027"
+          "BJT-E-0027",
+          "BJT-O-0077",
+          "BJT-O-0078",
+          "BJT-O-0080"
         ],
         "articleIds": [
           "o28",
@@ -1730,7 +1740,9 @@ window.BJT_LESSON_DB = {
           "o25"
         ],
         "practicalIds": [],
-        "listeningIds": []
+        "listeningIds": [
+          "BJT_JP_S2_10"
+        ]
       },
       "linkAuditRequired": true,
       "contentStatus": "merged_content_ready",
@@ -2018,7 +2030,8 @@ window.BJT_LESSON_DB = {
           "PBJ-C06-Q17",
           "PBJ-C06-Q18",
           "PBJ-C06-Q19",
-          "PBJ-C06-Q20"
+          "PBJ-C06-Q20",
+          "BJT-O-0076"
         ],
         "articleIds": [
           "o25",
@@ -2295,7 +2308,9 @@ window.BJT_LESSON_DB = {
           "d30",
           "o13",
           "d20",
-          "a05"
+          "a05",
+          "BJT-O-0075",
+          "BJT-O-0080"
         ],
         "articleIds": [
           "BJT-O-0059"
@@ -2467,7 +2482,9 @@ window.BJT_LESSON_DB = {
           "PBJ-C03-Q19",
           "PBJ-C03-Q20"
         ],
-        "listeningIds": []
+        "listeningIds": [
+          "BJT_JP_S2_07"
+        ]
       },
       "linkAuditRequired": true,
       "contentStatus": "merged_content_ready",
@@ -2704,7 +2721,9 @@ window.BJT_LESSON_DB = {
           "PBJ-C06-Q17",
           "PBJ-C06-Q18",
           "PBJ-C06-Q19",
-          "PBJ-C06-Q20"
+          "PBJ-C06-Q20",
+          "BJT-O-0090",
+          "BJT-O-0091"
         ],
         "articleIds": [
           "o27",
@@ -2712,7 +2731,9 @@ window.BJT_LESSON_DB = {
           "o53",
           "o51",
           "o23",
-          "o21"
+          "o21",
+          "BJT-O-0090",
+          "BJT-O-0091"
         ],
         "practicalIds": [
           "PBJ-C03-Q01",
@@ -2756,7 +2777,9 @@ window.BJT_LESSON_DB = {
           "PBJ-C06-Q19",
           "PBJ-C06-Q20"
         ],
-        "listeningIds": []
+        "listeningIds": [
+          "BJT_JP_S2_02"
+        ]
       },
       "linkAuditRequired": true,
       "contentStatus": "merged_content_ready",
@@ -2899,7 +2922,9 @@ window.BJT_LESSON_DB = {
           "PBJ-C05-Q19",
           "PBJ-C05-Q20"
         ],
-        "listeningIds": []
+        "listeningIds": [
+          "BJT_JP_S2_01"
+        ]
       },
       "linkAuditRequired": true,
       "contentStatus": "merged_content_ready",
@@ -3578,7 +3603,8 @@ window.BJT_LESSON_DB = {
           "PBJ-C02-Q17",
           "PBJ-C02-Q18",
           "PBJ-C02-Q19",
-          "PBJ-C02-Q20"
+          "PBJ-C02-Q20",
+          "BJT-O-0076"
         ],
         "articleIds": [],
         "practicalIds": [
@@ -3603,7 +3629,9 @@ window.BJT_LESSON_DB = {
           "PBJ-C02-Q19",
           "PBJ-C02-Q20"
         ],
-        "listeningIds": []
+        "listeningIds": [
+          "BJT_JP_S2_06"
+        ]
       },
       "linkAuditRequired": true,
       "contentStatus": "merged_content_ready",
@@ -3765,7 +3793,9 @@ window.BJT_LESSON_DB = {
           "PBJ-C02-Q19",
           "PBJ-C02-Q20"
         ],
-        "listeningIds": []
+        "listeningIds": [
+          "BJT_JP_S2_08"
+        ]
       },
       "linkAuditRequired": true,
       "contentStatus": "merged_content_ready",
@@ -3867,7 +3897,9 @@ window.BJT_LESSON_DB = {
           "BJT-O-0058",
           "BJT-E-0006",
           "BJT-O-0061",
-          "BJT-E-0013"
+          "BJT-E-0013",
+          "BJT-O-0075",
+          "BJT-O-0082"
         ],
         "articleIds": [],
         "practicalIds": [
@@ -3892,7 +3924,11 @@ window.BJT_LESSON_DB = {
           "PBJ-C01-Q19",
           "PBJ-C01-Q20"
         ],
-        "listeningIds": []
+        "listeningIds": [
+          "BJT_JP_S2_03",
+          "BJT_JP_S2_04",
+          "BJT_JP_S2_05"
+        ]
       },
       "linkAuditRequired": true,
       "contentStatus": "merged_content_ready",
@@ -4074,7 +4110,9 @@ window.BJT_LESSON_DB = {
           "PBJ-C02-Q19",
           "PBJ-C02-Q20"
         ],
-        "listeningIds": []
+        "listeningIds": [
+          "BJT_JP_S2_09"
+        ]
       },
       "linkAuditRequired": true,
       "contentStatus": "merged_content_ready",
@@ -5247,8 +5285,14 @@ window.BJT_LESSON_DB = {
       ],
       "links": {
         "knowledgePointIds": [],
-        "questionIds": [],
-        "articleIds": [],
+        "questionIds": [
+          "BJT-O-0089",
+          "BJT-O-0095"
+        ],
+        "articleIds": [
+          "BJT-O-0089",
+          "BJT-O-0095"
+        ],
         "practicalIds": [
           "PBJ-C04-Q01",
           "PBJ-C04-Q02",
@@ -5647,8 +5691,14 @@ window.BJT_LESSON_DB = {
       ],
       "links": {
         "knowledgePointIds": [],
-        "questionIds": [],
-        "articleIds": [],
+        "questionIds": [
+          "BJT-O-0089",
+          "BJT-O-0095"
+        ],
+        "articleIds": [
+          "BJT-O-0089",
+          "BJT-O-0095"
+        ],
         "practicalIds": [],
         "listeningIds": []
       },
@@ -5765,9 +5815,18 @@ window.BJT_LESSON_DB = {
           "PBJ-C10-Q17",
           "PBJ-C10-Q18",
           "PBJ-C10-Q19",
-          "PBJ-C10-Q20"
+          "PBJ-C10-Q20",
+          "BJT-O-0086",
+          "BJT-O-0092",
+          "BJT-O-0094",
+          "BJT-O-0097"
         ],
-        "articleIds": [],
+        "articleIds": [
+          "BJT-O-0086",
+          "BJT-O-0092",
+          "BJT-O-0094",
+          "BJT-O-0097"
+        ],
         "practicalIds": [],
         "listeningIds": []
       },
@@ -5901,7 +5960,13 @@ window.BJT_LESSON_DB = {
           "BJT-O-0061",
           "BJT-E-0013",
           "BJT-O-0057",
-          "BJT-E-0004"
+          "BJT-E-0004",
+          "BJT-O-0085",
+          "BJT-O-0088",
+          "BJT-O-0090",
+          "BJT-O-0091",
+          "BJT-O-0093",
+          "BJT-O-0096"
         ],
         "articleIds": [
           "o52",
@@ -5909,7 +5974,13 @@ window.BJT_LESSON_DB = {
           "d43",
           "BJT-O-0063",
           "BJT-O-0061",
-          "BJT-O-0057"
+          "BJT-O-0057",
+          "BJT-O-0085",
+          "BJT-O-0088",
+          "BJT-O-0090",
+          "BJT-O-0091",
+          "BJT-O-0093",
+          "BJT-O-0096"
         ],
         "practicalIds": [
           "PBJ-C08-Q01",
@@ -6047,11 +6118,15 @@ window.BJT_LESSON_DB = {
         ],
         "questionIds": [
           "BJT-O-0060",
-          "BJT-E-0010"
+          "BJT-E-0010",
+          "BJT-O-0091",
+          "BJT-O-0096"
         ],
         "articleIds": [
           "BJT-E-0010",
-          "BJT-E-0011"
+          "BJT-E-0011",
+          "BJT-O-0091",
+          "BJT-O-0096"
         ],
         "practicalIds": [
           "PBJ-C06-Q01",
@@ -6515,8 +6590,12 @@ window.BJT_LESSON_DB = {
       ],
       "links": {
         "knowledgePointIds": [],
-        "questionIds": [],
-        "articleIds": [],
+        "questionIds": [
+          "BJT-O-0087"
+        ],
+        "articleIds": [
+          "BJT-O-0087"
+        ],
         "practicalIds": [],
         "listeningIds": []
       },
@@ -6701,8 +6780,14 @@ window.BJT_LESSON_DB = {
       ],
       "links": {
         "knowledgePointIds": [],
-        "questionIds": [],
-        "articleIds": [],
+        "questionIds": [
+          "BJT-O-0084",
+          "BJT-O-0098"
+        ],
+        "articleIds": [
+          "BJT-O-0084",
+          "BJT-O-0098"
+        ],
         "practicalIds": [],
         "listeningIds": []
       },
@@ -6786,7 +6871,10 @@ window.BJT_LESSON_DB = {
       ],
       "links": {
         "knowledgePointIds": [],
-        "questionIds": [],
+        "questionIds": [
+          "BJT-O-0081",
+          "BJT-O-0083"
+        ],
         "articleIds": [],
         "practicalIds": [],
         "listeningIds": []
@@ -7742,7 +7830,9 @@ window.BJT_LESSON_DB = {
       ],
       "links": {
         "knowledgePointIds": [],
-        "questionIds": [],
+        "questionIds": [
+          "BJT-O-0079"
+        ],
         "articleIds": [],
         "practicalIds": [],
         "listeningIds": []
@@ -8088,6 +8178,7 @@ window.BJT_LESSON_DB = {
       "假名／中文顯示切換",
       "未來聽力連動"
     ],
-    "note": "既有 v1 映射僅作提示；因本次由40課擴充為50課，正式寫入App前需重新做一次 link audit。"
-  }
+    "note": "v12.3 已完成目前題庫 ID 的 link audit；新增 2026-09-14 真題採「相關練習推薦」映射，不宣稱唯一一對一考點。"
+  },
+  "note": "v13 新增 Section 2 聽力題 listeningIds；只做明確相關練習推薦，不宣稱唯一一對一考點。"
 };

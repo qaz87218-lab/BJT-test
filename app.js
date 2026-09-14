@@ -5,6 +5,11 @@
   const ARTICLE_DETAILS = window.BJT_ARTICLE_DETAILS || {};
   const BUSINESS_COURSE = window.BJT_BUSINESS_COURSE || {chapters:[]};
   const LESSON_DB = window.BJT_LESSON_DB || {modules:[],lessons:[]};
+  const GAME = window.BJT_GAME_CONFIG || {mainTitles:[],bosses:[],specialTitles:[]};
+  const LISTENING_PACKS = window.BJT_LISTENING_PACKS || [];
+  const LISTENING_QUESTIONS = window.BJT_LISTENING_QUESTIONS || [];
+  const LQMAP = Object.fromEntries(LISTENING_QUESTIONS.map(q=>[q.id,q]));
+  const LATEST_FEATURE='listening';
   const MODULES = LESSON_DB.modules || [];
   const LESSONS = LESSON_DB.lessons || [];
   const BUSINESS_QUESTIONS = QUESTIONS.filter(q=>q.course==='practical_business');
@@ -23,11 +28,18 @@
       return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
     }
   };
+  function freshDaily(){return {date:today(),count:0,correct:0,quickChecks:0,reviewActions:0,maxCombo:0,questRewarded:false,sessionBonuses:{}}}
   const defaultState={
     progress:{}, favorites:[], weak:[], notes:{}, errorTags:{},
     learning:{lessons:{}},
-    daily:{date:today(),count:0},
-    settings:{shuffleOptions:true, extensionSize:30, mixedSize:30, showReadings:true, showTranslations:true, includeBusinessInMixed:false}
+    listening:{progress:{},weak:[],lastPackId:null,lastQuestionId:null},
+    daily:freshDaily(),
+    game:{
+      xp:0,currentCombo:0,maxCombo:0,totalCorrectAnswers:0,reviewSuccesses:0,
+      questionFirstCorrect:{},revengeQuestions:{},articleRewards:{},lessonRewards:{},quickRewards:{},studyDates:[],
+      unlockedTitles:[],equippedTitle:null,bosses:{},perfect50:false,migrationV12:false
+    },
+    settings:{shuffleOptions:true, extensionSize:30, mixedSize:30, showReadings:true, showTranslations:true, includeBusinessInMixed:false,confirmSkip:false}
   };
   let state=loadState();
   let session=null;
@@ -39,6 +51,10 @@
   let lessonModuleFilter=null;
   let lessonQuizDraft={};
   let lessonQuizResult=null;
+  let announcementQueue=[];
+  let announcementActive=false;
+  let titleFilter='all';
+  let listeningSession=null;
 
   function loadState(){
     try{
@@ -47,22 +63,52 @@
       s.settings={...defaultState.settings,...(s.settings||{})};
       s.progress=s.progress||{}; s.favorites=s.favorites||[]; s.weak=s.weak||[]; s.notes=s.notes||{}; s.errorTags=s.errorTags||{};
       s.learning=s.learning||{lessons:{}}; s.learning.lessons=s.learning.lessons||{};
-      if(!s.daily || s.daily.date!==today()) s.daily={date:today(),count:0};
+      s.listening={...defaultState.listening,...(s.listening||{})};s.listening.progress=s.listening.progress||{};s.listening.weak=Array.isArray(s.listening.weak)?s.listening.weak:[];
+      s.game={...defaultState.game,...(s.game||{})};
+      s.game.questionFirstCorrect=s.game.questionFirstCorrect||{};s.game.revengeQuestions=s.game.revengeQuestions||{};s.game.articleRewards=s.game.articleRewards||{};s.game.lessonRewards=s.game.lessonRewards||{};s.game.quickRewards=s.game.quickRewards||{};s.game.studyDates=Array.isArray(s.game.studyDates)?s.game.studyDates:[];s.game.unlockedTitles=Array.isArray(s.game.unlockedTitles)?s.game.unlockedTitles:[];s.game.bosses=s.game.bosses||{};
+      if(!s.game.migrationV12){let legacyXp=0,totalCorrect=0;Object.entries(s.progress||{}).forEach(([qid,p])=>{totalCorrect+=p.correct||0;if((p.correct||0)>0){s.game.questionFirstCorrect[qid]=s.game.questionFirstCorrect[qid]||1;legacyXp+=10}if((p.correct||0)>0&&(p.wrong||0)>0){s.game.revengeQuestions[qid]=s.game.revengeQuestions[qid]||1;legacyXp+=5}});Object.entries((s.learning||{}).lessons||{}).forEach(([lid,ls])=>{if(ls.readAt){s.game.lessonRewards[lid]=s.game.lessonRewards[lid]||1;legacyXp+=15}if((ls.bestScore||0)>=.8){s.game.quickRewards[lid]=s.game.quickRewards[lid]||1;legacyXp+=((ls.bestScore||0)>=1?25:20)}if(ls.reviewed48h){s.game.reviewSuccesses=(s.game.reviewSuccesses||0)+1;legacyXp+=10}});s.game.totalCorrectAnswers=Math.max(s.game.totalCorrectAnswers||0,totalCorrect);s.game.xp=Math.max(s.game.xp||0,legacyXp);s.game.migrationV12=true;}
+      if(!s.daily || s.daily.date!==today()) s.daily=freshDaily(); else s.daily={...freshDaily(),...s.daily,sessionBonuses:s.daily.sessionBonuses||{}};
       return s;
     }catch(e){return structuredClone(defaultState)}
   }
   function ensureDailyCurrent(){
     const key=today();
-    if(!state.daily || state.daily.date!==key){state.daily={date:key,count:0};return true}
+    if(!state.daily || state.daily.date!==key){state.daily=freshDaily();return true}
     return false;
   }
   function saveState(){ ensureDailyCurrent(); localStorage.setItem(STORAGE,JSON.stringify(state)); updateToday(); }
   function esc(s=''){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
   function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
   function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1800)}
-  function updateToday(){document.getElementById('todayStat').textContent=`今日 ${state.daily.count||0} 題`}
+  function updateToday(){const el=document.getElementById('todayStat');if(el)el.textContent=`Lv.${gameLevel()} · 今日 ${state.daily.count||0} 題`}
   function pct(a,b){return b?Math.round(a/b*100):0}
   function progressOf(id){return state.progress[id]||{attempts:0,correct:0,wrong:0,streak:0,lastCorrect:null,lastAt:null,due:0}}
+  function xpNeed(level){const l=Math.max(1,Math.min(99,Number(level)||1));return Math.round((100+(l-1)*20+Math.pow(l-1,1.25)*5)/10)*10}
+  function xpFloorForLevel(level){let sum=0;for(let l=1;l<Math.max(1,Math.min(100,level));l++)sum+=xpNeed(l);return sum}
+  function gameLevel(xp=state.game.xp||0){let remain=Math.max(0,xp);for(let l=1;l<100;l++){const need=xpNeed(l);if(remain<need)return l;remain-=need}return 100}
+  function levelProgress(){const level=gameLevel(),floor=xpFloorForLevel(level),need=level>=100?0:xpNeed(level);return {level,into:Math.max(0,(state.game.xp||0)-floor),need,pct:level>=100?100:pct(Math.max(0,(state.game.xp||0)-floor),need)}}
+  function mainTitleAt(level=gameLevel()){let pick=GAME.mainTitles?.[0]||{level:1,name:'學習者',desc:''};(GAME.mainTitles||[]).forEach(t=>{if(t.level<=level)pick=t});return pick}
+  function nextMainTitle(level=gameLevel()){return (GAME.mainTitles||[]).find(t=>t.level>level)||null}
+  function specialTitle(id){return (GAME.specialTitles||[]).find(t=>t.id===id)||null}
+  function rarityLabel(r){return ({RARE:'稀有',EPIC:'史詩',LEGEND:'傳說',MYTHIC:'神話',BOSS:'BOSS'})[r]||r||'特殊'}
+  function equippedSpecial(){return specialTitle(state.game.equippedTitle)||null}
+  function studyStreak(){const dates=[...new Set(state.game.studyDates||[])].sort();if(!dates.length)return 0;let cursor=today(),streak=0;const set=new Set(dates);if(!set.has(cursor)){const d=new Date(cursor+'T00:00:00Z');d.setUTCDate(d.getUTCDate()-1);cursor=d.toISOString().slice(0,10)}while(set.has(cursor)){streak++;const d=new Date(cursor+'T00:00:00Z');d.setUTCDate(d.getUTCDate()-1);cursor=d.toISOString().slice(0,10)}return streak}
+  function registerStudyActivity(){const d=today();state.game.studyDates=state.game.studyDates||[];if(!state.game.studyDates.includes(d))state.game.studyDates.push(d);if(state.game.studyDates.length>500)state.game.studyDates=state.game.studyDates.slice(-500)}
+  function queueAnnouncement(data){announcementQueue.push(data);pumpAnnouncement()}
+  function pumpAnnouncement(){if(announcementActive||!announcementQueue.length)return;const box=document.getElementById('gameOverlay');if(!box)return;announcementActive=true;const a=announcementQueue.shift();const title=a.title||'SYSTEM';const body=a.body||'';const kicker=a.kicker||'';const titleObj=a.titleId?specialTitle(a.titleId):null;box.innerHTML=`<div class="game-announcement ${a.kind||''}">${kicker?`<div class="announce-kicker">${esc(kicker)}</div>`:''}<h2>${esc(title)}</h2>${body?`<p>${esc(body)}</p>`:''}${titleObj?`<div class="announce-actions"><button class="btn primary" id="equipAnnounceTitle">裝備《${esc(titleObj.name)}》</button><button class="btn" id="closeAnnouncement">稍後</button></div>`:''}</div>`;box.classList.add('show');let timer=setTimeout(close,titleObj?4200:2200);function close(){clearTimeout(timer);box.classList.remove('show');setTimeout(()=>{announcementActive=false;pumpAnnouncement()},220)}if(titleObj){const equip=document.getElementById('equipAnnounceTitle'),later=document.getElementById('closeAnnouncement');if(equip)equip.onclick=()=>{state.game.equippedTitle=titleObj.id;saveState();close()};if(later)later.onclick=close}}
+  function unlockTitle(id,announce=true){if(!id||state.game.unlockedTitles.includes(id))return false;const t=specialTitle(id);if(!t)return false;state.game.unlockedTitles.push(id);if(announce)queueAnnouncement({kind:'title',kicker:`${rarityLabel(t.rarity)}異名覺醒`,title:`《${t.name}》`,body:t.desc,titleId:id});return true}
+  function awardXp(amount,reason='學習'){amount=Math.max(0,Math.round(Number(amount)||0));if(!amount)return 0;const oldLevel=gameLevel();state.game.xp=(state.game.xp||0)+amount;const newLevel=gameLevel();if(session)session.lastXpGain=(session.lastXpGain||0)+amount;if(newLevel>oldLevel){const milestones=(GAME.mainTitles||[]).filter(t=>t.level>oldLevel&&t.level<=newLevel);if(!milestones.length)queueAnnouncement({kind:'level',kicker:'LEVEL UP',title:`Lv.${oldLevel} → Lv.${newLevel}`,body:'能力的境界，又向前推進了一步。'});else milestones.forEach(t=>queueAnnouncement({kind:t.level>=80?'ascend':'level',kicker:t.level===100?'FINAL ASCENSION':'位階突破',title:`Lv.${t.level}「${t.name}」`,body:t.desc}))}return amount}
+  function dailyQuestStatus(){ensureDailyCurrent();const d=state.daily;const tasks=[{key:'count',label:'完成刷題 10 題',now:d.count||0,target:10},{key:'correct',label:'答對 8 題',now:d.correct||0,target:8},{key:'quickChecks',label:'完成 Quick Check 1 回',now:d.quickChecks||0,target:1}];return {tasks,done:tasks.every(t=>t.now>=t.target),rewarded:!!d.questRewarded}}
+  function tryDailyQuestReward(){const q=dailyQuestStatus();if(q.done&&!q.rewarded){state.daily.questRewarded=true;awardXp(30,'Daily Quest');queueAnnouncement({kind:'daily',kicker:'DAILY QUEST COMPLETE',title:'今日修練完成',body:'EXP +30'});return true}return false}
+  function recordDaily(kind,amount=1){ensureDailyCurrent();state.daily[kind]=(state.daily[kind]||0)+amount;registerStudyActivity();tryDailyQuestReward()}
+  function allMainBossesCleared(){return (GAME.bosses||[]).filter(b=>!b.final).every(b=>state.game.bosses[b.id]?.cleared)}
+  function bossConfig(id){return (GAME.bosses||[]).find(b=>b.id===id)||null}
+  function bossState(id){return state.game.bosses[id]||{cleared:false,attempts:0,bestCombo:0,clearedAt:null}}
+  function conditionMet(c){if(!c)return false;const g=state.game;if(c.type==='correctAnswers')return (g.totalCorrectAnswers||0)>=c.value;if(c.type==='maxCombo')return (g.maxCombo||0)>=c.value;if(c.type==='revengeUnique')return Object.keys(g.revengeQuestions||{}).length>=c.value;if(c.type==='reviewSuccesses')return (g.reviewSuccesses||0)>=c.value;if(c.type==='studyStreak')return studyStreak()>=c.value;if(c.type==='allMastered')return systemStats().mastered>=LESSONS.length;if(c.type==='perfect50')return !!g.perfect50;if(c.type==='finalCompletion')return gameLevel()>=100&&systemStats().mastered>=LESSONS.length&&allMainBossesCleared()&&!!bossState('FINAL').cleared;return false}
+  function checkGameAchievements(announce=true){(GAME.specialTitles||[]).forEach(t=>{if(t.condition&&conditionMet(t.condition))unlockTitle(t.id,announce)});if(allMainBossesCleared())unlockTitle('boss_all',announce)}
+  function markRevenge(qid){state.game.revengeQuestions=state.game.revengeQuestions||{};if(state.game.revengeQuestions[qid])return false;state.game.revengeQuestions[qid]=Date.now();return true}
+  function handleQuestionRewards(q,correct,wasWrongBefore,wasDue){let gained=0;if(correct){state.game.totalCorrectAnswers=(state.game.totalCorrectAnswers||0)+1;state.game.currentCombo=(state.game.currentCombo||0)+1;state.game.maxCombo=Math.max(state.game.maxCombo||0,state.game.currentCombo);ensureDailyCurrent();state.daily.maxCombo=Math.max(state.daily.maxCombo||0,state.game.currentCombo);recordDaily('correct',1);if(!state.game.questionFirstCorrect[q.id]){state.game.questionFirstCorrect[q.id]=Date.now();gained+=awardXp(10,'首次答對')}if(wasWrongBefore&&markRevenge(q.id))gained+=awardXp(5,'錯題復仇');if(wasDue){state.game.reviewSuccesses=(state.game.reviewSuccesses||0)+1;recordDaily('reviewActions',1);gained+=awardXp(10,'到期複習')}}else{state.game.currentCombo=0}recordDaily('count',1);checkGameAchievements();return gained}
+  function equippedTitleHtml(){const t=equippedSpecial();return t?`<span class="equipped-alias">《${esc(t.name)}》</span>`:''}
   const LESSON_STATUS=[
     {key:'not_started',label:'未開始',level:0},
     {key:'learning',label:'學習中',level:1},
@@ -80,6 +126,7 @@
   function validLessonQuestionIds(l){return [...new Set((((l||{}).links||{}).questionIds||[]))].filter(id=>QMAP[id])}
   function validLessonKnowledgeIds(l){return [...new Set((((l||{}).links||{}).knowledgePointIds||[]))].filter(id=>KMAP[id])}
   function validLessonArticleIds(l){return [...new Set((((l||{}).links||{}).articleIds||[]))].filter(id=>ARTICLE_DETAILS[id]&&QMAP[id])}
+  function validLessonListeningIds(l){return [...new Set((((l||{}).links||{}).listeningIds||[]))].filter(id=>LQMAP[id])}
   function moduleQuestionIds(moduleId){const m=MODULES.find(x=>x.id===moduleId);if(!m)return[];return [...new Set((m.lessonIds||[]).flatMap(id=>validLessonQuestionIds(LMAP[id])))];}
   function lessonPracticeIds(l){const direct=validLessonQuestionIds(l);if(direct.length)return direct;return shuffle(moduleQuestionIds(l.moduleId)).slice(0,20)}
   function linkedLessonStats(l){
@@ -141,15 +188,22 @@
   }
   function totalStats(){
     let attempts=0,correct=0,answered=0,mastered=0,wrongSet=0;
-    Object.values(state.progress).forEach(p=>{attempts+=p.attempts||0;correct+=p.correct||0;if(p.attempts)answered++;if((p.streak||0)>=3)mastered++;if((p.wrong||0)>0)wrongSet++;});
+    QUESTIONS.forEach(q=>{const p=progressOf(q.id);attempts+=p.attempts||0;correct+=p.correct||0;if(p.attempts)answered++;if((p.streak||0)>=3)mastered++;if((p.wrong||0)>0)wrongSet++;});
     return {attempts,correct,answered,mastered,wrongSet,accuracy:pct(correct,attempts)};
   }
   function dueQuestions(){const now=Date.now();return QUESTIONS.filter(q=>{const p=progressOf(q.id);return p.attempts>0 && (p.due||0)<=now;})}
   function weakQuestions(){return QUESTIONS.filter(q=>{const p=progressOf(q.id);return state.weak.includes(q.id)||(p.wrong||0)>(p.correct||0)||(p.lastCorrect===false);})}
+  function listeningProgressOf(id){return (state.listening&&state.listening.progress&&state.listening.progress[id])||{attempts:0,correct:0,wrong:0,streak:0,lastCorrect:null,lastAt:null,due:0,totalPlays:0,firstListenCorrect:0,relistenCorrect:0}}
+  function listeningStats(list=LISTENING_QUESTIONS){let attempts=0,correct=0,answered=0,mastered=0,firstListenCorrect=0,relistenCorrect=0,totalPlays=0;list.forEach(q=>{const p=listeningProgressOf(q.id);attempts+=p.attempts||0;correct+=p.correct||0;totalPlays+=p.totalPlays||0;firstListenCorrect+=p.firstListenCorrect||0;relistenCorrect+=p.relistenCorrect||0;if(p.attempts)answered++;if((p.streak||0)>=3)mastered++;});return {attempts,correct,answered,mastered,firstListenCorrect,relistenCorrect,totalPlays,accuracy:pct(correct,attempts),firstListenAccuracy:pct(firstListenCorrect,attempts)}}
+  function listeningDueQuestions(list=LISTENING_QUESTIONS){const now=Date.now();return list.filter(q=>{const p=listeningProgressOf(q.id);return (p.attempts||0)>0&&(p.due||0)<=now})}
+  function listeningWeakQuestions(list=LISTENING_QUESTIONS){return list.filter(q=>{const p=listeningProgressOf(q.id);return (state.listening.weak||[]).includes(q.id)||(p.wrong||0)>(p.correct||0)||p.lastCorrect===false})}
   function titleMap(view){return {
     dashboard:['總覽','從系統課程建立框架，再用題庫、文章與實用商務反覆驗證。'],
     system:['系統學習',`${MODULES.length} 模組 × ${LESSONS.length} 課：學習 → Quick Check → 題庫應用 → 48h 重做。`],
     practice:['刷題','原題、延伸題、錯題與間隔複習。'],
+    listening:['聽力題庫',`${LISTENING_QUESTIONS.length} 題看圖聽解真題：圖片、音檔、發話選項與深度解析完整保留。`],
+    battle:['BJT BATTLE','用題庫攻略八大領域 Boss；答對造成傷害，連擊提高輸出。'],
+    titles:['稱號殿堂','主位階隨 Level 進化；Boss 與特殊條件解鎖可裝備異名。'],
     knowledge:['知識庫','每一道題的相關敬語、文法、詞彙與閱讀策略。'],
     articles:['文章詳解',`集中閱讀 ${Object.keys(ARTICLE_DETAILS).length} 篇文章：假名、翻譯、結構、陷阱與四選項詳解。`],
     business:['實用商務',`10 章 × 20 題：按情境建立真正可用的商務日語。`],
@@ -162,34 +216,44 @@
     document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
     const [t,s]=titleMap(view);document.getElementById('pageTitle').textContent=t;document.getElementById('pageSubtitle').textContent=s;
     document.getElementById('sidebar').classList.remove('open');
-    if(view==='dashboard')renderDashboard(); if(view==='system')renderSystem(); if(view==='practice')renderPractice(); if(view==='knowledge')renderKnowledge(); if(view==='articles')renderArticles(); if(view==='business')renderBusiness(); if(view==='mistakes')renderMistakes(); if(view==='settings')renderSettings();
+    if(view==='dashboard')renderDashboard(); if(view==='system')renderSystem(); if(view==='practice')renderPractice(); if(view==='listening')renderListening(); if(view==='battle')renderBattle(); if(view==='titles')renderTitles(); if(view==='knowledge')renderKnowledge(); if(view==='articles')renderArticles(); if(view==='business')renderBusiness(); if(view==='mistakes')renderMistakes(); if(view==='settings')renderSettings();
   }
 
+  function applyLatestFeatureBadge(){document.querySelectorAll('.nav-new').forEach(x=>x.remove());const target=document.querySelector(`[data-feature="${LATEST_FEATURE}"]`);if(target){const badge=document.createElement('span');badge.className='nav-new';badge.textContent='NEW';target.appendChild(badge)}}
+  function openImageViewer(src,alt='題目圖片'){if(!src)return;const modal=document.getElementById('imageViewerModal');if(!modal)return;let zoom=1;modal.hidden=false;modal.innerHTML=`<div class="image-viewer-card"><div class="image-viewer-head"><div><b>${esc(alt)}</b><span>可用 + / − 放大，手機也可直接縮放畫面。</span></div><button class="icon-btn viewer-close" id="closeImageViewer" aria-label="關閉">✕</button></div><div class="image-viewer-toolbar"><button class="btn" data-img-zoom="out">−</button><button class="btn" id="imageZoomLabel">100%</button><button class="btn" data-img-zoom="in">＋</button><button class="btn" data-img-zoom="reset">重設</button></div><div class="image-viewer-stage"><img id="imageViewerImg" src="${esc(src)}" alt="${esc(alt)}"></div></div>`;const img=document.getElementById('imageViewerImg'),label=document.getElementById('imageZoomLabel');const apply=()=>{if(img)img.style.width=`${Math.round(zoom*100)}%`;if(label)label.textContent=`${Math.round(zoom*100)}%`};document.getElementById('closeImageViewer').onclick=()=>{modal.hidden=true;modal.innerHTML=''};modal.querySelectorAll('[data-img-zoom]').forEach(b=>b.onclick=()=>{const a=b.dataset.imgZoom;if(a==='in')zoom=Math.min(3,zoom+.5);if(a==='out')zoom=Math.max(.75,zoom-.5);if(a==='reset')zoom=1;apply()});modal.onclick=e=>{if(e.target===modal){modal.hidden=true;modal.innerHTML=''}};apply()}
   function renderDashboard(){
-    const st=totalStats(); const sys=systemStats(); const orig=QUESTIONS.filter(q=>q.source==='原題').length; const business=BUSINESS_QUESTIONS.length; const ext=QUESTIONS.filter(q=>q.source==='延伸').length; const due=dueQuestions().length; const weak=weakQuestions().length;
+    const st=totalStats(); const sys=systemStats(); const lst=listeningStats(); const orig=QUESTIONS.filter(q=>q.source==='原題').length; const business=BUSINESS_QUESTIONS.length; const ext=QUESTIONS.filter(q=>q.source==='延伸').length; const due=dueQuestions().length; const weak=weakQuestions().length;
+    const lp=levelProgress(), mt=mainTitleAt(lp.level), nt=nextMainTitle(lp.level), eq=equippedSpecial(), dq=dailyQuestStatus();
+    const bosses=(GAME.bosses||[]).filter(b=>!b.final), cleared=bosses.filter(b=>bossState(b.id).cleared).length;
     document.getElementById('view-dashboard').innerHTML=`
+      <section class="card player-card"><div class="player-main"><span class="player-kicker">PLAYER STATUS</span><div class="player-level-row"><strong>Lv.${lp.level}</strong><div><h2>${esc(mt.name)}</h2>${eq?`<div class="player-alias">《${esc(eq.name)}》</div>`:'<div class="player-alias muted">尚未裝備異名</div>'}</div></div><div class="xp-row"><div class="progress xp-progress"><i style="width:${lp.pct}%"></i></div><b>${lp.level>=100?'MAX':`${lp.into} / ${lp.need} EXP`}</b></div>${nt?`<div class="next-rank">下一位階：Lv.${nt.level}「????」</div>`:'<div class="next-rank">最高位階已抵達</div>'}</div><div class="player-side"><div><b>${state.game.maxCombo||0}</b><span>最高 Combo</span></div><div><b>${cleared}/8</b><span>Boss 擊破</span></div><div><b>${state.game.unlockedTitles.length}</b><span>特殊異名</span></div><div><b>${studyStreak()}</b><span>連續學習日</span></div></div></section>
       <div class="grid stats-grid">
         <div class="card stat"><span>題庫總量</span><strong>${QUESTIONS.length}</strong><small>${orig} 原題／原題型 + ${ext} 延伸題 + ${business} 實用商務</small></div>
         <div class="card stat"><span>累積作答</span><strong>${st.attempts}</strong><small>已接觸 ${st.answered} 題</small></div>
         <div class="card stat"><span>正確率</span><strong>${st.accuracy}%</strong><small>${st.correct} 題答對</small></div>
         <div class="card stat"><span>系統課程</span><strong>${sys.understood}/${sys.total}</strong><small>已理解 · ${sys.mastered} 課已掌握</small></div>
+        <div class="card stat"><span>聽力真題</span><strong>${lst.answered}/${LISTENING_QUESTIONS.length}</strong><small>正確率 ${lst.accuracy}% · 初聽正解 ${lst.firstListenAccuracy}%</small></div>
       </div>
+      <section class="card daily-quest-card"><div class="daily-head"><div><span class="player-kicker">DAILY QUEST · 今日最高 ${state.daily.maxCombo||0} COMBO</span><h2>今日修練</h2></div><div class="daily-reward ${dq.rewarded?'done':''}">${dq.rewarded?'已領取':'完成獎勵'}<b>${dq.rewarded?'✓':'+30 EXP'}</b></div></div><div class="daily-task-grid">${dq.tasks.map(t=>`<div class="daily-task ${t.now>=t.target?'done':''}"><b>${t.now>=t.target?'✓':'○'} ${esc(t.label)}</b><span>${Math.min(t.now,t.target)} / ${t.target}</span><div class="progress"><i style="width:${pct(Math.min(t.now,t.target),t.target)}%"></i></div></div>`).join('')}</div></section>
       <div class="card hero">
         <h2>不是只背答案，而是把每題拆成可遷移的知識。</h2>
-        <p>目前已整理 ${KNOW.length} 個核心知識點。每道原題答完後會連到相關文法、敬語方向、固定搭配、商務詞彙與閱讀策略，再用針對同一考點設計的應用題、近義辨析與情境題反覆抽問。</p>
+        <p>目前已整理 ${KNOW.length} 個核心知識點，並加入 ${LISTENING_QUESTIONS.length} 題真正的看圖聽解真題。刷題與聽力都會累積 EXP、Combo 與複習紀錄；系統課程與間隔複習則負責把短期答對變成真正掌握。</p>
         <div class="quick-actions">
           <button class="btn primary" data-start="system">進入系統學習</button>
           <button class="btn" data-start="mixed">開始綜合 30 題</button>
           <button class="btn" data-start="original">重刷全部原題</button>
+          <button class="btn" id="dashListeningBtn">🎧 聽力題庫 (${LISTENING_QUESTIONS.length})</button>
           <button class="btn ${due?'warn':''}" data-start="due">今日到期複習 (${due})</button>
           <button class="btn ${weak?'bad':''}" data-start="weak">弱點題 (${weak})</button>
-          <button class="btn ${sys.due?'warn':''}" data-start="system">48h 課程複習 (${sys.due})</button>
+          <button class="btn" id="dashBattleBtn">⚔️ BJT BATTLE</button>
+          <button class="btn" id="dashTitlesBtn">🏆 稱號殿堂</button>
         </div>
       </div>
       <div class="section-title"><div><h2>練習模式</h2><p>依目的切換，不用每次從頭刷。</p></div></div>
       <div class="grid mode-grid">
         ${modeCard('system','系統學習',`${LESSONS.length} 課／${sys.understood} 課已理解`,'先建立 BJT 的人物關係、敬語、交涉、聽解、讀解與高階語用框架。')}
         ${modeCard('original','原題重現',`${orig} 題完整跑一輪`,'保留這串對話中的考點與原題型，先確認基本判斷。')}
+        ${modeCard('listening','聽力題庫',`${LISTENING_QUESTIONS.length} 題看圖聽解真題`,'圖片與音檔是題目本體；作答前不顯示發話文字，答題後再解鎖完整解析。')}
         ${modeCard('extension','知識點延伸',`${ext} 題中隨機 ${state.settings.extensionSize} 題`,'把原題內的敬語、語彙、文法轉成新問法，防止只記答案位置。')}
         ${modeCard('mixed','綜合混合',`隨機 ${state.settings.mixedSize} 題`,'原題與延伸題混合，適合日常刷題。')}
         ${modeCard('weak','弱點集中',`${weak} 題`,'答錯較多、最近答錯或手動標記不熟的題目。')}
@@ -200,6 +264,7 @@
       <div class="section-title"><div><h2>目前學習進度</h2><p>熟練標準：同一題連續答對 3 次。</p></div><span class="small">${st.mastered}/${QUESTIONS.length}</span></div>
       <div class="card progress-row"><div class="progress"><i style="width:${pct(st.mastered,QUESTIONS.length)}%"></i></div><b>${pct(st.mastered,QUESTIONS.length)}%</b></div>`;
     bindStartButtons();
+    document.getElementById('dashBattleBtn').onclick=()=>switchView('battle');document.getElementById('dashTitlesBtn').onclick=()=>switchView('titles');const dl=document.getElementById('dashListeningBtn');if(dl)dl.onclick=()=>switchView('listening');
   }
 
   function openLesson(id){
@@ -210,45 +275,72 @@
   function formatDateTime(ts){if(!ts)return '—';try{return new Intl.DateTimeFormat('zh-TW',{timeZone:APP_TIME_ZONE,month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(ts))}catch(e){return new Date(ts).toLocaleString()}}
   function lessonDigestHTML(l){
     const dig=l.sourceDigest||[];if(!dig.length)return '';
-    return `<details class="lesson-digest"><summary>展開深度講義整合內容（${dig.length} 節來源）</summary>${dig.map(sec=>`<section class="lesson-digest-section"><div class="lesson-digest-head"><b>${esc(sec.section||'補充內容')}</b><span>${esc(sec.source||'')}</span></div>${(sec.blocks||[]).map(block=>{
+    return `<details id="lesson-sec-digest" class="lesson-digest lesson-jump-target"><summary>展開深度講義整合內容（${dig.length} 節來源）</summary>${dig.map(sec=>`<section class="lesson-digest-section"><div class="lesson-digest-head"><b>${esc(sec.section||'補充內容')}</b><span>${esc(sec.source||'')}</span></div>${(sec.blocks||[]).map(block=>{
       if(block.type==='table'&&Array.isArray(block.rows))return `<div class="lesson-table-wrap"><table class="lesson-table">${block.rows.map((row,ri)=>`<tr>${row.map(cell=>`<${ri===0?'th':'td'}>${esc(cell)}</${ri===0?'th':'td'}>`).join('')}</tr>`).join('')}</table></div>`;
       return `<p>${esc(block.text||'')}</p>`;
     }).join('')}</section>`).join('')}</details>`;
   }
-  function markLessonRead(id){const ls=ensureLessonState(id);ls.openedAt=ls.openedAt||Date.now();ls.readAt=Date.now();saveState();renderSystem();toast('已標記為閱讀完成')}
-  function startLessonPractice(id){const l=LMAP[id];if(!l)return;const direct=validLessonQuestionIds(l),ids=lessonPracticeIds(l);if(!ids.length){toast('這個模組目前沒有可用題目。');return}session={mode:'lesson',originLessonId:id,lessonPracticeScope:direct.length?'direct':'module',ids:shuffle(ids),index:0,correct:0,wrong:0};currentPrepared=null;currentAnswered=false;currentSelectedOriginalIndex=null;switchView('practice')}
+  function markLessonRead(id){const ls=ensureLessonState(id),first=!ls.readAt;ls.openedAt=ls.openedAt||Date.now();ls.readAt=Date.now();registerStudyActivity();if(first&&!state.game.lessonRewards[id]){state.game.lessonRewards[id]=Date.now();awardXp(15,'完成課程')}checkGameAchievements();saveState();renderSystem();toast(first?'已閱讀 · EXP +15':'已重新標記閱讀')}
+  function startLessonPractice(id){const l=LMAP[id];if(!l)return;const direct=validLessonQuestionIds(l),ids=lessonPracticeIds(l);if(!ids.length){toast('這個模組目前沒有可用題目。');return}createSession('lesson',shuffle(ids),{originLessonId:id,lessonPracticeScope:direct.length?'direct':'module'});switchView('practice')}
   function submitLessonQuiz(id){
     const l=LMAP[id];if(!l)return;const checks=l.quickChecks||[], draft=lessonQuizDraft[id]||{};
     if(checks.some((_,i)=>!Number.isInteger(draft[i]))){toast('請先回答全部 Quick Check。');return}
     let correct=0;checks.forEach((q,i)=>{if(draft[i]===q.answer)correct++});const score=checks.length?correct/checks.length:1;const pass=score>=Number(l.quickCheckThreshold||.8);const now=Date.now();const ls=ensureLessonState(id);
+    const firstPass=!ls.passedAt, dueReview=!!ls.passedAt&&!!ls.dueAt&&now>=ls.dueAt&&!ls.reviewed48h;
     ls.openedAt=ls.openedAt||now;ls.quickAttempts=(ls.quickAttempts||0)+1;ls.lastScore=score;ls.bestScore=Math.max(ls.bestScore||0,score);ls.lastQuickAt=now;
-    if(pass){ls.readAt=ls.readAt||now;if(ls.passedAt&&ls.dueAt&&now>=ls.dueAt){ls.reviewed48h=true;ls.dueAt=0}else if(!ls.passedAt){ls.passedAt=now;ls.dueAt=now+48*3600000;}}
-    state.learning.lessons[id]=ls;saveState();lessonQuizResult={lessonId:id,answers:{...draft},score,pass};renderSystem();toast(pass?'Quick Check 通過':'未達 80%，看解析後再試一次');
+    recordDaily('quickChecks',1);
+    if(pass){ls.readAt=ls.readAt||now;if(dueReview){ls.reviewed48h=true;ls.dueAt=0;state.game.reviewSuccesses=(state.game.reviewSuccesses||0)+1;recordDaily('reviewActions',1);awardXp(10,'48h 課程複習')}else if(firstPass){ls.passedAt=now;ls.dueAt=now+48*3600000;}if(firstPass&&!state.game.quickRewards[id]){state.game.quickRewards[id]=Date.now();awardXp(score===1?25:20,'Quick Check 通過')}}
+    state.learning.lessons[id]=ls;checkGameAchievements();saveState();lessonQuizResult={lessonId:id,answers:{...draft},score,pass};renderSystem();toast(pass?`Quick Check 通過${firstPass?` · EXP +${score===1?25:20}`:''}`:'未達 80%，看解析後再試一次');
   }
   function resetLessonQuiz(id){lessonQuizDraft[id]={};lessonQuizResult=null;renderSystem()}
   function renderLessonQuickCheck(l){
     const checks=l.quickChecks||[], draft=lessonQuizDraft[l.id]||{}, result=lessonQuizResult&&lessonQuizResult.lessonId===l.id?lessonQuizResult:null, ls=lessonState(l.id);
-    if(!checks.length)return '<div class="card lesson-block"><h3>Quick Check</h3><p class="small">本課目前沒有課內測驗。</p></div>';
-    return `<section class="card lesson-block lesson-quiz"><div class="lesson-section-head"><div><span class="lesson-kicker">QUICK CHECK</span><h3>理解確認</h3></div><span class="status-badge">最佳 ${Math.round((ls.bestScore||0)*100)}%</span></div>${checks.map((q,qi)=>`<div class="lesson-qc"><b>Q${qi+1}. ${esc(q.q)}</b><div class="lesson-qc-options">${(q.options||[]).map((opt,oi)=>{const sel=draft[qi]===oi;const ok=result&&oi===q.answer;const wrong=result&&sel&&oi!==q.answer;return `<button class="lesson-qc-opt ${sel?'selected':''} ${ok?'correct':''} ${wrong?'wrong':''}" data-lq="${qi}" data-lo="${oi}" ${result?'disabled':''}>${oi+1}. ${esc(opt)}</button>`}).join('')}</div>${result?`<div class="lesson-qc-explain ${result.answers[qi]===q.answer?'ok':'ng'}"><b>${result.answers[qi]===q.answer?'✓ 正確':'✕ 正解：'+(q.answer+1)}</b><span>${esc(q.explain||'')}</span></div>`:''}</div>`).join('')}<div class="actions">${result?`<button class="btn" id="retryLessonQuiz">重新作答</button><span class="lesson-quiz-score ${result.pass?'pass':'fail'}">${Math.round(result.score*100)}% · ${result.pass?'通過':'未通過'}</span>`:`<button class="btn primary" id="submitLessonQuiz">送出 Quick Check</button>`}</div></section>`;
+    if(!checks.length)return '<section id="lesson-sec-quick" class="card lesson-block lesson-jump-target"><h3>Quick Check</h3><p class="small">本課目前沒有課內測驗。</p></section>';
+    return `<section id="lesson-sec-quick" class="card lesson-block lesson-quiz lesson-jump-target"><div class="lesson-section-head"><div><span class="lesson-kicker">QUICK CHECK</span><h3>理解確認</h3></div><span class="status-badge">最佳 ${Math.round((ls.bestScore||0)*100)}%</span></div>${checks.map((q,qi)=>`<div class="lesson-qc"><b>Q${qi+1}. ${esc(q.q)}</b><div class="lesson-qc-options">${(q.options||[]).map((opt,oi)=>{const sel=draft[qi]===oi;const ok=result&&oi===q.answer;const wrong=result&&sel&&oi!==q.answer;return `<button class="lesson-qc-opt ${sel?'selected':''} ${ok?'correct':''} ${wrong?'wrong':''}" data-lq="${qi}" data-lo="${oi}" ${result?'disabled':''}>${oi+1}. ${esc(opt)}</button>`}).join('')}</div>${result?`<div class="lesson-qc-explain ${result.answers[qi]===q.answer?'ok':'ng'}"><b>${result.answers[qi]===q.answer?'✓ 正確':'✕ 正解：'+(q.answer+1)}</b><span>${esc(q.explain||'')}</span></div>`:''}</div>`).join('')}<div class="actions">${result?`<button class="btn" id="retryLessonQuiz">重新作答</button><span class="lesson-quiz-score ${result.pass?'pass':'fail'}">${Math.round(result.score*100)}% · ${result.pass?'通過':'未通過'}</span>`:`<button class="btn primary" id="submitLessonQuiz">送出 Quick Check</button>`}</div></section>`;
+  }
+  function lessonSectionDefs(l){
+    const defs=[
+      ['goals','學習目標',true],['rules','核心規則',true],['examples','例句',!!(l.examples||[]).length],['pitfalls','常見錯誤',!!(l.commonMistakes||[]).length],['digest','深度講義',!!(l.sourceDigest||[]).length],['quick','Quick Check',true],['flow','判斷流程',!!(l.decisionFlow||[]).length],['cues','BJT 線索',!!(l.bjtHowTested||[]).length],['knowledge','知識卡',true],['articles','對應文章',true],['listening','聽力真題',!!validLessonListeningIds(l).length],['practice','題庫應用',true]
+    ];
+    return defs.filter(x=>x[2]).map(([key,label])=>({key,label}));
+  }
+  function jumpToLessonSection(key){
+    const el=document.getElementById(`lesson-sec-${key}`);if(!el)return;
+    if(el.tagName==='DETAILS')el.open=true;
+    const top=window.scrollY+el.getBoundingClientRect().top-88;
+    window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+    const modal=document.getElementById('lessonNavModal');if(modal)modal.hidden=true;
+  }
+  function openLessonNavModal(l){
+    const modal=document.getElementById('lessonNavModal');if(!modal)return;
+    const defs=lessonSectionDefs(l);
+    modal.innerHTML=`<div class="mobile-sheet lesson-nav-sheet"><div class="sheet-head"><div><span class="lesson-kicker">LESSON INDEX</span><h3>本課目錄</h3></div><button class="icon-btn sheet-close" id="closeLessonNav" aria-label="關閉">✕</button></div><div class="lesson-nav-list">${defs.map((x,i)=>`<button class="lesson-nav-list-btn" data-sheet-jump="${esc(x.key)}"><span>${String(i+1).padStart(2,'0')}</span>${esc(x.label)}</button>`).join('')}</div><button class="btn lesson-top-btn" id="lessonTopBtn">↑ 回到課程頂部</button></div>`;
+    modal.hidden=false;
+    document.getElementById('closeLessonNav').onclick=()=>modal.hidden=true;
+    document.getElementById('lessonTopBtn').onclick=()=>{modal.hidden=true;window.scrollTo({top:0,behavior:'smooth'})};
+    modal.querySelectorAll('[data-sheet-jump]').forEach(b=>b.onclick=()=>jumpToLessonSection(b.dataset.sheetJump));
+    modal.onclick=e=>{if(e.target===modal)modal.hidden=true};
   }
   function renderLessonDetail(l){
     const root=document.getElementById('view-system'), st=lessonStatus(l), ls=st.lessonState, qstats=st.questionStats;
-    const kids=validLessonKnowledgeIds(l), aids=validLessonArticleIds(l), qids=validLessonQuestionIds(l), practiceIds=lessonPracticeIds(l);
+    const kids=validLessonKnowledgeIds(l), aids=validLessonArticleIds(l), lids=validLessonListeningIds(l), qids=validLessonQuestionIds(l), practiceIds=lessonPracticeIds(l), sectionDefs=lessonSectionDefs(l);
     root.innerHTML=`<div class="lesson-detail-top"><button class="btn" id="lessonBackBtn">← 回系統學習</button><div class="lesson-display-toggles"><button class="btn" id="toggleLessonReading">讀音 ${state.settings.showReadings?'ON':'OFF'}</button><button class="btn" id="toggleLessonZh">中文 ${state.settings.showTranslations?'ON':'OFF'}</button></div></div>
-      <article class="card lesson-hero"><div class="lesson-meta"><span class="module-badge">${esc(l.moduleId)}</span><span class="status-badge status-${st.key}">${esc(st.label)}</span>${(l.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><h2>${esc(l.title_zh)}</h2><p class="lesson-ja-title">${esc(l.title_ja||'')}</p><div class="lesson-progress-summary"><div><b>Quick Check</b><span>${Math.round((ls.bestScore||0)*100)}%</span></div><div><b>對應題庫</b><span>${qstats.attempted}/${qstats.total} 題</span></div><div><b>題庫正確率</b><span>${qstats.accuracy}%</span></div><div><b>48h 重做</b><span>${ls.reviewed48h?'完成':(ls.dueAt?formatDateTime(ls.dueAt):'未排程')}</span></div></div><div class="actions"><button class="btn primary" id="markLessonRead">${ls.readAt?'重新標記閱讀':'標記已閱讀'}</button><button class="btn" id="lessonPracticeBtn" ${practiceIds.length?'':'disabled'}>${qids.length?`練習對應題 (${qids.length})`:`練習本模組題 (${practiceIds.length})`}</button></div></article>
+      <article class="card lesson-hero" id="lesson-top"><div class="lesson-meta"><span class="module-badge">${esc(l.moduleId)}</span><span class="status-badge status-${st.key}">${esc(st.label)}</span>${(l.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><h2>${esc(l.title_zh)}</h2><p class="lesson-ja-title">${esc(l.title_ja||'')}</p><div class="lesson-progress-summary"><div><b>Quick Check</b><span>${Math.round((ls.bestScore||0)*100)}%</span></div><div><b>對應題庫</b><span>${qstats.attempted}/${qstats.total} 題</span></div><div><b>題庫正確率</b><span>${qstats.accuracy}%</span></div><div><b>48h 重做</b><span>${ls.reviewed48h?'完成':(ls.dueAt?formatDateTime(ls.dueAt):'未排程')}</span></div></div><div class="actions"><button class="btn primary" id="markLessonRead">${ls.readAt?'重新標記閱讀':'標記已閱讀'}</button><button class="btn" id="lessonPracticeBtn" ${practiceIds.length?'':'disabled'}>${qids.length?`練習對應題 (${qids.length})`:`練習本模組題 (${practiceIds.length})`}</button></div></article>
+      <nav class="card lesson-anchor-nav" aria-label="本課導覽"><div class="lesson-anchor-title"><b>本課導覽</b><span>點選後直接跳到該段</span></div><div class="lesson-anchor-scroll">${sectionDefs.map(x=>`<button class="lesson-anchor-btn" data-lesson-jump="${esc(x.key)}">${esc(x.label)}</button>`).join('')}</div><button class="btn lesson-menu-btn" id="lessonMenuBtn">☰ 目錄</button></nav>
       <div class="lesson-columns"><div class="lesson-main">
-        <section class="card lesson-block"><span class="lesson-kicker">GOALS</span><h3>學習目標</h3><ul>${(l.learningGoals||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>
-        <section class="card lesson-block rules-block"><span class="lesson-kicker">【規則】</span><h3>核心規則</h3><ul>${(l.coreRules||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>
-        ${(l.examples||[]).length?`<section class="card lesson-block"><span class="lesson-kicker">EXAMPLES</span><h3>例句與判讀</h3><div class="lesson-examples">${l.examples.map((e,i)=>`<div class="lesson-example"><b>例 ${i+1}</b><div class="lesson-example-ja">${esc(state.settings.showReadings&&e.reading?e.reading:e.ja||'')}</div>${state.settings.showTranslations&&e.zh?`<div class="lesson-example-zh">${esc(e.zh)}</div>`:''}</div>`).join('')}</div></section>`:''}
-        ${(l.commonMistakes||[]).length?`<section class="card lesson-block warning-block"><span class="lesson-kicker">PITFALLS</span><h3>常見錯誤</h3><ul>${l.commonMistakes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>`:''}
+        <section id="lesson-sec-goals" class="card lesson-block lesson-jump-target"><span class="lesson-kicker">GOALS</span><h3>學習目標</h3><ul>${(l.learningGoals||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>
+        <section id="lesson-sec-rules" class="card lesson-block rules-block lesson-jump-target"><span class="lesson-kicker">【規則】</span><h3>核心規則</h3><ul>${(l.coreRules||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>
+        ${(l.examples||[]).length?`<section id="lesson-sec-examples" class="card lesson-block lesson-jump-target"><span class="lesson-kicker">EXAMPLES</span><h3>例句與判讀</h3><div class="lesson-examples">${l.examples.map((e,i)=>`<div class="lesson-example"><b>例 ${i+1}</b><div class="lesson-example-ja">${esc(state.settings.showReadings&&e.reading?e.reading:e.ja||'')}</div>${state.settings.showTranslations&&e.zh?`<div class="lesson-example-zh">${esc(e.zh)}</div>`:''}</div>`).join('')}</div></section>`:''}
+        ${(l.commonMistakes||[]).length?`<section id="lesson-sec-pitfalls" class="card lesson-block warning-block lesson-jump-target"><span class="lesson-kicker">PITFALLS</span><h3>常見錯誤</h3><ul>${l.commonMistakes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>`:''}
         ${lessonDigestHTML(l)}
         ${renderLessonQuickCheck(l)}
       </div><aside class="lesson-side">
-        ${(l.decisionFlow||[]).length?`<section class="card lesson-side-card"><h3>判斷流程</h3>${l.decisionFlow.map(x=>`<p>${esc(x)}</p>`).join('')}</section>`:''}
-        ${(l.bjtHowTested||[]).length?`<section class="card lesson-side-card cue-block"><h3>【高價值線索】BJT 怎麼考</h3>${l.bjtHowTested.map(x=>`<p>${esc(x)}</p>`).join('')}</section>`:''}
-        <section class="card lesson-side-card"><h3>對應知識卡</h3>${kids.length?kids.slice(0,8).map(id=>{const k=KMAP[id];return `<div class="lesson-linked-k"><b>${esc(k.title)}</b><span>${esc(k.summary)}</span><button class="text-btn" data-lesson-k="${esc(id)}">刷這個知識點</button></div>`}).join(''):'<p class="small">本課目前沒有直接映射知識卡。</p>'}</section>
-        <section class="card lesson-side-card"><h3>對應文章</h3>${aids.length?aids.slice(0,8).map(id=>`<button class="lesson-link-btn" data-lesson-a="${esc(id)}">${esc((ARTICLE_DETAILS[id]||{}).title||QMAP[id].stem)}</button>`).join(''):'<p class="small">本課目前沒有直接對應文章。</p>'}</section>
-        <section class="card lesson-side-card"><h3>題庫應用</h3><p class="small">映射只使用目前題庫中實際存在的 ID；視為「相關練習推薦」，不把它宣稱成唯一一對一考點。</p>${qids.length?`<div class="lesson-related-list">${qids.slice(0,8).map(id=>{const q=QMAP[id];return `<button class="lesson-related-q" data-lesson-q="${esc(id)}"><span>${esc(q.source)}</span>${esc(q.stem)}</button>`}).join('')}</div>${qids.length>8?`<div class="small">另有 ${qids.length-8} 題，可按「練習對應題」完整練習。</div>`:''}`:'<p class="small">本課先以教材＋Quick Check 建立能力，尚無直接題庫映射。</p>'}</section>
+        ${(l.decisionFlow||[]).length?`<section id="lesson-sec-flow" class="card lesson-side-card lesson-jump-target"><h3>判斷流程</h3>${l.decisionFlow.map(x=>`<p>${esc(x)}</p>`).join('')}</section>`:''}
+        ${(l.bjtHowTested||[]).length?`<section id="lesson-sec-cues" class="card lesson-side-card cue-block lesson-jump-target"><h3>【高價值線索】BJT 怎麼考</h3>${l.bjtHowTested.map(x=>`<p>${esc(x)}</p>`).join('')}</section>`:''}
+        <section id="lesson-sec-knowledge" class="card lesson-side-card lesson-jump-target"><h3>對應知識卡</h3>${kids.length?kids.slice(0,8).map(id=>{const k=KMAP[id];return `<div class="lesson-linked-k"><b>${esc(k.title)}</b><span>${esc(k.summary)}</span><button class="text-btn" data-lesson-k="${esc(id)}">刷這個知識點</button></div>`}).join(''):'<p class="small">本課目前沒有直接映射知識卡。</p>'}</section>
+        <section id="lesson-sec-articles" class="card lesson-side-card lesson-jump-target"><h3>對應文章</h3>${aids.length?aids.slice(0,8).map(id=>`<button class="lesson-link-btn" data-lesson-a="${esc(id)}">${esc((ARTICLE_DETAILS[id]||{}).title||QMAP[id].stem)}</button>`).join(''):'<p class="small">本課目前沒有直接對應文章。</p>'}</section>
+        ${lids.length?`<section id="lesson-sec-listening" class="card lesson-side-card lesson-jump-target listening-lesson-links"><h3>🎧 對應聽力真題</h3><p class="small">只連結語義上明確相關的題目；視為相關練習推薦，不宣稱唯一考點。</p>${lids.map(id=>{const q=LQMAP[id];return `<button class="lesson-link-btn" data-lesson-listen="${esc(id)}"><span>${esc(q.category)}</span>${esc(q.visualContext||q.questionZhTW||q.question)}</button>`}).join('')}</section>`:''}
+        <section id="lesson-sec-practice" class="card lesson-side-card lesson-jump-target"><h3>題庫應用</h3><p class="small">映射只使用目前題庫中實際存在的 ID；視為「相關練習推薦」，不把它宣稱成唯一一對一考點。</p>${qids.length?`<div class="lesson-related-list">${qids.slice(0,8).map(id=>{const q=QMAP[id];return `<button class="lesson-related-q" data-lesson-q="${esc(id)}"><span>${esc(q.source)}</span>${esc(q.stem)}</button>`}).join('')}</div>${qids.length>8?`<div class="small">另有 ${qids.length-8} 題，可按「練習對應題」完整練習。</div>`:''}`:'<p class="small">本課先以教材＋Quick Check 建立能力，尚無直接題庫映射。</p>'}</section>
       </aside></div>`;
     document.getElementById('lessonBackBtn').onclick=()=>{lessonFocusId=null;lessonQuizResult=null;renderSystem();window.scrollTo({top:0,behavior:'smooth'})};
     document.getElementById('toggleLessonReading').onclick=()=>{state.settings.showReadings=!state.settings.showReadings;saveState();renderSystem()};
@@ -256,7 +348,9 @@
     document.getElementById('markLessonRead').onclick=()=>markLessonRead(l.id);document.getElementById('lessonPracticeBtn').onclick=()=>startLessonPractice(l.id);
     document.querySelectorAll('[data-lq]').forEach(b=>b.onclick=()=>{lessonQuizDraft[l.id]=lessonQuizDraft[l.id]||{};lessonQuizDraft[l.id][Number(b.dataset.lq)]=Number(b.dataset.lo);lessonQuizResult=null;renderSystem()});
     const submit=document.getElementById('submitLessonQuiz');if(submit)submit.onclick=()=>submitLessonQuiz(l.id);const retry=document.getElementById('retryLessonQuiz');if(retry)retry.onclick=()=>resetLessonQuiz(l.id);
-    document.querySelectorAll('[data-lesson-k]').forEach(b=>b.onclick=()=>startTagSession(b.dataset.lessonK));document.querySelectorAll('[data-lesson-a]').forEach(b=>b.onclick=()=>openArticle(b.dataset.lessonA));document.querySelectorAll('[data-lesson-q]').forEach(b=>b.onclick=()=>practiceOne(b.dataset.lessonQ));
+    document.querySelectorAll('[data-lesson-k]').forEach(b=>b.onclick=()=>startTagSession(b.dataset.lessonK));document.querySelectorAll('[data-lesson-a]').forEach(b=>b.onclick=()=>openArticle(b.dataset.lessonA));document.querySelectorAll('[data-lesson-q]').forEach(b=>b.onclick=()=>practiceOne(b.dataset.lessonQ));document.querySelectorAll('[data-lesson-listen]').forEach(b=>b.onclick=()=>startListeningOne(b.dataset.lessonListen));
+    document.querySelectorAll('[data-lesson-jump]').forEach(b=>b.onclick=()=>jumpToLessonSection(b.dataset.lessonJump));
+    document.getElementById('lessonMenuBtn').onclick=()=>openLessonNavModal(l);
   }
   function renderSystem(){
     const root=document.getElementById('view-system');if(lessonFocusId&&LMAP[lessonFocusId]){renderLessonDetail(LMAP[lessonFocusId]);return}
@@ -270,7 +364,7 @@
   }
 
   function modeCard(mode,title,meta,desc){return `<button class="mode-card" data-start="${mode}"><h3>${esc(title)}</h3><p>${esc(desc)}</p><div class="meta">${esc(meta)}</div></button>`}
-  function bindStartButtons(){document.querySelectorAll('[data-start]').forEach(b=>b.addEventListener('click',()=>{const m=b.dataset.start;if(m==='system'){switchView('system');return}if(m==='knowledge'){switchView('knowledge');return}if(m==='business'){switchView('business');return}startSession(m)}))}
+  function bindStartButtons(){document.querySelectorAll('[data-start]').forEach(b=>b.addEventListener('click',()=>{const m=b.dataset.start;if(m==='system'){switchView('system');return}if(m==='knowledge'){switchView('knowledge');return}if(m==='business'){switchView('business');return}if(m==='listening'){switchView('listening');return}startSession(m)}))}
 
   function startSession(mode){
     let list=[];
@@ -282,14 +376,21 @@
     if(mode==='due') list=shuffle(dueQuestions());
     if(!list.length){toast(mode==='weak'?'目前沒有弱點題。':'目前沒有到期複習題。');switchView('practice');return}
     if(mode==='original') list=[...list]; else list=shuffle(list);
-    session={mode,ids:list.map(q=>q.id),index:0,correct:0,wrong:0}; currentPrepared=null;currentAnswered=false;currentSelectedOriginalIndex=null;
+    createSession(mode,list.map(q=>q.id));
     switchView('practice');
   }
+  function createSession(mode,ids,extra={}){session={mode,ids:[...ids],index:0,correct:0,wrong:0,records:{},lastXpGain:0,...extra};currentPrepared=null;currentAnswered=false;currentSelectedOriginalIndex=null}
   function prepareQuestion(q){
     const opts=q.options.map((text,i)=>({text,correct:i===q.answer,originalIndex:i}));
     return {...q, preparedOptions:state.settings.shuffleOptions?shuffle(opts):opts};
   }
   function currentQ(){ if(!session) return null; return QMAP[session.ids[session.index]]; }
+  function sessionRecord(index=session?.index){if(!session||index<0||index>=session.ids.length)return null;session.records=session.records||{};const key=String(index);if(!session.records[key]){const q=QMAP[session.ids[index]];if(!q)return null;const prepared=prepareQuestion(q);session.records[key]={qid:q.id,preparedOptions:prepared.preparedOptions,answered:false,correct:null,selectedOriginalIndex:null}}return session.records[key]}
+  function syncCurrentFromSession(){const q=currentQ();if(!q)return;const rec=sessionRecord();currentPrepared={...q,preparedOptions:rec.preparedOptions,_sessionIndex:session.index};currentAnswered=!!rec.answered;currentSelectedOriginalIndex=rec.selectedOriginalIndex}
+  function goToQuestion(index){if(!session)return;if(index<0)return;if(index>=session.ids.length){session.index=session.ids.length;currentPrepared=null;currentAnswered=false;currentSelectedOriginalIndex=null;renderPractice();window.scrollTo({top:0,behavior:'smooth'});return}session.index=index;syncCurrentFromSession();renderPractice();window.scrollTo({top:0,behavior:'smooth'})}
+  function previousQuestion(){if(!session||session.index<=0)return;goToQuestion(session.index-1)}
+  function nextQuestion(){if(!session)return;if(session.mode==='battle'&&!currentAnswered){toast('Boss 戰不能跳過未作答題。');return}goToQuestion(session.index+1)}
+  function openQuestionMap(){if(!session)return;const modal=document.getElementById('questionMapModal');if(!modal)return;const battle=session.mode==='battle';modal.hidden=false;modal.innerHTML=`<div class="question-map-card"><div class="question-map-head"><div><b>題目一覽</b><span>${session.ids.length} 題</span></div><button class="btn" id="closeQuestionMap">關閉</button></div><div class="question-map-grid">${session.ids.map((id,i)=>{const r=session.records?.[String(i)];const status=r?.answered?(r.correct?'correct':'wrong'):'unanswered';const disabled=battle&&i>session.index&&!r?.answered;return `<button class="question-map-item ${status} ${i===session.index?'current':''}" data-map-index="${i}" ${disabled?'disabled':''}>${i+1}<small>${status==='correct'?'✓':status==='wrong'?'✕':'○'}</small></button>`}).join('')}</div><div class="question-map-legend"><span>✓ 正解</span><span>✕ 不正解</span><span>○ 未回答</span><span>▶ 現在</span></div></div>`;document.getElementById('closeQuestionMap').onclick=()=>{modal.hidden=true;modal.innerHTML=''};modal.onclick=e=>{if(e.target===modal){modal.hidden=true;modal.innerHTML=''}};modal.querySelectorAll('[data-map-index]').forEach(b=>b.onclick=()=>{modal.hidden=true;modal.innerHTML='';goToQuestion(Number(b.dataset.mapIndex))})}
   function renderPractice(){
     const root=document.getElementById('view-practice');
     if(!session){
@@ -303,18 +404,26 @@
         ${modeCard('knowledge','先看知識卡',`${KNOW.length} 張`,'先理解再刷題。')}
       </div>`; bindStartButtons(); return;
     }
-    if(session.index>=session.ids.length){renderSessionEnd(root);return}
-    const q=currentQ(); if(!currentPrepared||currentPrepared.id!==q.id) currentPrepared=prepareQuestion(q);
+    if((session.mode==='battle'&&session.bossHp<=0)||session.index>=session.ids.length){renderSessionEnd(root);return}
+    syncCurrentFromSession();
+    const q=currentQ(); if(!q){renderSessionEnd(root);return}
     const p=progressOf(q.id); const fav=state.favorites.includes(q.id); const weak=state.weak.includes(q.id);
     const related=(q.tags||[]).map(t=>KMAP[t]).filter(Boolean);
-    root.innerHTML=`<div class="practice-layout">
+    const rec=sessionRecord();
+    const battle=session.mode==='battle';
+    const cfg=battle?bossConfig(session.bossId):null;
+    const battleHud=battle?`<div class="battle-hud"><div class="battle-hud-top"><div><span>${esc(cfg?.subtitle||'BJT BATTLE')}</span><h2>${esc(cfg?.name||'BOSS')}</h2></div><div class="battle-combo"><span id="battleComboCount">${session.battleCombo||0}</span><small>COMBO</small></div></div><div class="boss-hp-row"><b>HP</b><div class="boss-hp"><i id="bossHpFill" style="width:${pct(Math.max(0,session.bossHp||0),session.bossMaxHp||1)}%"></i></div><span id="bossHpText">${Math.max(0,session.bossHp||0)} / ${session.bossMaxHp||0}</span></div></div>`:'';
+    root.innerHTML=`${battleHud}<div class="practice-layout">
       <div class="card practice-panel">
-        <div class="practice-head"><span class="q-number">第 ${session.index+1} / ${session.ids.length} 題 · ${esc(q.category)}</span><span class="q-source">${esc(q.source)}</span></div>
+        <div class="practice-head"><span class="q-number">${battle?'BATTLE QUEST':'第'} ${session.index+1} / ${session.ids.length}${battle?'':' 題'} · ${esc(q.category)}</span><span class="q-source">${esc(q.source)}</span></div>
+        <div class="practice-status-strip"><span id="globalComboText">🔥 ${state.game.currentCombo||0} COMBO</span><span>⚡ Lv.${gameLevel()} ${esc(mainTitleAt().name)}</span>${equippedSpecial()?`<span>🏆 《${esc(equippedSpecial().name)}》</span>`:''}</div>
         <div class="progress"><i style="width:${pct(session.index,session.ids.length)}%"></i></div>
         ${q.passage?`<div class="reading-passage ${q.course==='practical_business'?'business-scenario':''}"><div class="reading-passage-head"><span>${q.course==='practical_business'?'情境':'閱讀文章'}</span><small>${q.course==='practical_business'?'先確認人物關係與發話目的':'請先讀完整前文，再回答下方問題'}</small></div><div class="reading-passage-text">${esc(state.settings.showReadings&&q.readingPassage?q.readingPassage:q.passage)}</div></div>`:''}
-        ${(q.assets||[]).length?`<div class="question-assets">${q.assets.map((src,i)=>`<figure><img src="${esc(src)}" alt="題目資料 ${i+1}" loading="lazy"><figcaption>題目資料 ${i+1}</figcaption></figure>`).join('')}</div>`:''}
+        ${(q.assets||[]).length?`${q.visual_required?'<div class="visual-required-alert"><b>⚠️ 此題必須看圖作答</b><span>圖片是題目本體的一部分，請先確認圖表後再選答案。</span><small class="visual-load-status">圖片載入中，完成前暫停作答。</small></div>':''}<div class="question-assets">${q.assets.map((src,i)=>`<figure><button class="question-image-btn" data-image-viewer="${esc(src)}" data-image-alt="題目資料 ${i+1}"><img src="${esc(src)}" alt="題目資料 ${i+1}" loading="${q.visual_required?'eager':'lazy'}"><span>🔍 點擊放大</span></button><figcaption>${q.visual_required?'必看圖表':'題目資料'} ${i+1}</figcaption></figure>`).join('')}</div>`:''}
         <div class="stem">${esc(q.stem)}</div>
         <div class="options">${currentPrepared.preparedOptions.map((o,i)=>`<button class="option" data-opt="${i}"><span class="key">${i+1}</span><span>${esc(state.settings.showReadings&&q.readingOptions?q.readingOptions[o.originalIndex]:o.text)}</span></button>`).join('')}</div>
+        <div class="question-navigation"><button class="btn" id="prevQuestionBtn" ${session.index<=0?'disabled':''}>← 上一題</button><button class="btn" id="questionMapBtn">題目一覽</button><span class="question-nav-count">${session.index+1} / ${session.ids.length}</span><button class="btn primary" id="nextQuestionNavBtn">${battle&&!currentAnswered?'作答後前進':(session.index+1>=session.ids.length?'完成本輪':'下一題 →')}</button></div>
+        ${!battle&&!currentAnswered?'<div class="skip-hint">未作答也可以先跳過；不會自動判錯。</div>':''}
         <div id="feedback"></div>
       </div>
       <aside class="grid">
@@ -328,19 +437,41 @@
     document.querySelectorAll('.option').forEach(b=>b.addEventListener('click',()=>answerQuestion(Number(b.dataset.opt))));
     document.getElementById('favBtn').addEventListener('click',()=>toggleFav(q.id));
     document.getElementById('weakBtn').addEventListener('click',()=>toggleWeak(q.id));
+    document.getElementById('prevQuestionBtn').onclick=previousQuestion;
+    document.getElementById('questionMapBtn').onclick=openQuestionMap;
+    document.getElementById('nextQuestionNavBtn').onclick=nextQuestion;
+    bindRequiredVisualGate(q);
     if(currentAnswered){
       document.querySelectorAll('.option').forEach((b,i)=>{const o=currentPrepared.preparedOptions[i];b.classList.add('disabled');if(o.correct)b.classList.add('correct');if(o.originalIndex===currentSelectedOriginalIndex&&!o.correct)b.classList.add('wrong')});
       showFeedback();
     }
   }
+  function bindRequiredVisualGate(q){
+    if(!q?.visual_required||currentAnswered)return;
+    const imgs=[...document.querySelectorAll('.question-assets img')],opts=[...document.querySelectorAll('.option')],alert=document.querySelector('.visual-required-alert'),status=document.querySelector('.visual-load-status');
+    if(!imgs.length){opts.forEach(b=>b.disabled=true);if(alert)alert.classList.add('visual-load-error');if(status)status.textContent='圖片資料缺失，這題已鎖定，請不要作答。';return}
+    const sync=()=>{const failed=imgs.some(img=>img.dataset.loadFailed==='1'||(img.complete&&img.naturalWidth===0)),ready=!failed&&imgs.every(img=>img.complete&&img.naturalWidth>0);opts.forEach(b=>b.disabled=!ready);if(alert)alert.classList.toggle('visual-load-error',failed);if(status)status.textContent=failed?'圖片載入失敗，這題已鎖定；請重新整理或確認 assets 圖片檔。':ready?'✓ 圖片已完整載入，可以作答。':'圖片載入中，完成前暫停作答。'};
+    imgs.forEach(img=>{img.addEventListener('load',sync);img.addEventListener('error',()=>{img.dataset.loadFailed='1';sync()})});sync();
+  }
+  function battleDamageForCombo(combo,base){const mult=combo>=10?1.5:combo>=5?1.2:combo>=3?1.1:1;return Math.round(base*mult)}
   function answerQuestion(index){
     if(currentAnswered) return;
-    const q=currentPrepared, selected=q.preparedOptions[index]; const correct=!!selected.correct; currentAnswered=true; currentSelectedOriginalIndex=selected.originalIndex;
+    const q=currentPrepared, selected=q.preparedOptions[index], correct=!!selected.correct, rec=sessionRecord();
+    const p=progressOf(q.id), now=Date.now(), wasWrongBefore=(p.wrong||0)>0, wasDue=(p.attempts||0)>0&&(p.due||0)>0&&(p.due||0)<=now;
+    currentAnswered=true; currentSelectedOriginalIndex=selected.originalIndex; session.lastXpGain=0;
+    rec.answered=true;rec.correct=correct;rec.selectedOriginalIndex=selected.originalIndex;rec.answeredAt=now;
     if(correct) session.correct++; else session.wrong++;
-    const p=progressOf(q.id); p.attempts=(p.attempts||0)+1; if(correct){p.correct=(p.correct||0)+1;p.streak=(p.streak||0)+1;}else{p.wrong=(p.wrong||0)+1;p.streak=0;}
-    p.lastCorrect=correct; p.lastAt=Date.now(); p.due=Date.now()+(correct?(p.streak>=3?7:p.streak===2?3:1)*86400000:3600000);
-    state.progress[q.id]=p; ensureDailyCurrent(); state.daily.count=(state.daily.count||0)+1; saveState();
+    p.attempts=(p.attempts||0)+1; if(correct){p.correct=(p.correct||0)+1;p.streak=(p.streak||0)+1;}else{p.wrong=(p.wrong||0)+1;p.streak=0;}
+    p.lastCorrect=correct; p.lastAt=now; p.due=now+(correct?(p.streak>=3?7:p.streak===2?3:1)*86400000:3600000);
+    state.progress[q.id]=p;
+    handleQuestionRewards(q,correct,wasWrongBefore,wasDue);
+    if(session.mode==='battle'){
+      const cfg=bossConfig(session.bossId);session.battleCombo=correct?(session.battleCombo||0)+1:0;session.battleMaxCombo=Math.max(session.battleMaxCombo||0,session.battleCombo||0);
+      if(correct){const dmg=battleDamageForCombo(session.battleCombo,cfg?.baseDamage||40);session.bossHp=Math.max(0,(session.bossHp||0)-dmg);session.lastBattleEvent={type:session.battleCombo>=10?'critical':'hit',damage:dmg};rec.battleEvent={...session.lastBattleEvent};if(session.bossHp<=0)completeBoss(session.bossId)}else{session.lastBattleEvent={type:'miss',damage:0};rec.battleEvent={...session.lastBattleEvent}}
+    }
+    rec.xpGain=session.lastXpGain||0;checkGameAchievements();saveState();
     document.querySelectorAll('.option').forEach((b,i)=>{const o=q.preparedOptions[i];b.classList.add('disabled');if(o.correct)b.classList.add('correct');if(i===index&&!o.correct)b.classList.add('wrong')});
+    const navNext=document.getElementById('nextQuestionNavBtn');if(navNext)navNext.textContent=session.mode==='battle'&&session.bossHp<=0?'查看戰果':(session.index+1>=session.ids.length?'完成本輪':'下一題 →');const comboText=document.getElementById('globalComboText');if(comboText)comboText.textContent=`🔥 ${state.game.currentCombo||0} COMBO`;const bc=document.getElementById('battleComboCount');if(bc)bc.textContent=session.battleCombo||0;const hpFill=document.getElementById('bossHpFill');if(hpFill)hpFill.style.width=`${pct(Math.max(0,session.bossHp||0),session.bossMaxHp||1)}%`;const hpText=document.getElementById('bossHpText');if(hpText)hpText.textContent=`${Math.max(0,session.bossHp||0)} / ${session.bossMaxHp||0}`;
     showFeedback(correct);
   }
   function optionUsageHint(text=''){
@@ -461,12 +592,14 @@
     return q.options.map((text,i)=>{const d=getChoiceDetail(q,i);const ok=i===q.answer;return `<div class="choice-detail ${ok?'is-correct':'is-wrong'}"><div class="choice-detail-head"><span class="choice-no">${i+1}</span><strong>${esc(text)}</strong><span class="choice-badge">${ok?'正解':esc(d.type)}</span></div><p>${esc(d.detail)}</p></div>`}).join('');
   }
   function showFeedback(forceCorrect){
-    const q=currentPrepared; const p=progressOf(q.id); const related=(q.tags||[]).map(t=>KMAP[t]).filter(Boolean);
-    const correct = typeof forceCorrect==='boolean'?forceCorrect:p.lastCorrect;
+    const q=currentPrepared; const p=progressOf(q.id); const related=(q.tags||[]).map(t=>KMAP[t]).filter(Boolean);const rec=sessionRecord();
+    const correct = typeof forceCorrect==='boolean'?forceCorrect:rec?.correct;
     const fb=document.getElementById('feedback'); if(!fb)return;
     const selectedIdx=currentSelectedOriginalIndex;
     const selectedWrong = !correct && Number.isInteger(selectedIdx) ? getChoiceDetail(q,selectedIdx) : null;
-    fb.innerHTML=`<div class="explanation"><h3>${correct?'✓ 正確':'✕ 這題要修正'}</h3>
+    const be=rec?.battleEvent;const battleLine=session?.mode==='battle'&&be?`<div class="battle-result ${be.type}">${be.type==='miss'?'MISS · 這一擊沒有造成傷害':`${be.type==='critical'?'CRITICAL':'HIT'} · -${be.damage} HP`}${session.bossHp<=0?'<b>BOSS CLEAR</b>':''}</div>`:'';
+    fb.innerHTML=`<div class="explanation"><div class="feedback-title-row"><h3>${correct?'✓ 正確':'✕ 這題要修正'}</h3>${rec?.xpGain?`<span class="xp-gain">EXP +${rec.xpGain}</span>`:''}</div>${battleLine}
+      ${correct&&(state.game.currentCombo||0)>=3?`<div class="combo-callout">🔥 ${state.game.currentCombo} COMBO${state.game.currentCombo>=50?' · 言葉は、もう敵ではない。':state.game.currentCombo>=10?' · CHAIN BREAKER':''}</div>`:''}
       ${selectedWrong?`<div class="wrong-choice-explain"><div class="wrong-choice-title">你選的「${esc(q.options[selectedIdx])}」為什麼不行？</div><span class="wrong-reason-tag">${esc(selectedWrong.type)}</span><p>${esc(selectedWrong.detail)}</p>${q.course==='practical_business'?`<div class="mistake-why"><b>你可能卡在這裡：</b>${esc(businessMistakeHint(q,selectedIdx))}</div>`:''}<div class="error-tag-box"><b>錯因標籤（可複選）</b><div>${errorTagList().map(([code,label])=>`<button class="error-tag ${(state.errorTags[q.id]||[]).includes(code)?'active':''}" data-error-tag="${code}">${code} ${label}</button>`).join('')}</div></div></div>`:''}
       <div class="main-explain"><b>本題核心解析</b><p>${esc(q.explanation)}</p></div>
       <div class="actions detail-actions"><button class="btn" id="allDetailsBtn" aria-expanded="false">詳解四個選項</button></div>
@@ -475,10 +608,10 @@
       ${q.passage&&ARTICLE_DETAILS[q.id]?`<div class="article-jump"><b>這是一題文章閱讀題</b><span>文章詳解保留全文假名、中文翻譯、閱讀結構、陷阱與解題策略。</span><button class="btn" id="articleDetailBtn">查看這篇文章的完整詳解</button></div>`:''}
       ${q.course==='practical_business'?`<div class="business-analysis-box"><b>情境解析</b><span>${esc(q.readingPassage||q.passage)}</span><p><strong>核心：</strong>${esc(q.coreKnowledge||'場面判断')}　<strong>本章：</strong>${esc(q.chapterTitle||'')}</p><p>${esc(q.trap||'先判斷人物關係、資訊確定度與說話者真正目的。')}</p></div>`:''}
       <div class="actions"><button class="btn bad" data-rate="again">再學一次</button><button class="btn warn" data-rate="hard">困難</button><button class="btn good" data-rate="good">普通</button><button class="btn primary" data-rate="easy">熟練</button></div>
-      <div class="actions"><button class="btn" id="relatedBtn">再出一題關聯題</button><button class="btn primary" id="nextBtn">${session.index+1>=session.ids.length?'看結果':'下一題'}</button></div></div>`;
+      <div class="actions">${session?.mode==='battle'?'':`<button class="btn" id="relatedBtn">再出一題關聯題</button>`}<button class="btn primary" id="feedbackNextBtn">${session?.mode==='battle'&&session.bossHp<=0?'查看戰果':(session.index+1>=session.ids.length?'看結果':'下一題 →')}</button></div></div>`;
     document.querySelectorAll('[data-rate]').forEach(b=>b.addEventListener('click',()=>rateCurrent(b.dataset.rate)));document.querySelectorAll('[data-error-tag]').forEach(b=>b.addEventListener('click',()=>toggleErrorTag(q.id,b.dataset.errorTag)));
-    document.getElementById('nextBtn').addEventListener('click',nextQuestion);
-    document.getElementById('relatedBtn').addEventListener('click',injectRelatedQuestion);
+    const next=document.getElementById('feedbackNextBtn');if(next)next.addEventListener('click',nextQuestion);
+    const relatedBtn=document.getElementById('relatedBtn');if(relatedBtn)relatedBtn.addEventListener('click',injectRelatedQuestion);
     const allBtn=document.getElementById('allDetailsBtn'), allBox=document.getElementById('allChoiceDetails');
     allBtn.addEventListener('click',()=>{const open=allBox.hidden;allBox.hidden=!open;allBtn.setAttribute('aria-expanded',String(open));allBtn.textContent=open?'收起四個選項詳解':'詳解四個選項';});
     const articleBtn=document.getElementById('articleDetailBtn');
@@ -488,21 +621,58 @@
     const q=currentPrepared,p=progressOf(q.id),now=Date.now(); const days={again:0,hard:1,good:3,easy:10}[rate];
     p.due=now+(rate==='again'?10*60*1000:days*86400000); if(rate==='again'){p.streak=0;if(!state.weak.includes(q.id))state.weak.push(q.id)} if(rate==='easy')p.streak=Math.max(3,p.streak||0);state.progress[q.id]=p;saveState();toast({again:'10 分鐘後再複習',hard:'明天再複習',good:'3 天後再複習',easy:'10 天後再複習'}[rate]);
   }
-  function nextQuestion(){session.index++;currentPrepared=null;currentAnswered=false;currentSelectedOriginalIndex=null;renderPractice();window.scrollTo({top:0,behavior:'smooth'})}
   function injectRelatedQuestion(){
-    const tags=currentPrepared.tags||[]; const candidates=QUESTIONS.filter(x=>x.id!==currentPrepared.id && (x.tags||[]).some(t=>tags.includes(t)) && !session.ids.slice(session.index+1).includes(x.id));
+    const tags=currentPrepared.tags||[]; const candidates=QUESTIONS.filter(x=>x.id!==currentPrepared.id && (x.tags||[]).some(t=>tags.includes(t)) && !session.ids.includes(x.id));
     if(!candidates.length){toast('目前沒有其他關聯題。');return}
-    const pick=shuffle(candidates)[0]; session.ids.splice(session.index+1,0,pick.id);toast('已把關聯題加入下一題。')
+    const pick=shuffle(candidates)[0],pos=session.index+1;const nextRecords={};Object.entries(session.records||{}).forEach(([k,v])=>{const i=Number(k);nextRecords[String(i>=pos?i+1:i)]=v});session.records=nextRecords;session.ids.splice(pos,0,pick.id);toast('已把關聯題加入下一題。');renderPractice()
   }
+  function completeBoss(id){const cfg=bossConfig(id);if(!cfg)return;const prev=bossState(id),first=!prev.cleared;state.game.bosses[id]={...prev,cleared:true,clearedAt:prev.clearedAt||Date.now(),bestCombo:Math.max(prev.bestCombo||0,session?.battleMaxCombo||0)};registerStudyActivity();if(first){awardXp(cfg.xp||0,'Boss Clear');unlockTitle(cfg.rewardTitle,true);queueAnnouncement({kind:'boss',kicker:'BOSS CLEAR',title:`「${cfg.name}」擊破`,body:`EXP +${cfg.xp||0}`});if(allMainBossesCleared())unlockTitle('boss_all',true)}checkGameAchievements();saveState()}
   function renderSessionEnd(root){
-    const total=session.correct+session.wrong; const origin=session.originLessonId;
-    if(origin&&!session.lessonResultRecorded){const ls=ensureLessonState(origin),score=total?session.correct/total:0;ls.practiceRuns=(ls.practiceRuns||0)+1;ls.bestPracticeScore=Math.max(ls.bestPracticeScore||0,score);state.learning.lessons[origin]=ls;session.lessonResultRecorded=true;saveState();}
-    root.innerHTML=`<div class="card hero"><h2>本輪完成</h2><p>答對 ${session.correct}／${total}，正確率 ${pct(session.correct,total)}%。錯題已自動進入弱點追蹤，並依熟練度安排下次複習。${origin&&session.lessonPracticeScope==='module'?' 本課沒有直接一對一題目，因此本輪使用同模組相關題進行應用訓練。':''}</p><div class="quick-actions">${origin?'<button class="btn primary" id="backLesson">回系統課程</button>':'<button class="btn primary" id="restartMixed">再刷綜合題</button>'}<button class="btn" id="reviewWrong">立刻刷弱點題</button><button class="btn" id="backDash">回總覽</button></div></div>`;
-    const restart=document.getElementById('restartMixed');if(restart)restart.onclick=()=>startSession('mixed');const backLesson=document.getElementById('backLesson');if(backLesson)backLesson.onclick=()=>{session=null;lessonFocusId=origin;switchView('system')};document.getElementById('reviewWrong').onclick=()=>startSession('weak');document.getElementById('backDash').onclick=()=>{session=null;switchView('dashboard')};
+    const total=session.correct+session.wrong, unanswered=Math.max(0,session.ids.length-total), origin=session.originLessonId, battle=session.mode==='battle';
+    if(battle){const cfg=bossConfig(session.bossId),cleared=(session.bossHp||0)<=0||bossState(session.bossId).cleared;root.innerHTML=`<section class="card battle-end ${cleared?'cleared':'retreat'}"><span class="player-kicker">${cleared?'BOSS CLEAR':'BATTLE END'}</span><h2>${esc(cfg?.name||'BOSS')}</h2><div class="battle-end-score"><div><b>${session.correct}</b><span>正解</span></div><div><b>${session.wrong}</b><span>MISS</span></div><div><b>${session.battleMaxCombo||0}</b><span>MAX COMBO</span></div></div><p>${cleared?'領域攻略完成。專屬異名已加入稱號殿堂。':'Boss 尚未擊破，可以重新挑戰。'}</p><div class="quick-actions"><button class="btn primary" id="battleBack">回 BJT BATTLE</button><button class="btn" id="battleTitles">查看稱號</button><button class="btn" id="backDash">回總覽</button></div></section>`;document.getElementById('battleBack').onclick=()=>{session=null;switchView('battle')};document.getElementById('battleTitles').onclick=()=>{session=null;switchView('titles')};document.getElementById('backDash').onclick=()=>{session=null;switchView('dashboard')};return}
+    if(origin&&!session.lessonResultRecorded){const ls=ensureLessonState(origin),score=total?session.correct/total:0;ls.practiceRuns=(ls.practiceRuns||0)+1;ls.bestPracticeScore=Math.max(ls.bestPracticeScore||0,score);state.learning.lessons[origin]=ls;session.lessonResultRecorded=true;}
+    let bonus=0;if(total===session.ids.length&&total>=20){const key=String(session.mode||'session');state.daily.sessionBonuses=state.daily.sessionBonuses||{};if(!state.daily.sessionBonuses[key]){state.daily.sessionBonuses[key]=true;bonus=awardXp(20,'完成一輪')}}if(total>=50&&session.correct===total){state.game.perfect50=true;checkGameAchievements()}saveState();
+    root.innerHTML=`<div class="card hero session-end"><span class="player-kicker">QUEST COMPLETE</span><h2>本輪完成</h2><p>答對 ${session.correct}／${total}，正確率 ${pct(session.correct,total)}%。${unanswered?`另有 ${unanswered} 題保留未作答。`:''}錯題已自動進入弱點追蹤，並依熟練度安排下次複習。${origin&&session.lessonPracticeScope==='module'?' 本課沒有直接一對一題目，因此本輪使用同模組相關題進行應用訓練。':''}</p>${bonus?`<div class="session-bonus">完整修練獎勵　EXP +${bonus}</div>`:''}<div class="quick-actions">${unanswered?'<button class="btn primary" id="resumeUnanswered">回到未作答題</button>':origin?'<button class="btn primary" id="backLesson">回系統課程</button>':'<button class="btn primary" id="restartMixed">再刷綜合題</button>'}${unanswered&&origin?'<button class="btn" id="backLesson">回系統課程</button>':''}${unanswered&&!origin?'<button class="btn" id="restartMixed">再刷綜合題</button>':''}<button class="btn" id="reviewWrong">立刻刷弱點題</button><button class="btn" id="backDash">回總覽</button></div></div>`;
+    const resume=document.getElementById('resumeUnanswered');if(resume)resume.onclick=()=>{const idx=session.ids.findIndex((_,i)=>!session.records?.[String(i)]?.answered);goToQuestion(idx>=0?idx:0)};const restart=document.getElementById('restartMixed');if(restart)restart.onclick=()=>startSession('mixed');const backLesson=document.getElementById('backLesson');if(backLesson)backLesson.onclick=()=>{session=null;lessonFocusId=origin;switchView('system')};document.getElementById('reviewWrong').onclick=()=>startSession('weak');document.getElementById('backDash').onclick=()=>{session=null;switchView('dashboard')};
   }
   function toggleFav(id){const i=state.favorites.indexOf(id);if(i>=0)state.favorites.splice(i,1);else state.favorites.push(id);saveState();renderPractice()}
   function toggleWeak(id){const i=state.weak.indexOf(id);if(i>=0)state.weak.splice(i,1);else state.weak.push(id);saveState();renderPractice()}
 
+  function startBoss(id){const cfg=bossConfig(id);if(!cfg)return;if(cfg.final&&!allMainBossesCleared()){toast('先擊破八大領域 Boss。');return}let pool=cfg.final?QUESTIONS.map(q=>q.id):moduleQuestionIds(cfg.moduleId);pool=[...new Set(pool)].filter(id=>QMAP[id]);if(!pool.length){toast('這個領域目前沒有可用題目。');return}const size=cfg.final?32:24;const ids=shuffle(pool).slice(0,Math.min(size,pool.length));const bs=bossState(id);state.game.bosses[id]={...bs,attempts:(bs.attempts||0)+1};saveState();createSession('battle',ids,{bossId:id,bossHp:cfg.hp,bossMaxHp:cfg.hp,battleCombo:0,battleMaxCombo:0});switchView('practice')}
+  function renderBattle(){const root=document.getElementById('view-battle');const bosses=(GAME.bosses||[]).filter(b=>!b.final),final=(GAME.bosses||[]).find(b=>b.final),cleared=bosses.filter(b=>bossState(b.id).cleared).length;root.innerHTML=`<section class="card battle-hero"><div><span class="player-kicker">BJT BATTLE</span><h2>八大領域攻略戰</h2><p>每個 Boss 都使用對應模組的實際題庫。答對造成傷害，連續答對提高傷害倍率；答錯不扣玩家 HP，但 Combo 會中斷。</p></div><div class="battle-total"><strong>${cleared}</strong><span>/ 8 CLEARED</span></div></section><div class="boss-grid">${bosses.map((b,i)=>{const bs=bossState(b.id),reward=specialTitle(b.rewardTitle);return `<article class="card boss-card ${bs.cleared?'cleared':''}"><div class="boss-area">AREA ${String(i+1).padStart(2,'0')} · ${esc(b.moduleId)}</div><div class="boss-emblem">${bs.cleared?'✓':'⚔'}</div><h3>${esc(b.name)}</h3><p>${esc(b.subtitle)}</p><div class="boss-card-meta"><span>HP ${b.hp}</span><span>最高 Combo ${bs.bestCombo||0}</span><span>挑戰 ${bs.attempts||0} 次</span></div><div class="boss-reward"><small>擊破異名</small><b>${bs.cleared?`《${esc(reward?.name||'????')}》`:'《????》'}</b></div><button class="btn ${bs.cleared?'':'primary'}" data-boss="${esc(b.id)}">${bs.cleared?'再次挑戰':'開始戰鬥'}</button></article>`}).join('')}</div>${final?`<section class="card final-boss-card ${allMainBossesCleared()?'unlocked':'locked'}"><div><span class="player-kicker">FINAL BOSS</span><h2>${allMainBossesCleared()?esc(final.name):'？？？？？？'}</h2><p>${allMainBossesCleared()?'八大領域已全部擊破。最終混合領域已解鎖。':'擊破八大領域 Boss 後解鎖最終個體。'}</p></div><div class="final-boss-side"><b>${bossState('FINAL').cleared?'CLEARED':allMainBossesCleared()?'UNLOCKED':'LOCKED'}</b><button class="btn primary" id="finalBossBtn" ${allMainBossesCleared()?'':'disabled'}>${bossState('FINAL').cleared?'再次挑戰':'進入最終境界'}</button></div></section>`:''}`;root.querySelectorAll('[data-boss]').forEach(b=>b.onclick=()=>startBoss(b.dataset.boss));const fb=document.getElementById('finalBossBtn');if(fb)fb.onclick=()=>startBoss('FINAL')}
+  function equipTitle(id){if(id&& !state.game.unlockedTitles.includes(id)){toast('這個異名尚未解鎖。');return}state.game.equippedTitle=id||null;saveState();renderTitles();toast(id?`已裝備《${specialTitle(id)?.name||''}》`:'已卸下異名')}
+  function titleGlyph(t){
+    if(!t)return '◇';
+    if(t.rarity==='MYTHIC')return '✦';if(t.rarity==='LEGEND')return '◆';if(t.rarity==='EPIC')return '◈';if(t.rarity==='BOSS')return '⚔';return '◇';
+  }
+  function openTitleDetail(kind,id){
+    const modal=document.getElementById('titleDetailModal');if(!modal)return;
+    const lp=levelProgress();let have=false,name='????',desc='取得後揭曉。',meta='未知異名',canEquip=false,titleId=null,levelText='';
+    if(kind==='rank'){
+      const t=(GAME.mainTitles||[]).find(x=>String(x.level)===String(id));if(!t)return;have=t.level<=lp.level;name=have?t.name:'????';desc=have?t.desc:'到達指定 Lv. 後，真正稱號才會揭曉。';meta=have?'主位階':'未取得';levelText=`Lv.${t.level}`;
+    }else{
+      const t=specialTitle(id);if(!t)return;have=(state.game.unlockedTitles||[]).includes(t.id);name=have?t.name:'????';desc=have?t.desc:'取得後才會揭曉名稱、稀有度與取得條件。';meta=have?`${rarityLabel(t.rarity)} · ${t.group==='boss'?'BOSS':'特殊異名'}`:'未知異名';canEquip=have;titleId=t.id;
+    }
+    modal.innerHTML=`<div class="mobile-sheet title-detail-sheet"><div class="sheet-head"><div><span class="lesson-kicker">TITLE CODEX</span><h3>${have?'稱號詳情':'未解鎖'}</h3></div><button class="icon-btn sheet-close" id="closeTitleDetail" aria-label="關閉">✕</button></div><div class="title-detail-emblem ${have?'unlocked':'locked'}">${have?(kind==='rank'?'✦':titleGlyph(specialTitle(id))):'?'}</div>${levelText?`<div class="title-detail-level">${esc(levelText)}</div>`:''}<h2>${kind==='rank'?esc(name):`《${esc(name)}》`}</h2><div class="title-detail-meta">${esc(meta)}</div><p>${esc(desc)}</p>${canEquip?`<button class="btn primary title-detail-equip" id="titleDetailEquip">${state.game.equippedTitle===titleId?'卸下異名':'裝備此異名'}</button>`:''}</div>`;
+    modal.hidden=false;
+    document.getElementById('closeTitleDetail').onclick=()=>modal.hidden=true;
+    const equip=document.getElementById('titleDetailEquip');if(equip)equip.onclick=()=>{equipTitle(state.game.equippedTitle===titleId?null:titleId);modal.hidden=true};
+    modal.onclick=e=>{if(e.target===modal)modal.hidden=true};
+  }
+  function renderTitles(){
+    const root=document.getElementById('view-titles'),lp=levelProgress(),current=mainTitleAt(lp.level),eq=equippedSpecial(),unlocked=new Set(state.game.unlockedTitles||[]),specials=GAME.specialTitles||[];
+    const filtered=specials.filter(t=>titleFilter==='all'?true:titleFilter==='boss'?t.group==='boss':titleFilter==='hidden'?!!t.hidden:(t.group==='achievement'&&!t.hidden));
+    root.innerHTML=`<section class="card title-hall-hero"><span class="player-kicker">TITLE HALL</span><div class="title-hall-current"><div><strong>Lv.${lp.level}</strong><h2>${esc(current.name)}</h2><p>${esc(current.desc)}</p></div><div class="equipped-title-box"><small>目前裝備異名</small><b>${eq?`《${esc(eq.name)}》`:'—'}</b>${eq?'<button class="text-btn" id="unequipTitle">卸下</button>':''}</div></div><div class="xp-row"><div class="progress xp-progress"><i style="width:${lp.pct}%"></i></div><b>${lp.level>=100?'MAX':`${lp.into} / ${lp.need} EXP`}</b></div></section>
+      <div class="section-title"><div><h2>主位階圖鑑</h2><p>已取得才顯示真名；尚未抵達的位階全部保持 ????。</p></div></div>
+      <div class="rank-timeline title-codex-grid">${(GAME.mainTitles||[]).map(t=>{const have=t.level<=lp.level;return `<button class="title-codex-card rank-card ${have?'unlocked':'locked'} ${t.name===current.name?'current':''}" data-rank-level="${t.level}"><span class="title-codex-level">Lv.${t.level}</span><span class="title-codex-icon">${have?'✦':'?'}</span><b>${have?esc(t.name):'????'}</b><small>${have?(t.name===current.name?'CURRENT':'已取得'):'未取得'}</small></button>`}).join('')}</div>
+      <div class="section-title title-collection-head"><div><h2>異名圖鑑</h2><p>點選方格查看詳情。未取得的異名不顯示名稱、稀有度與條件。</p></div><span class="small">${unlocked.size} / ??</span></div>
+      <div class="title-filter-bar"><button class="title-filter-btn ${titleFilter==='all'?'active':''}" data-title-filter="all">全部</button><button class="title-filter-btn ${titleFilter==='boss'?'active':''}" data-title-filter="boss">BOSS</button><button class="title-filter-btn ${titleFilter==='achievement'?'active':''}" data-title-filter="achievement">特殊</button><button class="title-filter-btn ${titleFilter==='hidden'?'active':''}" data-title-filter="hidden">隱藏</button></div>
+      <div class="special-title-grid title-codex-grid">${filtered.map(t=>{const have=unlocked.has(t.id);return `<button class="title-codex-card special-title-card rarity-${have?String(t.rarity||'').toLowerCase():'locked'} ${have?'unlocked':'locked'} ${state.game.equippedTitle===t.id?'equipped':''}" data-title-id="${esc(t.id)}"><span class="title-codex-icon">${have?titleGlyph(t):'?'}</span><b>${have?`《${esc(t.name)}》`:'《????》'}</b><small>${have?(state.game.equippedTitle===t.id?'裝備中':'已取得'):'未取得'}</small></button>`}).join('')||'<div class="card empty title-empty">這個分類目前沒有可顯示的項目。</div>'}</div>`;
+    root.querySelectorAll('[data-rank-level]').forEach(b=>b.onclick=()=>openTitleDetail('rank',b.dataset.rankLevel));
+    root.querySelectorAll('[data-title-id]').forEach(b=>b.onclick=()=>openTitleDetail('special',b.dataset.titleId));
+    root.querySelectorAll('[data-title-filter]').forEach(b=>b.onclick=()=>{titleFilter=b.dataset.titleFilter;renderTitles()});
+    const un=document.getElementById('unequipTitle');if(un)un.onclick=()=>equipTitle(null);
+  }
   function renderKnowledge(){
     const cats=[...new Set(KNOW.map(k=>k.category))].sort(); const root=document.getElementById('view-knowledge');
     root.innerHTML=`<div class="toolbar"><input class="input" id="kSearch" placeholder="搜尋：例如 いただく、回避、敬語、報銷…"><select class="select" id="kCat"><option value="">全部分類</option>${cats.map(c=>`<option>${esc(c)}</option>`).join('')}</select></div><div id="kGrid" class="grid knowledge-grid"></div>`;
@@ -511,7 +681,7 @@
   }
   function renderKCard(k){return `<article class="card knowledge-card"><div class="tag-list"><span class="tag">${esc(k.category)}</span>${(k.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><h3>${esc(k.title)}</h3>${state.settings.showReadings&&k.reading?`<div class="reading">讀音：${esc(k.reading)}</div>`:''}<p><b>${esc(k.summary)}</b></p><p>${esc(k.detail)}</p><div class="example">例：${esc(k.example)}</div>${k.contrast?`<div class="contrast">易混點：${esc(k.contrast)}</div>`:''}<div style="margin-top:14px"><label class="small">我的筆記</label><textarea class="note" data-note="${k.id}" placeholder="寫下你自己的記憶方式、錯因或例句…">${esc(state.notes[k.id]||'')}</textarea></div><div class="actions"><button class="btn" data-practice-tag="${k.id}">只刷這個知識點</button></div></article>`}
   function bindNotes(){document.querySelectorAll('[data-note]').forEach(t=>t.addEventListener('change',()=>{state.notes[t.dataset.note]=t.value;saveState();toast('筆記已保存')}));document.querySelectorAll('[data-practice-tag]').forEach(b=>b.addEventListener('click',()=>startTagSession(b.dataset.practiceTag)))}
-  function startTagSession(tag){const list=QUESTIONS.filter(q=>(q.tags||[]).includes(tag));if(!list.length){toast('此知識點暫無題目');return}session={mode:'tag',ids:shuffle(list).map(q=>q.id),index:0,correct:0,wrong:0};currentPrepared=null;currentAnswered=false;currentSelectedOriginalIndex=null;switchView('practice')}
+  function startTagSession(tag){const list=QUESTIONS.filter(q=>(q.tags||[]).includes(tag));if(!list.length){toast('此知識點暫無題目');return}createSession('tag',shuffle(list).map(q=>q.id));switchView('practice')}
 
   function articleRecords(){
     return Object.values(ARTICLE_DETAILS).map(a=>({...a,question:QMAP[a.question_id]})).filter(a=>a.question);
@@ -524,8 +694,7 @@
   }
   function practiceOne(qid){
     if(!QMAP[qid]){toast('找不到對應題目。');return}
-    session={mode:'one',ids:[qid],index:0,correct:0,wrong:0};
-    currentPrepared=null;currentAnswered=false;currentSelectedOriginalIndex=null;
+    createSession('one',[qid]);
     switchView('practice');
   }
   function articleArrayBlock(title,items,cls=''){
@@ -533,6 +702,7 @@
     if(!list.length)return '';
     return `<section class="article-study-block ${cls}"><h3>${esc(title)}</h3><ul>${list.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>`;
   }
+  function completeArticle(qid){if(!ARTICLE_DETAILS[qid])return;registerStudyActivity();if(!state.game.articleRewards[qid]){state.game.articleRewards[qid]=Date.now();awardXp(15,'完成文章學習');checkGameAchievements();saveState();renderArticles();toast('文章學習完成 · EXP +15')}else toast('這篇文章已取得完成 EXP')}
   function renderArticles(){
     const root=document.getElementById('view-articles');
     const records=articleRecords();
@@ -556,11 +726,11 @@
           ${articleArrayBlock('⑥ 容易誤判的地方',a.traps,'article-traps')}
           <section class="article-study-block article-strategy"><h3>⑦ 解題方式</h3><p>${esc(a.strategy||'')}</p></section>
           <section class="article-study-block"><h3>⑧ 漢字／重要詞彙讀音</h3><div class="vocab-grid">${vocab.map(v=>`<div class="vocab-item"><strong>${esc(v.surface)}</strong><span>（${esc(v.reading)}）</span></div>`).join('')||'<span class="small">—</span>'}</div></section>
-          <section class="article-study-block linked-question"><h3>⑨ 對應題目</h3><div class="stem article-stem">${esc(q.stem)}</div><div class="article-answer"><b>正確答案：</b>${q.answer+1}. ${esc(q.options[q.answer])}</div><div class="main-explain"><b>本題核心解析</b><p>${esc(q.explanation)}</p></div><div class="actions"><button class="btn primary" id="articlePracticeBtn">直接練這一題</button></div></section>
+          <section class="article-study-block linked-question"><h3>⑨ 對應題目</h3><div class="stem article-stem">${esc(q.stem)}</div><div class="article-answer"><b>正確答案：</b>${q.answer+1}. ${esc(q.options[q.answer])}</div><div class="main-explain"><b>本題核心解析</b><p>${esc(q.explanation)}</p></div><div class="actions"><button class="btn primary" id="articlePracticeBtn">直接練這一題</button><button class="btn ${state.game.articleRewards[q.id]?'good':''}" id="articleCompleteBtn">${state.game.articleRewards[q.id]?'✓ 已完成文章學習':'完成文章學習 +15 EXP'}</button></div></section>
           <section class="article-study-block"><h3>⑩ 四個選項完整詳解</h3><div class="all-choice-details article-choice-details">${renderAllChoiceDetails(q)}</div></section>
         </article>`;
       document.getElementById('articleBackBtn').onclick=()=>{articleFocusId=null;renderArticles();window.scrollTo({top:0,behavior:'smooth'})};
-      document.getElementById('articlePracticeBtn').onclick=()=>practiceOne(q.id);
+      document.getElementById('articlePracticeBtn').onclick=()=>practiceOne(q.id);document.getElementById('articleCompleteBtn').onclick=()=>completeArticle(q.id);
       return;
     }
     root.innerHTML=`
@@ -597,7 +767,7 @@
   function renderBusiness(){
     const root=document.getElementById('view-business');
     const chapters=BUSINESS_COURSE.chapters||[];
-    root.innerHTML=`<div class="card business-hero"><div><span class="tag">NEW COURSE</span><h2>實用商務日語｜10 章情境訓練</h2><p>這 200 題獨立保留為課程，不會把原本 BJT 題庫的學習脈絡打散。每章 20 題；答題後可查看四選項本義、錯誤原因、情境解析與相關知識卡。</p></div><div class="business-course-stat"><strong>${BUSINESS_QUESTIONS.length}</strong><span>題</span></div></div>
+    root.innerHTML=`<div class="card business-hero"><div><span class="tag">PRACTICAL BUSINESS</span><h2>實用商務日語｜10 章情境訓練</h2><p>這 200 題獨立保留為課程，不會把原本 BJT 題庫的學習脈絡打散。每章 20 題；答題後可查看四選項本義、錯誤原因、情境解析與相關知識卡。</p></div><div class="business-course-stat"><strong>${BUSINESS_QUESTIONS.length}</strong><span>題</span></div></div>
       <div class="business-chapter-grid">${chapters.map(ch=>{const p=businessProgress(ch.chapter);const cards=(ch.knowledgeCards||[]).map(id=>KMAP[id]).filter(Boolean);return `<article class="card business-chapter-card"><div class="chapter-no">CH ${String(ch.chapter).padStart(2,'0')}</div><h3>${esc(ch.title)}</h3><p>${esc(ch.zh||'')}</p><div class="chapter-progress"><div class="progress"><i style="width:${pct(p.done,p.total)}%"></i></div><span>${p.done}/${p.total} 題 · 正確率 ${p.accuracy}%</span></div><div class="chapter-kps">${cards.map(k=>`<div class="chapter-kp"><strong>${esc(k.title.replace('實用商務｜',''))}</strong><span>${esc(k.summary)}</span></div>`).join('')}</div><div class="actions"><button class="btn primary" data-business-ch="${ch.chapter}">開始本章 20 題</button><button class="btn" data-business-review="${ch.chapter}">查看本章題目</button></div></article>`}).join('')}</div>
       <div id="businessQuestionList"></div>`;
     document.querySelectorAll('[data-business-ch]').forEach(b=>b.onclick=()=>startSession('business-ch'+b.dataset.businessCh));
@@ -613,11 +783,48 @@
     box.scrollIntoView({behavior:'smooth',block:'start'});
   }
 
+  function listeningPackById(id){return LISTENING_PACKS.find(p=>p.id===id)||LISTENING_PACKS[0]||null}
+  function listeningPackQuestions(packId){const pack=listeningPackById(packId);if(!pack)return[];return (pack.questionIds||[]).map(id=>LQMAP[id]).filter(Boolean).sort((a,b)=>(a.number||0)-(b.number||0))}
+  function listeningRecord(index=listeningSession?.index){if(!listeningSession||index<0||index>=listeningSession.ids.length)return null;listeningSession.records=listeningSession.records||{};const key=String(index);if(!listeningSession.records[key])listeningSession.records[key]={qid:listeningSession.ids[index],answered:false,correct:null,selectedOriginalIndex:null,playCount:0,audioStarted:false,xpGain:0};return listeningSession.records[key]}
+  function listeningCurrentQ(){if(!listeningSession)return null;return LQMAP[listeningSession.ids[listeningSession.index]]||null}
+  function startListeningSession(mode='all',packId=LISTENING_PACKS[0]?.id){const pack=listeningPackById(packId);if(!pack){toast('目前沒有聽力題庫。');return}let list=listeningPackQuestions(pack.id);if(mode==='unanswered')list=list.filter(q=>(listeningProgressOf(q.id).attempts||0)===0);if(mode==='weak')list=listeningWeakQuestions(list);if(mode==='due')list=listeningDueQuestions(list);if(mode==='random')list=shuffle(list);if(!list.length){toast(mode==='unanswered'?'這個題組目前沒有未作答題。':mode==='weak'?'目前沒有聽力錯題。':mode==='due'?'目前沒有到期聽力複習。':'目前沒有可用聽力題。');return}let startIndex=0;if(mode==='continue'&&state.listening.lastQuestionId){const i=list.findIndex(q=>q.id===state.listening.lastQuestionId);if(i>=0)startIndex=i}listeningSession={mode,packId:pack.id,ids:list.map(q=>q.id),index:startIndex,correct:0,wrong:0,records:{}};state.listening.lastPackId=pack.id;saveState();switchView('listening')}
+  function startListeningOne(id){const q=LQMAP[id];if(!q){toast('找不到對應聽力題。');return}listeningSession={mode:'one',packId:q.packId,ids:[id],index:0,correct:0,wrong:0,records:{}};state.listening.lastPackId=q.packId;state.listening.lastQuestionId=id;saveState();switchView('listening')}
+  function listeningGoTo(index){if(!listeningSession)return;if(index<0)return;if(index>=listeningSession.ids.length){listeningSession.index=listeningSession.ids.length;renderListening();window.scrollTo({top:0,behavior:'smooth'});return}listeningSession.index=index;const q=listeningCurrentQ();if(q){state.listening.lastQuestionId=q.id;saveState()}renderListening();window.scrollTo({top:0,behavior:'smooth'})}
+  function listeningPrev(){if(listeningSession&&listeningSession.index>0)listeningGoTo(listeningSession.index-1)}
+  function listeningNext(){if(listeningSession)listeningGoTo(listeningSession.index+1)}
+  function openListeningMap(){if(!listeningSession)return;const modal=document.getElementById('questionMapModal');if(!modal)return;modal.hidden=false;modal.innerHTML=`<div class="question-map-card"><div class="question-map-head"><div><b>聽力題目一覽</b><span>${listeningSession.ids.length} 題</span></div><button class="btn" id="closeListeningMap">關閉</button></div><div class="question-map-grid">${listeningSession.ids.map((id,i)=>{const r=listeningSession.records?.[String(i)];const p=listeningProgressOf(id);const status=r?.answered?(r.correct?'correct':'wrong'):(p.attempts?(p.lastCorrect?'correct':'wrong'):'unanswered');return `<button class="question-map-item ${status} ${i===listeningSession.index?'current':''}" data-listen-map-index="${i}">${i+1}<small>${status==='correct'?'✓':status==='wrong'?'✕':'○'}</small></button>`}).join('')}</div><div class="question-map-legend"><span>✓ 已正解</span><span>✕ 最近錯誤</span><span>○ 未作答</span><span>▶ 現在</span></div></div>`;document.getElementById('closeListeningMap').onclick=()=>{modal.hidden=true;modal.innerHTML=''};modal.onclick=e=>{if(e.target===modal){modal.hidden=true;modal.innerHTML=''}};modal.querySelectorAll('[data-listen-map-index]').forEach(b=>b.onclick=()=>{modal.hidden=true;modal.innerHTML='';listeningGoTo(Number(b.dataset.listenMapIndex))})}
+  function handleListeningRewards(q,correct,wasWrongBefore,wasDue){let gained=0;if(correct){state.game.totalCorrectAnswers=(state.game.totalCorrectAnswers||0)+1;state.game.currentCombo=(state.game.currentCombo||0)+1;state.game.maxCombo=Math.max(state.game.maxCombo||0,state.game.currentCombo);ensureDailyCurrent();state.daily.maxCombo=Math.max(state.daily.maxCombo||0,state.game.currentCombo);recordDaily('correct',1);if(!state.game.questionFirstCorrect[q.id]){state.game.questionFirstCorrect[q.id]=Date.now();gained+=awardXp(10,'聽力首次答對')}if(wasWrongBefore&&markRevenge(q.id))gained+=awardXp(5,'聽力錯題復仇');if(wasDue){state.game.reviewSuccesses=(state.game.reviewSuccesses||0)+1;recordDaily('reviewActions',1);gained+=awardXp(10,'聽力到期複習')}}else state.game.currentCombo=0;recordDaily('count',1);checkGameAchievements();return gained}
+  function answerListening(originalIndex){if(!listeningSession)return;const q=listeningCurrentQ(),rec=listeningRecord();if(!q||!rec||rec.answered)return;if(!rec.audioStarted){toast('請先播放音檔，再作答。');return}const correct=Number(originalIndex)===Number(q.correctAnswer?.originalIndex),now=Date.now(),p={...listeningProgressOf(q.id)},wasWrongBefore=(p.wrong||0)>0,wasDue=(p.attempts||0)>0&&(p.due||0)>0&&(p.due||0)<=now;rec.answered=true;rec.correct=correct;rec.selectedOriginalIndex=Number(originalIndex);rec.answeredAt=now;listeningSession.correct+=(correct?1:0);listeningSession.wrong+=(correct?0:1);p.attempts=(p.attempts||0)+1;p.totalPlays=(p.totalPlays||0)+(rec.playCount||0);if(correct){p.correct=(p.correct||0)+1;p.streak=(p.streak||0)+1;if((rec.playCount||0)===1)p.firstListenCorrect=(p.firstListenCorrect||0)+1;else p.relistenCorrect=(p.relistenCorrect||0)+1}else{p.wrong=(p.wrong||0)+1;p.streak=0}p.lastCorrect=correct;p.lastAt=now;p.lastPlayCount=rec.playCount||0;p.due=now+(correct?(p.streak>=3?7:p.streak===2?3:1)*86400000:3600000);state.listening.progress[q.id]=p;state.listening.lastQuestionId=q.id;rec.xpGain=handleListeningRewards(q,correct,wasWrongBefore,wasDue);saveState();renderListening()}
+  function jumpListeningFeedback(key){const el=document.getElementById(`listening-sec-${key}`);if(!el)return;const top=window.scrollY+el.getBoundingClientRect().top-82;window.scrollTo({top:Math.max(0,top),behavior:'smooth'})}
+  function renderListeningFeedback(q,rec){const answer=Number(q.correctAnswer?.originalIndex);return `<div class="listening-feedback"><div class="feedback-title-row"><h3>${rec.correct?'✓ 正確':'✕ 這題要修正'}</h3>${rec.xpGain?`<span class="xp-gain">EXP +${rec.xpGain}</span>`:''}</div><nav class="listening-feedback-nav"><button data-listen-jump="reason">正解理由</button><button data-listen-jump="choices">發話選項</button><button data-listen-jump="knowledge">核心知識</button><button data-listen-jump="source">原題解說</button><button data-listen-jump="reference">參考頁</button></nav><section id="listening-sec-reason" class="listening-explain-block"><span class="lesson-kicker">ANSWER</span><h3>正解：${answer}</h3><p>${esc(q.correctReason||'')}</p>${q.editorialReviewed?'<div class="editorial-note">此題解析已做教學校閱：保留原正解，但避免把單題判斷擴張成所有商務場合的絕對規則。</div>':''}</section><section id="listening-sec-choices" class="listening-explain-block"><span class="lesson-kicker">SPOKEN CHOICES</span><h3>發話選項</h3><p class="small">以下文字依來源答案頁確認；這不是完整音檔逐字稿。</p><div class="spoken-choice-list">${(q.options||[]).map(o=>{const ok=Number(o.originalIndex)===answer,sel=Number(o.originalIndex)===Number(rec.selectedOriginalIndex);return `<article class="spoken-choice ${ok?'correct':''} ${sel&&!ok?'selected-wrong':''}"><div class="spoken-choice-head"><b>${o.originalIndex}</b><strong>${esc(o.text)}</strong><span>${ok?'正解':sel?'你的答案':''}</span></div>${o.zhTW?`<div class="spoken-choice-zh">${esc(o.zhTW)}</div>`:''}<p>${esc(o.explanation||'')}</p></article>`}).join('')}</div></section><section id="listening-sec-knowledge" class="listening-explain-block"><span class="lesson-kicker">KNOWLEDGE</span><h3>核心知識與陷阱</h3><div class="tag-list">${(q.coreKnowledge||[]).map(x=>`<span class="tag">${esc(x)}</span>`).join('')}</div>${q.trap?`<div class="listening-trap"><b>陷阱</b><p>${esc(q.trap)}</p></div>`:''}${q.visualContext?`<div class="listening-context"><b>情境</b><p>${esc(q.visualContext)}</p></div>`:''}</section><section id="listening-sec-source" class="listening-explain-block"><span class="lesson-kicker">SOURCE NOTE</span><h3>來源原始日文解說</h3><p>${esc(q.sourceExplanationJa||'來源未提供原始解說。')}</p></section><section id="listening-sec-reference" class="listening-explain-block"><span class="lesson-kicker">SOURCE REFERENCE</span><h3>原始答案頁</h3><p class="small">只在作答後提供，用於核對來源；不會在作答前顯示。</p>${q.media?.answerReferenceImage?`<button class="reference-image-button" data-image-viewer="${esc(q.media.answerReferenceImage)}" data-image-alt="${esc(q.id)} 原始答案頁"><img src="${esc(q.media.answerReferenceImage)}" alt="${esc(q.id)} 原始答案頁" loading="lazy"><span>🔍 點擊放大原始答案頁</span></button>`:''}</section></div>`}
+  function formatAudioTime(sec){sec=Math.max(0,Number(sec)||0);const m=Math.floor(sec/60),s=Math.floor(sec%60);return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
+  function bindListeningAudio(q,rec){
+    const audio=document.getElementById('listeningAudio');if(!audio)return;
+    const play=document.getElementById('listeningPlay'),replay=document.getElementById('listeningReplay'),back=document.getElementById('listeningBack5'),forward=document.getElementById('listeningForward5'),seek=document.getElementById('listeningSeek'),speed=document.getElementById('listeningSpeed'),time=document.getElementById('listeningTime'),plays=document.getElementById('listeningPlayCount'),visualImg=document.querySelector('.listening-image-button img'),visualStatus=document.getElementById('listeningVisualStatus'),warning=document.querySelector('.listening-visual-warning');
+    let visualReady=!!(visualImg?.complete&&visualImg.naturalWidth>0),visualFailed=!!(visualImg?.complete&&visualImg.naturalWidth===0);
+    const syncAnswers=()=>{document.querySelectorAll('[data-listening-answer]').forEach(b=>b.disabled=!!rec.answered||!rec.audioStarted||!visualReady);if(warning)warning.classList.toggle('visual-load-error',visualFailed);if(visualStatus)visualStatus.textContent=visualFailed?'題目圖片載入失敗，本題已鎖定；請重新整理或確認圖片檔。':visualReady?(rec.audioStarted?'✓ 圖片與音檔皆已就緒，可以作答。':'✓ 圖片已載入；請先播放音檔後作答。'):'圖片載入中；圖片與音檔都就緒後才可作答。'};
+    const sync=()=>{const dur=Number.isFinite(audio.duration)?audio.duration:(q.audioDurationSec||0);if(seek){seek.max=dur||1;seek.value=audio.currentTime||0}if(time)time.textContent=`${formatAudioTime(audio.currentTime)} / ${formatAudioTime(dur)}`;if(play)play.textContent=audio.paused?'▶ 播放':'⏸ 暫停'};
+    const markStart=(forceNew=false)=>{if(!rec.audioStarted||forceNew||audio.ended)rec.playCount=(rec.playCount||0)+1;rec.audioStarted=true;if(plays)plays.textContent=`播放 ${rec.playCount} 次`;syncAnswers()};
+    const startPlayback=(forceNew=false,msg='音檔無法播放，請確認瀏覽器媒體權限。')=>audio.play().then(()=>markStart(forceNew)).catch(()=>{syncAnswers();toast(msg)});
+    if(play)play.onclick=()=>{if(audio.paused)startPlayback(false);else audio.pause()};
+    if(replay)replay.onclick=()=>{audio.pause();audio.currentTime=0;startPlayback(true,'音檔無法播放。')};
+    if(back)back.onclick=()=>{audio.currentTime=Math.max(0,(audio.currentTime||0)-5)};
+    if(forward)forward.onclick=()=>{audio.currentTime=Math.min(Number.isFinite(audio.duration)?audio.duration:(q.audioDurationSec||0),(audio.currentTime||0)+5)};
+    if(seek)seek.oninput=()=>{audio.currentTime=Number(seek.value)||0};
+    if(speed)speed.onchange=()=>{audio.playbackRate=Number(speed.value)||1};
+    if(visualImg){visualImg.addEventListener('load',()=>{visualReady=true;visualFailed=false;syncAnswers()});visualImg.addEventListener('error',()=>{visualReady=false;visualFailed=true;syncAnswers()})}else{visualReady=false;visualFailed=true}
+    audio.addEventListener('loadedmetadata',sync);audio.addEventListener('timeupdate',sync);audio.addEventListener('play',sync);audio.addEventListener('pause',sync);audio.addEventListener('ended',sync);sync();syncAnswers();
+  }
+  function renderListeningQuestion(root){const q=listeningCurrentQ(),rec=listeningRecord();if(!q||!rec){renderListeningSessionEnd(root);return}state.listening.lastQuestionId=q.id;const p=listeningProgressOf(q.id),answer=Number(q.correctAnswer?.originalIndex),pack=listeningPackById(q.packId);root.innerHTML=`<div class="listening-practice-layout"><main class="card listening-question-card"><div class="practice-head"><span class="q-number">🎧 ${esc(pack?.titleZh||pack?.title||'聽力真題')} · ${listeningSession.index+1} / ${listeningSession.ids.length}</span><span class="q-source">${esc(q.difficulty||'BJT')}</span></div><div class="progress"><i style="width:${pct(listeningSession.index,listeningSession.ids.length)}%"></i></div><div class="listening-visual-warning"><b>🖼️ 此題必須看圖＋聽音檔作答</b><span>圖片與音檔都是題目本體；作答前不顯示四個發話文字。</span><small id="listeningVisualStatus">圖片載入中；圖片與音檔都就緒後才可作答。</small></div><button class="listening-image-button" data-image-viewer="${esc(q.media?.image||'')}" data-image-alt="${esc(q.id)} 題目圖片"><img src="${esc(q.media?.image||'')}" alt="${esc(q.id)} 題目圖片" loading="eager"><span>🔍 點擊放大題目圖片</span></button><section class="listening-player"><div class="listening-player-head"><div><span class="lesson-kicker">LISTENING</span><b>${esc(q.category||'聽力')}</b></div><span id="listeningPlayCount">播放 ${rec.playCount||0} 次</span></div><audio id="listeningAudio" src="${esc(q.media?.audio||'')}" preload="metadata"></audio><div class="audio-main-controls"><button class="btn primary" id="listeningPlay">▶ 播放</button><button class="btn" id="listeningReplay">↺ 從頭重播</button><button class="btn" id="listeningBack5">−5秒</button><button class="btn" id="listeningForward5">+5秒</button></div><div class="audio-seek-row"><span id="listeningTime">00:00 / ${formatAudioTime(q.audioDurationSec||0)}</span><input id="listeningSeek" type="range" min="0" max="${Number(q.audioDurationSec||1)}" step="0.1" value="0"><select id="listeningSpeed" class="select"><option value="0.75">0.75×</option><option value="1" selected>1.0×</option><option value="1.25">1.25×</option></select></div></section><section class="listening-prompt"><span class="lesson-kicker">QUESTION</span><h2>${esc(q.questionZhTW||q.question)}</h2><p>${esc(q.question)}</p></section><div class="listening-number-options">${[1,2,3,4].map(n=>`<button class="listening-number-option ${rec.answered&&n===answer?'correct':''} ${rec.answered&&n===rec.selectedOriginalIndex&&n!==answer?'wrong':''}" data-listening-answer="${n}" ${!rec.audioStarted||rec.answered?'disabled':''}><span>${n}</span>${rec.answered?`<small>${esc((q.options||[]).find(o=>Number(o.originalIndex)===n)?.text||'')}</small>`:'<small>發話選項</small>'}</button>`).join('')}</div>${!rec.audioStarted?'<div class="listen-first-hint">▶ 先播放音檔，之後才可選擇 1～4。</div>':''}<div class="question-navigation"><button class="btn" id="listenPrevBtn" ${listeningSession.index<=0?'disabled':''}>← 上一題</button><button class="btn" id="listenMapBtn">題目一覽</button><span class="question-nav-count">${listeningSession.index+1} / ${listeningSession.ids.length}</span><button class="btn primary" id="listenNextBtn">${listeningSession.index+1>=listeningSession.ids.length?'完成本輪':'下一題 →'}</button></div>${!rec.answered?'<div class="skip-hint">練習模式可先跳過未作答題，不會自動判錯。</div>':''}${rec.answered?renderListeningFeedback(q,rec):''}</main><aside class="grid"><div class="card side-card"><h3>聽力學習狀態</h3><div class="mini-list"><div class="mini-item"><b>作答 ${p.attempts||0} 次</b><small>答對 ${p.correct||0}／答錯 ${p.wrong||0}／連對 ${p.streak||0}</small></div><div class="mini-item"><b>初聽正解 ${p.firstListenCorrect||0}</b><small>重聽後正解 ${p.relistenCorrect||0} · 累積播放 ${p.totalPlays||0} 次</small></div></div></div><div class="card side-card"><h3>這個 Section 的規則</h3><p class="small">四個選項本身就在音檔裡。作答前只顯示 1～4，不能把發話文字提前變成閱讀提示；選項順序也永遠固定，不受「選項隨機」設定影響。</p></div></aside></div>`;document.querySelectorAll('[data-listening-answer]').forEach(b=>b.onclick=()=>answerListening(Number(b.dataset.listeningAnswer)));document.getElementById('listenPrevBtn').onclick=listeningPrev;document.getElementById('listenNextBtn').onclick=listeningNext;document.getElementById('listenMapBtn').onclick=openListeningMap;document.querySelectorAll('[data-listen-jump]').forEach(b=>b.onclick=()=>jumpListeningFeedback(b.dataset.listenJump));bindListeningAudio(q,rec)}
+  function renderListeningSessionEnd(root){const total=listeningSession.correct+listeningSession.wrong,unanswered=Math.max(0,listeningSession.ids.length-total);root.innerHTML=`<section class="card hero listening-end"><span class="player-kicker">LISTENING COMPLETE</span><h2>本輪聽力完成</h2><p>答對 ${listeningSession.correct}／${total}，正確率 ${pct(listeningSession.correct,total)}%。${unanswered?`另有 ${unanswered} 題保留未作答。`:''}聽力錯題與到期複習會獨立追蹤，不會混亂原本 416 題文字題的統計。</p><div class="quick-actions">${unanswered?'<button class="btn primary" id="listenResume">回到未作答題</button>':''}<button class="btn" id="listenAgain">再練本題組</button><button class="btn" id="listenWeak">錯題再戰</button><button class="btn" id="listenHome">回聽力首頁</button></div></section>`;const resume=document.getElementById('listenResume');if(resume)resume.onclick=()=>{const idx=listeningSession.ids.findIndex((_,i)=>!listeningSession.records?.[String(i)]?.answered);listeningGoTo(idx>=0?idx:0)};document.getElementById('listenAgain').onclick=()=>startListeningSession('all',listeningSession.packId);document.getElementById('listenWeak').onclick=()=>{listeningSession=null;startListeningSession('weak',state.listening.lastPackId||LISTENING_PACKS[0]?.id)};document.getElementById('listenHome').onclick=()=>{listeningSession=null;renderListening()}}
+  function renderListeningHome(root){const all=listeningStats(),due=listeningDueQuestions().length,weak=listeningWeakQuestions().length,lastId=state.listening.lastQuestionId;root.innerHTML=`<section class="card listening-hero"><div><span class="player-kicker">LISTENING TRAINING</span><h2>看圖 × 聽解 × 商務語用</h2><p>聽力題庫與文字題分開管理。這批 Section 2 題目在作答前不顯示發話文字，圖片與音檔都視為不可缺少的題目資料。</p></div><div class="listening-hero-count"><strong>${LISTENING_QUESTIONS.length}</strong><span>真題</span></div></section><div class="grid stats-grid listening-stats"><div class="card stat"><span>已完成</span><strong>${all.answered}/${LISTENING_QUESTIONS.length}</strong><small>${all.mastered} 題已熟練</small></div><div class="card stat"><span>聽力正確率</span><strong>${all.accuracy}%</strong><small>${all.correct} / ${all.attempts} 次作答</small></div><div class="card stat"><span>初聽正解率</span><strong>${all.firstListenAccuracy}%</strong><small>第一次播放就答對 ${all.firstListenCorrect} 次</small></div><div class="card stat"><span>待處理</span><strong>${weak}</strong><small>錯題 · ${due} 題到期複習</small></div></div><div class="quick-actions listening-actions">${lastId?'<button class="btn primary" data-listen-start="continue">▶ 繼續上次</button>':''}<button class="btn" data-listen-start="all">全部練習</button><button class="btn" data-listen-start="unanswered">未作答</button><button class="btn ${weak?'bad':''}" data-listen-start="weak">錯題再戰 (${weak})</button><button class="btn ${due?'warn':''}" data-listen-start="due">到期複習 (${due})</button></div><div class="section-title"><div><h2>聽力題組</h2><p>未來增加 Section 1、Section 3 或其他真題包時，會直接追加在這裡。</p></div></div><div class="listening-pack-grid">${LISTENING_PACKS.map(pack=>{const list=listeningPackQuestions(pack.id),st=listeningStats(list);return `<article class="card listening-pack-card"><div class="listening-pack-top"><div><span class="tag">${esc(pack.difficulty||'BJT')}</span><h3>${esc(pack.titleZh||pack.title)}</h3></div><b>${list.length} 題</b></div><p>${esc(pack.description||'')}</p><div class="progress"><i style="width:${pct(st.answered,list.length)}%"></i></div><div class="listening-pack-meta"><span>${st.answered}/${list.length} 已完成</span><span>正確率 ${st.accuracy}%</span><span>初聽 ${st.firstListenAccuracy}%</span></div><div class="actions"><button class="btn primary" data-listen-pack="${esc(pack.id)}">開始題組</button><button class="btn" data-listen-random="${esc(pack.id)}">隨機練習</button></div></article>`}).join('')}</div>`;root.querySelectorAll('[data-listen-start]').forEach(b=>b.onclick=()=>startListeningSession(b.dataset.listenStart,state.listening.lastPackId||LISTENING_PACKS[0]?.id));root.querySelectorAll('[data-listen-pack]').forEach(b=>b.onclick=()=>startListeningSession('all',b.dataset.listenPack));root.querySelectorAll('[data-listen-random]').forEach(b=>b.onclick=()=>startListeningSession('random',b.dataset.listenRandom))}
+  function renderListening(){const root=document.getElementById('view-listening');if(!root)return;if(!LISTENING_QUESTIONS.length){root.innerHTML='<div class="card empty">目前沒有聽力題庫。</div>';return}if(!listeningSession){renderListeningHome(root);return}if(listeningSession.index>=listeningSession.ids.length){renderListeningSessionEnd(root);return}renderListeningQuestion(root)}
+
   function renderMistakes(){
     const list=weakQuestions().sort((a,b)=>{const pa=progressOf(a.id),pb=progressOf(b.id);return (pb.wrong||0)-(pa.wrong||0)});const root=document.getElementById('view-mistakes');
     if(!list.length){root.innerHTML='<div class="card empty">目前沒有錯題或標記不熟的題目。繼續刷題後會自動整理到這裡。</div>';return}
     root.innerHTML=`<div class="card"><div class="section-title" style="margin-top:0"><div><h2>${list.length} 題需要處理</h2><p>依答錯次數排序；已標記的錯因會一起保留。</p></div><button class="btn primary" id="startWeakNow">開始刷錯題</button></div><div style="overflow:auto"><table class="table"><thead><tr><th>題目</th><th>分類</th><th>錯因</th><th>對 / 錯</th><th>操作</th></tr></thead><tbody>${list.map(q=>{const p=progressOf(q.id),tags=state.errorTags[q.id]||[];return `<tr><td>${esc(q.stem)}</td><td>${esc(q.category)}</td><td>${tags.length?tags.map(x=>`<span class="tag">${esc(x)}</span>`).join(' '):'—'}</td><td>${p.correct||0} / ${p.wrong||0}</td><td><button class="btn" data-one="${q.id}">練這題</button></td></tr>`}).join('')}</tbody></table></div></div>`;
-    document.getElementById('startWeakNow').onclick=()=>startSession('weak');document.querySelectorAll('[data-one]').forEach(b=>b.onclick=()=>{session={mode:'one',ids:[b.dataset.one],index:0,correct:0,wrong:0};currentPrepared=null;currentAnswered=false;currentSelectedOriginalIndex=null;switchView('practice')});
+    document.getElementById('startWeakNow').onclick=()=>startSession('weak');document.querySelectorAll('[data-one]').forEach(b=>b.onclick=()=>{createSession('one',[b.dataset.one]);switchView('practice')});
   }
 
   function renderSettings(){const root=document.getElementById('view-settings');root.innerHTML=`<div class="grid settings-grid">
@@ -630,19 +837,21 @@
       <div class="setting-row"><div><b>綜合題每輪</b></div><select class="select" id="mixSize">${[10,20,30,50,80].map(n=>`<option ${n===state.settings.mixedSize?'selected':''}>${n}</option>`).join('')}</select></div>
     </div>
     <div class="card"><h2>備份與還原</h2><p class="small">題目進度、系統課程、錯因標籤、收藏與個人筆記都保存在瀏覽器 localStorage。換裝置前建議匯出。</p><div class="actions"><button class="btn primary" id="exportBtn">匯出學習紀錄</button><button class="btn" id="importBtn">匯入紀錄</button></div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><button class="btn danger" id="resetBtn">清除全部學習紀錄</button></div>
-    <div class="card"><h2>題庫內容</h2><p>知識點：<b>${KNOW.length}</b></p><p>題目：<b>${QUESTIONS.length}</b></p><p>原題／原題型：<b>${QUESTIONS.filter(q=>q.source==='原題').length}</b></p><p>延伸題：<b>${QUESTIONS.filter(q=>q.source==='延伸').length}</b></p><p>實用商務課程：<b>${BUSINESS_QUESTIONS.length}</b></p><p>系統學習：<b>${MODULES.length} 模組／${LESSONS.length} 課／${LESSONS.reduce((n,l)=>n+(l.quickChecks||[]).length,0)} Quick Check</b></p></div>
+    <div class="card"><h2>角色成長</h2><p>目前位階：<b>Lv.${gameLevel()} ${esc(mainTitleAt().name)}</b></p><p>累積 EXP：<b>${state.game.xp||0}</b></p><p>最高 Combo：<b>${state.game.maxCombo||0}</b></p><p>特殊異名：<b>${state.game.unlockedTitles.length}</b></p><p>Boss 擊破：<b>${(GAME.bosses||[]).filter(b=>!b.final&&bossState(b.id).cleared).length}/8</b></p><p class="small">Level 代表 App 內有效學習累積，不等同 BJT 官方 J1/J1+ 成績。</p></div>
+    <div class="card"><h2>題庫內容</h2><p>知識點：<b>${KNOW.length}</b></p><p>題目：<b>${QUESTIONS.length}</b></p><p>原題／原題型：<b>${QUESTIONS.filter(q=>q.source==='原題').length}</b></p><p>延伸題：<b>${QUESTIONS.filter(q=>q.source==='延伸').length}</b></p><p>實用商務課程：<b>${BUSINESS_QUESTIONS.length}</b></p><p>聽力真題：<b>${LISTENING_QUESTIONS.length}</b>（${LISTENING_PACKS.length} 題組）</p><p>系統學習：<b>${MODULES.length} 模組／${LESSONS.length} 課／${LESSONS.reduce((n,l)=>n+(l.quickChecks||[]).length,0)} Quick Check</b></p></div>
     <div class="card"><h2>學習規則</h2><p class="small">答錯：1 小時內再複習；連對 1 次：約 1 天；連對 2 次：約 3 天；連對 3 次以上：約 7 天。你也可以在每題解析後手動評分，重新調整間隔。</p></div>
   </div>`;
     document.getElementById('shuffleSet').onchange=e=>{state.settings.shuffleOptions=e.target.checked;saveState()};document.getElementById('readingSet').onchange=e=>{state.settings.showReadings=e.target.checked;saveState()};document.getElementById('translationSet').onchange=e=>{state.settings.showTranslations=e.target.checked;saveState()};document.getElementById('businessMixSet').onchange=e=>{state.settings.includeBusinessInMixed=e.target.checked;saveState()};document.getElementById('extSize').onchange=e=>{state.settings.extensionSize=Number(e.target.value);saveState()};document.getElementById('mixSize').onchange=e=>{state.settings.mixedSize=Number(e.target.value);saveState()};document.getElementById('exportBtn').onclick=exportState;document.getElementById('importBtn').onclick=()=>document.getElementById('importFile').click();document.getElementById('resetBtn').onclick=()=>{if(confirm('確定清除所有作答紀錄、系統課程進度、筆記、收藏與錯題標記？')){localStorage.removeItem(STORAGE);state=loadState();session=null;toast('已清除');renderSettings()}};
   }
   function exportState(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`BJT學習紀錄_${today()}.json`;a.click();URL.revokeObjectURL(a.href)}
-  function importState(file){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);state={...defaultState,...d,settings:{...defaultState.settings,...(d.settings||{})}};state.learning=state.learning||{lessons:{}};state.learning.lessons=state.learning.lessons||{};state.errorTags=state.errorTags||{};saveState();toast('匯入完成');renderSettings()}catch(e){alert('檔案格式不正確')}};r.readAsText(file)}
+  function importState(file){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);localStorage.setItem(STORAGE,JSON.stringify(d));state=loadState();saveState();checkGameAchievements();toast('匯入完成');renderSettings()}catch(e){alert('檔案格式不正確')}};r.readAsText(file)}
 
   document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.view)));
   document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));
+  document.addEventListener('click',e=>{const btn=e.target.closest?.('[data-image-viewer]');if(btn){e.preventDefault();openImageViewer(btn.dataset.imageViewer,btn.dataset.imageAlt||'題目圖片')}});
   document.getElementById('importFile').addEventListener('change',e=>{if(e.target.files[0])importState(e.target.files[0]);e.target.value=''})
-  document.addEventListener('keydown',e=>{if(!document.getElementById('view-practice').classList.contains('active')||!session)return;if(!currentAnswered&&['1','2','3','4'].includes(e.key)){const b=document.querySelector(`.option[data-opt="${Number(e.key)-1}"]`);if(b)b.click()}else if(currentAnswered&&e.key==='Enter'){const b=document.getElementById('nextBtn');if(b)b.click()}})
+  document.addEventListener('keydown',e=>{if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName))return;const practiceActive=document.getElementById('view-practice').classList.contains('active'),listeningActive=document.getElementById('view-listening').classList.contains('active');if(practiceActive&&session){if(!currentAnswered&&['1','2','3','4'].includes(e.key)){const b=document.querySelector(`.option[data-opt="${Number(e.key)-1}"]`);if(b)b.click()}else if(e.key==='ArrowLeft'){previousQuestion()}else if(e.key==='ArrowRight'||(currentAnswered&&e.key==='Enter')){nextQuestion()}return}if(listeningActive&&listeningSession){const rec=listeningRecord();if(!rec?.answered&&rec?.audioStarted&&['1','2','3','4'].includes(e.key))answerListening(Number(e.key));else if(e.key==='ArrowLeft')listeningPrev();else if(e.key==='ArrowRight')listeningNext()}})
   if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch(()=>{});
-  updateToday();renderDashboard();
+  applyLatestFeatureBadge();checkGameAchievements(false);saveState();updateToday();renderDashboard();
   setInterval(()=>{if(ensureDailyCurrent()) localStorage.setItem(STORAGE,JSON.stringify(state));updateToday()},60000);
 })();

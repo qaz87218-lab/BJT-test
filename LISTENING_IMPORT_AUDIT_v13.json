@@ -1,0 +1,24 @@
+{
+  "version": "v13.0",
+  "sourcePack": "BJT_JPLUS_SECTION2_001",
+  "questionCount": 10,
+  "allHaveAudio": true,
+  "allHaveImage": true,
+  "allHaveReferenceImage": true,
+  "hiddenOptionsBeforeAnswer": true,
+  "fixedOriginalOptionOrder": true,
+  "transcriptPolicy": "choices_only; do not label as full transcript",
+  "editorialReviewedIds": [
+    "BJT_JP_S2_01",
+    "BJT_JP_S2_02",
+    "BJT_JP_S2_03",
+    "BJT_JP_S2_06",
+    "BJT_JP_S2_07",
+    "BJT_JP_S2_08",
+    "BJT_JP_S2_09"
+  ],
+  "notes": [
+    "Q02/Q06/Q07/Q08/Q09 explanations were softened to avoid overgeneralizing single-item BJT judgments.",
+    "Original source explanations are preserved in sourceExplanationJa and sourceCorrectReason/sourceTrap."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
+  "reviewed_source_questions": 25,
+  "exact_duplicates": [
+    {
+      "source_id": "BJT-QPACK-20260914-O001",
+      "existing_id": "BJT-O-0074",
+      "action": "merged provenance; no duplicate question created"
+    }
+  ],
+  "new_questions_added": 24,
+  "new_id_range": [
+    "BJT-O-0075",
+    "BJT-O-0098"
+  ],
+  "new_article_details": 15,
+  "new_option_details": 96,
+  "before": {
+    "knowledge": 118,
+    "questions": 392,
+    "original": 74,
+    "extension": 118,
+    "business": 200,
+    "articles": 33,
+    "option_detail_questions": 392,
+    "option_details": 1568
+  },
+  "after": {
+    "knowledge": 118,
+    "questions": 416,
+    "original": 98,
+    "extension": 118,
+    "business": 200,
+    "articles": 48,
+    "option_detail_questions": 416,
+    "option_details": 1664,
+    "source_assets_archived": 25
+  },
+  "checks": {
+    "source_qpack_mechanics_invalid": [],
+    "duplicate_question_ids": [],
+    "invalid_answer_indices": [],
+    "new_questions_missing_4_option_details": [],
+    "missing_visual_assets": [],
+    "invalid_lesson_links": [],
+    "visual_required_ids": [
+      "BJT-O-0089",
+      "BJT-O-0095"
+    ],
+    "visual_assets_precached": [
+      "assets/qpack_20260914/O016.png",
+      "assets/qpack_20260914/O022.png"
+    ]
+  },
+  "editorial_fixes": [
+    "O001 is an exact duplicate of existing BJT-O-0074; retained one canonical question only.",
+    "O003 answer ④ 外出しております manually confirmed against source image.",
+    "O007 explanation refined: お伺いする／お伺いいたす are listed by Japan Agency for Cultural Affairs as established acceptable double-keigo forms.",
+    "O008 answer ② 耳 manually confirmed against source image.",
+    "O016 and O022 visually checked against original graphs; image dependency preserved.",
+    "O021 zh-Hant passage translation normalized to remove Japanese/Chinese mixing."
+  ],
+  "progress_compatibility": {
+    "localStorage_key": "bjtDeepStateV1",
+    "destructive_migration": false
+  }
+}
