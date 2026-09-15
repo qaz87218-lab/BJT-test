@@ -1,0 +1,59 @@
+{
+  "nodeSyntax": {
+    "app.js": true,
+    "listening_data.js": true,
+    "data.js": true,
+    "option_details.js": true,
+    "article_details.js": true,
+    "business_course.js": true,
+    "lessons.js": true,
+    "game_data.js": true,
+    "sw.js": true
+  },
+  "listening": {
+    "packs": 6,
+    "questions": 75,
+    "uniqueIds": 75,
+    "deep": 10,
+    "verifiedOnly": 65,
+    "part1New": 35,
+    "part2New": 30
+  },
+  "packCounts": {
+    "BJT_JPLUS_SECTION2_001": 10,
+    "BJT_JPLUS02_P1_S1": 10,
+    "BJT_JPLUS02_P1_S2": 10,
+    "BJT_JPLUS02_P1_S3": 15,
+    "BJT_JPLUS02_P2_S1": 15,
+    "BJT_JPLUS02_P2_S2": 15
+  },
+  "badAnswers": [],
+  "missingPackRefs": [],
+  "missingMedia": [],
+  "old10MediaChanged": [],
+  "coreUnchanged": [
+    "data.js",
+    "option_details.js",
+    "article_details.js",
+    "business_course.js",
+    "lessons.js",
+    "game_data.js",
+    "index.html",
+    "manifest.webmanifest"
+  ],
+  "unexpectedCoreChanged": [],
+  "invariants": {
+    "storageKeyPresent": true,
+    "latestFeatureListening": true,
+    "globalRandom20": true,
+    "verifiedQualityUi": true,
+    "answerOnlyNoFakeExplanation": true
+  },
+  "serviceWorker": {
+    "coreCache": true,
+    "mediaCache": true,
+    "runtimeListeningMedia": true
+  },
+  "newMediaBytes": 48446891,
+  "passed": true
+}

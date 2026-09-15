@@ -1,0 +1,59 @@
+{
+  "sourcePackId": "BJT_JPLUS02_QPACK_V2",
+  "sourceSchemaVersion": "2.0",
+  "sourceQuestionCount": 65,
+  "integratedQuestionCount": 65,
+  "existingListeningQuestionsPreserved": 10,
+  "totalListeningQuestionsAfterImport": 75,
+  "sections": [
+    {
+      "part": 1,
+      "section": 1,
+      "count": 10,
+      "packId": "BJT_JPLUS02_P1_S1"
+    },
+    {
+      "part": 1,
+      "section": 2,
+      "count": 10,
+      "packId": "BJT_JPLUS02_P1_S2"
+    },
+    {
+      "part": 1,
+      "section": 3,
+      "count": 15,
+      "packId": "BJT_JPLUS02_P1_S3"
+    },
+    {
+      "part": 2,
+      "section": 1,
+      "count": 15,
+      "packId": "BJT_JPLUS02_P2_S1"
+    },
+    {
+      "part": 2,
+      "section": 2,
+      "count": 15,
+      "packId": "BJT_JPLUS02_P2_S2"
+    }
+  ],
+  "reviewPolicy": {
+    "deepReviewedExisting": 10,
+    "verifiedAnswerOnlyNew": 65,
+    "inventedTranscripts": 0,
+    "inventedExplanations": 0
+  },
+  "assets": {
+    "audioCopied": 65,
+    "cleanImagesCopied": 65,
+    "rawFramesDeployed": 0,
+    "answerKeyScreensDeployed": 0
+  },
+  "sourceValidationPassed": true,
+  "sourceMissing": [],
+  "sourceZipSha256": "97a7d2274b09677b2dd1bf41a41f4540d7643ffc68ced1016b5f21bf4f69b72f",
+  "spoilerPolicy": {
+    "partWideAnswerKeyImagesNotDeployed": true,
+    "reason": "來源答案表一次顯示整個 Part 的答案；若在單題作答後顯示會提前暴露尚未作答題目。正解序號已由 answer_key.json 驗證後寫入題目資料。"
+  }
+}

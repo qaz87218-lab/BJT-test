@@ -29,7 +29,223 @@ window.BJT_LISTENING_PACKS = [
       "hidden_options_during_listening",
       "answer_explanations",
       "zh-TW_notes"
-    ]
+    ],
+    "collectionId": "BJT_JPLUS_ORIGINAL",
+    "collectionTitleZh": "BJT J+｜深度解析題組",
+    "part": 0,
+    "partTitleZh": "看圖聽解",
+    "reviewLevel": "deep",
+    "dataQualityLabel": "深度解析"
+  },
+  {
+    "id": "BJT_JPLUS02_P1_S1",
+    "title": "BJT J+ 02 - 第1部 聴解・Section 1",
+    "titleZh": "BJT J+ 02｜第1部 聴解・Section 1",
+    "difficulty": "J+",
+    "questionCount": 10,
+    "type": "source_media_index_choice",
+    "description": "來源題組第1部「聴解テスト」Section 1。每題保留題目圖、正式作答音檔與由影片答案表驗證的正解。",
+    "questionIds": [
+      "BJT_JP02_P1_S1_Q01",
+      "BJT_JP02_P1_S1_Q02",
+      "BJT_JP02_P1_S1_Q03",
+      "BJT_JP02_P1_S1_Q04",
+      "BJT_JP02_P1_S1_Q05",
+      "BJT_JP02_P1_S1_Q06",
+      "BJT_JP02_P1_S1_Q07",
+      "BJT_JP02_P1_S1_Q08",
+      "BJT_JP02_P1_S1_Q09",
+      "BJT_JP02_P1_S1_Q10"
+    ],
+    "source": {
+      "originalFile": "BJT J+ 02.mp4",
+      "durationSec": 5021.756
+    },
+    "features": [
+      "audio",
+      "visual_context",
+      "fixed_answer_index",
+      "verified_answer_key"
+    ],
+    "collectionId": "BJT_JPLUS02",
+    "collectionTitleZh": "BJT J+ 02｜65 題完整題組",
+    "part": 1,
+    "partTitleZh": "第1部 聴解テスト",
+    "sectionNumber": 1,
+    "kind": "聴解",
+    "reviewLevel": "answer_key_only",
+    "dataQualityLabel": "正解已驗證"
+  },
+  {
+    "id": "BJT_JPLUS02_P1_S2",
+    "title": "BJT J+ 02 - 第1部 聴解・Section 2",
+    "titleZh": "BJT J+ 02｜第1部 聴解・Section 2",
+    "difficulty": "J+",
+    "questionCount": 10,
+    "type": "source_media_index_choice",
+    "description": "來源題組第1部「聴解テスト」Section 2。每題保留題目圖、正式作答音檔與由影片答案表驗證的正解。",
+    "questionIds": [
+      "BJT_JP02_P1_S2_Q01",
+      "BJT_JP02_P1_S2_Q02",
+      "BJT_JP02_P1_S2_Q03",
+      "BJT_JP02_P1_S2_Q04",
+      "BJT_JP02_P1_S2_Q05",
+      "BJT_JP02_P1_S2_Q06",
+      "BJT_JP02_P1_S2_Q07",
+      "BJT_JP02_P1_S2_Q08",
+      "BJT_JP02_P1_S2_Q09",
+      "BJT_JP02_P1_S2_Q10"
+    ],
+    "source": {
+      "originalFile": "BJT J+ 02.mp4",
+      "durationSec": 5021.756
+    },
+    "features": [
+      "audio",
+      "visual_context",
+      "fixed_answer_index",
+      "verified_answer_key"
+    ],
+    "collectionId": "BJT_JPLUS02",
+    "collectionTitleZh": "BJT J+ 02｜65 題完整題組",
+    "part": 1,
+    "partTitleZh": "第1部 聴解テスト",
+    "sectionNumber": 2,
+    "kind": "聴解",
+    "reviewLevel": "answer_key_only",
+    "dataQualityLabel": "正解已驗證"
+  },
+  {
+    "id": "BJT_JPLUS02_P1_S3",
+    "title": "BJT J+ 02 - 第1部 聴解・Section 3",
+    "titleZh": "BJT J+ 02｜第1部 聴解・Section 3",
+    "difficulty": "J+",
+    "questionCount": 15,
+    "type": "source_media_index_choice",
+    "description": "來源題組第1部「聴解テスト」Section 3。音檔較長；每題保留題目圖與由影片答案表驗證的正解。",
+    "questionIds": [
+      "BJT_JP02_P1_S3_Q01",
+      "BJT_JP02_P1_S3_Q02",
+      "BJT_JP02_P1_S3_Q03",
+      "BJT_JP02_P1_S3_Q04",
+      "BJT_JP02_P1_S3_Q05",
+      "BJT_JP02_P1_S3_Q06",
+      "BJT_JP02_P1_S3_Q07",
+      "BJT_JP02_P1_S3_Q08",
+      "BJT_JP02_P1_S3_Q09",
+      "BJT_JP02_P1_S3_Q10",
+      "BJT_JP02_P1_S3_Q11",
+      "BJT_JP02_P1_S3_Q12",
+      "BJT_JP02_P1_S3_Q13",
+      "BJT_JP02_P1_S3_Q14",
+      "BJT_JP02_P1_S3_Q15"
+    ],
+    "source": {
+      "originalFile": "BJT J+ 02.mp4",
+      "durationSec": 5021.756
+    },
+    "features": [
+      "audio",
+      "visual_context",
+      "fixed_answer_index",
+      "verified_answer_key"
+    ],
+    "collectionId": "BJT_JPLUS02",
+    "collectionTitleZh": "BJT J+ 02｜65 題完整題組",
+    "part": 1,
+    "partTitleZh": "第1部 聴解テスト",
+    "sectionNumber": 3,
+    "kind": "聴解",
+    "reviewLevel": "answer_key_only",
+    "dataQualityLabel": "正解已驗證"
+  },
+  {
+    "id": "BJT_JPLUS02_P2_S1",
+    "title": "BJT J+ 02 - 第2部 聴読解・Section 1",
+    "titleZh": "BJT J+ 02｜第2部 聴読解・Section 1",
+    "difficulty": "J+",
+    "questionCount": 15,
+    "type": "source_media_index_choice",
+    "description": "來源題組第2部「聴読解テスト」Section 1。題目圖中的文字／表格與音檔都屬於作答資訊。",
+    "questionIds": [
+      "BJT_JP02_P2_S1_Q01",
+      "BJT_JP02_P2_S1_Q02",
+      "BJT_JP02_P2_S1_Q03",
+      "BJT_JP02_P2_S1_Q04",
+      "BJT_JP02_P2_S1_Q05",
+      "BJT_JP02_P2_S1_Q06",
+      "BJT_JP02_P2_S1_Q07",
+      "BJT_JP02_P2_S1_Q08",
+      "BJT_JP02_P2_S1_Q09",
+      "BJT_JP02_P2_S1_Q10",
+      "BJT_JP02_P2_S1_Q11",
+      "BJT_JP02_P2_S1_Q12",
+      "BJT_JP02_P2_S1_Q13",
+      "BJT_JP02_P2_S1_Q14",
+      "BJT_JP02_P2_S1_Q15"
+    ],
+    "source": {
+      "originalFile": "BJT J+ 02.mp4",
+      "durationSec": 5021.756
+    },
+    "features": [
+      "audio",
+      "visual_context",
+      "fixed_answer_index",
+      "verified_answer_key"
+    ],
+    "collectionId": "BJT_JPLUS02",
+    "collectionTitleZh": "BJT J+ 02｜65 題完整題組",
+    "part": 2,
+    "partTitleZh": "第2部 聴読解テスト",
+    "sectionNumber": 1,
+    "kind": "聴読解",
+    "reviewLevel": "answer_key_only",
+    "dataQualityLabel": "正解已驗證"
+  },
+  {
+    "id": "BJT_JPLUS02_P2_S2",
+    "title": "BJT J+ 02 - 第2部 聴読解・Section 2",
+    "titleZh": "BJT J+ 02｜第2部 聴読解・Section 2",
+    "difficulty": "J+",
+    "questionCount": 15,
+    "type": "source_media_index_choice",
+    "description": "來源題組第2部「聴読解テスト」Section 2。題目圖中的文件／圖表與音檔都屬於作答資訊。",
+    "questionIds": [
+      "BJT_JP02_P2_S2_Q01",
+      "BJT_JP02_P2_S2_Q02",
+      "BJT_JP02_P2_S2_Q03",
+      "BJT_JP02_P2_S2_Q04",
+      "BJT_JP02_P2_S2_Q05",
+      "BJT_JP02_P2_S2_Q06",
+      "BJT_JP02_P2_S2_Q07",
+      "BJT_JP02_P2_S2_Q08",
+      "BJT_JP02_P2_S2_Q09",
+      "BJT_JP02_P2_S2_Q10",
+      "BJT_JP02_P2_S2_Q11",
+      "BJT_JP02_P2_S2_Q12",
+      "BJT_JP02_P2_S2_Q13",
+      "BJT_JP02_P2_S2_Q14",
+      "BJT_JP02_P2_S2_Q15"
+    ],
+    "source": {
+      "originalFile": "BJT J+ 02.mp4",
+      "durationSec": 5021.756
+    },
+    "features": [
+      "audio",
+      "visual_context",
+      "fixed_answer_index",
+      "verified_answer_key"
+    ],
+    "collectionId": "BJT_JPLUS02",
+    "collectionTitleZh": "BJT J+ 02｜65 題完整題組",
+    "part": 2,
+    "partTitleZh": "第2部 聴読解テスト",
+    "sectionNumber": 2,
+    "kind": "聴読解",
+    "reviewLevel": "answer_key_only",
+    "dataQualityLabel": "正解已驗證"
   }
 ];
 
@@ -124,7 +340,10 @@ window.BJT_LISTENING_QUESTIONS = [
     "audioDurationSec": 37.094,
     "sourceCorrectReason": "面對顧客（「外／ソト」關係）時，需要正式且禮貌地拒絕。表示「無法接受／難以辦理」的固定商務表現是「〜かねます」。因此第 3 項最合適。",
     "sourceTrap": "「できません」は客への断りとして直接的すぎる。フォーマルな接客では定型表現「〜かねます」を用いる。",
-    "editorialReviewed": true
+    "editorialReviewed": true,
+    "reviewMode": "deep",
+    "imageRequired": true,
+    "audioRequired": true
   },
   {
     "id": "BJT_JP_S2_02",
@@ -216,7 +435,10 @@ window.BJT_LISTENING_QUESTIONS = [
     "audioDurationSec": 33.176,
     "sourceCorrectReason": "拜訪客戶時應先配合對方的時間，而不是由自己指定日期；「ご都合はいつがよろしいでしょうか」直接且禮貌地詢問對方何時方便。",
     "sourceTrap": "「行きたい」は自分の希望を直接述べる言い方で、取引先への訪問調整として丁寧さが不足する。",
-    "editorialReviewed": true
+    "editorialReviewed": true,
+    "reviewMode": "deep",
+    "imageRequired": true,
+    "audioRequired": true
   },
   {
     "id": "BJT_JP_S2_03",
@@ -309,7 +531,10 @@ window.BJT_LISTENING_QUESTIONS = [
     "audioDurationSec": 41.43,
     "sourceCorrectReason": "接客時要同時控制詞彙禮貌度與句型：「ご清算」「でしたら」「あちら」「お願いいたします」都比口語形式更適合正式服務場合。",
     "sourceTrap": "「清算」には「ご」を付け、「だったら」より「でしたら」を用いる方が接客では適切。",
-    "editorialReviewed": true
+    "editorialReviewed": true,
+    "reviewMode": "deep",
+    "imageRequired": true,
+    "audioRequired": true
   },
   {
     "id": "BJT_JP_S2_04",
@@ -401,7 +626,10 @@ window.BJT_LISTENING_QUESTIONS = [
     "audioDurationSec": 42.083,
     "sourceCorrectReason": "到客戶公司櫃檯時，自我介紹通常要交代「公司名＋自己的姓」，要找的人則以「部門／職務＋姓＋様」清楚指定。第 4 項資訊與敬稱最完整。",
     "sourceTrap": "自分の名乗りはよいが、訪問相手は部署まで含めて明確に呼ぶのがより適切。",
-    "editorialReviewed": false
+    "editorialReviewed": false,
+    "reviewMode": "deep",
+    "imageRequired": true,
+    "audioRequired": true
   },
   {
     "id": "BJT_JP_S2_05",
@@ -493,7 +721,10 @@ window.BJT_LISTENING_QUESTIONS = [
     "audioDurationSec": 41.848,
     "sourceCorrectReason": "請顧客填資料時，用「お名前」「ご住所」提升對對方資訊的敬意，再搭配「お願いいたします」。不能把「様」隨意附在「住所」後面。",
     "sourceTrap": "客の「名前」「住所」には、それぞれ「お名前」「ご住所」と敬意を付ける方が適切。",
-    "editorialReviewed": false
+    "editorialReviewed": false,
+    "reviewMode": "deep",
+    "imageRequired": true,
+    "audioRequired": true
   },
   {
     "id": "BJT_JP_S2_06",
@@ -586,7 +817,10 @@ window.BJT_LISTENING_QUESTIONS = [
     "audioDurationSec": 41.482,
     "sourceCorrectReason": "客戶在場時，公司內部上司屬於「ウチ」，不能對外把自己人抬高；同時也不宜透露電話的具體內容。只說「急ぎの電話」既保留隱私又能傳達必須中斷會議的理由。",
     "sourceTrap": "外部の同席者がいる場面で電話の具体的な相手・内容に踏み込みすぎるため不適切。",
-    "editorialReviewed": true
+    "editorialReviewed": true,
+    "reviewMode": "deep",
+    "imageRequired": true,
+    "audioRequired": true
   },
   {
     "id": "BJT_JP_S2_07",
@@ -679,7 +913,10 @@ window.BJT_LISTENING_QUESTIONS = [
     "audioDurationSec": 40.438,
     "sourceCorrectReason": "初次見面詢問姓名時，「失礼ですが」是常用的緩衝語。敬語不是越長越好，過度謙讓會顯得不自然；而「〜てください」即使搭配尊敬語，仍可能有命令感。",
     "sourceTrap": "「うかがわせていただく」は、単に名前を尋ねる場面ではへりくだりすぎて冗長。",
-    "editorialReviewed": true
+    "editorialReviewed": true,
+    "reviewMode": "deep",
+    "imageRequired": true,
+    "audioRequired": true
   },
   {
     "id": "BJT_JP_S2_08",
@@ -772,7 +1009,10 @@ window.BJT_LISTENING_QUESTIONS = [
     "audioDurationSec": 39.184,
     "sourceCorrectReason": "商務日語中「收到並代為轉達留言」常用「伝言を預かる」。同時敬語要看人物上下關係；向部長報告課長的留言時，不需要把課長的「伝言」敬語化成「ご伝言」。",
     "sourceTrap": "「伝言」に対応する業務上の表現としては「もらう」より「預かる」が適切。",
-    "editorialReviewed": true
+    "editorialReviewed": true,
+    "reviewMode": "deep",
+    "imageRequired": true,
+    "audioRequired": true
   },
   {
     "id": "BJT_JP_S2_09",
@@ -867,7 +1107,10 @@ window.BJT_LISTENING_QUESTIONS = [
     "audioDurationSec": 37.904,
     "sourceCorrectReason": "向公司內部報告外部客戶高階主管的來訪時，外部人物要用尊敬表現；稱呼採「公司名＋姓＋職稱」。確定行程不應用表示推測的「〜ようです」，也不能把謙讓語用在客戶的行為上。",
     "sourceTrap": "「社長さん」はビジネスの呼称として不適切で、確定した予定報告に「〜ようです」を使うのも不適切。",
-    "editorialReviewed": true
+    "editorialReviewed": true,
+    "reviewMode": "deep",
+    "imageRequired": true,
+    "audioRequired": true
   },
   {
     "id": "BJT_JP_S2_10",
@@ -960,6 +1203,6119 @@ window.BJT_LISTENING_QUESTIONS = [
     "audioDurationSec": 38.896,
     "sourceCorrectReason": "向客戶介紹「自己公司的產品」是我方的行為，因此要把自己的「紹介する」降格為謙讓語「ご紹介いたします」。其他選項不是動作主體錯誤，就是把受惠關係倒置。",
     "sourceTrap": "「拝見する」は「見る」の謙譲語で、自分が新製品を見る意味になってしまう。",
+    "editorialReviewed": false,
+    "reviewMode": "deep",
+    "imageRequired": true,
+    "audioRequired": true
+  },
+  {
+    "id": "BJT_JP02_P1_S1_Q01",
+    "sourceQuestionId": "P1-S1-Q01",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S1",
+    "number": 1,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 1,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S1_Q01.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S1_Q01.png",
+      "audioStartSec": 119.494,
+      "audioEndSec": 148.442
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 1,
+      "questionNumber": 1,
+      "questionTimestamp": {
+        "startSeconds": 119.494,
+        "endSeconds": 148.442
+      },
+      "frameTimestampSeconds": 133.968,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S1",
+    "audioDurationSec": 29.362,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S1_Q02",
+    "sourceQuestionId": "P1-S1-Q02",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S1",
+    "number": 2,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 1,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S1_Q02.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S1_Q02.png",
+      "audioStartSec": 153.984,
+      "audioEndSec": 183.729
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 1,
+      "questionNumber": 2,
+      "questionTimestamp": {
+        "startSeconds": 153.984,
+        "endSeconds": 183.729
+      },
+      "frameTimestampSeconds": 168.857,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S1",
+    "audioDurationSec": 30.145,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S1_Q03",
+    "sourceQuestionId": "P1-S1-Q03",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S1",
+    "number": 3,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 1,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S1_Q03.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S1_Q03.png",
+      "audioStartSec": 189.012,
+      "audioEndSec": 226.561
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 1,
+      "questionNumber": 3,
+      "questionTimestamp": {
+        "startSeconds": 189.012,
+        "endSeconds": 226.561
+      },
+      "frameTimestampSeconds": 207.786,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S1",
+    "audioDurationSec": 37.956,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S1_Q04",
+    "sourceQuestionId": "P1-S1-Q04",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S1",
+    "number": 4,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 1,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S1_Q04.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S1_Q04.png",
+      "audioStartSec": 232.132,
+      "audioEndSec": 260.588
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 1,
+      "questionNumber": 4,
+      "questionTimestamp": {
+        "startSeconds": 232.132,
+        "endSeconds": 260.588
+      },
+      "frameTimestampSeconds": 246.36,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S1",
+    "audioDurationSec": 28.865,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S1_Q05",
+    "sourceQuestionId": "P1-S1-Q05",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S1",
+    "number": 5,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 1,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S1_Q05.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S1_Q05.png",
+      "audioStartSec": 265.988,
+      "audioEndSec": 295.628
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 1,
+      "questionNumber": 5,
+      "questionTimestamp": {
+        "startSeconds": 265.988,
+        "endSeconds": 295.628
+      },
+      "frameTimestampSeconds": 280.808,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S1",
+    "audioDurationSec": 30.041,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S1_Q06",
+    "sourceQuestionId": "P1-S1-Q06",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S1",
+    "number": 6,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 1,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S1_Q06.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S1_Q06.png",
+      "audioStartSec": 301.206,
+      "audioEndSec": 331.881
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 1,
+      "questionNumber": 6,
+      "questionTimestamp": {
+        "startSeconds": 301.206,
+        "endSeconds": 331.881
+      },
+      "frameTimestampSeconds": 316.543,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S1",
+    "audioDurationSec": 31.086,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S1_Q07",
+    "sourceQuestionId": "P1-S1-Q07",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S1",
+    "number": 7,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 1,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S1_Q07.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S1_Q07.png",
+      "audioStartSec": 338.258,
+      "audioEndSec": 372.227
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 1,
+      "questionNumber": 7,
+      "questionTimestamp": {
+        "startSeconds": 338.258,
+        "endSeconds": 372.227
+      },
+      "frameTimestampSeconds": 355.242,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S1",
+    "audioDurationSec": 34.377,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S1_Q08",
+    "sourceQuestionId": "P1-S1-Q08",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S1",
+    "number": 8,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 1,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S1_Q08.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S1_Q08.png",
+      "audioStartSec": 377.857,
+      "audioEndSec": 406.465
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 1,
+      "questionNumber": 8,
+      "questionTimestamp": {
+        "startSeconds": 377.857,
+        "endSeconds": 406.465
+      },
+      "frameTimestampSeconds": 392.161,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S1",
+    "audioDurationSec": 29.022,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S1_Q09",
+    "sourceQuestionId": "P1-S1-Q09",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S1",
+    "number": 9,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 1,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S1_Q09.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S1_Q09.png",
+      "audioStartSec": 412.148,
+      "audioEndSec": 444.21
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 1,
+      "questionNumber": 9,
+      "questionTimestamp": {
+        "startSeconds": 412.148,
+        "endSeconds": 444.21
+      },
+      "frameTimestampSeconds": 428.179,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S1",
+    "audioDurationSec": 32.47,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S1_Q10",
+    "sourceQuestionId": "P1-S1-Q10",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S1",
+    "number": 10,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 1,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S1_Q10.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S1_Q10.png",
+      "audioStartSec": 449.388,
+      "audioEndSec": 480.994
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 1,
+      "questionNumber": 10,
+      "questionTimestamp": {
+        "startSeconds": 449.388,
+        "endSeconds": 480.994
+      },
+      "frameTimestampSeconds": 465.191,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S1",
+    "audioDurationSec": 32.026,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S2_Q01",
+    "sourceQuestionId": "P1-S2-Q01",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S2",
+    "number": 1,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 2,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S2_Q01.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S2_Q01.png",
+      "audioStartSec": 608.186,
+      "audioEndSec": 650.893
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 2,
+      "questionNumber": 1,
+      "questionTimestamp": {
+        "startSeconds": 608.186,
+        "endSeconds": 650.893
+      },
+      "frameTimestampSeconds": 629.54,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S2",
+    "audioDurationSec": 43.128,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S2_Q02",
+    "sourceQuestionId": "P1-S2-Q02",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S2",
+    "number": 2,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 2,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S2_Q02.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S2_Q02.png",
+      "audioStartSec": 656.603,
+      "audioEndSec": 705.741
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 2,
+      "questionNumber": 2,
+      "questionTimestamp": {
+        "startSeconds": 656.603,
+        "endSeconds": 705.741
+      },
+      "frameTimestampSeconds": 681.172,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S2",
+    "audioDurationSec": 49.554,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S2_Q03",
+    "sourceQuestionId": "P1-S2-Q03",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S2",
+    "number": 3,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 2,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S2_Q03.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S2_Q03.png",
+      "audioStartSec": 710.947,
+      "audioEndSec": 761.979
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 2,
+      "questionNumber": 3,
+      "questionTimestamp": {
+        "startSeconds": 710.947,
+        "endSeconds": 761.979
+      },
+      "frameTimestampSeconds": 736.463,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S2",
+    "audioDurationSec": 51.435,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S2_Q04",
+    "sourceQuestionId": "P1-S2-Q04",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S2",
+    "number": 4,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 2,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S2_Q04.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S2_Q04.png",
+      "audioStartSec": 767.422,
+      "audioEndSec": 811.453
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 2,
+      "questionNumber": 4,
+      "questionTimestamp": {
+        "startSeconds": 767.422,
+        "endSeconds": 811.453
+      },
+      "frameTimestampSeconds": 789.438,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S2",
+    "audioDurationSec": 44.434,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S2_Q05",
+    "sourceQuestionId": "P1-S2-Q05",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S2",
+    "number": 5,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 2,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S2_Q05.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S2_Q05.png",
+      "audioStartSec": 817.051,
+      "audioEndSec": 863.876
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 2,
+      "questionNumber": 5,
+      "questionTimestamp": {
+        "startSeconds": 817.051,
+        "endSeconds": 863.876
+      },
+      "frameTimestampSeconds": 840.464,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S2",
+    "audioDurationSec": 47.229,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S2_Q06",
+    "sourceQuestionId": "P1-S2-Q06",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S2",
+    "number": 6,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 2,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S2_Q06.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S2_Q06.png",
+      "audioStartSec": 869.25,
+      "audioEndSec": 911.426
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 2,
+      "questionNumber": 6,
+      "questionTimestamp": {
+        "startSeconds": 869.25,
+        "endSeconds": 911.426
+      },
+      "frameTimestampSeconds": 890.338,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S2",
+    "audioDurationSec": 42.58,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S2_Q07",
+    "sourceQuestionId": "P1-S2-Q07",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S2",
+    "number": 7,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 2,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S2_Q07.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S2_Q07.png",
+      "audioStartSec": 917.088,
+      "audioEndSec": 966.366
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 2,
+      "questionNumber": 7,
+      "questionTimestamp": {
+        "startSeconds": 917.088,
+        "endSeconds": 966.366
+      },
+      "frameTimestampSeconds": 941.727,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S2",
+    "audioDurationSec": 49.685,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S2_Q08",
+    "sourceQuestionId": "P1-S2-Q08",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S2",
+    "number": 8,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 2,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S2_Q08.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S2_Q08.png",
+      "audioStartSec": 971.614,
+      "audioEndSec": 1017.479
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 2,
+      "questionNumber": 8,
+      "questionTimestamp": {
+        "startSeconds": 971.614,
+        "endSeconds": 1017.479
+      },
+      "frameTimestampSeconds": 994.547,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S2",
+    "audioDurationSec": 46.263,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S2_Q09",
+    "sourceQuestionId": "P1-S2-Q09",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S2",
+    "number": 9,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 2,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S2_Q09.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S2_Q09.png",
+      "audioStartSec": 1023.118,
+      "audioEndSec": 1068.932
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 2,
+      "questionNumber": 9,
+      "questionTimestamp": {
+        "startSeconds": 1023.118,
+        "endSeconds": 1068.932
+      },
+      "frameTimestampSeconds": 1046.025,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S2",
+    "audioDurationSec": 46.211,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S2_Q10",
+    "sourceQuestionId": "P1-S2-Q10",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S2",
+    "number": 10,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 2,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S2_Q10.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S2_Q10.png",
+      "audioStartSec": 1074.374,
+      "audioEndSec": 1128.266
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 2,
+      "questionNumber": 10,
+      "questionTimestamp": {
+        "startSeconds": 1074.374,
+        "endSeconds": 1128.266
+      },
+      "frameTimestampSeconds": 1101.32,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S2",
+    "audioDurationSec": 54.309,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q01",
+    "sourceQuestionId": "P1-S3-Q01",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 1,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q01.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q01.png",
+      "audioStartSec": 1279.318,
+      "audioEndSec": 1399.376
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 1,
+      "questionTimestamp": {
+        "startSeconds": 1279.318,
+        "endSeconds": 1399.376
+      },
+      "frameTimestampSeconds": 1339.347,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 120.477,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q02",
+    "sourceQuestionId": "P1-S3-Q02",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 2,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q02.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q02.png",
+      "audioStartSec": 1404.694,
+      "audioEndSec": 1515.722
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 2,
+      "questionTimestamp": {
+        "startSeconds": 1404.694,
+        "endSeconds": 1515.722
+      },
+      "frameTimestampSeconds": 1460.208,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 111.438,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q03",
+    "sourceQuestionId": "P1-S3-Q03",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 3,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q03.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q03.png",
+      "audioStartSec": 1521.032,
+      "audioEndSec": 1635.665
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 3,
+      "questionTimestamp": {
+        "startSeconds": 1521.032,
+        "endSeconds": 1635.665
+      },
+      "frameTimestampSeconds": 1578.349,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 115.043,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q04",
+    "sourceQuestionId": "P1-S3-Q04",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 4,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q04.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q04.png",
+      "audioStartSec": 1640.666,
+      "audioEndSec": 1729.158
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 4,
+      "questionTimestamp": {
+        "startSeconds": 1640.666,
+        "endSeconds": 1729.158
+      },
+      "frameTimestampSeconds": 1684.912,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 88.895,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q05",
+    "sourceQuestionId": "P1-S3-Q05",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 5,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q05.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q05.png",
+      "audioStartSec": 1734.696,
+      "audioEndSec": 1860.328
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 5,
+      "questionTimestamp": {
+        "startSeconds": 1734.696,
+        "endSeconds": 1860.328
+      },
+      "frameTimestampSeconds": 1797.512,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 126.041,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q06",
+    "sourceQuestionId": "P1-S3-Q06",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 6,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q06.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q06.png",
+      "audioStartSec": 1865.574,
+      "audioEndSec": 1976.336
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 6,
+      "questionTimestamp": {
+        "startSeconds": 1865.574,
+        "endSeconds": 1976.336
+      },
+      "frameTimestampSeconds": 1920.955,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 111.177,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q07",
+    "sourceQuestionId": "P1-S3-Q07",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 7,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q07.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q07.png",
+      "audioStartSec": 1981.673,
+      "audioEndSec": 2099.116
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 7,
+      "questionTimestamp": {
+        "startSeconds": 1981.673,
+        "endSeconds": 2099.116
+      },
+      "frameTimestampSeconds": 2040.394,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 117.864,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q08",
+    "sourceQuestionId": "P1-S3-Q08",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 8,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q08.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q08.png",
+      "audioStartSec": 2104.559,
+      "audioEndSec": 2217.345
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 8,
+      "questionTimestamp": {
+        "startSeconds": 2104.559,
+        "endSeconds": 2217.345
+      },
+      "frameTimestampSeconds": 2160.952,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 113.189,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q09",
+    "sourceQuestionId": "P1-S3-Q09",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 9,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q09.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q09.png",
+      "audioStartSec": 2222.676,
+      "audioEndSec": 2309.671
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 9,
+      "questionTimestamp": {
+        "startSeconds": 2222.676,
+        "endSeconds": 2309.671
+      },
+      "frameTimestampSeconds": 2266.173,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 87.406,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q10",
+    "sourceQuestionId": "P1-S3-Q10",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 10,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q10.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q10.png",
+      "audioStartSec": 2315.081,
+      "audioEndSec": 2426.013
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 10,
+      "questionTimestamp": {
+        "startSeconds": 2315.081,
+        "endSeconds": 2426.013
+      },
+      "frameTimestampSeconds": 2370.547,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 111.334,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q11",
+    "sourceQuestionId": "P1-S3-Q11",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 11,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q11.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q11.png",
+      "audioStartSec": 2431.448,
+      "audioEndSec": 2524.568
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 11,
+      "questionTimestamp": {
+        "startSeconds": 2431.448,
+        "endSeconds": 2524.568
+      },
+      "frameTimestampSeconds": 2478.008,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 93.518,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q12",
+    "sourceQuestionId": "P1-S3-Q12",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 12,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q12.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q12.png",
+      "audioStartSec": 2529.552,
+      "audioEndSec": 2649.592
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 12,
+      "questionTimestamp": {
+        "startSeconds": 2529.552,
+        "endSeconds": 2649.592
+      },
+      "frameTimestampSeconds": 2589.572,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 120.451,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q13",
+    "sourceQuestionId": "P1-S3-Q13",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 13,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q13.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q13.png",
+      "audioStartSec": 2655.313,
+      "audioEndSec": 2772.745
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 13,
+      "questionTimestamp": {
+        "startSeconds": 2655.313,
+        "endSeconds": 2772.745
+      },
+      "frameTimestampSeconds": 2714.029,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 117.838,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q14",
+    "sourceQuestionId": "P1-S3-Q14",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 14,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q14.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q14.png",
+      "audioStartSec": 2778.149,
+      "audioEndSec": 2904.895
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 14,
+      "questionTimestamp": {
+        "startSeconds": 2778.149,
+        "endSeconds": 2904.895
+      },
+      "frameTimestampSeconds": 2841.522,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 127.164,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P1_S3_Q15",
+    "sourceQuestionId": "P1-S3-Q15",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P1 S3",
+    "number": 15,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴解",
+    "part": 1,
+    "sectionNumber": 3,
+    "question": "画像を確認しながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請查看題目圖片並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S3_Q15.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S3_Q15.png",
+      "audioStartSec": 2910.222,
+      "audioEndSec": 3016.573
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 1,
+      "section": 3,
+      "questionNumber": 15,
+      "questionTimestamp": {
+        "startSeconds": 2910.222,
+        "endSeconds": 3016.573
+      },
+      "frameTimestampSeconds": 2963.398,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P1_S3",
+    "audioDurationSec": 106.762,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片與音檔都是題目本體。資料包沒有可驗證的完整逐字稿／選項文字，因此作答前後都不臆測補入文字內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q01",
+    "sourceQuestionId": "P2-S1-Q01",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 1,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q01.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q01.png",
+      "audioStartSec": 3144.578,
+      "audioEndSec": 3193.715
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 1,
+      "questionTimestamp": {
+        "startSeconds": 3144.578,
+        "endSeconds": 3193.715
+      },
+      "frameTimestampSeconds": 3169.146,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 49.554,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q02",
+    "sourceQuestionId": "P2-S1-Q02",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 2,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q02.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q02.png",
+      "audioStartSec": 3202.004,
+      "audioEndSec": 3243.89
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 2,
+      "questionTimestamp": {
+        "startSeconds": 3202.004,
+        "endSeconds": 3243.89
+      },
+      "frameTimestampSeconds": 3222.947,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 42.292,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q03",
+    "sourceQuestionId": "P2-S1-Q03",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 3,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q03.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q03.png",
+      "audioStartSec": 3252.282,
+      "audioEndSec": 3302.124
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 3,
+      "questionTimestamp": {
+        "startSeconds": 3252.282,
+        "endSeconds": 3302.124
+      },
+      "frameTimestampSeconds": 3277.203,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 50.26,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q04",
+    "sourceQuestionId": "P2-S1-Q04",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 4,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q04.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q04.png",
+      "audioStartSec": 3310.393,
+      "audioEndSec": 3346.245
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 4,
+      "questionTimestamp": {
+        "startSeconds": 3310.393,
+        "endSeconds": 3346.245
+      },
+      "frameTimestampSeconds": 3328.319,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 36.258,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q05",
+    "sourceQuestionId": "P2-S1-Q05",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 5,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q05.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q05.png",
+      "audioStartSec": 3354.477,
+      "audioEndSec": 3376.271
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 5,
+      "questionTimestamp": {
+        "startSeconds": 3354.477,
+        "endSeconds": 3376.271
+      },
+      "frameTimestampSeconds": 3365.374,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 22.204,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q06",
+    "sourceQuestionId": "P2-S1-Q06",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 6,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q06.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q06.png",
+      "audioStartSec": 3388.632,
+      "audioEndSec": 3397.084
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 6,
+      "questionTimestamp": {
+        "startSeconds": 3388.632,
+        "endSeconds": 3397.084
+      },
+      "frameTimestampSeconds": 3392.858,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 8.856,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q07",
+    "sourceQuestionId": "P2-S1-Q07",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 7,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q07.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q07.png",
+      "audioStartSec": 3405.275,
+      "audioEndSec": 3420.187
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 7,
+      "questionTimestamp": {
+        "startSeconds": 3405.275,
+        "endSeconds": 3420.187
+      },
+      "frameTimestampSeconds": 3412.731,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 15.334,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q08",
+    "sourceQuestionId": "P2-S1-Q08",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 8,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q08.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q08.png",
+      "audioStartSec": 3428.448,
+      "audioEndSec": 3442.327
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 8,
+      "questionTimestamp": {
+        "startSeconds": 3428.448,
+        "endSeconds": 3442.327
+      },
+      "frameTimestampSeconds": 3435.387,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 14.289,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q09",
+    "sourceQuestionId": "P2-S1-Q09",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 9,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q09.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q09.png",
+      "audioStartSec": 3450.599,
+      "audioEndSec": 3465.051
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 9,
+      "questionTimestamp": {
+        "startSeconds": 3450.599,
+        "endSeconds": 3465.051
+      },
+      "frameTimestampSeconds": 3457.825,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 14.864,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q10",
+    "sourceQuestionId": "P2-S1-Q10",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 10,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q10.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q10.png",
+      "audioStartSec": 3477.249,
+      "audioEndSec": 3492.541
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 10,
+      "questionTimestamp": {
+        "startSeconds": 3477.249,
+        "endSeconds": 3492.541
+      },
+      "frameTimestampSeconds": 3484.895,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 15.7,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q11",
+    "sourceQuestionId": "P2-S1-Q11",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 11,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q11.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q11.png",
+      "audioStartSec": 3500.734,
+      "audioEndSec": 3518.255
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 11,
+      "questionTimestamp": {
+        "startSeconds": 3500.734,
+        "endSeconds": 3518.255
+      },
+      "frameTimestampSeconds": 3509.494,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 17.92,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q12",
+    "sourceQuestionId": "P2-S1-Q12",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 12,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q12.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q12.png",
+      "audioStartSec": 3530.449,
+      "audioEndSec": 3542.745
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 12,
+      "questionTimestamp": {
+        "startSeconds": 3530.449,
+        "endSeconds": 3542.745
+      },
+      "frameTimestampSeconds": 3536.597,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 12.696,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q13",
+    "sourceQuestionId": "P2-S1-Q13",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 13,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q13.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q13.png",
+      "audioStartSec": 3554.933,
+      "audioEndSec": 3571.933
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 13,
+      "questionTimestamp": {
+        "startSeconds": 3554.933,
+        "endSeconds": 3571.933
+      },
+      "frameTimestampSeconds": 3563.433,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 17.398,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q14",
+    "sourceQuestionId": "P2-S1-Q14",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 14,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q14.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q14.png",
+      "audioStartSec": 3584.124,
+      "audioEndSec": 3596.312
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 14,
+      "questionTimestamp": {
+        "startSeconds": 3584.124,
+        "endSeconds": 3596.312
+      },
+      "frameTimestampSeconds": 3590.218,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 12.591,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S1_Q15",
+    "sourceQuestionId": "P2-S1-Q15",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S1",
+    "number": 15,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 1,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S1_Q15.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S1_Q15.png",
+      "audioStartSec": 3608.636,
+      "audioEndSec": 3626.726
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 1,
+      "questionNumber": 15,
+      "questionTimestamp": {
+        "startSeconds": 3608.636,
+        "endSeconds": 3626.726
+      },
+      "frameTimestampSeconds": 3617.681,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S1",
+    "audioDurationSec": 18.495,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q01",
+    "sourceQuestionId": "P2-S2-Q01",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 1,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q01.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q01.png",
+      "audioStartSec": 3772.373,
+      "audioEndSec": 3833.741
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 1,
+      "questionTimestamp": {
+        "startSeconds": 3772.373,
+        "endSeconds": 3833.741
+      },
+      "frameTimestampSeconds": 3803.057,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 61.78,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q02",
+    "sourceQuestionId": "P2-S2-Q02",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 2,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q02.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q02.png",
+      "audioStartSec": 3844.011,
+      "audioEndSec": 3894.94
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 2,
+      "questionTimestamp": {
+        "startSeconds": 3844.011,
+        "endSeconds": 3894.94
+      },
+      "frameTimestampSeconds": 3869.476,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 51.331,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q03",
+    "sourceQuestionId": "P2-S2-Q03",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 3,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q03.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q03.png",
+      "audioStartSec": 3905.448,
+      "audioEndSec": 3988.632
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 3,
+      "questionTimestamp": {
+        "startSeconds": 3905.448,
+        "endSeconds": 3988.632
+      },
+      "frameTimestampSeconds": 3947.04,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 83.592,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q04",
+    "sourceQuestionId": "P2-S2-Q04",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 4,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q04.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q04.png",
+      "audioStartSec": 3998.997,
+      "audioEndSec": 4084.979
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 4,
+      "questionTimestamp": {
+        "startSeconds": 3998.997,
+        "endSeconds": 4084.979
+      },
+      "frameTimestampSeconds": 4041.988,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 86.387,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q05",
+    "sourceQuestionId": "P2-S2-Q05",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 5,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q05.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q05.png",
+      "audioStartSec": 4095.203,
+      "audioEndSec": 4158.387
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 5,
+      "questionTimestamp": {
+        "startSeconds": 4095.203,
+        "endSeconds": 4158.387
+      },
+      "frameTimestampSeconds": 4126.795,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 63.582,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q06",
+    "sourceQuestionId": "P2-S2-Q06",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 6,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q06.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q06.png",
+      "audioStartSec": 4168.647,
+      "audioEndSec": 4245.841
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 6,
+      "questionTimestamp": {
+        "startSeconds": 4168.647,
+        "endSeconds": 4245.841
+      },
+      "frameTimestampSeconds": 4207.244,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 77.61,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q07",
+    "sourceQuestionId": "P2-S2-Q07",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 7,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q07.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q07.png",
+      "audioStartSec": 4256.162,
+      "audioEndSec": 4354.301
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 7,
+      "questionTimestamp": {
+        "startSeconds": 4256.162,
+        "endSeconds": 4354.301
+      },
+      "frameTimestampSeconds": 4305.231,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 98.56,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q08",
+    "sourceQuestionId": "P2-S2-Q08",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 8,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q08.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q08.png",
+      "audioStartSec": 4364.614,
+      "audioEndSec": 4419.731
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 8,
+      "questionTimestamp": {
+        "startSeconds": 4364.614,
+        "endSeconds": 4419.731
+      },
+      "frameTimestampSeconds": 4392.172,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 55.536,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q09",
+    "sourceQuestionId": "P2-S2-Q09",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 9,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q09.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q09.png",
+      "audioStartSec": 4430.176,
+      "audioEndSec": 4475.401
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 9,
+      "questionTimestamp": {
+        "startSeconds": 4430.176,
+        "endSeconds": 4475.401
+      },
+      "frameTimestampSeconds": 4452.789,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 45.636,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q10",
+    "sourceQuestionId": "P2-S2-Q10",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 10,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q10.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q10.png",
+      "audioStartSec": 4485.713,
+      "audioEndSec": 4581.856
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 4,
+      "optionId": "4"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 10,
+      "questionTimestamp": {
+        "startSeconds": 4485.713,
+        "endSeconds": 4581.856
+      },
+      "frameTimestampSeconds": 4533.784,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 96.549,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q11",
+    "sourceQuestionId": "P2-S2-Q11",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 11,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q11.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q11.png",
+      "audioStartSec": 4597.166,
+      "audioEndSec": 4637.031
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 11,
+      "questionTimestamp": {
+        "startSeconds": 4597.166,
+        "endSeconds": 4637.031
+      },
+      "frameTimestampSeconds": 4617.099,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 40.281,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q12",
+    "sourceQuestionId": "P2-S2-Q12",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 12,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q12.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q12.png",
+      "audioStartSec": 4647.433,
+      "audioEndSec": 4743.671
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 12,
+      "questionTimestamp": {
+        "startSeconds": 4647.433,
+        "endSeconds": 4743.671
+      },
+      "frameTimestampSeconds": 4695.552,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 96.653,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q13",
+    "sourceQuestionId": "P2-S2-Q13",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 13,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q13.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q13.png",
+      "audioStartSec": 4754.008,
+      "audioEndSec": 4816.708
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 3,
+      "optionId": "3"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 13,
+      "questionTimestamp": {
+        "startSeconds": 4754.008,
+        "endSeconds": 4816.708
+      },
+      "frameTimestampSeconds": 4785.358,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 63.112,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q14",
+    "sourceQuestionId": "P2-S2-Q14",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 14,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q14.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q14.png",
+      "audioStartSec": 4827.029,
+      "audioEndSec": 4913.973
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 2,
+      "optionId": "2"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 14,
+      "questionTimestamp": {
+        "startSeconds": 4827.029,
+        "endSeconds": 4913.973
+      },
+      "frameTimestampSeconds": 4870.501,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 87.353,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
+    "editorialReviewed": false
+  },
+  {
+    "id": "BJT_JP02_P2_S2_Q15",
+    "sourceQuestionId": "P2-S2-Q15",
+    "type": "listening_source_index_choice",
+    "section": "BJT J+ 02 P2 S2",
+    "number": 15,
+    "isOriginalQuestion": true,
+    "difficulty": "J+",
+    "category": "聴読解",
+    "part": 2,
+    "sectionNumber": 2,
+    "question": "画像資料を見ながら音声を聞き、原題の指示に従って1〜4から選んでください。",
+    "questionZhTW": "請同時查看題目圖片中的資料並聽音檔，依原題指示從 1～4 中選擇答案。",
+    "visualContext": null,
+    "media": {
+      "audio": "assets/listening/BJT_JPLUS02/audio/BJT_JP02_P2_S2_Q15.mp3",
+      "image": "assets/listening/BJT_JPLUS02/images/BJT_JP02_P2_S2_Q15.png",
+      "audioStartSec": 4923.795,
+      "audioEndSec": 4992.546
+    },
+    "display": {
+      "showOptionTextDuringQuestion": false,
+      "showTranscriptBeforeAnswer": false,
+      "showImageDuringPlayback": true,
+      "revealOptionTextAfterAnswer": false
+    },
+    "audioTranscript": {
+      "status": "not_available",
+      "scope": "none",
+      "note": "來源未提供可直接驗證的完整逐字稿；本題不使用 ASR 猜測內容。",
+      "choices": []
+    },
+    "options": [
+      {
+        "id": "1",
+        "originalIndex": 1,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "2",
+        "originalIndex": 2,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "3",
+        "originalIndex": 3,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      },
+      {
+        "id": "4",
+        "originalIndex": 4,
+        "text": "",
+        "zhTW": "",
+        "explanation": ""
+      }
+    ],
+    "correctAnswer": {
+      "originalIndex": 1,
+      "optionId": "1"
+    },
+    "correctReason": "本題目前只保留由來源影片答案表驗證的正解序號；來源沒有提供可可靠核對的逐字稿與逐項詳解，因此 App 不自行生成或猜測解析。",
+    "sourceExplanationJa": "",
+    "coreKnowledge": [],
+    "relatedKnowledge": [],
+    "kanjiKana": [],
+    "trap": "",
+    "source": {
+      "file": "BJT J+ 02.mp4",
+      "part": 2,
+      "section": 2,
+      "questionNumber": 15,
+      "questionTimestamp": {
+        "startSeconds": 4923.795,
+        "endSeconds": 4992.546
+      },
+      "frameTimestampSeconds": 4958.171,
+      "segmentationBasis": "long-silence boundary + visual section/question cross-check",
+      "segmentationConfidence": "high"
+    },
+    "packId": "BJT_JPLUS02_P2_S2",
+    "audioDurationSec": 69.172,
+    "reviewMode": "answer_key_only",
+    "reviewStatus": "verified_answer_only",
+    "dataRule": "題目圖片中的文字、表格或文件與音檔都屬於題目本體。資料包沒有可驗證的完整逐字稿或逐項解析，因此 App 不補寫內容。",
+    "imageRequired": true,
+    "audioRequired": true,
     "editorialReviewed": false
   }
 ];
