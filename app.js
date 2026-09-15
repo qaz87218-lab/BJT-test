@@ -299,14 +299,14 @@
     ls.openedAt=ls.openedAt||now;ls.quickAttempts=(ls.quickAttempts||0)+1;ls.lastScore=score;ls.bestScore=Math.max(ls.bestScore||0,score);ls.lastQuickAt=now;
     recordDaily('quickChecks',1);
     if(pass){ls.readAt=ls.readAt||now;if(dueReview){ls.reviewed48h=true;ls.dueAt=0;state.game.reviewSuccesses=(state.game.reviewSuccesses||0)+1;recordDaily('reviewActions',1);awardXp(10,'48h 課程複習')}else if(firstPass){ls.passedAt=now;ls.dueAt=now+48*3600000;}if(firstPass&&!state.game.quickRewards[id]){state.game.quickRewards[id]=Date.now();awardXp(score===1?25:20,'Quick Check 通過')}}
-    state.learning.lessons[id]=ls;checkGameAchievements();saveState();lessonQuizResult={lessonId:id,answers:{...draft},score,pass};renderSystem();toast(pass?`Quick Check 通過${firstPass?` · EXP +${score===1?25:20}`:''}`:'未達 80%，看解析後再試一次');
+    state.learning.lessons[id]=ls;checkGameAchievements();saveState();lessonQuizResult={lessonId:id,answers:{...draft},score,pass};renderSystem();requestAnimationFrame(()=>{const el=document.getElementById('lesson-sec-quick');if(el){const top=window.scrollY+el.getBoundingClientRect().top-88;window.scrollTo({top:Math.max(0,top),behavior:'auto'})}});toast(pass?`Quick Check 通過${firstPass?` · EXP +${score===1?25:20}`:''}`:'未達 80%，看解析後再試一次');
   }
-  function resetLessonQuiz(id){lessonQuizDraft[id]={};lessonQuizResult=null;renderSystem()}
+  function resetLessonQuiz(id){lessonQuizDraft[id]={};lessonQuizResult=null;renderSystem();requestAnimationFrame(()=>{const el=document.getElementById('lesson-sec-quick');if(el){const top=window.scrollY+el.getBoundingClientRect().top-88;window.scrollTo({top:Math.max(0,top),behavior:'auto'})}})}
   function renderLessonQuickCheck(l){
     const checks=l.quickChecks||[], draft=lessonQuizDraft[l.id]||{}, result=lessonQuizResult&&lessonQuizResult.lessonId===l.id?lessonQuizResult:null, ls=lessonState(l.id), seq=lessonSequenceInfo(l.id);
     if(!checks.length)return '<section id="lesson-sec-quick" class="card lesson-block lesson-jump-target"><h3>Quick Check</h3><p class="small">本課目前沒有課內測驗。</p></section>';
     const nextAction=result?.pass?`<button class="btn primary" id="quickNextLesson">${seq.next?'下一課 →':'完成全部課程・回系統學習'}</button>`:'';
-    return `<section id="lesson-sec-quick" class="card lesson-block lesson-quiz lesson-jump-target"><div class="lesson-section-head"><div><span class="lesson-kicker">QUICK CHECK</span><h3>理解確認</h3></div><span class="status-badge">最佳 ${Math.round((ls.bestScore||0)*100)}%</span></div>${checks.map((q,qi)=>`<div class="lesson-qc"><b>Q${qi+1}. ${esc(q.q)}</b><div class="lesson-qc-options">${(q.options||[]).map((opt,oi)=>{const sel=draft[qi]===oi;const ok=result&&oi===q.answer;const wrong=result&&sel&&oi!==q.answer;return `<button class="lesson-qc-opt ${sel?'selected':''} ${ok?'correct':''} ${wrong?'wrong':''}" data-lq="${qi}" data-lo="${oi}" ${result?'disabled':''}>${oi+1}. ${esc(opt)}</button>`}).join('')}</div>${result?`<div class="lesson-qc-explain ${result.answers[qi]===q.answer?'ok':'ng'}"><b>${result.answers[qi]===q.answer?'✓ 正確':'✕ 正解：'+(q.answer+1)}</b><span>${esc(q.explain||'')}</span></div>`:''}</div>`).join('')}<div class="actions">${result?`<button class="btn" id="retryLessonQuiz">重新作答</button><span class="lesson-quiz-score ${result.pass?'pass':'fail'}">${Math.round(result.score*100)}% · ${result.pass?'通過':'未通過'}</span>${nextAction}`:`<button class="btn primary" id="submitLessonQuiz">送出 Quick Check</button>`}</div></section>`;
+    return `<section id="lesson-sec-quick" class="card lesson-block lesson-quiz lesson-jump-target"><div class="lesson-section-head"><div><span class="lesson-kicker">QUICK CHECK</span><h3>理解確認</h3></div><span class="status-badge">最佳 ${Math.round((ls.bestScore||0)*100)}%</span></div>${checks.map((q,qi)=>`<div class="lesson-qc"><b>Q${qi+1}. ${esc(q.q)}</b><div class="lesson-qc-options">${(q.options||[]).map((opt,oi)=>{const sel=draft[qi]===oi;const ok=result&&oi===q.answer;const wrong=result&&sel&&oi!==q.answer;return `<button class="lesson-qc-opt ${sel?'selected':''} ${ok?'correct':''} ${wrong?'wrong':''}" data-lq="${qi}" data-lo="${oi}" aria-pressed="${sel?'true':'false'}" ${result?'disabled':''}>${oi+1}. ${esc(opt)}</button>`}).join('')}</div>${result?`<div class="lesson-qc-explain ${result.answers[qi]===q.answer?'ok':'ng'}"><b>${result.answers[qi]===q.answer?'✓ 正確':'✕ 正解：'+(q.answer+1)}</b><span>${esc(q.explain||'')}</span></div>`:''}</div>`).join('')}<div class="actions">${result?`<button class="btn" id="retryLessonQuiz">重新作答</button><span class="lesson-quiz-score ${result.pass?'pass':'fail'}">${Math.round(result.score*100)}% · ${result.pass?'通過':'未通過'}</span>${nextAction}`:`<button class="btn primary" id="submitLessonQuiz">送出 Quick Check</button>`}</div></section>`;
   }
   function lessonSectionDefs(l){
     const defs=[
@@ -357,7 +357,17 @@
     document.getElementById('toggleLessonReading').onclick=()=>{state.settings.showReadings=!state.settings.showReadings;saveState();renderSystem()};
     document.getElementById('toggleLessonZh').onclick=()=>{state.settings.showTranslations=!state.settings.showTranslations;saveState();renderSystem()};
     document.getElementById('markLessonRead').onclick=()=>markLessonRead(l.id);document.getElementById('lessonPracticeBtn').onclick=()=>startLessonPractice(l.id);
-    document.querySelectorAll('[data-lq]').forEach(b=>b.onclick=()=>{lessonQuizDraft[l.id]=lessonQuizDraft[l.id]||{};lessonQuizDraft[l.id][Number(b.dataset.lq)]=Number(b.dataset.lo);lessonQuizResult=null;renderSystem()});
+    document.querySelectorAll('[data-lq]').forEach(b=>b.onclick=()=>{
+      lessonQuizDraft[l.id]=lessonQuizDraft[l.id]||{};
+      const qi=Number(b.dataset.lq), oi=Number(b.dataset.lo);
+      lessonQuizDraft[l.id][qi]=oi; lessonQuizResult=null;
+      const group=b.closest('.lesson-qc-options');
+      if(group) group.querySelectorAll('[data-lq]').forEach(opt=>{
+        const selected=Number(opt.dataset.lo)===oi;
+        opt.classList.toggle('selected',selected);
+        opt.setAttribute('aria-pressed',selected?'true':'false');
+      });
+    });
     const submit=document.getElementById('submitLessonQuiz');if(submit)submit.onclick=()=>submitLessonQuiz(l.id);const retry=document.getElementById('retryLessonQuiz');if(retry)retry.onclick=()=>resetLessonQuiz(l.id);const quickNext=document.getElementById('quickNextLesson');if(quickNext)quickNext.onclick=()=>goLessonSequence(l.id,1);
     document.querySelectorAll('[data-lesson-k]').forEach(b=>b.onclick=()=>startTagSession(b.dataset.lessonK));document.querySelectorAll('[data-lesson-a]').forEach(b=>b.onclick=()=>openArticle(b.dataset.lessonA));document.querySelectorAll('[data-lesson-q]').forEach(b=>b.onclick=()=>practiceOne(b.dataset.lessonQ));document.querySelectorAll('[data-lesson-listen]').forEach(b=>b.onclick=()=>startListeningOne(b.dataset.lessonListen));
     document.querySelectorAll('[data-lesson-jump]').forEach(b=>b.onclick=()=>jumpToLessonSection(b.dataset.lessonJump));

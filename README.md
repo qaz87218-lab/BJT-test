@@ -1,4 +1,11 @@
-# BJT 深度學習刷題 App — v13.2 NAVIGATION UX
+# v13.3 Privacy + Quick Check UX
+
+- Quick Check 選答案不再整頁重繪，避免手機畫面亂跳；送出／重新作答後固定回到 Quick Check 區。
+- 清除使用者公司與內部人員名稱：以虛構公司「青葉リンク」及通用虛構姓名替代。
+- 非視覺必須的 QPACK 題不再依賴原始截圖；O016／O022 必看圖仍完整保留。
+- 既有題目 ID、答案、EXP、localStorage key 與 75 題聽力媒體均不變。
+
+# BJT 深度學習刷題 App — v13.3 PRIVACY + QUICK CHECK UX
 
 ## v13.2：課程連續學習 + 一鍵返回大項首頁
 - 系統學習每一課新增「上一課／回系統學習／下一課」導覽。

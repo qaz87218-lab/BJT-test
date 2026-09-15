@@ -5755,7 +5755,7 @@ window.BJT_QUESTIONS = [
     "source_pack_aliases": [
       "QPACK_BJT_20260914_THREAD_FULL"
     ],
-    "source_asset": "assets/qpack_20260914/O001.png"
+    "source_asset": null
   },
   {
     "id": "BJT-E-0016",
@@ -6122,7 +6122,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O002",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O002.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -6182,7 +6182,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O003",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O003.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -6250,7 +6250,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O004",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O004.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -6312,7 +6312,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O005",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O005.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -6384,7 +6384,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O006",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O006.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -6392,7 +6392,7 @@ window.BJT_QUESTIONS = [
     "type": "keigo",
     "passage": "",
     "assets": [],
-    "stem": "A：上田部長さまはいらっしゃいますか。\nB：上田は今、出掛けております。私でよろしければ、ご用件を＿＿＿＿。",
+    "stem": "A：高橋部長さまはいらっしゃいますか。\nB：高橋は今、出掛けております。私でよろしければ、ご用件を＿＿＿＿。",
     "options": [
       "聞きましょうか",
       "伺ってあげます",
@@ -6401,8 +6401,8 @@ window.BJT_QUESTIONS = [
     ],
     "answer": 2,
     "category": "敬語",
-    "explanation": "「伺う」可作「聞く／尋ねる／訪ねる」的謙讓語。本題 B 對外部來電者說「如果我可以的話，我來聽您的用件」，自己的「聞く」要謙讓，因此「ご用件をお伺いいたします」最適切。\n\n【證據】\n・「私でよろしければ、ご用件をお伺いいたします。」：B 自己向客戶聽取事項，用謙讓語降低自己。\n・「上田は今、出掛けております。」：對外談自己公司上田，不抬高自己人。\n\n【解題步驟】\n1. 動作者＝B本人\n2. 對客戶執行「聞く」→謙讓\n3. 聞く／尋ねる→伺う\n4. 正式化為「お伺いいたします」\n5. 選③\n\n【校閱補充】「お伺いいたします」雖形式上可分析為敬語重疊，但文化廳《敬語の指針》把「お伺いする／お伺いいたす」列為已習慣定著、可接受的形式；因此不能把它一律當成錯誤二重敬語。",
-    "translation_zh_tw": "A：請問上田部長在嗎？\nB：上田現在外出了。如果由我來處理也可以的話，我來聽取您的事項。",
+    "explanation": "「伺う」可作「聞く／尋ねる／訪ねる」的謙讓語。本題 B 對外部來電者說「如果我可以的話，我來聽您的用件」，自己的「聞く」要謙讓，因此「ご用件をお伺いいたします」最適切。\n\n【證據】\n・「私でよろしければ、ご用件をお伺いいたします。」：B 自己向客戶聽取事項，用謙讓語降低自己。\n・「高橋は今、出掛けております。」：對外談自己公司高橋，不抬高自己人。\n\n【解題步驟】\n1. 動作者＝B本人\n2. 對客戶執行「聞く」→謙讓\n3. 聞く／尋ねる→伺う\n4. 正式化為「お伺いいたします」\n5. 選③\n\n【校閱補充】「お伺いいたします」雖形式上可分析為敬語重疊，但文化廳《敬語の指針》把「お伺いする／お伺いいたす」列為已習慣定著、可接受的形式；因此不能把它一律當成錯誤二重敬語。",
+    "translation_zh_tw": "A：請問高橋部長在嗎？\nB：高橋現在外出了。如果由我來處理也可以的話，我來聽取您的事項。",
     "readings": [
       {
         "surface": "伺う",
@@ -6444,7 +6444,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O007",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O007.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -6494,7 +6494,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O008",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O008.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -6552,7 +6552,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O009",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O009.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -6610,7 +6610,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O010",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O010.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -6676,7 +6676,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O011",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O011.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -6744,7 +6744,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O012",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O012.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -6814,7 +6814,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O013",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O013.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -6886,7 +6886,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O014",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O014.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -6962,7 +6962,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O015",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O015.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -7090,7 +7090,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O017",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O017.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -7162,7 +7162,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O018",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O018.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -7234,7 +7234,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O019",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O019.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -7298,7 +7298,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O020",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O020.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -7368,7 +7368,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O021",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O021.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -7508,7 +7508,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O023",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O023.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -7578,7 +7578,7 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O024",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O024.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
@@ -7646,21 +7646,21 @@ window.BJT_QUESTIONS = [
     ],
     "legacy_id": "BJT-QPACK-20260914-O025",
     "source_pack": "QPACK_BJT_20260914_THREAD_FULL",
-    "source_asset": "assets/qpack_20260914/O025.png",
+    "source_asset": null,
     "visual_required": false
   },
   {
     "id": "PBJ-C01-Q01",
     "stem": "最も適切な対応・理解はどれですか。",
     "options": [
-      "初めまして。株式会社HARIHIROの石と申します。",
-      "HARIHIROの石です。",
-      "石さんです。",
-      "石でいらっしゃいます。"
+      "初めまして。株式会社青葉リンクの佐藤と申します。",
+      "青葉リンクの佐藤です。",
+      "佐藤さんです。",
+      "佐藤でいらっしゃいます。"
     ],
     "answer": 0,
     "category": "實用商務｜挨拶",
-    "explanation": "本題場景是「初対面の取引先に自己紹介する。」，考點是「名乗り」。正解「初めまして。株式会社HARIHIROの石と申します。」同時符合本章的商務語域、人物關係與發話目的；判斷時不要只看字面，而要確認誰對誰說、資訊是否已確定，以及下一步要做什麼。",
+    "explanation": "本題場景是「初対面の取引先に自己紹介する。」，考點是「名乗り」。正解「初めまして。株式会社青葉リンクの佐藤と申します。」同時符合本章的商務語域、人物關係與發話目的；判斷時不要只看字面，而要確認誰對誰說、資訊是否已確定，以及下一步要做什麼。",
     "source": "實用商務",
     "tags": [
       "pb-k01",
@@ -7675,10 +7675,10 @@ window.BJT_QUESTIONS = [
     "trap": "不要只按字面選；先判斷人物關係、資訊確定度與說話者真正目的。",
     "readingPassage": "場面：初対面（しょたいめん）の取引先（とりひきさき）に自己紹介（しょうかい）（じこしょうかい）する。",
     "readingOptions": [
-      "初めまして。株式会社（かぶしきがいしゃ）HARIHIROの石と申します（もうします）。",
-      "HARIHIROの石です。",
-      "石さんです。",
-      "石でいらっしゃいます。"
+      "初めまして。株式会社（かぶしきがいしゃ）青葉リンクの佐藤と申します（もうします）。",
+      "青葉リンクの佐藤です。",
+      "佐藤さんです。",
+      "佐藤でいらっしゃいます。"
     ]
   },
   {
@@ -7818,11 +7818,11 @@ window.BJT_QUESTIONS = [
       "山田さん、いる？",
       "山田を呼んでください。",
       "山田様が私に会います。",
-      "山田様にお目にかかる予定の石と申します。"
+      "山田様にお目にかかる予定の佐藤と申します。"
     ],
     "answer": 3,
     "category": "實用商務｜挨拶",
-    "explanation": "本題場景是「初訪問先の受付で名乗る。」，考點是「訪問」。正解「山田様にお目にかかる予定の石と申します。」同時符合本章的商務語域、人物關係與發話目的；判斷時不要只看字面，而要確認誰對誰說、資訊是否已確定，以及下一步要做什麼。",
+    "explanation": "本題場景是「初訪問先の受付で名乗る。」，考點是「訪問」。正解「山田様にお目にかかる予定の佐藤と申します。」同時符合本章的商務語域、人物關係與發話目的；判斷時不要只看字面，而要確認誰對誰說、資訊是否已確定，以及下一步要做什麼。",
     "source": "實用商務",
     "tags": [
       "pb-k01",
@@ -7840,7 +7840,7 @@ window.BJT_QUESTIONS = [
       "山田さん、いる？",
       "山田を呼んでください。",
       "山田様が私に会います。",
-      "山田様にお目にかかる（めにかかる）予定（よてい）の石と申します（もうします）。"
+      "山田様にお目にかかる（めにかかる）予定（よてい）の佐藤と申します（もうします）。"
     ]
   },
   {
@@ -8300,14 +8300,14 @@ window.BJT_QUESTIONS = [
     "id": "PBJ-C02-Q01",
     "stem": "最も適切な対応・理解はどれですか。",
     "options": [
-      "お電話ありがとうございます。株式会社HARIHIROでございます。",
+      "お電話ありがとうございます。株式会社青葉リンクでございます。",
       "はい。",
       "何の用ですか。",
       "もしもし、誰？"
     ],
     "answer": 0,
     "category": "實用商務｜電話の応対",
-    "explanation": "本題場景是「会社で外線電話を取る。」，考點是「受電」。正解「お電話ありがとうございます。株式会社HARIHIROでございます。」同時符合本章的商務語域、人物關係與發話目的；判斷時不要只看字面，而要確認誰對誰說、資訊是否已確定，以及下一步要做什麼。",
+    "explanation": "本題場景是「会社で外線電話を取る。」，考點是「受電」。正解「お電話ありがとうございます。株式会社青葉リンクでございます。」同時符合本章的商務語域、人物關係與發話目的；判斷時不要只看字面，而要確認誰對誰說、資訊是否已確定，以及下一步要做什麼。",
     "source": "實用商務",
     "tags": [
       "pb-k03",
@@ -8322,7 +8322,7 @@ window.BJT_QUESTIONS = [
     "trap": "不要只按字面選；先判斷人物關係、資訊確定度與說話者真正目的。",
     "readingPassage": "場面：会社で外線（がいせん）電話（でんわ）を取る。",
     "readingOptions": [
-      "お電話（でんわ）ありがとうございます。株式会社（かぶしきがいしゃ）HARIHIROでございます。",
+      "お電話（でんわ）ありがとうございます。株式会社（かぶしきがいしゃ）青葉リンクでございます。",
       "はい。",
       "何の用ですか。",
       "もしもし、誰？"
