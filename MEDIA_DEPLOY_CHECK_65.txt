@@ -1,0 +1,15 @@
+BJT v13.1｜65 題聽力媒體部署檢核
+
+這 65 題使用以下兩個目錄：
+- assets/listening/BJT_JPLUS02/images/   （65 張 PNG）
+- assets/listening/BJT_JPLUS02/audio/    （65 個 MP3）
+
+若 App 已顯示「75 題」與 BJT J+ 02 題組，但圖片破圖、音檔無法播放，代表 listening_data.js / app.js 已部署成功，但上面兩個新媒體目錄沒有被網站實際提供。
+
+修復方式：把 images 與 audio 兩個資料夾完整上傳到上述相對路徑，保留大小寫與檔名。
+
+抽查檔案：
+- assets/listening/BJT_JPLUS02/images/BJT_JP02_P1_S2_Q01.png
+- assets/listening/BJT_JPLUS02/audio/BJT_JP02_P1_S2_Q01.mp3
+
+若這兩個檔案在部署後能直接由網站相對路徑取得，65 題就會正常顯示／播放。
