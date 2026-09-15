@@ -1,0 +1,32 @@
+{
+  "unchanged": {
+    "data.js": true,
+    "option_details.js": true,
+    "article_details.js": true,
+    "business_course.js": true,
+    "lessons.js": true,
+    "game_data.js": true,
+    "listening_data.js": true,
+    "index.html": true,
+    "manifest.webmanifest": true
+  },
+  "media": {
+    "new65_images": 65,
+    "new65_audio": 65,
+    "legacy10_images": 10
+  },
+  "ui_markers": {
+    "quickNextLesson": true,
+    "lessonPrevBtn": true,
+    "lessonNextBtn": true,
+    "lessonHomeBtn": true,
+    "practiceHomeBtn": true,
+    "listeningHomeNowBtn": true,
+    "function exitPracticeToParent": true,
+    "function lessonSequenceInfo": true
+  },
+  "sw": [
+    "const CORE_CACHE='bjt-deep-v13-2-nav-listening-75q-mediafix-20260915';",
+    "const MEDIA_CACHE='bjt-media-v13-2-nav-listening-75q-mediafix-20260915';"
+  ]
+}

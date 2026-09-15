@@ -1,5 +1,5 @@
-const CORE_CACHE='bjt-deep-v13-1-listening-75q-mediafix-20260915';
-const MEDIA_CACHE='bjt-media-v13-1-listening-75q-mediafix-20260915';
+const CORE_CACHE='bjt-deep-v13-2-nav-listening-75q-mediafix-20260915';
+const MEDIA_CACHE='bjt-media-v13-2-nav-listening-75q-mediafix-20260915';
 const CORE_ASSETS=[
   './','./index.html','./styles.css','./data.js','./option_details.js','./article_details.js',
   './business_course.js','./lessons.js','./game_data.js','./listening_data.js','./app.js','./manifest.webmanifest',
