@@ -14,7 +14,7 @@
   const ROLE_HINT_FOR_QUESTION = window.BJT_ROLE_HINT_FOR_QUESTION || (()=>'');
   const LQMAP = Object.fromEntries(LISTENING_QUESTIONS.map(q=>[q.id,q]));
   const LATEST_FEATURE='listening';
-  // v13.9 — 題庫分冊：保留原始題目資料，只在 UI／練習層建立冊與 Section 映射。
+  // v13.9.1 — 題庫分冊 hotfix：保留原始題目資料，只在 UI／練習層建立冊與 Section 映射。
   const ORIGINAL_ORDER = QUESTIONS.filter(q=>q.source==='原題').map(q=>q.id);
   const ORIGINAL_READING_BOOKS = [
     {id:'READING_BOOK_01',order:1,title:'第1冊',subtitle:'BJT 讀解模擬',sections:[
@@ -557,7 +557,7 @@
     const root=document.getElementById('view-practice');
     if(!session){
       if(practiceLibraryMode==='original'){renderOriginalLibrary(root);return}
-      const ms=masteryStats(QUESTIONS),one=QUESTIONS.filter(q=>(progressOf(q.id).correct||0)===MASTERY_TARGET-1).length,zero=QUESTIONS.filter(q=>(progressOf(q.id).correct||0)===0).length,high=QUESTIONS.filter(q=>(progressOf(q.id).wrong||0)>=3).length;
+      const ms=masteryStats(QUESTIONS),one=QUESTIONS.filter(q=>(progressOf(q.id).correct||0)===MASTERY_TARGET-1).length,zero=QUESTIONS.filter(q=>(progressOf(q.id).correct||0)===0).length,high=QUESTIONS.filter(q=>(progressOf(q.id).wrong||0)>=3).length,orig=ORIGINAL_ORDER.filter(id=>QMAP[id]).length;
       root.innerHTML=`<section class="card mastery-home-card"><div class="mastery-home-copy"><span class="player-kicker">QUESTION MASTERY</span><h2>刷題完成率 ${ms.percent}%</h2><p>${ms.mastered} / ${ms.total} 題已達成 ★★★★★。每題累積答對 ${MASTERY_TARGET} 次即完成，答錯次數另行保留。</p><div class="progress mastery-progress"><i style="width:${ms.percent}%"></i></div></div><div class="mastery-filter-actions"><button class="btn primary" data-start="mastery-incomplete">未完成 ${ms.remaining}</button><button class="btn" data-start="mastery-one">差 1 次 ${one}</button><button class="btn" data-start="mastery-zero">0 次正解 ${zero}</button><button class="btn" data-start="mastery-done">已完成 ${ms.mastered}</button><button class="btn ${high?'bad':''}" data-start="mastery-high-error">高錯誤 ${high}</button></div></section><div class="section-title"><div><h2>選擇刷題方式</h2><p>原題先打底，延伸題負責把知識變成真正會用。</p></div></div><div class="grid mode-grid">
         ${modeCard('system','系統學習',`${LESSONS.length} 課／${systemStats().understood} 課已理解`,'先建立 BJT 的人物關係、敬語、交涉、聽解、讀解與高階語用框架。')}
         ${modeCard('original','讀解原題分冊',`${orig} 題｜3 冊完整模擬 + 未編冊`,'依 30 題正式讀解結構分冊；可整冊或按 Section 練習。')}

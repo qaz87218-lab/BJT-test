@@ -1,3 +1,10 @@
+# BJT Deep Practice v13.9.1 — Book Library Hotfix
+
+## v13.9.1 hotfix
+- 修正刷題首頁 `renderPractice()` 中 `orig` 未定義造成頁面主內容停止渲染的 runtime error。
+- 分冊規則、題庫、答案、圖片、音檔、詳解與 localStorage 結構皆不變。
+- 更新 Service Worker cache key，確保 GitHub Pages 取得修正版 `app.js`。
+
 # BJT Deep Practice v13.9 — Book Library / 模擬分冊
 
 ## v13.9 修正重點
