@@ -150,11 +150,16 @@
     return `<section class="stem-understanding context-understanding" id="contextUnderstanding"><div class="stem-understanding-head"><div><span class="lesson-kicker">CONTEXT UNDERSTANDING</span><h3>🧭 情境／前文理解</h3></div></div><div class="stem-understanding-block"><b>情境／前文原文</b><p class="stem-ja">${esc(sourceJa)}</p></div><div class="stem-understanding-block primary"><b>情境／前文中文</b><p>${hasReliableZh?esc(ctx.scenarioZh):'目前沒有可可靠核對的完整中文翻譯；本題先保留原文，不自行補寫內容。'}</p></div>${ctx.roleHint?`<div class="stem-understanding-block"><b>人物／角色關係</b><p>${esc(ctx.roleHint)}</p></div>`:''}<div class="stem-understanding-block"><b>情境重點</b><p>${esc(focus)}</p></div><div class="stem-understanding-block"><b>這個情境要求你做什麼</b><p>${esc(task)}</p></div></section>`;
   }
   function renderStemUnderstanding(q){
-    const zh=stemZh(q), cues=stemCues(q);
-    const questionIntent=q?.course==='practical_business'
-      ? `本題不是只把「最も適切」翻成「最恰當」。你要把上方情境中的人物關係、發話目的與核心考點「${q.coreKnowledge||'場面判斷'}」一起帶入四個選項，選出在這個具體場合最自然、最符合商務日語規則的一項。`
-      : stemIntent(q);
-    return `${renderContextUnderstanding(q)}<section class="stem-understanding" id="stemUnderstanding"><div class="stem-understanding-head"><div><span class="lesson-kicker">QUESTION UNDERSTANDING</span><h3>📘 問題理解</h3></div></div><div class="stem-understanding-block"><b>問題句原文</b><p class="stem-ja">${esc(q?.stem||'')}</p></div><div class="stem-understanding-block primary"><b>問題句中文</b><p>${zh?esc(zh):'目前來源資料沒有可可靠核對的題幹中文；本題不自行補寫。'}</p></div><div class="stem-understanding-block"><b>這題真正要判斷的是</b><p>${esc(questionIntent)}</p></div>${cues.length?`<div class="stem-cue-list">${cues.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}<div class="stem-trap"><b>解題提醒</b><p>${esc(stemTrap(q))}</p></div></section>`;
+    const context=renderContextUnderstanding(q);
+    // Practical-business questions all use the same generic stem
+    // 「最も適切な対応・理解はどれですか。」.  Re-explaining that sentence
+    // adds no learning value after the scenario has already been analysed, so
+    // keep the stem in the question itself and omit the redundant block here.
+    if(q?.course==='practical_business' && q?.passage){
+      return context;
+    }
+    const zh=stemZh(q), cues=stemCues(q), questionIntent=stemIntent(q);
+    return `${context}<section class="stem-understanding" id="stemUnderstanding"><div class="stem-understanding-head"><div><span class="lesson-kicker">QUESTION UNDERSTANDING</span><h3>📘 問題理解</h3></div></div><div class="stem-understanding-block"><b>問題句原文</b><p class="stem-ja">${esc(q?.stem||'')}</p></div><div class="stem-understanding-block primary"><b>問題句中文</b><p>${zh?esc(zh):'目前來源資料沒有可可靠核對的題幹中文；本題不自行補寫。'}</p></div><div class="stem-understanding-block"><b>這題真正要判斷的是</b><p>${esc(questionIntent)}</p></div>${cues.length?`<div class="stem-cue-list">${cues.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}<div class="stem-trap"><b>解題提醒</b><p>${esc(stemTrap(q))}</p></div></section>`;
   }
   function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
   function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1800)}

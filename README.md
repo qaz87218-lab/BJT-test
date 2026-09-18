@@ -1,6 +1,14 @@
-# BJT Deep Practice v13.8 — Context Understanding PATCH
+# BJT Deep Practice v13.8.1 — Context Understanding Cleanup
 
 本版以 v13.7 Typed Choices PATCH V3.1 RC1 為基底，修正「有 passage 的題目只翻譯 stem，卻沒有解釋情境／前文」的結構性問題。
+
+
+## v13.8.1 修正重點
+
+- 實用商務 200 題的 stem 全為通用問句「最も適切な対応・理解はどれですか。」；在已有完整情境理解後，不再重複顯示「問題理解」卡片。
+- 這 200 題仍保留題目本身的 stem，作答介面不變；只移除沒有額外學習價值的重複解說。
+- 非實用商務題仍依原邏輯保留 QUESTION UNDERSTANDING，例如期限、原因、主旨、第一步、人物／行動等真正有資訊量的問題。
+- Service Worker cache 更新為 `bjt-deep-v13-8-1-context-cleanup-20260918`，確保 GitHub Pages 更新後載入新版 `app.js`。
 
 ## v13.8 修正重點
 - 新增 `scenario_understanding.js`，不改寫原始 `data.js`。
