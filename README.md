@@ -1,3 +1,43 @@
+# BJT Deep Practice v13.6 — LISTENING LEARNING v3 RC1
+
+本版將使用者提供的 `BJT_Jplus02_QPACK_v3_learning_PATCH` 匯入既有 65 題 BJT J+ 02 聽力／聽讀解題庫。
+
+- 原 65 題 ID、題號、題目順序、音檔路徑、圖片路徑、正解、originalIndex 均不改動。
+- 正式作答前不顯示逐字稿、讀音、翻譯或解析。
+- 作答後解鎖：正解、日文原始逐字稿、漢字＋括號平假名讀音、繁中翻譯、四選項完整解析。
+- `grammarExplanation` 與 `analysisType` 使用來源資料內容，不自行濃縮或改寫。
+- Learning 欄位為 optional；缺欄位時對應區塊不顯示，不造成 crash。
+- 原 10 題深度解析聽力維持原有格式。
+- `bjtDeepStateV1` 不變，既有答題／熟練度／EXP／稱號／Boss 紀錄沿用。
+
+---
+
+# v13.5 Question Understanding
+
+本版在 v13.4 Question Mastery Engine 基礎上新增「題幹理解層」，不重寫既有題庫與答案。
+
+## 主要更新
+- 416 題文字／閱讀／實用商務題均可取得題幹繁中意思；空格題保留空格，不提前洩漏正解。
+- 作答後解析順序改為：題幹原文 → 題幹中文 → 真正判斷目標 → 題幹關鍵詞／陷阱 → 核心解析 → 四選項詳解。
+- 針對「最も適切」「まず／最初」「いつまで」「理由」「用件／趣旨／目的」、複合條件與必看圖片題提供不同的解題提醒。
+- 解析區新增手機用快速跳轉：題幹理解／核心解析／四選項。
+- 文章詳解的對應題目區也加入題幹理解。
+- 65 題僅有答案表的聽力／聽讀解仍不虛構不存在的逐字稿；既有 10 題深度聽力維持原資料品質。
+- 保留 v13.4 的 Question Mastery、正確／錯誤累計、★★★★★ 完成規則與既有 localStorage `bjtDeepStateV1`。
+- Service Worker core/media cache 更新為 v13.5，並將 `question_understanding.js` 納入核心快取。
+
+## v13.4 Question Mastery Engine（前版）
+- 新增「刷題完成率」：每一題累積答對 **5 次**即視為 ★★★★★ MASTERED；完成率以 0.1% 精度顯示。
+- 完成率直接沿用既有 `bjtDeepStateV1` 的每題 `correct`／`wrong` 歷史，不重置舊紀錄。
+- 每題顯示累積正確次數、錯誤次數、0～5 星熟練進度，以及距離完成還差幾次正解。
+- Dashboard 分別顯示真題／原題、延伸題、實用商務、聽力／聽讀解四類熟練度，並提供全題庫總熟練度。
+- 刷題首頁與聽力首頁新增熟練度篩選：未完成、差 1 次、0 次正解、已完成、高錯誤（答錯 3 次以上）。
+- 題目一覽加入 ★★★★★ 熟練顯示。
+- 第一次由 4 次正解提升到 5 次時觸發 QUESTION/LISTENING MASTERED，僅一次 +5 EXP；之後仍持續累積正確／錯誤次數。
+- `streak` 不再作為題目完成判定，只保留給間隔複習排程使用。
+- Quick Check 不納入刷題完成率，因既有資料只保存課程層級分數，沒有每個小題的歷史正誤次數。
+- Service Worker cache 更新為 v13.4。
+
 # v13.3 Privacy + Quick Check UX
 
 - Quick Check 選答案不再整頁重繪，避免手機畫面亂跳；送出／重新作答後固定回到 Quick Check 區。

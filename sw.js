@@ -1,8 +1,8 @@
-const CORE_CACHE='bjt-deep-v13-3-privacy-quickcheck-20260915';
-const MEDIA_CACHE='bjt-media-v13-3-privacy-quickcheck-20260915';
+const CORE_CACHE='bjt-deep-v13-6-listening-learning-v3-20260918';
+const MEDIA_CACHE='bjt-media-v13-6-listening-learning-v3-20260918';
 const CORE_ASSETS=[
   './','./index.html','./styles.css','./data.js','./option_details.js','./article_details.js',
-  './business_course.js','./lessons.js','./game_data.js','./listening_data.js','./app.js','./manifest.webmanifest',
+  './business_course.js','./lessons.js','./game_data.js','./listening_data.js','./listening_learning_v3.js','./question_understanding.js','./app.js','./manifest.webmanifest',
   './assets/qpack_20260914/O016.png','./assets/qpack_20260914/O022.png'
 ];
 
