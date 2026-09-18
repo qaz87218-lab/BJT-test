@@ -1,3 +1,18 @@
+# BJT Deep Practice v13.9 — Book Library / 模擬分冊
+
+## v13.9 修正重點
+
+- 讀解原題 98 題改為「冊 → Section → 題目」：第1冊、第2冊、第3冊各 30 題；剩餘 8 題獨立為「未編冊真題」。未來新增但尚未正式編冊的原題會自動進入未編冊區。
+- 每冊讀解皆維持 10 題語彙・文法＋10 題表現讀解＋10 題綜合讀解；第3冊依題目功能重新編排，BJT-O-0096 編入表現讀解。
+- 原題每冊支援完整 30 題模擬、整冊隨機，以及各 Section 的順序／隨機練習。
+- 聽力 75 題改為分冊入口：最初 10 題獨立保留；BJT J+ 02 的 65 題設為「第1冊」。
+- 聽力第1冊點入後保留既有 Part／Section，可做完整 65 題、單一 Section、本冊隨機 20 題或未作答題。
+- 預留聽力第2冊、第3冊位置，未匯入前顯示為停用卡片；未來可直接掛接新 collection。
+- 不修改 data.js、listening_data.js、答案、原題 ID、圖片、音檔、typed choices、詳解與 localStorage key。
+- Service Worker cache 更新為 `bjt-deep-v13-9-book-library-20260918`。
+
+## 歷史版本
+
 # BJT Deep Practice v13.8.1 — Context Understanding Cleanup
 
 本版以 v13.7 Typed Choices PATCH V3.1 RC1 為基底，修正「有 passage 的題目只翻譯 stem，卻沒有解釋情境／前文」的結構性問題。
