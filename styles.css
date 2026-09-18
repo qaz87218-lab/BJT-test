@@ -185,3 +185,10 @@ nav{display:grid;gap:8px}.nav-btn{border:0;background:transparent;color:#d1d5db;
 .learning-option-translation p{margin:5px 0 0;line-height:1.7;color:#374151;white-space:pre-wrap}
 .learning-option-grammar ul{margin:7px 0 0;padding-left:1.3em;display:grid;gap:7px;line-height:1.7;color:#374151}
 @media(max-width:640px){.learning-option-head{grid-template-columns:34px minmax(0,1fr)}.learning-option-badges{grid-column:2;justify-content:flex-start}.learning-transcript-text{font-size:14px}.learning-option-card{padding:12px}}
+/* v13.7 — Part 2 / 聴読解 Section 1 typed choices */
+.listening-number-options.typed-choice-options{grid-template-columns:1fr;gap:10px;margin-top:10px}
+.typed-choice-option{min-height:0;padding:13px 15px;display:grid;grid-template-columns:42px minmax(0,1fr);align-items:start;justify-content:stretch;text-align:left;gap:12px}
+.typed-choice-option>span{width:38px;height:38px;font-size:17px;flex:none}
+.typed-choice-option>small{font-size:14px;line-height:1.65;color:#1f2937;font-weight:700;overflow-wrap:anywhere;white-space:normal}
+.typed-choice-option.correct>small{color:#14532d}.typed-choice-option.wrong>small{color:#7f1d1d}
+@media(max-width:620px){.listening-number-options.typed-choice-options{grid-template-columns:1fr}.typed-choice-option{grid-template-columns:36px minmax(0,1fr);padding:12px 13px;gap:10px}.typed-choice-option>span{width:34px;height:34px;font-size:16px}.typed-choice-option>small{font-size:13px;line-height:1.6}}

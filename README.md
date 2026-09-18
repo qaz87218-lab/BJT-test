@@ -1,3 +1,31 @@
+# BJT Deep Practice v13.8 — Context Understanding PATCH
+
+本版以 v13.7 Typed Choices PATCH V3.1 RC1 為基底，修正「有 passage 的題目只翻譯 stem，卻沒有解釋情境／前文」的結構性問題。
+
+## v13.8 修正重點
+- 新增 `scenario_understanding.js`，不改寫原始 `data.js`。
+- 416 題中 248 題含 `passage`：200 題實用商務使用獨立情境中文；另外 48 題文章／閱讀題沿用 `article_details.js` 的 `translation_zh_tw`。
+- 解題區正式拆為 `CONTEXT UNDERSTANDING`（情境／前文理解）＋ `QUESTION UNDERSTANDING`（問題理解）。
+- 實用商務題新增：情境中文、人物／角色提示（僅能由題目支持時顯示）、章節情境焦點、溝通任務，以及把情境條件帶入四選項的判斷說明。
+- 保留 v13.7 的 Typed Choices V3.1、題號、答案、圖片、音檔、localStorage key 與既有學習資料。
+- Service Worker cache 更新為 `bjt-deep-v13-8-context-understanding-20260918`，並納入 `scenario_understanding.js`。
+
+---
+
+## Previous baseline: v13.7 — Typed Choices PATCH
+
+本版以 v13.6 LISTENING LEARNING v3 為基底，套用使用者提供的 `BJT_Jplus02_QPACK_v3_1_typed_choices_PATCH`。
+
+- 僅更新 BJT J+ 02｜第2部 聴読解・Section 1 的 Q01～Q15 作答區。
+- 原題圖片與音檔完整保留。
+- 圖片下方新增 ①～④ 清晰文字選項，共 60 個 typed choices。
+- 文字內容逐字採用 PATCH 的 `test.choices[].text`；不 OCR、不改寫、不重新生成。
+- 選項永遠依 `originalIndex` 1→4 顯示。
+- `listening_data.js` 與 `listening_learning_v3.js` 不修改，確保題號、音檔、圖片、正解與 Learning / Review 向後相容。
+- 作答前只顯示正式作答資料；逐字稿、讀音、繁中翻譯、文法／語用解析仍在作答後解鎖。
+
+---
+
 # BJT Deep Practice v13.6 — LISTENING LEARNING v3 RC1
 
 本版將使用者提供的 `BJT_Jplus02_QPACK_v3_learning_PATCH` 匯入既有 65 題 BJT J+ 02 聽力／聽讀解題庫。
