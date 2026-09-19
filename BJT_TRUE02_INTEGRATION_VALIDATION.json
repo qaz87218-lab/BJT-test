@@ -1,0 +1,9 @@
+{
+  "questions": 50,
+  "learning": 50,
+  "options": 200,
+  "typedChoiceQuestions": 25,
+  "typedChoices": 100,
+  "audio": 50,
+  "images": 50
+}

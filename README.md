@@ -1,3 +1,14 @@
+# BJT Deep Practice v14.0 — Listening Book 02 + Learning v3
+
+## v14.0 (2026-09-19)
+- 新增聽力第2冊 `BJT 聴力 真題 02` 共 50 題。
+- 第1部聽解 25 題：Section 1=5、Section 2=10、Section 3=10。
+- 第2部聽讀解 25 題：Section 1=5、Section 2=10、Section 3=10。
+- 保留原始 50 MP3、50 題圖片、原 ID、originalIndex 與答案表。
+- 第2部 25 題保留 100 個 typed choices；第1部作答前不顯示發話選項文字。
+- Learning v3 補齊 50/50 日文逐字稿、50/50 讀音層、50/50 繁中翻譯、50/50 四選項解析（200 個選項）。
+- 聽力首頁現為：早期10題 + 第1冊65題 + 第2冊50題；第3冊保留。
+
 # BJT Deep Practice v13.9.1 — Book Library Hotfix
 
 ## v13.9.1 hotfix
