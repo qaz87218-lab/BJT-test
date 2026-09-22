@@ -1,0 +1,20 @@
+{
+  "version": "v14.1",
+  "collectionId": "BJT_TRUE03",
+  "questionCount": 65,
+  "packCount": 5,
+  "sectionCounts": {
+    "P1S1": 10,
+    "P1S2": 10,
+    "P1S3": 15,
+    "P2S1": 15,
+    "P2S2": 15
+  },
+  "answerCount": 65,
+  "audioFileCount": 65,
+  "imageFileCount": 65,
+  "learningCount": 65,
+  "furiganaCount": 65,
+  "translationCount": 65,
+  "optionAnalysisCount": 260
+}

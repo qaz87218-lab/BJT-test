@@ -1,3 +1,17 @@
+# v14.1 — Listening Book 03 Integration
+
+新增 **聽力第3冊｜BJT 聴力 真題 03（65題）**。
+
+- 第1部 聴解：Section 1 = 10題、Section 2 = 10題、Section 3 = 15題
+- 第2部 聴読解：Section 1 = 15題、Section 2 = 15題
+- 65 個逐題 MP3、65 張題目圖
+- 65/65 日文逐字稿、漢字括號假名、繁體中文
+- 65/65 Learning v3 review、260 個選項解析
+- 正解由來源影片末尾答案表核對
+- 第1、2冊資料不改寫；第3冊沿用同一分冊 → Part → Section → 題目流程
+
+---
+
 # BJT Deep Practice v14.0 — Listening Book 02 + Learning v3
 
 ## v14.0 (2026-09-19)
