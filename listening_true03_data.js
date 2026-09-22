@@ -230,8 +230,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S1_Q01.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S1_Q01.jpg",
-      "audioStartSec": 45,
-      "audioEndSec": 68.75
+      "audioStartSec": 46.774,
+      "audioEndSec": 73.314
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -329,8 +329,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S1_Q02.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S1_Q02.jpg",
-      "audioStartSec": 69,
-      "audioEndSec": 99.75
+      "audioStartSec": 76.107,
+      "audioEndSec": 100.794
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -428,8 +428,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S1_Q03.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S1_Q03.jpg",
-      "audioStartSec": 100,
-      "audioEndSec": 133.75
+      "audioStartSec": 103.642,
+      "audioEndSec": 127.773
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -527,8 +527,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S1_Q04.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S1_Q04.jpg",
-      "audioStartSec": 134,
-      "audioEndSec": 165.75
+      "audioStartSec": 130.61,
+      "audioEndSec": 160.559
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -626,8 +626,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S1_Q05.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S1_Q05.jpg",
-      "audioStartSec": 166,
-      "audioEndSec": 196.75
+      "audioStartSec": 163.343,
+      "audioEndSec": 190.777
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -725,8 +725,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S1_Q06.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S1_Q06.jpg",
-      "audioStartSec": 197,
-      "audioEndSec": 215.75
+      "audioStartSec": 193.571,
+      "audioEndSec": 219.641
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -824,8 +824,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S1_Q07.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S1_Q07.jpg",
-      "audioStartSec": 216,
-      "audioEndSec": 255.75
+      "audioStartSec": 222.478,
+      "audioEndSec": 250.167
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -923,8 +923,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S1_Q08.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S1_Q08.jpg",
-      "audioStartSec": 256,
-      "audioEndSec": 293.75
+      "audioStartSec": 252.96,
+      "audioEndSec": 287.756
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -1022,8 +1022,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S1_Q09.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S1_Q09.jpg",
-      "audioStartSec": 294,
-      "audioEndSec": 321.75
+      "audioStartSec": 290.542,
+      "audioEndSec": 316.33
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -1121,8 +1121,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S1_Q10.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S1_Q10.jpg",
-      "audioStartSec": 322,
-      "audioEndSec": 352
+      "audioStartSec": 319.222,
+      "audioEndSec": 348.942
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -1220,8 +1220,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S2_Q01.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S2_Q01.jpg",
-      "audioStartSec": 418,
-      "audioEndSec": 461.75
+      "audioStartSec": 419.853,
+      "audioEndSec": 462.631
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -1319,8 +1319,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S2_Q02.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S2_Q02.jpg",
-      "audioStartSec": 462,
-      "audioEndSec": 506.75
+      "audioStartSec": 466.465,
+      "audioEndSec": 507.832
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -1418,8 +1418,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S2_Q03.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S2_Q03.jpg",
-      "audioStartSec": 507,
-      "audioEndSec": 550.75
+      "audioStartSec": 511.683,
+      "audioEndSec": 551.814
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -1517,8 +1517,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S2_Q04.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S2_Q04.jpg",
-      "audioStartSec": 551,
-      "audioEndSec": 600.75
+      "audioStartSec": 555.662,
+      "audioEndSec": 601.46
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -1616,8 +1616,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S2_Q05.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S2_Q05.jpg",
-      "audioStartSec": 601,
-      "audioEndSec": 646.75
+      "audioStartSec": 605.354,
+      "audioEndSec": 647.644
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -1715,8 +1715,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S2_Q06.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S2_Q06.jpg",
-      "audioStartSec": 647,
-      "audioEndSec": 687.75
+      "audioStartSec": 651.444,
+      "audioEndSec": 688.883
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -1814,8 +1814,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S2_Q07.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S2_Q07.jpg",
-      "audioStartSec": 688,
-      "audioEndSec": 732.75
+      "audioStartSec": 692.709,
+      "audioEndSec": 734.2
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -1913,8 +1913,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S2_Q08.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S2_Q08.jpg",
-      "audioStartSec": 733,
-      "audioEndSec": 786.75
+      "audioStartSec": 738.022,
+      "audioEndSec": 779.733
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -2012,8 +2012,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S2_Q09.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S2_Q09.jpg",
-      "audioStartSec": 787,
-      "audioEndSec": 826.75
+      "audioStartSec": 783.578,
+      "audioEndSec": 819.605
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -2111,8 +2111,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S2_Q10.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S2_Q10.jpg",
-      "audioStartSec": 827,
-      "audioEndSec": 872
+      "audioStartSec": 823.475,
+      "audioEndSec": 858.002
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -2210,8 +2210,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q01.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q01.jpg",
-      "audioStartSec": 945,
-      "audioEndSec": 1029.75
+      "audioStartSec": 946.893,
+      "audioEndSec": 1030.959
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -2309,8 +2309,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q02.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q02.jpg",
-      "audioStartSec": 1030,
-      "audioEndSec": 1126.75
+      "audioStartSec": 1034.798,
+      "audioEndSec": 1127.267
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -2408,8 +2408,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q03.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q03.jpg",
-      "audioStartSec": 1127,
-      "audioEndSec": 1197.75
+      "audioStartSec": 1131.063,
+      "audioEndSec": 1198.965
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -2507,8 +2507,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q04.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q04.jpg",
-      "audioStartSec": 1198,
-      "audioEndSec": 1309.75
+      "audioStartSec": 1202.829,
+      "audioEndSec": 1303.638
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -2606,8 +2606,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q05.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q05.jpg",
-      "audioStartSec": 1310,
-      "audioEndSec": 1432.75
+      "audioStartSec": 1307.443,
+      "audioEndSec": 1426.309
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -2705,8 +2705,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q06.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q06.jpg",
-      "audioStartSec": 1433,
-      "audioEndSec": 1520.75
+      "audioStartSec": 1430.123,
+      "audioEndSec": 1521.884
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -2804,8 +2804,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q07.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q07.jpg",
-      "audioStartSec": 1521,
-      "audioEndSec": 1615.75
+      "audioStartSec": 1525.675,
+      "audioEndSec": 1616.483
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -2903,8 +2903,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q08.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q08.jpg",
-      "audioStartSec": 1616,
-      "audioEndSec": 1699.75
+      "audioStartSec": 1620.308,
+      "audioEndSec": 1700.734
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -3002,8 +3002,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q09.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q09.jpg",
-      "audioStartSec": 1700,
-      "audioEndSec": 1813.75
+      "audioStartSec": 1704.548,
+      "audioEndSec": 1817.946
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -3101,8 +3101,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q10.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q10.jpg",
-      "audioStartSec": 1814,
-      "audioEndSec": 1938.75
+      "audioStartSec": 1821.777,
+      "audioEndSec": 1932.057
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -3200,8 +3200,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q11.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q11.jpg",
-      "audioStartSec": 1939,
-      "audioEndSec": 2061.75
+      "audioStartSec": 1935.914,
+      "audioEndSec": 2062.899
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -3299,8 +3299,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q12.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q12.jpg",
-      "audioStartSec": 2062,
-      "audioEndSec": 2172.75
+      "audioStartSec": 2066.786,
+      "audioEndSec": 2173.716
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -3398,8 +3398,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q13.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q13.jpg",
-      "audioStartSec": 2173,
-      "audioEndSec": 2286.75
+      "audioStartSec": 2177.596,
+      "audioEndSec": 2288.01
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -3497,8 +3497,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q14.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q14.jpg",
-      "audioStartSec": 2287,
-      "audioEndSec": 2427.75
+      "audioStartSec": 2291.881,
+      "audioEndSec": 2428.226
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -3596,8 +3596,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P1_S3_Q15.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P1_S3_Q15.jpg",
-      "audioStartSec": 2428,
-      "audioEndSec": 2533
+      "audioStartSec": 2432.089,
+      "audioEndSec": 2529.912
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -3695,8 +3695,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q01.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q01.jpg",
-      "audioStartSec": 2579,
-      "audioEndSec": 2605.75
+      "audioStartSec": 2580.012,
+      "audioEndSec": 2606.57
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -3789,8 +3789,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q02.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q02.jpg",
-      "audioStartSec": 2606,
-      "audioEndSec": 2649.75
+      "audioStartSec": 2617.394,
+      "audioEndSec": 2635.642
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -3883,8 +3883,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q03.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q03.jpg",
-      "audioStartSec": 2650,
-      "audioEndSec": 2663.75
+      "audioStartSec": 2646.45,
+      "audioEndSec": 2664.783
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -3977,8 +3977,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q04.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q04.jpg",
-      "audioStartSec": 2664,
-      "audioEndSec": 2691.75
+      "audioStartSec": 2675.597,
+      "audioEndSec": 2692.46
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -4071,8 +4071,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q05.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q05.jpg",
-      "audioStartSec": 2692,
-      "audioEndSec": 2735.75
+      "audioStartSec": 2703.267,
+      "audioEndSec": 2722.467
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -4165,8 +4165,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q06.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q06.jpg",
-      "audioStartSec": 2736,
-      "audioEndSec": 2754.75
+      "audioStartSec": 2733.279,
+      "audioEndSec": 2755.583
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -4259,8 +4259,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q07.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q07.jpg",
-      "audioStartSec": 2755,
-      "audioEndSec": 2781.75
+      "audioStartSec": 2761.383,
+      "audioEndSec": 2782.636
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -4353,8 +4353,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q08.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q08.jpg",
-      "audioStartSec": 2782,
-      "audioEndSec": 2808.75
+      "audioStartSec": 2793.437,
+      "audioEndSec": 2809.944
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -4447,8 +4447,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q09.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q09.jpg",
-      "audioStartSec": 2809,
-      "audioEndSec": 2847.75
+      "audioStartSec": 2820.797,
+      "audioEndSec": 2834.175
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -4541,8 +4541,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q10.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q10.jpg",
-      "audioStartSec": 2848,
-      "audioEndSec": 2853.75
+      "audioStartSec": 2844.994,
+      "audioEndSec": 2854.713
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -4635,8 +4635,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q11.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q11.jpg",
-      "audioStartSec": 2854,
-      "audioEndSec": 2895.75
+      "audioStartSec": 2860.532,
+      "audioEndSec": 2882.301
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -4729,8 +4729,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q12.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q12.jpg",
-      "audioStartSec": 2896,
-      "audioEndSec": 2907.75
+      "audioStartSec": 2893.148,
+      "audioEndSec": 2908.781
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -4823,8 +4823,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q13.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q13.jpg",
-      "audioStartSec": 2908,
-      "audioEndSec": 2936.75
+      "audioStartSec": 2919.643,
+      "audioEndSec": 2937.213
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -4917,8 +4917,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q14.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q14.jpg",
-      "audioStartSec": 2937,
-      "audioEndSec": 2955.75
+      "audioStartSec": 2943.013,
+      "audioEndSec": 2960.172
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -5011,8 +5011,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S1_Q15.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S1_Q15.jpg",
-      "audioStartSec": 2956,
-      "audioEndSec": 2984
+      "audioStartSec": 2971.043,
+      "audioEndSec": 2992.363
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -5105,8 +5105,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q01.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q01.jpg",
-      "audioStartSec": 3080,
-      "audioEndSec": 3175.75
+      "audioStartSec": 3081.492,
+      "audioEndSec": 3170.886
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -5199,8 +5199,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q02.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q02.jpg",
-      "audioStartSec": 3176,
-      "audioEndSec": 3260.75
+      "audioStartSec": 3176.668,
+      "audioEndSec": 3251.79
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -5293,8 +5293,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q03.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q03.jpg",
-      "audioStartSec": 3261,
-      "audioEndSec": 3333.75
+      "audioStartSec": 3257.573,
+      "audioEndSec": 3335.89
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -5387,8 +5387,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q04.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q04.jpg",
-      "audioStartSec": 3334,
-      "audioEndSec": 3430.75
+      "audioStartSec": 3341.683,
+      "audioEndSec": 3422.225
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -5481,8 +5481,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q05.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q05.jpg",
-      "audioStartSec": 3431,
-      "audioEndSec": 3496.75
+      "audioStartSec": 3428.069,
+      "audioEndSec": 3497.229
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -5575,8 +5575,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q06.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q06.jpg",
-      "audioStartSec": 3497,
-      "audioEndSec": 3601.75
+      "audioStartSec": 3506.08,
+      "audioEndSec": 3602.048
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -5669,8 +5669,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q07.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q07.jpg",
-      "audioStartSec": 3602,
-      "audioEndSec": 3702.75
+      "audioStartSec": 3607.938,
+      "audioEndSec": 3703.703
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -5765,8 +5765,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q08.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q08.jpg",
-      "audioStartSec": 3703,
-      "audioEndSec": 3795.75
+      "audioStartSec": 3712.528,
+      "audioEndSec": 3796.722
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -5859,8 +5859,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q09.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q09.jpg",
-      "audioStartSec": 3796,
-      "audioEndSec": 3873.75
+      "audioStartSec": 3802.511,
+      "audioEndSec": 3874.266
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -5953,8 +5953,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q10.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q10.jpg",
-      "audioStartSec": 3874,
-      "audioEndSec": 3979.75
+      "audioStartSec": 3883.073,
+      "audioEndSec": 3980.333
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -6047,8 +6047,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q11.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q11.jpg",
-      "audioStartSec": 3980,
-      "audioEndSec": 4061.75
+      "audioStartSec": 3986.19,
+      "audioEndSec": 4057.576
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -6141,8 +6141,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q12.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q12.jpg",
-      "audioStartSec": 4062,
-      "audioEndSec": 4146.75
+      "audioStartSec": 4063.459,
+      "audioEndSec": 4147.445
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -6235,8 +6235,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q13.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q13.jpg",
-      "audioStartSec": 4147,
-      "audioEndSec": 4243.75
+      "audioStartSec": 4153.25,
+      "audioEndSec": 4240.354
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -6329,8 +6329,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q14.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q14.jpg",
-      "audioStartSec": 4244,
-      "audioEndSec": 4339.75
+      "audioStartSec": 4246.192,
+      "audioEndSec": 4341.001
     },
     "display": {
       "showOptionTextDuringQuestion": false,
@@ -6423,8 +6423,8 @@ window.BJT_TRUE03_QUESTIONS = [
     "media": {
       "audio": "assets/listening/BJT_TRUE03/audio/BJT_TRUE03_P2_S2_Q15.mp3",
       "image": "assets/listening/BJT_TRUE03/images/BJT_TRUE03_P2_S2_Q15.jpg",
-      "audioStartSec": 4340,
-      "audioEndSec": 4440
+      "audioStartSec": 4349.906,
+      "audioEndSec": 4428.868
     },
     "display": {
       "showOptionTextDuringQuestion": false,

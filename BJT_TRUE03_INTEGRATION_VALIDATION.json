@@ -1,5 +1,5 @@
 {
-  "version": "v14.1",
+  "version": "v14.1.1",
   "collectionId": "BJT_TRUE03",
   "questionCount": 65,
   "packCount": 5,
@@ -16,5 +16,13 @@
   "learningCount": 65,
   "furiganaCount": 65,
   "translationCount": 65,
-  "optionAnalysisCount": 260
+  "optionAnalysisCount": 260,
+  "mediaAlignment": {
+    "status": "PASS",
+    "method": "source M4A silence-boundary segmentation + synchronized source MP4 frame extraction",
+    "correctedAudioCount": 65,
+    "correctedImageCount": 65,
+    "visualContactSheetReviewed": 65,
+    "usesApproxTranscriptTimesForCutting": false
+  }
 }

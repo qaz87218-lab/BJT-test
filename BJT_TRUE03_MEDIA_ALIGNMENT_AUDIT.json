@@ -1,0 +1,392 @@
+{
+  "BJT_TRUE03_P1_S1_Q01": {
+    "start": 46.774,
+    "end": 73.314,
+    "image_time": 54.836,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S1_Q02": {
+    "start": 76.107,
+    "end": 100.794,
+    "image_time": 83.935,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S1_Q03": {
+    "start": 103.642,
+    "end": 127.773,
+    "image_time": 111.365,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S1_Q04": {
+    "start": 130.61,
+    "end": 160.559,
+    "image_time": 138.27,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S1_Q05": {
+    "start": 163.343,
+    "end": 190.777,
+    "image_time": 170.973,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S1_Q06": {
+    "start": 193.571,
+    "end": 219.641,
+    "image_time": 201.367,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S1_Q07": {
+    "start": 222.478,
+    "end": 250.167,
+    "image_time": 230.168,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S1_Q08": {
+    "start": 252.96,
+    "end": 287.756,
+    "image_time": 260.654,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S1_Q09": {
+    "start": 290.542,
+    "end": 316.33,
+    "image_time": 298.234,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S1_Q10": {
+    "start": 319.222,
+    "end": 348.942,
+    "image_time": 326.868,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S2_Q01": {
+    "start": 419.853,
+    "end": 462.631,
+    "image_time": 427.876,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S2_Q02": {
+    "start": 466.465,
+    "end": 507.832,
+    "image_time": 474.151,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S2_Q03": {
+    "start": 511.683,
+    "end": 551.814,
+    "image_time": 519.377,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S2_Q04": {
+    "start": 555.662,
+    "end": 601.46,
+    "image_time": 563.315,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S2_Q05": {
+    "start": 605.354,
+    "end": 647.644,
+    "image_time": 613.068,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S2_Q06": {
+    "start": 651.444,
+    "end": 688.883,
+    "image_time": 659.107,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S2_Q07": {
+    "start": 692.709,
+    "end": 734.2,
+    "image_time": 700.368,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S2_Q08": {
+    "start": 738.022,
+    "end": 779.733,
+    "image_time": 745.729,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S2_Q09": {
+    "start": 783.578,
+    "end": 819.605,
+    "image_time": 791.268,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S2_Q10": {
+    "start": 823.475,
+    "end": 858.002,
+    "image_time": 831.178,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q01": {
+    "start": 946.893,
+    "end": 1030.959,
+    "image_time": 954.936,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q02": {
+    "start": 1034.798,
+    "end": 1127.267,
+    "image_time": 1042.536,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q03": {
+    "start": 1131.063,
+    "end": 1198.965,
+    "image_time": 1138.754,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q04": {
+    "start": 1202.829,
+    "end": 1303.638,
+    "image_time": 1210.536,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q05": {
+    "start": 1307.443,
+    "end": 1426.309,
+    "image_time": 1315.149,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q06": {
+    "start": 1430.123,
+    "end": 1521.884,
+    "image_time": 1437.829,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q07": {
+    "start": 1525.675,
+    "end": 1616.483,
+    "image_time": 1533.311,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q08": {
+    "start": 1620.308,
+    "end": 1700.734,
+    "image_time": 1628.022,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q09": {
+    "start": 1704.548,
+    "end": 1817.946,
+    "image_time": 1712.223,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q10": {
+    "start": 1821.777,
+    "end": 1932.057,
+    "image_time": 1829.43,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q11": {
+    "start": 1935.914,
+    "end": 2062.899,
+    "image_time": 1943.634,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q12": {
+    "start": 2066.786,
+    "end": 2173.716,
+    "image_time": 2074.475,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q13": {
+    "start": 2177.596,
+    "end": 2288.01,
+    "image_time": 2185.288,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q14": {
+    "start": 2291.881,
+    "end": 2428.226,
+    "image_time": 2299.564,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P1_S3_Q15": {
+    "start": 2432.089,
+    "end": 2529.912,
+    "image_time": 2439.825,
+    "mode": "p1"
+  },
+  "BJT_TRUE03_P2_S1_Q01": {
+    "start": 2580.012,
+    "end": 2606.57,
+    "image_time": 2608.45,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S1_Q02": {
+    "start": 2617.394,
+    "end": 2635.642,
+    "image_time": 2637.522,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S1_Q03": {
+    "start": 2646.45,
+    "end": 2664.783,
+    "image_time": 2666.663,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S1_Q04": {
+    "start": 2675.597,
+    "end": 2692.46,
+    "image_time": 2694.34,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S1_Q05": {
+    "start": 2703.267,
+    "end": 2722.467,
+    "image_time": 2724.347,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S1_Q06": {
+    "start": 2733.279,
+    "end": 2755.583,
+    "image_time": 2757.463,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S1_Q07": {
+    "start": 2761.383,
+    "end": 2782.636,
+    "image_time": 2784.516,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S1_Q08": {
+    "start": 2793.437,
+    "end": 2809.944,
+    "image_time": 2811.824,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S1_Q09": {
+    "start": 2820.797,
+    "end": 2834.175,
+    "image_time": 2836.055,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S1_Q10": {
+    "start": 2844.994,
+    "end": 2854.713,
+    "image_time": 2856.593,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S1_Q11": {
+    "start": 2860.532,
+    "end": 2882.301,
+    "image_time": 2884.181,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S1_Q12": {
+    "start": 2893.148,
+    "end": 2908.781,
+    "image_time": 2910.661,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S1_Q13": {
+    "start": 2919.643,
+    "end": 2937.213,
+    "image_time": 2939.093,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S1_Q14": {
+    "start": 2943.013,
+    "end": 2960.172,
+    "image_time": 2962.052,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S1_Q15": {
+    "start": 2971.043,
+    "end": 2992.363,
+    "image_time": 2994.243,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q01": {
+    "start": 3081.492,
+    "end": 3170.886,
+    "image_time": 3172.766,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q02": {
+    "start": 3176.668,
+    "end": 3251.79,
+    "image_time": 3253.67,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q03": {
+    "start": 3257.573,
+    "end": 3335.89,
+    "image_time": 3337.77,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q04": {
+    "start": 3341.683,
+    "end": 3422.225,
+    "image_time": 3424.105,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q05": {
+    "start": 3428.069,
+    "end": 3497.229,
+    "image_time": 3499.109,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q06": {
+    "start": 3506.08,
+    "end": 3602.048,
+    "image_time": 3603.928,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q07": {
+    "start": 3607.938,
+    "end": 3703.703,
+    "image_time": 3705.583,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q08": {
+    "start": 3712.528,
+    "end": 3796.722,
+    "image_time": 3798.602,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q09": {
+    "start": 3802.511,
+    "end": 3874.266,
+    "image_time": 3876.146,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q10": {
+    "start": 3883.073,
+    "end": 3980.333,
+    "image_time": 3982.213,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q11": {
+    "start": 3986.19,
+    "end": 4057.576,
+    "image_time": 4059.456,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q12": {
+    "start": 4063.459,
+    "end": 4147.445,
+    "image_time": 4149.325,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q13": {
+    "start": 4153.25,
+    "end": 4240.354,
+    "image_time": 4242.234,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q14": {
+    "start": 4246.192,
+    "end": 4341.001,
+    "image_time": 4342.881,
+    "mode": "p2"
+  },
+  "BJT_TRUE03_P2_S2_Q15": {
+    "start": 4349.906,
+    "end": 4428.868,
+    "image_time": 4430.748,
+    "mode": "p2"
+  }
+}

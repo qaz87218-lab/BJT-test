@@ -14,7 +14,7 @@
   const ROLE_HINT_FOR_QUESTION = window.BJT_ROLE_HINT_FOR_QUESTION || (()=>'');
   const LQMAP = Object.fromEntries(LISTENING_QUESTIONS.map(q=>[q.id,q]));
   const LATEST_FEATURE='listening';
-  // v14.1 — 加入聽力第3冊 BJT TRUE03（65題），保留原始題目資料與分冊／Section 練習層。
+  // v14.1.1 — 第3冊 65 題媒體重新對齊：以原始音檔停頓邊界重切 MP3，並依同步影片重擷取逐題題圖。
   const ORIGINAL_ORDER = QUESTIONS.filter(q=>q.source==='原題').map(q=>q.id);
   const ORIGINAL_READING_BOOKS = [
     {id:'READING_BOOK_01',order:1,title:'第1冊',subtitle:'BJT 讀解模擬',sections:[
