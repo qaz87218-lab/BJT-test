@@ -1,0 +1,6535 @@
+{
+  "version": "v14.3",
+  "text_questions": [
+    {
+      "id": "o01",
+      "source": "原題",
+      "tags": [
+        "k01"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o02",
+      "source": "原題",
+      "tags": [
+        "k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o03",
+      "source": "原題",
+      "tags": [
+        "k03"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o04",
+      "source": "原題",
+      "tags": [
+        "k04",
+        "k05"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o05",
+      "source": "原題",
+      "tags": [
+        "k06"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o06",
+      "source": "原題",
+      "tags": [
+        "k07",
+        "k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o07",
+      "source": "原題",
+      "tags": [
+        "k09",
+        "k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o08",
+      "source": "原題",
+      "tags": [
+        "k11"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o09",
+      "source": "原題",
+      "tags": [
+        "k12",
+        "k13",
+        "k14"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o10",
+      "source": "原題",
+      "tags": [
+        "k15"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o11",
+      "source": "原題",
+      "tags": [
+        "k16"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o12",
+      "source": "原題",
+      "tags": [
+        "k17",
+        "k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o13",
+      "source": "原題",
+      "tags": [
+        "k19",
+        "k20"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o14",
+      "source": "原題",
+      "tags": [
+        "k21",
+        "k22"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o15",
+      "source": "原題",
+      "tags": [
+        "k23",
+        "k24",
+        "k25"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o16",
+      "source": "原題",
+      "tags": [
+        "k26",
+        "k27"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o17",
+      "source": "原題",
+      "tags": [
+        "k28",
+        "k29"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o18",
+      "source": "原題",
+      "tags": [
+        "k30",
+        "k31"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o19",
+      "source": "原題",
+      "tags": [
+        "k32"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o20",
+      "source": "原題",
+      "tags": [
+        "k33",
+        "kx018"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o21",
+      "source": "原題",
+      "tags": [
+        "k34",
+        "k35"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o22",
+      "source": "原題",
+      "tags": [
+        "k36",
+        "k37"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o23",
+      "source": "原題",
+      "tags": [
+        "k38"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o24",
+      "source": "原題",
+      "tags": [
+        "k39"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o25",
+      "source": "原題",
+      "tags": [
+        "k40"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o26",
+      "source": "原題",
+      "tags": [
+        "k41"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o27",
+      "source": "原題",
+      "tags": [
+        "k42",
+        "k43"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o28",
+      "source": "原題",
+      "tags": [
+        "k43"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o29",
+      "source": "原題",
+      "tags": [
+        "k44"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o30",
+      "source": "原題",
+      "tags": [
+        "k45"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o31",
+      "source": "原題",
+      "tags": [
+        "k46"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o32",
+      "source": "原題",
+      "tags": [
+        "k47",
+        "k48"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o33",
+      "source": "原題",
+      "tags": [
+        "k49",
+        "kx041",
+        "kx042"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o34",
+      "source": "原題",
+      "tags": [
+        "k50"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o35",
+      "source": "原題",
+      "tags": [
+        "k51"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o36",
+      "source": "原題",
+      "tags": [
+        "k52"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o37",
+      "source": "原題",
+      "tags": [
+        "k15",
+        "k53"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o38",
+      "source": "原題",
+      "tags": [
+        "k54"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o39",
+      "source": "原題",
+      "tags": [
+        "k55"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o40",
+      "source": "原題",
+      "tags": [
+        "k56"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o41",
+      "source": "原題",
+      "tags": [
+        "k57"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o42",
+      "source": "原題",
+      "tags": [
+        "k58"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o43",
+      "source": "原題",
+      "tags": [
+        "k59"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o44",
+      "source": "原題",
+      "tags": [
+        "k60"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o45",
+      "source": "原題",
+      "tags": [
+        "k61"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o46",
+      "source": "原題",
+      "tags": [
+        "k62"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o47",
+      "source": "原題",
+      "tags": [
+        "k63"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o48",
+      "source": "原題",
+      "tags": [
+        "k64"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o49",
+      "source": "原題",
+      "tags": [
+        "k65"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o50",
+      "source": "原題",
+      "tags": [
+        "k66",
+        "k63"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o51",
+      "source": "原題",
+      "tags": [
+        "k67",
+        "k43"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o52",
+      "source": "原題",
+      "tags": [
+        "k68",
+        "k43"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o53",
+      "source": "原題",
+      "tags": [
+        "k69"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o54",
+      "source": "原題",
+      "tags": [
+        "k70"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "o55",
+      "source": "原題",
+      "tags": [
+        "k71"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d01",
+      "source": "延伸",
+      "tags": [
+        "k01"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d02",
+      "source": "延伸",
+      "tags": [
+        "k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d03",
+      "source": "延伸",
+      "tags": [
+        "k03"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d04",
+      "source": "延伸",
+      "tags": [
+        "k04"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d05",
+      "source": "延伸",
+      "tags": [
+        "k05"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d06",
+      "source": "延伸",
+      "tags": [
+        "k06"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d07",
+      "source": "延伸",
+      "tags": [
+        "k07"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d08",
+      "source": "延伸",
+      "tags": [
+        "k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d09",
+      "source": "延伸",
+      "tags": [
+        "k09"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d10",
+      "source": "延伸",
+      "tags": [
+        "k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d11",
+      "source": "延伸",
+      "tags": [
+        "k11"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d12",
+      "source": "延伸",
+      "tags": [
+        "k12"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d13",
+      "source": "延伸",
+      "tags": [
+        "k13"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d14",
+      "source": "延伸",
+      "tags": [
+        "k14"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d15",
+      "source": "延伸",
+      "tags": [
+        "k15"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d16",
+      "source": "延伸",
+      "tags": [
+        "k16"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d17",
+      "source": "延伸",
+      "tags": [
+        "k17"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d18",
+      "source": "延伸",
+      "tags": [
+        "k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d19",
+      "source": "延伸",
+      "tags": [
+        "k19"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d20",
+      "source": "延伸",
+      "tags": [
+        "k20"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d21",
+      "source": "延伸",
+      "tags": [
+        "k21"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d22",
+      "source": "延伸",
+      "tags": [
+        "k22"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d23",
+      "source": "延伸",
+      "tags": [
+        "k23"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d24",
+      "source": "延伸",
+      "tags": [
+        "k24"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d25",
+      "source": "延伸",
+      "tags": [
+        "k25"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d26",
+      "source": "延伸",
+      "tags": [
+        "k26"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d27",
+      "source": "延伸",
+      "tags": [
+        "k27"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d28",
+      "source": "延伸",
+      "tags": [
+        "k28"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d29",
+      "source": "延伸",
+      "tags": [
+        "k29"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d30",
+      "source": "延伸",
+      "tags": [
+        "k30"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d31",
+      "source": "延伸",
+      "tags": [
+        "k31"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d32",
+      "source": "延伸",
+      "tags": [
+        "k32"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d33",
+      "source": "延伸",
+      "tags": [
+        "k33"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d34",
+      "source": "延伸",
+      "tags": [
+        "k34"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d35",
+      "source": "延伸",
+      "tags": [
+        "k35"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d36",
+      "source": "延伸",
+      "tags": [
+        "k36"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d37",
+      "source": "延伸",
+      "tags": [
+        "k37"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d38",
+      "source": "延伸",
+      "tags": [
+        "k38"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d39",
+      "source": "延伸",
+      "tags": [
+        "k39"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d40",
+      "source": "延伸",
+      "tags": [
+        "k40"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d41",
+      "source": "延伸",
+      "tags": [
+        "k41"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d42",
+      "source": "延伸",
+      "tags": [
+        "k42"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d43",
+      "source": "延伸",
+      "tags": [
+        "k43"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d44",
+      "source": "延伸",
+      "tags": [
+        "k44"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d45",
+      "source": "延伸",
+      "tags": [
+        "k45"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d46",
+      "source": "延伸",
+      "tags": [
+        "k46"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d47",
+      "source": "延伸",
+      "tags": [
+        "k47"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d48",
+      "source": "延伸",
+      "tags": [
+        "k48"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d49",
+      "source": "延伸",
+      "tags": [
+        "k49"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d50",
+      "source": "延伸",
+      "tags": [
+        "k50"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d51",
+      "source": "延伸",
+      "tags": [
+        "k51"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d52",
+      "source": "延伸",
+      "tags": [
+        "k52"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d53",
+      "source": "延伸",
+      "tags": [
+        "k53"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d54",
+      "source": "延伸",
+      "tags": [
+        "k54"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d55",
+      "source": "延伸",
+      "tags": [
+        "k55"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d56",
+      "source": "延伸",
+      "tags": [
+        "k56"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d57",
+      "source": "延伸",
+      "tags": [
+        "k57"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d58",
+      "source": "延伸",
+      "tags": [
+        "k58"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d59",
+      "source": "延伸",
+      "tags": [
+        "k59"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d60",
+      "source": "延伸",
+      "tags": [
+        "k60"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d61",
+      "source": "延伸",
+      "tags": [
+        "k61"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d62",
+      "source": "延伸",
+      "tags": [
+        "k62"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d63",
+      "source": "延伸",
+      "tags": [
+        "k63"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d64",
+      "source": "延伸",
+      "tags": [
+        "k64"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d65",
+      "source": "延伸",
+      "tags": [
+        "k65"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d66",
+      "source": "延伸",
+      "tags": [
+        "k66"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d67",
+      "source": "延伸",
+      "tags": [
+        "k67"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d68",
+      "source": "延伸",
+      "tags": [
+        "k68"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d69",
+      "source": "延伸",
+      "tags": [
+        "k69"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d70",
+      "source": "延伸",
+      "tags": [
+        "k70"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "d71",
+      "source": "延伸",
+      "tags": [
+        "k71"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a01",
+      "source": "延伸",
+      "tags": [
+        "k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a02",
+      "source": "延伸",
+      "tags": [
+        "k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a03",
+      "source": "延伸",
+      "tags": [
+        "k16"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a04",
+      "source": "延伸",
+      "tags": [
+        "k16"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a05",
+      "source": "延伸",
+      "tags": [
+        "k20"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a06",
+      "source": "延伸",
+      "tags": [
+        "k27"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a07",
+      "source": "延伸",
+      "tags": [
+        "k62"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a08",
+      "source": "延伸",
+      "tags": [
+        "k63",
+        "k32"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a09",
+      "source": "延伸",
+      "tags": [
+        "k64"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a10",
+      "source": "延伸",
+      "tags": [
+        "k43"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a11",
+      "source": "延伸",
+      "tags": [
+        "k45",
+        "k40"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a12",
+      "source": "延伸",
+      "tags": [
+        "k50"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a13",
+      "source": "延伸",
+      "tags": [
+        "k50"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a14",
+      "source": "延伸",
+      "tags": [
+        "k15"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a15",
+      "source": "延伸",
+      "tags": [
+        "k15"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a16",
+      "source": "延伸",
+      "tags": [
+        "k41"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a17",
+      "source": "延伸",
+      "tags": [
+        "k69"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a18",
+      "source": "延伸",
+      "tags": [
+        "k67"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a19",
+      "source": "延伸",
+      "tags": [
+        "k70"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "a20",
+      "source": "延伸",
+      "tags": [
+        "k40",
+        "k71"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0056",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0001",
+        "k35",
+        "KP-T02-0002"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0057",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0003",
+        "KP-T02-0004",
+        "KP-T02-0005"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0058",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0006",
+        "KP-T02-0007"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0059",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0008",
+        "KP-T02-0009"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0060",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0010",
+        "KP-T02-0011",
+        "KP-T02-0012"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0061",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0001",
+        "k10",
+        "KP-T02-0013"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0062",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0011",
+        "KP-T02-0014"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0063",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0008",
+        "KP-T02-0015",
+        "kx005"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0001",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0002",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0002"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0003",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0003"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0004",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0004"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0005",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0005"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0006",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0006"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0007",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0007"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0008",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0008"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0009",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0009"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0010",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0010"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0011",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0011"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0012",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0012"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0013",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0013"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0014",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0014"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0015",
+      "source": "延伸",
+      "tags": [
+        "KP-T02-0015"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0064",
+      "source": "原題",
+      "tags": [
+        "KP-D3-0001",
+        "KP-D3-0012"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0065",
+      "source": "原題",
+      "tags": [
+        "KP-D3-0002"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0066",
+      "source": "原題",
+      "tags": [
+        "KP-D3-0003"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0067",
+      "source": "原題",
+      "tags": [
+        "KP-D3-0004"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0068",
+      "source": "原題",
+      "tags": [
+        "KP-D3-0005"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0069",
+      "source": "原題",
+      "tags": [
+        "KP-D3-0006"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0070",
+      "source": "原題",
+      "tags": [
+        "KP-D3-0007"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0071",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0012",
+        "kx040"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0072",
+      "source": "原題",
+      "tags": [
+        "KP-D3-0008"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0073",
+      "source": "原題",
+      "tags": [
+        "KP-D3-0009",
+        "KP-D3-0011"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0074",
+      "source": "原題",
+      "tags": [
+        "KP-D3-0010"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0016",
+      "source": "延伸",
+      "tags": [
+        "KP-D3-0001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0017",
+      "source": "延伸",
+      "tags": [
+        "KP-D3-0002"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0018",
+      "source": "延伸",
+      "tags": [
+        "KP-D3-0003"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0019",
+      "source": "延伸",
+      "tags": [
+        "KP-D3-0004"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0020",
+      "source": "延伸",
+      "tags": [
+        "KP-D3-0005"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0021",
+      "source": "延伸",
+      "tags": [
+        "KP-D3-0006"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0022",
+      "source": "延伸",
+      "tags": [
+        "KP-D3-0007"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0023",
+      "source": "延伸",
+      "tags": [
+        "KP-D3-0008"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0024",
+      "source": "延伸",
+      "tags": [
+        "KP-D3-0009"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0025",
+      "source": "延伸",
+      "tags": [
+        "KP-D3-0010"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0026",
+      "source": "延伸",
+      "tags": [
+        "KP-D3-0011"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-E-0027",
+      "source": "延伸",
+      "tags": [
+        "KP-D3-0012"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0075",
+      "source": "原題",
+      "tags": [
+        "k26",
+        "k63",
+        "kx038"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0076",
+      "source": "原題",
+      "tags": [
+        "KP-D3-0011",
+        "k63",
+        "kx037"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0077",
+      "source": "原題",
+      "tags": [
+        "k26",
+        "k32",
+        "kx036"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0078",
+      "source": "原題",
+      "tags": [
+        "k26",
+        "kx039"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0079",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0013",
+        "KP-D3-0009",
+        "kx035"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0080",
+      "source": "原題",
+      "tags": [
+        "k17",
+        "k31"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0081",
+      "source": "原題",
+      "tags": [
+        "ky055"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0082",
+      "source": "原題",
+      "tags": [
+        "k63"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0083",
+      "source": "原題",
+      "tags": [
+        "kx034"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0084",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0010"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0085",
+      "source": "原題",
+      "tags": [
+        "k43",
+        "KP-T02-0001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0086",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0008"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0087",
+      "source": "原題",
+      "tags": [
+        "KP-D3-0012",
+        "KP-T02-0001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0088",
+      "source": "原題",
+      "tags": [
+        "k43",
+        "k36"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0089",
+      "source": "原題",
+      "tags": [
+        "ky056"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0090",
+      "source": "原題",
+      "tags": [
+        "k17",
+        "k43"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0091",
+      "source": "原題",
+      "tags": [
+        "k43",
+        "pb-k05",
+        "ky057"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0092",
+      "source": "原題",
+      "tags": [
+        "k45",
+        "KP-T02-0008"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0093",
+      "source": "原題",
+      "tags": [
+        "k43",
+        "pb-k09"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0094",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0095",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0096",
+      "source": "原題",
+      "tags": [
+        "k43",
+        "pb-k07"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0097",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-O-0098",
+      "source": "原題",
+      "tags": [
+        "KP-T02-0010",
+        "k38"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q01",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q02",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02",
+        "k63"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q03",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q04",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q05",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02",
+        "k63"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q06",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q07",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q08",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q09",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q10",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q11",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q12",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q13",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02",
+        "k32"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q14",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02",
+        "k32"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q15",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q16",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02",
+        "ky023"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q17",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q18",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02",
+        "k33"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q19",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02",
+        "k33"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C01-Q20",
+      "source": "實用商務",
+      "tags": [
+        "pb-k01",
+        "pb-k02",
+        "k63"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q01",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q02",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04",
+        "ky029"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q03",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04",
+        "ky008",
+        "ky030",
+        "ky054"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q04",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04",
+        "k24"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q05",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04",
+        "ky001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q06",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q07",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q08",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04",
+        "k66"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q09",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q10",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04",
+        "k24"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q11",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04",
+        "k63",
+        "ky029"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q12",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04",
+        "ky031"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q13",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04",
+        "ky032"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q14",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04",
+        "ky028"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q15",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04",
+        "ky029"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q16",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04",
+        "ky033"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q17",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04",
+        "k23"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q18",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q19",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C02-Q20",
+      "source": "實用商務",
+      "tags": [
+        "pb-k03",
+        "pb-k04",
+        "KP-T02-0001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q01",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06",
+        "ky002"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q02",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06",
+        "ky020",
+        "ky021"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q03",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06",
+        "ky002"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q04",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q05",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q06",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06",
+        "ky001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q07",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06",
+        "ky021"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q08",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q09",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06",
+        "ky022"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q10",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06",
+        "ky002",
+        "ky015",
+        "ky053"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q11",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06",
+        "ky001",
+        "ky016"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q12",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06",
+        "ky017"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q13",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06",
+        "ky018"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q14",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06",
+        "ky018"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q15",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06",
+        "ky019"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q16",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06",
+        "k66"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q17",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q18",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06",
+        "ky037"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q19",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C03-Q20",
+      "source": "實用商務",
+      "tags": [
+        "pb-k05",
+        "pb-k06"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q01",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q02",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08",
+        "k37"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q03",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q04",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q05",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q06",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q07",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q08",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08",
+        "ky034"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q09",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q10",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q11",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q12",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q13",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q14",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q15",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08",
+        "ky035"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q16",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q17",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08",
+        "KP-T02-0011"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q18",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08",
+        "k37",
+        "ky036"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q19",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08",
+        "ky036"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C04-Q20",
+      "source": "實用商務",
+      "tags": [
+        "pb-k07",
+        "pb-k08"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q01",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10",
+        "ky015"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q02",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q03",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10",
+        "KP-T02-0011"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q04",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q05",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q06",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10",
+        "ky014"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q07",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q08",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10",
+        "KP-T02-0011"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q09",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10",
+        "ky015"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q10",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q11",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q12",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q13",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q14",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q15",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q16",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q17",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q18",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q19",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C05-Q20",
+      "source": "實用商務",
+      "tags": [
+        "pb-k09",
+        "pb-k10",
+        "KP-T02-0001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q01",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12",
+        "ky003"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q02",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12",
+        "ky013"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q03",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12",
+        "ky013"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q04",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12",
+        "ky003"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q05",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q06",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q07",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12",
+        "k44",
+        "ky013"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q08",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q09",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q10",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12",
+        "ky013"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q11",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12",
+        "ky012"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q12",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12",
+        "ky003"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q13",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q14",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12",
+        "ky011"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q15",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q16",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q17",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q18",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12",
+        "ky010"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q19",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C06-Q20",
+      "source": "實用商務",
+      "tags": [
+        "pb-k11",
+        "pb-k12",
+        "KP-T02-0001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q01",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14",
+        "ky004"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q02",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14",
+        "ky039"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q03",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q04",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14",
+        "ky038"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q05",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14",
+        "ky040"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q06",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q07",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q08",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14",
+        "ky041"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q09",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q10",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q11",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q12",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q13",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q14",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q15",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14",
+        "ky005"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q16",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14",
+        "ky004"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q17",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q18",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14",
+        "ky052"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q19",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C07-Q20",
+      "source": "實用商務",
+      "tags": [
+        "pb-k13",
+        "pb-k14",
+        "KP-T02-0001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q01",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16",
+        "ky045"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q02",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q03",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16",
+        "KP-T02-0011",
+        "ky006"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q04",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16",
+        "ky007"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q05",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16",
+        "KP-T02-0011",
+        "ky007"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q06",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q07",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16",
+        "ky008",
+        "ky009"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q08",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16",
+        "ky042"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q09",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16",
+        "ky043",
+        "ky044"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q10",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16",
+        "k66",
+        "ky006"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q11",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q12",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16",
+        "ky008"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q13",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q14",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q15",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q16",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q17",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16",
+        "k41"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q18",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16",
+        "ky008"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q19",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C08-Q20",
+      "source": "實用商務",
+      "tags": [
+        "pb-k15",
+        "pb-k16",
+        "KP-T02-0001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q01",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q02",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q03",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q04",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q05",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q06",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q07",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18",
+        "ky041",
+        "ky043",
+        "ky054"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q08",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q09",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q10",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q11",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q12",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q13",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q14",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q15",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q16",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q17",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q18",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q19",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C09-Q20",
+      "source": "實用商務",
+      "tags": [
+        "pb-k17",
+        "pb-k18"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q01",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q02",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q03",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q04",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20",
+        "ky050"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q05",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20",
+        "KP-T02-0011",
+        "ky046"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q06",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q07",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20",
+        "ky052"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q08",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q09",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20",
+        "ky051"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q10",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20",
+        "ky049",
+        "ky052"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q11",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q12",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20",
+        "KP-T02-0001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q13",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20",
+        "ky048"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q14",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20",
+        "ky047"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q15",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q16",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q17",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q18",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q19",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20",
+        "KP-T02-0011",
+        "ky046",
+        "ky037"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "PBJ-C10-Q20",
+      "source": "實用商務",
+      "tags": [
+        "pb-k19",
+        "pb-k20"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-001",
+      "source": "延伸",
+      "tags": [
+        "kx001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-002",
+      "source": "延伸",
+      "tags": [
+        "kx002"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-003",
+      "source": "延伸",
+      "tags": [
+        "kx003"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-004",
+      "source": "延伸",
+      "tags": [
+        "kx004"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-005",
+      "source": "延伸",
+      "tags": [
+        "kx005"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-006",
+      "source": "延伸",
+      "tags": [
+        "kx006"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-007",
+      "source": "延伸",
+      "tags": [
+        "kx007"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-008",
+      "source": "延伸",
+      "tags": [
+        "kx008"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-009",
+      "source": "延伸",
+      "tags": [
+        "kx009"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-010",
+      "source": "延伸",
+      "tags": [
+        "kx010"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-011",
+      "source": "延伸",
+      "tags": [
+        "kx011"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-012",
+      "source": "延伸",
+      "tags": [
+        "kx012"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-013",
+      "source": "延伸",
+      "tags": [
+        "kx013"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-014",
+      "source": "延伸",
+      "tags": [
+        "kx014"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-015",
+      "source": "延伸",
+      "tags": [
+        "kx015"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-016",
+      "source": "延伸",
+      "tags": [
+        "kx016"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-017",
+      "source": "延伸",
+      "tags": [
+        "kx017"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-018",
+      "source": "延伸",
+      "tags": [
+        "kx018"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-019",
+      "source": "延伸",
+      "tags": [
+        "kx019"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-020",
+      "source": "延伸",
+      "tags": [
+        "kx020"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-021",
+      "source": "延伸",
+      "tags": [
+        "kx021"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-022",
+      "source": "延伸",
+      "tags": [
+        "kx022"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-023",
+      "source": "延伸",
+      "tags": [
+        "kx023"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-024",
+      "source": "延伸",
+      "tags": [
+        "kx024"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-025",
+      "source": "延伸",
+      "tags": [
+        "kx025"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-026",
+      "source": "延伸",
+      "tags": [
+        "kx026"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-027",
+      "source": "延伸",
+      "tags": [
+        "kx027"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-028",
+      "source": "延伸",
+      "tags": [
+        "kx028"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-029",
+      "source": "延伸",
+      "tags": [
+        "kx029"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-030",
+      "source": "延伸",
+      "tags": [
+        "kx030"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-031",
+      "source": "延伸",
+      "tags": [
+        "kx031"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-032",
+      "source": "延伸",
+      "tags": [
+        "kx032"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-033",
+      "source": "延伸",
+      "tags": [
+        "kx033"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-034",
+      "source": "延伸",
+      "tags": [
+        "kx034"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-035",
+      "source": "延伸",
+      "tags": [
+        "kx035"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-036",
+      "source": "延伸",
+      "tags": [
+        "kx036"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-037",
+      "source": "延伸",
+      "tags": [
+        "kx037"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-038",
+      "source": "延伸",
+      "tags": [
+        "kx038"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-039",
+      "source": "延伸",
+      "tags": [
+        "kx039"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-040",
+      "source": "延伸",
+      "tags": [
+        "kx040"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-041",
+      "source": "延伸",
+      "tags": [
+        "kx041"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-042",
+      "source": "延伸",
+      "tags": [
+        "kx042"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-043",
+      "source": "延伸",
+      "tags": [
+        "kx043"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-044",
+      "source": "延伸",
+      "tags": [
+        "kx044"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-045",
+      "source": "延伸",
+      "tags": [
+        "kx045"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-046",
+      "source": "延伸",
+      "tags": [
+        "kx046"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-047",
+      "source": "延伸",
+      "tags": [
+        "kx047"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-048",
+      "source": "延伸",
+      "tags": [
+        "kx048"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-049",
+      "source": "延伸",
+      "tags": [
+        "ky001"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-050",
+      "source": "延伸",
+      "tags": [
+        "ky002"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-051",
+      "source": "延伸",
+      "tags": [
+        "ky003"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-052",
+      "source": "延伸",
+      "tags": [
+        "ky004"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-053",
+      "source": "延伸",
+      "tags": [
+        "ky005"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-054",
+      "source": "延伸",
+      "tags": [
+        "ky006"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-055",
+      "source": "延伸",
+      "tags": [
+        "ky007"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-056",
+      "source": "延伸",
+      "tags": [
+        "ky008"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-057",
+      "source": "延伸",
+      "tags": [
+        "ky009"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-058",
+      "source": "延伸",
+      "tags": [
+        "ky010"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-059",
+      "source": "延伸",
+      "tags": [
+        "ky011"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-060",
+      "source": "延伸",
+      "tags": [
+        "ky012"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-061",
+      "source": "延伸",
+      "tags": [
+        "ky013"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-062",
+      "source": "延伸",
+      "tags": [
+        "ky014"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-063",
+      "source": "延伸",
+      "tags": [
+        "ky015"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-064",
+      "source": "延伸",
+      "tags": [
+        "ky016"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-065",
+      "source": "延伸",
+      "tags": [
+        "ky017"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-066",
+      "source": "延伸",
+      "tags": [
+        "ky018"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-067",
+      "source": "延伸",
+      "tags": [
+        "ky019"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-068",
+      "source": "延伸",
+      "tags": [
+        "ky020"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-069",
+      "source": "延伸",
+      "tags": [
+        "ky021"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-070",
+      "source": "延伸",
+      "tags": [
+        "ky022"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-071",
+      "source": "延伸",
+      "tags": [
+        "ky023"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-072",
+      "source": "延伸",
+      "tags": [
+        "ky024"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-073",
+      "source": "延伸",
+      "tags": [
+        "ky025"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-074",
+      "source": "延伸",
+      "tags": [
+        "ky026"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-075",
+      "source": "延伸",
+      "tags": [
+        "ky027"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-076",
+      "source": "延伸",
+      "tags": [
+        "ky028"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-077",
+      "source": "延伸",
+      "tags": [
+        "ky029"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-078",
+      "source": "延伸",
+      "tags": [
+        "ky030"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-079",
+      "source": "延伸",
+      "tags": [
+        "ky031"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-080",
+      "source": "延伸",
+      "tags": [
+        "ky032"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-081",
+      "source": "延伸",
+      "tags": [
+        "ky033"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-082",
+      "source": "延伸",
+      "tags": [
+        "ky034"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-083",
+      "source": "延伸",
+      "tags": [
+        "ky035"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-084",
+      "source": "延伸",
+      "tags": [
+        "ky036"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-085",
+      "source": "延伸",
+      "tags": [
+        "ky037"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-086",
+      "source": "延伸",
+      "tags": [
+        "ky038"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-087",
+      "source": "延伸",
+      "tags": [
+        "ky039"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-088",
+      "source": "延伸",
+      "tags": [
+        "ky040"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-089",
+      "source": "延伸",
+      "tags": [
+        "ky041"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-090",
+      "source": "延伸",
+      "tags": [
+        "ky042"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-091",
+      "source": "延伸",
+      "tags": [
+        "ky043"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-092",
+      "source": "延伸",
+      "tags": [
+        "ky044"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-093",
+      "source": "延伸",
+      "tags": [
+        "ky045"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-094",
+      "source": "延伸",
+      "tags": [
+        "ky046"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-095",
+      "source": "延伸",
+      "tags": [
+        "ky047"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-096",
+      "source": "延伸",
+      "tags": [
+        "ky048"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-097",
+      "source": "延伸",
+      "tags": [
+        "ky049"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-098",
+      "source": "延伸",
+      "tags": [
+        "ky050"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-099",
+      "source": "延伸",
+      "tags": [
+        "ky051"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-100",
+      "source": "延伸",
+      "tags": [
+        "ky052"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-101",
+      "source": "延伸",
+      "tags": [
+        "ky053"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-102",
+      "source": "延伸",
+      "tags": [
+        "ky054"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-103",
+      "source": "延伸",
+      "tags": [
+        "ky055"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-104",
+      "source": "延伸",
+      "tags": [
+        "ky056"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-105",
+      "source": "延伸",
+      "tags": [
+        "ky057"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-106",
+      "source": "延伸",
+      "tags": [
+        "ky058"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-107",
+      "source": "延伸",
+      "tags": [
+        "ky059"
+      ],
+      "option_count": 4
+    },
+    {
+      "id": "BJT-EV143-108",
+      "source": "延伸",
+      "tags": [
+        "ky060"
+      ],
+      "option_count": 4
+    }
+  ],
+  "listening_questions": [
+    {
+      "id": "BJT_JP_S2_01",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_JP_S2_02",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_JP_S2_03",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_JP_S2_04",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_JP_S2_05",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_JP_S2_06",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_JP_S2_07",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_JP_S2_08",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_JP_S2_09",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_JP_S2_10",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_JP02_P1_S1_Q01",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S1_Q02",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S1_Q03",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S1_Q04",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S1_Q05",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S1_Q06",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S1_Q07",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S1_Q08",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S1_Q09",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S1_Q10",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S2_Q01",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S2_Q02",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S2_Q03",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S2_Q04",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S2_Q05",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S2_Q06",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S2_Q07",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S2_Q08",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S2_Q09",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S2_Q10",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q01",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q02",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q03",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q04",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q05",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q06",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q07",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q08",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q09",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q10",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q11",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q12",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q13",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q14",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P1_S3_Q15",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q01",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q02",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q03",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q04",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q05",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q06",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q07",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q08",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q09",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q10",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q11",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q12",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q13",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q14",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S1_Q15",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q01",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q02",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q03",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q04",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q05",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q06",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q07",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q08",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q09",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q10",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q11",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q12",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q13",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q14",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_JP02_P2_S2_Q15",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S1_Q01",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S1_Q02",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S1_Q03",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S1_Q04",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S1_Q05",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S2_Q01",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S2_Q02",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S2_Q03",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S2_Q04",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S2_Q05",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S2_Q06",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S2_Q07",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S2_Q08",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S2_Q09",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S2_Q10",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S3_Q01",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S3_Q02",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S3_Q03",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S3_Q04",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S3_Q05",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S3_Q06",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S3_Q07",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S3_Q08",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S3_Q09",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P1_S3_Q10",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S1_Q01",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S1_Q02",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S1_Q03",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S1_Q04",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S1_Q05",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S2_Q01",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S2_Q02",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S2_Q03",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S2_Q04",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S2_Q05",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S2_Q06",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S2_Q07",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S2_Q08",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S2_Q09",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S2_Q10",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S3_Q01",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S3_Q02",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S3_Q03",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S3_Q04",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S3_Q05",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S3_Q06",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S3_Q07",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S3_Q08",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S3_Q09",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE02_P2_S3_Q10",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S1_Q01",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S1_Q02",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S1_Q03",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S1_Q04",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S1_Q05",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S1_Q06",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S1_Q07",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S1_Q08",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S1_Q09",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S1_Q10",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S2_Q01",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S2_Q02",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S2_Q03",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S2_Q04",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S2_Q05",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S2_Q06",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S2_Q07",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S2_Q08",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S2_Q09",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S2_Q10",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q01",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q02",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q03",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q04",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q05",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q06",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q07",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q08",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q09",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q10",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q11",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q12",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q13",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q14",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P1_S3_Q15",
+      "effective_option_count": 4,
+      "option_source": "question_data"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q01",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q02",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q03",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q04",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q05",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q06",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q07",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q08",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q09",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q10",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q11",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q12",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q13",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q14",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S1_Q15",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q01",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q02",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q03",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q04",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q05",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q06",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q07",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q08",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q09",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q10",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q11",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q12",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q13",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q14",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    },
+    {
+      "id": "BJT_TRUE03_P2_S2_Q15",
+      "effective_option_count": 4,
+      "option_source": "learning_v3"
+    }
+  ],
+  "new_knowledge_cards": [
+    {
+      "id": "ky001",
+      "title": "恐れ入ります・恐縮ですが",
+      "sourceRefs": [
+        "PBJ-C02-Q05",
+        "PBJ-C03-Q06",
+        "PBJ-C03-Q11"
+      ]
+    },
+    {
+      "id": "ky002",
+      "title": "～いただけますか・～いただけますでしょうか",
+      "sourceRefs": [
+        "PBJ-C03-Q01",
+        "PBJ-C03-Q03",
+        "PBJ-C03-Q10"
+      ]
+    },
+    {
+      "id": "ky003",
+      "title": "～てもよろしいでしょうか",
+      "sourceRefs": [
+        "PBJ-C06-Q01",
+        "PBJ-C06-Q04",
+        "PBJ-C06-Q12"
+      ]
+    },
+    {
+      "id": "ky004",
+      "title": "～てはいかがでしょうか",
+      "sourceRefs": [
+        "PBJ-C07-Q01",
+        "PBJ-C07-Q16"
+      ]
+    },
+    {
+      "id": "ky005",
+      "title": "～かと思います",
+      "sourceRefs": [
+        "PBJ-C07-Q03",
+        "PBJ-C07-Q15"
+      ]
+    },
+    {
+      "id": "ky006",
+      "title": "～とのことです",
+      "sourceRefs": [
+        "PBJ-C08-Q01",
+        "PBJ-C08-Q03",
+        "PBJ-C08-Q10"
+      ]
+    },
+    {
+      "id": "ky007",
+      "title": "～そうです：傳聞與樣態",
+      "sourceRefs": [
+        "PBJ-C08-Q04",
+        "PBJ-C08-Q05"
+      ]
+    },
+    {
+      "id": "ky008",
+      "title": "～予定です・～見込みです",
+      "sourceRefs": [
+        "PBJ-C02-Q03",
+        "PBJ-C08-Q07",
+        "PBJ-C08-Q12",
+        "PBJ-C08-Q18"
+      ]
+    },
+    {
+      "id": "ky009",
+      "title": "～次第、ご連絡します",
+      "sourceRefs": [
+        "PBJ-C08-Q07",
+        "k36"
+      ]
+    },
+    {
+      "id": "ky010",
+      "title": "～に限り",
+      "sourceRefs": [
+        "PBJ-C06-Q18"
+      ]
+    },
+    {
+      "id": "ky011",
+      "title": "～となっております",
+      "sourceRefs": [
+        "PBJ-C06-Q14"
+      ]
+    },
+    {
+      "id": "ky012",
+      "title": "差し支えありません",
+      "sourceRefs": [
+        "PBJ-C06-Q11",
+        "k19"
+      ]
+    },
+    {
+      "id": "ky013",
+      "title": "ご遠慮ください・ご遠慮いただいております",
+      "sourceRefs": [
+        "PBJ-C06-Q02",
+        "PBJ-C06-Q03",
+        "PBJ-C06-Q07",
+        "PBJ-C06-Q10"
+      ]
+    },
+    {
+      "id": "ky014",
+      "title": "ご都合・都合がつく",
+      "sourceRefs": [
+        "BJT_JP_S2_02",
+        "PBJ-C05-Q06"
+      ]
+    },
+    {
+      "id": "ky015",
+      "title": "よろしければ・可能でしたら",
+      "sourceRefs": [
+        "PBJ-C05-Q01",
+        "PBJ-C05-Q09",
+        "PBJ-C03-Q10"
+      ]
+    },
+    {
+      "id": "ky016",
+      "title": "お忙しいところ恐縮ですが",
+      "sourceRefs": [
+        "PBJ-C03-Q11"
+      ]
+    },
+    {
+      "id": "ky017",
+      "title": "遅くとも～までに",
+      "sourceRefs": [
+        "PBJ-C03-Q12",
+        "kx009"
+      ]
+    },
+    {
+      "id": "ky018",
+      "title": "～でしたら対応可能です",
+      "sourceRefs": [
+        "PBJ-C03-Q13",
+        "PBJ-C03-Q14"
+      ]
+    },
+    {
+      "id": "ky019",
+      "title": "目を通す",
+      "sourceRefs": [
+        "PBJ-C03-Q15",
+        "BJT_TRUE03_P1_S1_Q07"
+      ]
+    },
+    {
+      "id": "ky020",
+      "title": "ご高覧賜る",
+      "sourceRefs": [
+        "PBJ-C03-Q02",
+        "PBJ-C03-Q19"
+      ]
+    },
+    {
+      "id": "ky021",
+      "title": "～てもらえる？・～ていただけますか",
+      "sourceRefs": [
+        "PBJ-C03-Q02",
+        "PBJ-C03-Q07"
+      ]
+    },
+    {
+      "id": "ky022",
+      "title": "～てあげる・～ていただく：授受方向",
+      "sourceRefs": [
+        "o16",
+        "BJT_JP_S2_10",
+        "PBJ-C03-Q09"
+      ]
+    },
+    {
+      "id": "ky023",
+      "title": "こちらへどうぞ・ご案内いたします",
+      "sourceRefs": [
+        "BJT_TRUE02_P1_S2_Q01",
+        "PBJ-C01-Q16"
+      ]
+    },
+    {
+      "id": "ky024",
+      "title": "配属になる",
+      "sourceRefs": [
+        "BJT_TRUE02_P1_S2_Q05"
+      ]
+    },
+    {
+      "id": "ky025",
+      "title": "～くださいまして・～いただきまして",
+      "sourceRefs": [
+        "BJT_TRUE02_P1_S2_Q10"
+      ]
+    },
+    {
+      "id": "ky026",
+      "title": "伝言を預かる",
+      "sourceRefs": [
+        "BJT_JP_S2_08",
+        "pb-k04"
+      ]
+    },
+    {
+      "id": "ky027",
+      "title": "お名前を頂戴する",
+      "sourceRefs": [
+        "BJT_JP_S2_07"
+      ]
+    },
+    {
+      "id": "ky028",
+      "title": "お電話が遠い",
+      "sourceRefs": [
+        "PBJ-C02-Q14"
+      ]
+    },
+    {
+      "id": "ky029",
+      "title": "席を外す・外出する・不在",
+      "sourceRefs": [
+        "PBJ-C02-Q02",
+        "PBJ-C02-Q11",
+        "PBJ-C02-Q15"
+      ]
+    },
+    {
+      "id": "ky030",
+      "title": "確定予定與推測：戻る予定・～ようです",
+      "sourceRefs": [
+        "PBJ-C02-Q03",
+        "BJT_JP_S2_09"
+      ]
+    },
+    {
+      "id": "ky031",
+      "title": "おつなぎいたします",
+      "sourceRefs": [
+        "PBJ-C02-Q12"
+      ]
+    },
+    {
+      "id": "ky032",
+      "title": "～てしまい、失礼いたしました",
+      "sourceRefs": [
+        "PBJ-C02-Q13"
+      ]
+    },
+    {
+      "id": "ky033",
+      "title": "～旨を伝える",
+      "sourceRefs": [
+        "PBJ-C02-Q16"
+      ]
+    },
+    {
+      "id": "ky034",
+      "title": "お間違いないでしょうか",
+      "sourceRefs": [
+        "PBJ-C04-Q08"
+      ]
+    },
+    {
+      "id": "ky035",
+      "title": "お支払い条件",
+      "sourceRefs": [
+        "PBJ-C04-Q15",
+        "BJT_TRUE02_P2_S1_Q03"
+      ]
+    },
+    {
+      "id": "ky036",
+      "title": "分納・欠品・代替品",
+      "sourceRefs": [
+        "PBJ-C04-Q18",
+        "PBJ-C04-Q19"
+      ]
+    },
+    {
+      "id": "ky037",
+      "title": "ご検討いただく・再度ご検討いただく",
+      "sourceRefs": [
+        "BJT_TRUE02_P1_S2_Q07",
+        "PBJ-C03-Q18",
+        "PBJ-C10-Q19"
+      ]
+    },
+    {
+      "id": "ky038",
+      "title": "一案かと存じます",
+      "sourceRefs": [
+        "PBJ-C07-Q04"
+      ]
+    },
+    {
+      "id": "ky039",
+      "title": "～ほうがいいと思います",
+      "sourceRefs": [
+        "PBJ-C07-Q02"
+      ]
+    },
+    {
+      "id": "ky040",
+      "title": "別の見方もできるのではないでしょうか",
+      "sourceRefs": [
+        "PBJ-C07-Q05"
+      ]
+    },
+    {
+      "id": "ky041",
+      "title": "～可能性があります",
+      "sourceRefs": [
+        "PBJ-C07-Q08",
+        "PBJ-C09-Q07"
+      ]
+    },
+    {
+      "id": "ky042",
+      "title": "確認したところ",
+      "sourceRefs": [
+        "PBJ-C08-Q08",
+        "kx001"
+      ]
+    },
+    {
+      "id": "ky043",
+      "title": "現時点では",
+      "sourceRefs": [
+        "PBJ-C08-Q09",
+        "PBJ-C09-Q07"
+      ]
+    },
+    {
+      "id": "ky044",
+      "title": "改めて",
+      "sourceRefs": [
+        "PBJ-C08-Q09"
+      ]
+    },
+    {
+      "id": "ky045",
+      "title": "～との連絡がありました",
+      "sourceRefs": [
+        "PBJ-C08-Q01"
+      ]
+    },
+    {
+      "id": "ky046",
+      "title": "決定・保留・検討中",
+      "sourceRefs": [
+        "BJT-O-0062",
+        "PBJ-C10-Q05",
+        "PBJ-C10-Q19"
+      ]
+    },
+    {
+      "id": "ky047",
+      "title": "一方で",
+      "sourceRefs": [
+        "PBJ-C10-Q14",
+        "PBJ-C09-Q10"
+      ]
+    },
+    {
+      "id": "ky048",
+      "title": "確かに～ですが",
+      "sourceRefs": [
+        "PBJ-C10-Q13",
+        "PBJ-C10-Q08"
+      ]
+    },
+    {
+      "id": "ky049",
+      "title": "つまり",
+      "sourceRefs": [
+        "PBJ-C10-Q10"
+      ]
+    },
+    {
+      "id": "ky050",
+      "title": "～ということでよろしいでしょうか",
+      "sourceRefs": [
+        "PBJ-C10-Q04"
+      ]
+    },
+    {
+      "id": "ky051",
+      "title": "～ていただければ、～可能です",
+      "sourceRefs": [
+        "PBJ-C10-Q09"
+      ]
+    },
+    {
+      "id": "ky052",
+      "title": "気になる・懸念",
+      "sourceRefs": [
+        "PBJ-C07-Q18",
+        "PBJ-C10-Q07",
+        "PBJ-C10-Q10"
+      ]
+    },
+    {
+      "id": "ky053",
+      "title": "～に違いない",
+      "sourceRefs": [
+        "PBJ-C03-Q10"
+      ]
+    },
+    {
+      "id": "ky054",
+      "title": "必ず・絶対・可能性・見込み",
+      "sourceRefs": [
+        "PBJ-C02-Q03",
+        "PBJ-C08-Q06",
+        "PBJ-C09-Q07"
+      ]
+    },
+    {
+      "id": "ky055",
+      "title": "耳が痛い",
+      "sourceRefs": [
+        "BJT-O-0081"
+      ]
+    },
+    {
+      "id": "ky056",
+      "title": "損益分岐点・固定費・変動費・総コスト",
+      "sourceRefs": [
+        "BJT-O-0089"
+      ]
+    },
+    {
+      "id": "ky057",
+      "title": "棚卸し・受け払い",
+      "sourceRefs": [
+        "BJT-O-0091"
+      ]
+    },
+    {
+      "id": "ky058",
+      "title": "即戦力",
+      "sourceRefs": [
+        "BJT_TRUE02_P1_S3_Q05"
+      ]
+    },
+    {
+      "id": "ky059",
+      "title": "手間がかかる・手間を省く",
+      "sourceRefs": [
+        "BJT_TRUE02_P1_S3_Q04"
+      ]
+    },
+    {
+      "id": "ky060",
+      "title": "売り込む・店頭キャンペーン・小売店訪問",
+      "sourceRefs": [
+        "BJT_TRUE03_P1_S3_Q01"
+      ]
+    }
+  ],
+  "new_extensions": [
+    {
+      "id": "BJT-EV143-001",
+      "knowledge_id": "kx001",
+      "stem": "「今まさに資料を確認している最中です」と言いたい。最も自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-002",
+      "knowledge_id": "kx002",
+      "stem": "彼は今、会議室から出ようとしている。意味が最も近いのは？"
+    },
+    {
+      "id": "BJT-EV143-003",
+      "knowledge_id": "kx003",
+      "stem": "上司が「部下にこの資料を確認してほしい」と言った。最も近いのは？"
+    },
+    {
+      "id": "BJT-EV143-004",
+      "knowledge_id": "kx004",
+      "stem": "取引先に依頼を切り出す前置きとして自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-005",
+      "knowledge_id": "kx005",
+      "stem": "顧客の利用状況に合わせてプランを変える。自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-006",
+      "knowledge_id": "kx006",
+      "stem": "二つの動作を同時に行う表現は？"
+    },
+    {
+      "id": "BJT-EV143-007",
+      "knowledge_id": "kx007",
+      "stem": "「この仕事___経験が必要です」に最も自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-008",
+      "knowledge_id": "kx008",
+      "stem": "口語で「田中さんって、営業部の人？」の「って」に最も近い働きは？"
+    },
+    {
+      "id": "BJT-EV143-009",
+      "knowledge_id": "kx009",
+      "stem": "金曜日を締切として、それ以前に提出してほしい。自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-010",
+      "knowledge_id": "kx010",
+      "stem": "文書で追加事項を示す「なお」の使い方として自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-011",
+      "knowledge_id": "kx011",
+      "stem": "取引先に再確認を依頼する最も丁寧な表現は？"
+    },
+    {
+      "id": "BJT-EV143-012",
+      "knowledge_id": "kx012",
+      "stem": "上司の指示に対する返答として最も自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-013",
+      "knowledge_id": "kx013",
+      "stem": "社外の相手から伝言を受ける。最も自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-014",
+      "knowledge_id": "kx014",
+      "stem": "強く参加を希望する返答として自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-015",
+      "knowledge_id": "kx015",
+      "stem": "プレゼン終了後、質問を募る自然な言い方は？"
+    },
+    {
+      "id": "BJT-EV143-016",
+      "knowledge_id": "kx016",
+      "stem": "長年利用してくれた顧客への挨拶として自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-017",
+      "knowledge_id": "kx017",
+      "stem": "顧客の期待に応えられなかったとき自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-018",
+      "knowledge_id": "kx018",
+      "stem": "会話で相手企業を指す語は？"
+    },
+    {
+      "id": "BJT-EV143-019",
+      "knowledge_id": "kx019",
+      "stem": "取引先に自社の課長を話題にする。最も自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-020",
+      "knowledge_id": "kx020",
+      "stem": "「田中という方からお電話です」の「という方」は？"
+    },
+    {
+      "id": "BJT-EV143-021",
+      "knowledge_id": "kx021",
+      "stem": "長期間相手に心配をかけたことを詫びるなら？"
+    },
+    {
+      "id": "BJT-EV143-022",
+      "knowledge_id": "kx022",
+      "stem": "顧客に直接会って謝罪したい。自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-023",
+      "knowledge_id": "kx023",
+      "stem": "部下に「戻ったら顧客へ電話するよう伝える」。自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-024",
+      "knowledge_id": "kx024",
+      "stem": "来社した顧客へのお礼として最も自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-025",
+      "knowledge_id": "kx025",
+      "stem": "上司に自分の父の発言を尋ねる。自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-026",
+      "knowledge_id": "kx026",
+      "stem": "「足で稼ぐ」の意味に最も近いのは？"
+    },
+    {
+      "id": "BJT-EV143-027",
+      "knowledge_id": "kx027",
+      "stem": "売れない商品のラインナップを再検討する。最も近い語は？"
+    },
+    {
+      "id": "BJT-EV143-028",
+      "knowledge_id": "kx028",
+      "stem": "高齢者もいるので、できるだけ楽なプランにする。「できるだけ」に近いのは？"
+    },
+    {
+      "id": "BJT-EV143-029",
+      "knowledge_id": "kx029",
+      "stem": "「売上全体に占める割合」の意味は？"
+    },
+    {
+      "id": "BJT-EV143-030",
+      "knowledge_id": "kx030",
+      "stem": "「現場の手間がかからないというのが、一番の利点」の中心は？"
+    },
+    {
+      "id": "BJT-EV143-031",
+      "knowledge_id": "kx031",
+      "stem": "計画を少しずつ確実に進める。「着実に」に近いのは？"
+    },
+    {
+      "id": "BJT-EV143-032",
+      "knowledge_id": "kx032",
+      "stem": "「至急」と「早速」の違いとして最も適切なのは？"
+    },
+    {
+      "id": "BJT-EV143-033",
+      "knowledge_id": "kx033",
+      "stem": "自分から日程変更をお願いしたい。自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-034",
+      "knowledge_id": "kx034",
+      "stem": "「だいたいの金額すら想像できない」に近いのは？"
+    },
+    {
+      "id": "BJT-EV143-035",
+      "knowledge_id": "kx035",
+      "stem": "「企業努力をしても赤字は避けられない」に最も近いのは？"
+    },
+    {
+      "id": "BJT-EV143-036",
+      "knowledge_id": "kx036",
+      "stem": "来期方針を部長が社員に伝える場合、最も中立な語は？"
+    },
+    {
+      "id": "BJT-EV143-037",
+      "knowledge_id": "kx037",
+      "stem": "電話で「田中は会社の外へ出ています」。最も自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-038",
+      "knowledge_id": "kx038",
+      "stem": "部長に「私の車に乗ってください」。自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-039",
+      "knowledge_id": "kx039",
+      "stem": "自分が急ぎの書類を届ける。自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-040",
+      "knowledge_id": "kx040",
+      "stem": "「今月末を最後に、その後は勤務しない」と明確に言うなら？"
+    },
+    {
+      "id": "BJT-EV143-041",
+      "knowledge_id": "kx041",
+      "stem": "同僚が先に退社すると言ったときの返答は？"
+    },
+    {
+      "id": "BJT-EV143-042",
+      "knowledge_id": "kx042",
+      "stem": "既存取引先に電話をかける冒頭は？"
+    },
+    {
+      "id": "BJT-EV143-043",
+      "knowledge_id": "kx043",
+      "stem": "「どうしても方法がない」に近いのは？"
+    },
+    {
+      "id": "BJT-EV143-044",
+      "knowledge_id": "kx044",
+      "stem": "病気から戻った相手への言葉として適切なのは？"
+    },
+    {
+      "id": "BJT-EV143-045",
+      "knowledge_id": "kx045",
+      "stem": "許可を得ながら自分が対応したい意向を柔らかく言うなら？"
+    },
+    {
+      "id": "BJT-EV143-046",
+      "knowledge_id": "kx046",
+      "stem": "会社の決定で来月大阪へ異動する。自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-047",
+      "knowledge_id": "kx047",
+      "stem": "部下へ「明日までに提出するように」と伝える。自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-048",
+      "knowledge_id": "kx048",
+      "stem": "客先に自社部長の発言を伝える。自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-049",
+      "knowledge_id": "ky001",
+      "stem": "取引先に追加資料を頼む前置きとして最も自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-050",
+      "knowledge_id": "ky002",
+      "stem": "顧客に「今日中に確認してもらえますか」と丁寧に頼むなら？"
+    },
+    {
+      "id": "BJT-EV143-051",
+      "knowledge_id": "ky003",
+      "stem": "会議室を使ってよいか許可を求めるなら？"
+    },
+    {
+      "id": "BJT-EV143-052",
+      "knowledge_id": "ky004",
+      "stem": "同僚に別案を提案する最も柔らかい表現は？"
+    },
+    {
+      "id": "BJT-EV143-053",
+      "knowledge_id": "ky005",
+      "stem": "会議で反対意見を柔らかく述べるなら？"
+    },
+    {
+      "id": "BJT-EV143-054",
+      "knowledge_id": "ky006",
+      "stem": "「先方から納期を延ばしたいと連絡があった」を正式に報告するなら？"
+    },
+    {
+      "id": "BJT-EV143-055",
+      "knowledge_id": "ky007",
+      "stem": "「空が暗いので、もうすぐ雨が降りそうだ」はどの「そう」？"
+    },
+    {
+      "id": "BJT-EV143-056",
+      "knowledge_id": "ky008",
+      "stem": "復旧時間を現在の進捗から予測している。自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-057",
+      "knowledge_id": "ky009",
+      "stem": "「確認が終わったらすぐ連絡する」を商務表現にすると？"
+    },
+    {
+      "id": "BJT-EV143-058",
+      "knowledge_id": "ky010",
+      "stem": "「社内でだけ使用できます」に最も近いのは？"
+    },
+    {
+      "id": "BJT-EV143-059",
+      "knowledge_id": "ky011",
+      "stem": "施設の既定ルールを丁寧に案内するなら？"
+    },
+    {
+      "id": "BJT-EV143-060",
+      "knowledge_id": "ky012",
+      "stem": "相手に「その時間で問題ありません」と返すなら？"
+    },
+    {
+      "id": "BJT-EV143-061",
+      "knowledge_id": "ky013",
+      "stem": "館内撮影を丁寧に禁止するなら？"
+    },
+    {
+      "id": "BJT-EV143-062",
+      "knowledge_id": "ky014",
+      "stem": "相手の日程が空いているか丁寧に尋ねるなら？"
+    },
+    {
+      "id": "BJT-EV143-063",
+      "knowledge_id": "ky015",
+      "stem": "相手に断る余地を残して会議参加を頼むなら？"
+    },
+    {
+      "id": "BJT-EV143-064",
+      "knowledge_id": "ky016",
+      "stem": "忙しい相手に返信を催促する前置きは？"
+    },
+    {
+      "id": "BJT-EV143-065",
+      "knowledge_id": "ky017",
+      "stem": "最終締切が金曜日なら？"
+    },
+    {
+      "id": "BJT-EV143-066",
+      "knowledge_id": "ky018",
+      "stem": "今週は無理だが来週月曜ならできる。適切な返答は？"
+    },
+    {
+      "id": "BJT-EV143-067",
+      "knowledge_id": "ky019",
+      "stem": "「資料をざっと確認しておいて」に最も近いのは？"
+    },
+    {
+      "id": "BJT-EV143-068",
+      "knowledge_id": "ky020",
+      "stem": "同僚に簡単な資料確認を頼むのに過剰に硬い表現は？"
+    },
+    {
+      "id": "BJT-EV143-069",
+      "knowledge_id": "ky021",
+      "stem": "親しい同僚に軽く確認を頼むなら？"
+    },
+    {
+      "id": "BJT-EV143-070",
+      "knowledge_id": "ky022",
+      "stem": "「承蒙客戶寄資料給我」的授受方向是？"
+    },
+    {
+      "id": "BJT-EV143-071",
+      "knowledge_id": "ky023",
+      "stem": "来客を会議室へ案内するなら？"
+    },
+    {
+      "id": "BJT-EV143-072",
+      "knowledge_id": "ky024",
+      "stem": "新人が「今月から営業部に配置されました」と言うなら？"
+    },
+    {
+      "id": "BJT-EV143-073",
+      "knowledge_id": "ky025",
+      "stem": "取引先が花を送ってくれたことへのお礼は？"
+    },
+    {
+      "id": "BJT-EV143-074",
+      "knowledge_id": "ky026",
+      "stem": "電話で「留言をお預かりします」と言いたい。自然なのは？"
+    },
+    {
+      "id": "BJT-EV143-075",
+      "knowledge_id": "ky027",
+      "stem": "受付で相手の名前を丁寧に聞くなら？"
+    },
+    {
+      "id": "BJT-EV143-076",
+      "knowledge_id": "ky028",
+      "stem": "電話の声が小さいときの婉曲表現は？"
+    },
+    {
+      "id": "BJT-EV143-077",
+      "knowledge_id": "ky029",
+      "stem": "社員が一時的に机から離れている場合は？"
+    },
+    {
+      "id": "BJT-EV143-078",
+      "knowledge_id": "ky030",
+      "stem": "確定済みの帰社予定を伝えるなら？"
+    },
+    {
+      "id": "BJT-EV143-079",
+      "knowledge_id": "ky031",
+      "stem": "電話を担当者へ転送するなら？"
+    },
+    {
+      "id": "BJT-EV143-080",
+      "knowledge_id": "ky032",
+      "stem": "電話が途中で切れたことを詫びるなら？"
+    },
+    {
+      "id": "BJT-EV143-081",
+      "knowledge_id": "ky033",
+      "stem": "「緊急だという内容を担当者に伝える」の書面語は？"
+    },
+    {
+      "id": "BJT-EV143-082",
+      "knowledge_id": "ky034",
+      "stem": "品番を復唱確認するなら？"
+    },
+    {
+      "id": "BJT-EV143-083",
+      "knowledge_id": "ky035",
+      "stem": "取引条件で「いつ・どう払うか」をまとめて何という？"
+    },
+    {
+      "id": "BJT-EV143-084",
+      "knowledge_id": "ky036",
+      "stem": "一度に全部納品せず、二回に分けて納品するのは？"
+    },
+    {
+      "id": "BJT-EV143-085",
+      "knowledge_id": "ky037",
+      "stem": "「先方は検討します」と言った。適切な理解は？"
+    },
+    {
+      "id": "BJT-EV143-086",
+      "knowledge_id": "ky038",
+      "stem": "顧客へ「これも一つの案です」と柔らかく言うなら？"
+    },
+    {
+      "id": "BJT-EV143-087",
+      "knowledge_id": "ky039",
+      "stem": "部下に「再確認した方がいい」と助言するなら？"
+    },
+    {
+      "id": "BJT-EV143-088",
+      "knowledge_id": "ky040",
+      "stem": "会議で直接否定を避けるなら？"
+    },
+    {
+      "id": "BJT-EV143-089",
+      "knowledge_id": "ky041",
+      "stem": "リスクを断定せず伝えるなら？"
+    },
+    {
+      "id": "BJT-EV143-090",
+      "knowledge_id": "ky042",
+      "stem": "「調べた結果、誤りはなかった」を自然に言うなら？"
+    },
+    {
+      "id": "BJT-EV143-091",
+      "knowledge_id": "ky043",
+      "stem": "「今の段階ではまだ未確認」を自然に言うなら？"
+    },
+    {
+      "id": "BJT-EV143-092",
+      "knowledge_id": "ky044",
+      "stem": "「確認後、另行再報告」を自然に言うなら？"
+    },
+    {
+      "id": "BJT-EV143-093",
+      "knowledge_id": "ky045",
+      "stem": "社内報告で「先方から延期したいと連絡が来た」は？"
+    },
+    {
+      "id": "BJT-EV143-094",
+      "knowledge_id": "ky046",
+      "stem": "「検討します」とだけ返事をもらった場合の扱いは？"
+    },
+    {
+      "id": "BJT-EV143-095",
+      "knowledge_id": "ky047",
+      "stem": "「コストは高い。一方で品質は良い」の「一方で」は？"
+    },
+    {
+      "id": "BJT-EV143-096",
+      "knowledge_id": "ky048",
+      "stem": "「確かにAですが、Bです」の最終立場を読むとき重要なのは？"
+    },
+    {
+      "id": "BJT-EV143-097",
+      "knowledge_id": "ky049",
+      "stem": "「つまり」の働きは？"
+    },
+    {
+      "id": "BJT-EV143-098",
+      "knowledge_id": "ky050",
+      "stem": "会議の決定を最後に確認するなら？"
+    },
+    {
+      "id": "BJT-EV143-099",
+      "knowledge_id": "ky051",
+      "stem": "条件付きで対応可能と伝えるなら？"
+    },
+    {
+      "id": "BJT-EV143-100",
+      "knowledge_id": "ky052",
+      "stem": "「一点気になるのは運用コストです」の意味は？"
+    },
+    {
+      "id": "BJT-EV143-101",
+      "knowledge_id": "ky053",
+      "stem": "「彼はもう到着したに違いない」の確度は？"
+    },
+    {
+      "id": "BJT-EV143-102",
+      "knowledge_id": "ky054",
+      "stem": "未確認情報の報告として最も適切なのは？"
+    },
+    {
+      "id": "BJT-EV143-103",
+      "knowledge_id": "ky055",
+      "stem": "上司に自分の整理不足を指摘され「正論なのでつらい」と感じた。慣用句は？"
+    },
+    {
+      "id": "BJT-EV143-104",
+      "knowledge_id": "ky056",
+      "stem": "売上高と総コストが同額になる点は？"
+    },
+    {
+      "id": "BJT-EV143-105",
+      "knowledge_id": "ky057",
+      "stem": "倉庫の実在庫と帳簿を照合する作業は？"
+    },
+    {
+      "id": "BJT-EV143-106",
+      "knowledge_id": "ky058",
+      "stem": "採用後すぐ業務で成果を出せる経験者を何という？"
+    },
+    {
+      "id": "BJT-EV143-107",
+      "knowledge_id": "ky059",
+      "stem": "新システム導入で入力作業が減ることを表すなら？"
+    },
+    {
+      "id": "BJT-EV143-108",
+      "knowledge_id": "ky060",
+      "stem": "商品を小売店へ積極的に紹介して売ろうとすることは？"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "version": "v14.3",
+  "knowledge_total": 226,
+  "knowledge_before_v14_3": 166,
+  "new_knowledge_cards": 60,
+  "question_total": 524,
+  "question_source_counts": {
+    "原題": 98,
+    "延伸": 226,
+    "實用商務": 200
+  },
+  "extensions_before_v14_3": 118,
+  "new_targeted_extensions": 108,
+  "extension_total": 226,
+  "new_option_details": 432,
+  "full_option_audit": {
+    "text_questions": 416,
+    "text_option_positions": 1664,
+    "listening_questions": 190,
+    "listening_option_positions": 760,
+    "listening_questions_with_effective_four_option_text": 190,
+    "fully_auditable_option_positions": 2424,
+    "unresolved_listening_questions": [],
+    "note": "Listening option text is resolved from typed options when present, otherwise from Learning v3 optionAnalysis; all 190 listening questions have four recoverable option texts."
+  },
+  "checks": {
+    "duplicate_knowledge_ids": [],
+    "duplicate_question_ids": [],
+    "new_extension_missing_details": [],
+    "new_extension_bad_answers": [],
+    "v14_2_or_v14_3_cards_without_targeted_extension": [],
+    "new_cards_without_source_refs": [],
+    "all_text_questions_have_tags": true
+  },
+  "checks_pass": true
+}
