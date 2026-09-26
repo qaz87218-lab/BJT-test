@@ -13,7 +13,7 @@
   const SCENARIO_UNDERSTANDING_BY_ID = window.BJT_SCENARIO_UNDERSTANDING_BY_ID || {};
   const ROLE_HINT_FOR_QUESTION = window.BJT_ROLE_HINT_FOR_QUESTION || (()=>'');
   const LQMAP = Object.fromEntries(LISTENING_QUESTIONS.map(q=>[q.id,q]));
-  const LATEST_FEATURE='listening';
+  const LATEST_FEATURE='mockexam';
   // v14.1.1 — 第3冊 65 題媒體重新對齊：以原始音檔停頓邊界重切 MP3，並依同步影片重擷取逐題題圖。
   const ORIGINAL_ORDER = QUESTIONS.filter(q=>q.source==='原題').map(q=>q.id);
   const ORIGINAL_READING_BOOKS = [
@@ -319,6 +319,7 @@
     system:['系統學習',`${MODULES.length} 模組 × ${LESSONS.length} 課：學習 → Quick Check → 題庫應用 → 48h 重做。`],
     practice:['刷題','原題、延伸題、錯題與間隔複習。'],
     listening:['聽力題庫',`${LISTENING_QUESTIONS.length} 題聽解／聽讀解真題：圖片與音檔完整保留，並依來源資料品質區分深度解析與正解驗證題。`],
+    mockexam:['BJT 模擬試驗','獨立80題正式模擬：聽解25＋聽讀解25＋讀解30；嚴格不可回頭、聽力僅一次、最後換算0–800模擬尺度分數。'],
     battle:['BJT BATTLE','用題庫攻略八大領域 Boss；答對造成傷害，連擊提高輸出。'],
     titles:['稱號殿堂','主位階隨 Level 進化；Boss 與特殊條件解鎖可裝備異名。'],
     knowledge:['知識庫','每一道題的相關敬語、文法、詞彙與閱讀策略。'],
@@ -328,12 +329,16 @@
     settings:['設定 / 備份','學習紀錄只存在這台裝置，可隨時匯出。']
   }[view]}
   function switchView(view){
+    if(window.BJT_MOCK_EXAM?.isActive?.() && view!=='mockexam'){
+      if(!confirm('BJT模擬試驗進行中です。離れると今回の試驗を中止します。よろしいですか？')) return;
+      window.BJT_MOCK_EXAM.abandon();
+    }
     document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
     document.getElementById('view-'+view).classList.add('active');
     document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
     const [t,s]=titleMap(view);document.getElementById('pageTitle').textContent=t;document.getElementById('pageSubtitle').textContent=s;
     document.getElementById('sidebar').classList.remove('open');
-    if(view==='dashboard')renderDashboard(); if(view==='system')renderSystem(); if(view==='practice')renderPractice(); if(view==='listening')renderListening(); if(view==='battle')renderBattle(); if(view==='titles')renderTitles(); if(view==='knowledge')renderKnowledge(); if(view==='articles')renderArticles(); if(view==='business')renderBusiness(); if(view==='mistakes')renderMistakes(); if(view==='settings')renderSettings();
+    if(view==='dashboard')renderDashboard(); if(view==='system')renderSystem(); if(view==='practice')renderPractice(); if(view==='listening')renderListening(); if(view==='mockexam')window.BJT_MOCK_EXAM?.render?.(document.getElementById('view-mockexam')); if(view==='battle')renderBattle(); if(view==='titles')renderTitles(); if(view==='knowledge')renderKnowledge(); if(view==='articles')renderArticles(); if(view==='business')renderBusiness(); if(view==='mistakes')renderMistakes(); if(view==='settings')renderSettings();
   }
 
   function applyLatestFeatureBadge(){document.querySelectorAll('.nav-new').forEach(x=>x.remove());const target=document.querySelector(`[data-feature="${LATEST_FEATURE}"]`);if(target){const badge=document.createElement('span');badge.className='nav-new';badge.textContent='NEW';target.appendChild(badge)}}
@@ -1084,6 +1089,6 @@
   document.getElementById('importFile').addEventListener('change',e=>{if(e.target.files[0])importState(e.target.files[0]);e.target.value=''})
   document.addEventListener('keydown',e=>{if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName))return;const practiceActive=document.getElementById('view-practice').classList.contains('active'),listeningActive=document.getElementById('view-listening').classList.contains('active');if(practiceActive&&session){if(!currentAnswered&&['1','2','3','4'].includes(e.key)){const b=document.querySelector(`.option[data-opt="${Number(e.key)-1}"]`);if(b)b.click()}else if(e.key==='ArrowLeft'){previousQuestion()}else if(e.key==='ArrowRight'||(currentAnswered&&e.key==='Enter')){nextQuestion()}return}if(listeningActive&&listeningSession){const rec=listeningRecord();if(!rec?.answered&&rec?.audioStarted&&['1','2','3','4'].includes(e.key))answerListening(Number(e.key));else if(e.key==='ArrowLeft')listeningPrev();else if(e.key==='ArrowRight')listeningNext()}})
   if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch(()=>{});
-  applyLatestFeatureBadge();checkGameAchievements(false);saveState();updateToday();renderDashboard();
+  applyLatestFeatureBadge();checkGameAchievements(false);saveState();updateToday();if(window.BJT_MOCK_EXAM?.isActive?.())switchView('mockexam');else renderDashboard();
   setInterval(()=>{if(ensureDailyCurrent()) localStorage.setItem(STORAGE,JSON.stringify(state));updateToday()},60000);
 })();

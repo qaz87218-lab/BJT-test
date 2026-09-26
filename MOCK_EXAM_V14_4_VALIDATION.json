@@ -1,0 +1,64 @@
+{
+  "version": "v14.4",
+  "feature": "BJT MOCK EXAM 01",
+  "question_count": 80,
+  "unique_ids": 80,
+  "section_counts": {
+    "P1_S1": 5,
+    "P1_S2": 10,
+    "P1_S3": 10,
+    "P2_S1": 5,
+    "P2_S2": 10,
+    "P2_S3": 10,
+    "P3_S1": 10,
+    "P3_S2": 10,
+    "P3_S3": 10
+  },
+  "parts": {
+    "listening": 25,
+    "listening_reading": 25,
+    "reading": 30
+  },
+  "timers_minutes": {
+    "part1": 45,
+    "part2": 30,
+    "part3": 30
+  },
+  "audio_questions": 50,
+  "audio_text_complete": 50,
+  "four_options_complete": 80,
+  "valid_answers": 80,
+  "difficulty": {
+    "mean": -0.011249999999999996,
+    "min": -1.1,
+    "max": 1.1
+  },
+  "behavior": {
+    "part1_part2_audio_once": true,
+    "no_backtracking_all_parts_user_strict_mode": true,
+    "official_difference": "Official BJT permits returning within Part 3's 30-minute limit; this mock is intentionally stricter at the user's request.",
+    "answers_hidden_until_finish": true,
+    "separate_localstorage_key": "bjtMockExamV1",
+    "main_learning_state_untouched": "bjtDeepStateV1"
+  },
+  "scoring": {
+    "range": "0-800",
+    "method": "Internal 2PL-style IRT ability estimate using authored item difficulty and section-based discrimination parameters; mapped around 400 at theta=0.",
+    "official_status": "Unofficial practice estimate. Official BJT scores require calibrated items and the official IRT conversion.",
+    "level_bands": {
+      "J5": "0-199",
+      "J4": "200-319",
+      "J3": "320-419",
+      "J2": "420-529",
+      "J1": "530-599",
+      "J1+": "600-800"
+    },
+    "user_target": 400
+  },
+  "syntax_checks": {
+    "app_js": "PASS",
+    "mock_exam_js": "PASS",
+    "sw_js": "PASS"
+  },
+  "browser_runtime_test": "Chromium headless could not produce DOM in this container due environment/DBus issues; not claimed as passed."
+}
