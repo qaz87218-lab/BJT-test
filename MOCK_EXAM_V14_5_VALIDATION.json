@@ -1,0 +1,67 @@
+{
+  "version": "14.5",
+  "exam_count": 3,
+  "total_questions": 240,
+  "exams": {
+    "BJT-MOCK-01": {
+      "title": "模擬試驗 第1回",
+      "question_count": 80,
+      "section_counts": {
+        "P1-S1": 5,
+        "P1-S2": 10,
+        "P1-S3": 10,
+        "P2-S1": 5,
+        "P2-S2": 10,
+        "P2-S3": 10,
+        "P3-S1": 10,
+        "P3-S2": 10,
+        "P3-S3": 10
+      },
+      "audio_questions": 50,
+      "reading_questions": 30,
+      "unique_ids": true,
+      "all_four_options": true,
+      "all_answers_valid": true
+    },
+    "BJT-MOCK-02": {
+      "title": "模擬試驗 第2回",
+      "question_count": 80,
+      "section_counts": {
+        "P1-S1": 5,
+        "P1-S2": 10,
+        "P1-S3": 10,
+        "P2-S1": 5,
+        "P2-S2": 10,
+        "P2-S3": 10,
+        "P3-S1": 10,
+        "P3-S2": 10,
+        "P3-S3": 10
+      },
+      "audio_questions": 50,
+      "reading_questions": 30,
+      "unique_ids": true,
+      "all_four_options": true,
+      "all_answers_valid": true
+    },
+    "BJT-MOCK-03": {
+      "title": "模擬試驗 第3回",
+      "question_count": 80,
+      "section_counts": {
+        "P1-S1": 5,
+        "P1-S2": 10,
+        "P1-S3": 10,
+        "P2-S1": 5,
+        "P2-S2": 10,
+        "P2-S3": 10,
+        "P3-S1": 10,
+        "P3-S2": 10,
+        "P3-S3": 10
+      },
+      "audio_questions": 50,
+      "reading_questions": 30,
+      "unique_ids": true,
+      "all_four_options": true,
+      "all_answers_valid": true
+    }
+  }
+}
