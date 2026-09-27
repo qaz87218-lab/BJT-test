@@ -1,0 +1,30 @@
+{
+  "version": "v14.6",
+  "scope": {
+    "text_questions": 524,
+    "text_option_details": 2096,
+    "listening_questions_total": 190,
+    "listening_learning_v3_questions": 180,
+    "mock_exam_questions": 240
+  },
+  "quality_audit": {
+    "severe_placeholder_patterns": [
+      "正解理由：正しい。",
+      "錯誤原因：無關。",
+      "不符合本題條件"
+    ],
+    "affected_questions_before_patch": 93,
+    "affected_options_before_patch": 107,
+    "affected_questions_after_patch": 0,
+    "affected_options_after_patch": 0,
+    "patched_file": "option_details_quality_v14_6.js"
+  },
+  "question_notes": {
+    "storage_key": "bjtQuestionNotesV1",
+    "text_questions": "shown only after answer feedback",
+    "listening_questions": "shown only after answer feedback",
+    "mock_exams": "shown only after whole-exam submission in review",
+    "included_in_export_import": true,
+    "question_map_note_marker": true
+  }
+}
