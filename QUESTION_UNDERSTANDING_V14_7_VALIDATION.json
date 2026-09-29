@@ -1,0 +1,42 @@
+{
+  "version": "v14.7",
+  "scope": {
+    "text_questions": 524,
+    "question_understanding_shown": 324,
+    "practical_business_questions": 200,
+    "passage_questions": 248,
+    "targeted_extensions": 108,
+    "text_option_details": 2096
+  },
+  "question_understanding": {
+    "missing_stem_zh_before_patch": 108,
+    "missing_stem_zh_after_patch": 0,
+    "targeted_translated": 108,
+    "question_specific_meta": 149,
+    "generic_intent_fallback_after_patch": 0,
+    "generic_trap_fallback_after_patch": 0,
+    "passage_context_zh_missing": 0
+  },
+  "targeted_option_details": {
+    "questions": 108,
+    "options": 432,
+    "options_missing_chinese_meaning": 0,
+    "severe_placeholder_patterns_remaining": 0,
+    "exact_option_echo_as_meaning_remaining": 0
+  },
+  "notes": {
+    "storage_key": "bjtQuestionNotesV1",
+    "preserved": true
+  },
+  "example_BJT_EV143_030": {
+    "stem_zh": "「不會增加現場作業負擔，是最大的優點」這句話的核心意思是什麼？",
+    "intent": "本題主要檢查「～というのが、一番の利点」。用名詞化結構把前述內容定義成主要優點。",
+    "trap": "辨析重點：「ということ」也可名詞化，但「というのが」常更像口頭說明中的主題提示。",
+    "option_details": [
+      "中文意思：最大的優點是減少現場人員的作業負擔。\n用法說明：用名詞化結構把前述內容定義成主要優點。 「～というのが」把整個句子名詞化並設為主題，常接「理由・利点・問題」。\n本題判定：正確。\n正解理由：「～というのが、一番の利点」明示核心優點。\n辨析重點：「ということ」也可名詞化，但「というのが」常更像口頭說明中的主題提示。",
+      "中文意思：缺點是價格。\n用法說明：用名詞化結構把前述內容定義成主要優點。 「～というのが」把整個句子名詞化並設為主題，常接「理由・利点・問題」。\n本題判定：錯誤。\n錯誤原因：此選項的意思是「缺點是價格」，與本題要辨認的「～というのが、一番の利点」不一致。\n辨析重點：「ということ」也可名詞化，但「というのが」常更像口頭說明中的主題提示。",
+      "中文意思：一定會導入。\n用法說明：用名詞化結構把前述內容定義成主要優點。 「～というのが」把整個句子名詞化並設為主題，常接「理由・利点・問題」。\n本題判定：錯誤。\n錯誤原因：此選項的意思是「一定會導入」，與本題要辨認的「～というのが、一番の利点」不一致。\n辨析重點：「ということ」也可名詞化，但「というのが」常更像口頭說明中的主題提示。",
+      "中文意思：廢除現場。\n用法說明：用名詞化結構把前述內容定義成主要優點。 「～というのが」把整個句子名詞化並設為主題，常接「理由・利点・問題」。\n本題判定：錯誤。\n錯誤原因：此選項的意思是「廢除現場」，與本題要辨認的「～というのが、一番の利点」不一致。\n辨析重點：「ということ」也可名詞化，但「というのが」常更像口頭說明中的主題提示。"
+    ]
+  }
+}

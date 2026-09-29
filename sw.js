@@ -1,8 +1,8 @@
-const CORE_CACHE='bjt-deep-v14-6-detail-quality-notes-20260927';
+const CORE_CACHE='bjt-deep-v14-8-mock-full-review-20260928';
 const MEDIA_CACHE='bjt-media-v14-4-mock-exam-20260926';
 const CORE_ASSETS=[
   './','./index.html','./styles.css','./data.js','./option_details.js','./article_details.js',
-  './business_course.js','./lessons.js','./game_data.js','./listening_data.js','./listening_true02_data.js','./listening_true02_learning.js','./listening_true03_data.js','./listening_true03_learning.js','./listening_typed_choices_v3_1.js','./listening_learning_v3.js','./question_understanding.js','./scenario_understanding.js','./knowledge_expansion_v14_2.js','./knowledge_expansion_v14_3.js','./targeted_extensions_v14_3.js','./option_details_quality_v14_6.js','./question_notes_v14_6.js','./mock_exam_v14_5.js','./DETAIL_QUALITY_V14_6_VALIDATION.json','./MOCK_EXAM_V14_5_VALIDATION.json','./KNOWLEDGE_EXPANSION_V14_2_VALIDATION.json','./KNOWLEDGE_EXPANSION_V14_3_VALIDATION.json','./app.js','./manifest.webmanifest',
+  './business_course.js','./lessons.js','./game_data.js','./listening_data.js','./listening_true02_data.js','./listening_true02_learning.js','./listening_true03_data.js','./listening_true03_learning.js','./listening_typed_choices_v3_1.js','./listening_learning_v3.js','./question_understanding.js','./scenario_understanding.js','./knowledge_expansion_v14_2.js','./knowledge_expansion_v14_3.js','./targeted_extensions_v14_3.js','./question_understanding_quality_v14_7.js','./option_details_quality_v14_6.js','./targeted_option_details_v14_7.js','./question_notes_v14_6.js','./mock_exam_v14_5.js','./mock_exam_learning_v14_8.js','./MOCK_EXAM_V14_8_LEARNING_VALIDATION.json','./QUESTION_UNDERSTANDING_V14_7_VALIDATION.json','./DETAIL_QUALITY_V14_6_VALIDATION.json','./MOCK_EXAM_V14_5_VALIDATION.json','./KNOWLEDGE_EXPANSION_V14_2_VALIDATION.json','./KNOWLEDGE_EXPANSION_V14_3_VALIDATION.json','./app.js','./manifest.webmanifest',
   './assets/qpack_20260914/O016.png','./assets/qpack_20260914/O022.png'
 ];
 

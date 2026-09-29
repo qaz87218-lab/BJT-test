@@ -10,6 +10,7 @@
   const LISTENING_QUESTIONS = window.BJT_LISTENING_QUESTIONS || [];
   const STEM_ZH_BY_ID = window.BJT_STEM_ZH_BY_ID || {};
   const STEM_ZH_BY_STEM = window.BJT_STEM_ZH_BY_STEM || {};
+  const STEM_META_BY_ID = window.BJT_STEM_META_BY_ID || {};
   const SCENARIO_UNDERSTANDING_BY_ID = window.BJT_SCENARIO_UNDERSTANDING_BY_ID || {};
   const ROLE_HINT_FOR_QUESTION = window.BJT_ROLE_HINT_FOR_QUESTION || (()=>'');
   const LQMAP = Object.fromEntries(LISTENING_QUESTIONS.map(q=>[q.id,q]));
@@ -185,8 +186,9 @@
     if(q?.course==='practical_business' && q?.passage){
       return context;
     }
-    const zh=stemZh(q), cues=stemCues(q), questionIntent=stemIntent(q);
-    return `${context}<section class="stem-understanding" id="stemUnderstanding"><div class="stem-understanding-head"><div><span class="lesson-kicker">QUESTION UNDERSTANDING</span><h3>📘 問題理解</h3></div></div><div class="stem-understanding-block"><b>問題句原文</b><p class="stem-ja">${esc(q?.stem||'')}</p></div><div class="stem-understanding-block primary"><b>問題句中文</b><p>${zh?esc(zh):'目前來源資料沒有可可靠核對的題幹中文；本題不自行補寫。'}</p></div><div class="stem-understanding-block"><b>這題真正要判斷的是</b><p>${esc(questionIntent)}</p></div>${cues.length?`<div class="stem-cue-list">${cues.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}<div class="stem-trap"><b>解題提醒</b><p>${esc(stemTrap(q))}</p></div></section>`;
+    const meta=STEM_META_BY_ID[q?.id]||{};
+    const zh=meta.zh||stemZh(q), cues=Array.isArray(meta.cues)?meta.cues:stemCues(q), questionIntent=meta.intent||stemIntent(q), questionTrap=meta.trap||stemTrap(q);
+    return `${context}<section class="stem-understanding" id="stemUnderstanding"><div class="stem-understanding-head"><div><span class="lesson-kicker">QUESTION UNDERSTANDING</span><h3>📘 問題理解</h3></div></div><div class="stem-understanding-block"><b>問題句原文</b><p class="stem-ja">${esc(q?.stem||'')}</p></div><div class="stem-understanding-block primary"><b>問題句中文</b><p>${zh?esc(zh):'⚠ 此題尚未補齊題幹中文翻譯。'}</p></div><div class="stem-understanding-block"><b>這題真正要判斷的是</b><p>${esc(questionIntent)}</p></div>${cues.length?`<div class="stem-cue-list">${cues.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}<div class="stem-trap"><b>解題提醒</b><p>${esc(questionTrap)}</p></div></section>`;
   }
   function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
   function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1800)}
@@ -1085,7 +1087,7 @@
   </div>`;
     document.getElementById('shuffleSet').onchange=e=>{state.settings.shuffleOptions=e.target.checked;saveState()};document.getElementById('readingSet').onchange=e=>{state.settings.showReadings=e.target.checked;saveState()};document.getElementById('translationSet').onchange=e=>{state.settings.showTranslations=e.target.checked;saveState()};document.getElementById('businessMixSet').onchange=e=>{state.settings.includeBusinessInMixed=e.target.checked;saveState()};document.getElementById('extSize').onchange=e=>{state.settings.extensionSize=Number(e.target.value);saveState()};document.getElementById('mixSize').onchange=e=>{state.settings.mixedSize=Number(e.target.value);saveState()};document.getElementById('exportBtn').onclick=exportState;document.getElementById('importBtn').onclick=()=>document.getElementById('importFile').click();document.getElementById('resetBtn').onclick=()=>{if(confirm('確定清除所有作答紀錄、系統課程進度、筆記、收藏與錯題標記？')){localStorage.removeItem(STORAGE);window.BJT_QUESTION_NOTES?.clearAll?.();state=loadState();session=null;toast('已清除');renderSettings()}};
   }
-  function exportState(){const payload={format:'bjt-deep-export-v14-6',appState:state,questionNotes:window.BJT_QUESTION_NOTES?.exportData?.()||{}};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`BJT學習紀錄_${today()}.json`;a.click();URL.revokeObjectURL(a.href)}
+  function exportState(){const payload={format:'bjt-deep-export-v14-7',appState:state,questionNotes:window.BJT_QUESTION_NOTES?.exportData?.()||{}};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`BJT學習紀錄_${today()}.json`;a.click();URL.revokeObjectURL(a.href)}
   function importState(file){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);const appState=d?.appState||d;localStorage.setItem(STORAGE,JSON.stringify(appState));if(d?.questionNotes)window.BJT_QUESTION_NOTES?.importData?.(d.questionNotes);state=loadState();saveState();checkGameAchievements();toast('匯入完成');renderSettings()}catch(e){alert('檔案格式不正確')}};r.readAsText(file)}
 
   document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.view)));

@@ -1,0 +1,18 @@
+{
+  "version": "v14.8",
+  "scope": "BJT mock exam post-exam detailed review",
+  "mockExams": 3,
+  "questions": 240,
+  "optionTranslations": 960,
+  "optionLevelExplanations": 960,
+  "questionChinese": 240,
+  "rationaleChinese": 240,
+  "learningFocus": 240,
+  "contextChineseSummary": 240,
+  "readingPassageFullChinese": 30,
+  "visualChinese": 150,
+  "visualQuestions": 150,
+  "notesPreserved": true,
+  "examModeChanged": false,
+  "note": "Audio dialogue transcripts remain in original Japanese; post-exam review adds Chinese task/context understanding, translated visual data, question/options Chinese, per-option analysis, rationale, and learning focus. Reading passages are fully translated to Traditional Chinese."
+}
