@@ -14,7 +14,7 @@
   const SCENARIO_UNDERSTANDING_BY_ID = window.BJT_SCENARIO_UNDERSTANDING_BY_ID || {};
   const ROLE_HINT_FOR_QUESTION = window.BJT_ROLE_HINT_FOR_QUESTION || (()=>'');
   const LQMAP = Object.fromEntries(LISTENING_QUESTIONS.map(q=>[q.id,q]));
-  const LATEST_FEATURE='mockexam';
+  const LATEST_FEATURE='phrases';
   // v14.1.1 — 第3冊 65 題媒體重新對齊：以原始音檔停頓邊界重切 MP3，並依同步影片重擷取逐題題圖。
   const ORIGINAL_ORDER = QUESTIONS.filter(q=>q.source==='原題').map(q=>q.id);
   const ORIGINAL_READING_BOOKS = [
@@ -329,6 +329,7 @@
     knowledge:['知識庫','每一道題的相關敬語、文法、詞彙與閱讀策略。'],
     articles:['文章詳解',`集中閱讀 ${Object.keys(ARTICLE_DETAILS).length} 篇文章：假名、翻譯、結構、陷阱與四選項詳解。`],
     business:['實用商務',`10 章 × 20 題：按情境建立真正可用的商務日語。`],
+    phrases:['商務定型表現 125','17 類 × 125 句：一覧、日→中、中文→日文回想與弱點複習；獨立於一般題庫統計。'],
     mistakes:['錯題簿','集中處理答錯、標記不熟與低正確率題目。'],
     settings:['設定 / 備份','學習紀錄只存在這台裝置，可隨時匯出。']
   }[view]}
@@ -342,7 +343,7 @@
     document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
     const [t,s]=titleMap(view);document.getElementById('pageTitle').textContent=t;document.getElementById('pageSubtitle').textContent=s;
     document.getElementById('sidebar').classList.remove('open');
-    if(view==='dashboard')renderDashboard(); if(view==='system')renderSystem(); if(view==='practice')renderPractice(); if(view==='listening')renderListening(); if(view==='mockexam')window.BJT_MOCK_EXAM?.render?.(document.getElementById('view-mockexam')); if(view==='battle')renderBattle(); if(view==='titles')renderTitles(); if(view==='knowledge')renderKnowledge(); if(view==='articles')renderArticles(); if(view==='business')renderBusiness(); if(view==='mistakes')renderMistakes(); if(view==='settings')renderSettings();
+    if(view==='dashboard')renderDashboard(); if(view==='system')renderSystem(); if(view==='practice')renderPractice(); if(view==='listening')renderListening(); if(view==='mockexam')window.BJT_MOCK_EXAM?.render?.(document.getElementById('view-mockexam')); if(view==='battle')renderBattle(); if(view==='titles')renderTitles(); if(view==='knowledge')renderKnowledge(); if(view==='articles')renderArticles(); if(view==='business')renderBusiness(); if(view==='phrases')window.BJT_BUSINESS_PHRASES?.render?.(document.getElementById('view-phrases')); if(view==='mistakes')renderMistakes(); if(view==='settings')renderSettings();
   }
 
   function applyLatestFeatureBadge(){document.querySelectorAll('.nav-new').forEach(x=>x.remove());const target=document.querySelector(`[data-feature="${LATEST_FEATURE}"]`);if(target){const badge=document.createElement('span');badge.className='nav-new';badge.textContent='NEW';target.appendChild(badge)}}
@@ -374,6 +375,7 @@
         ${modeCard('due','間隔複習',`${due} 題到期`,'依答題結果安排複習；答錯會更快再次出現。')}
         ${modeCard('knowledge','知識卡模式',`${KNOW.length} 個知識點`,'直接從概念、讀音、例句與易混點建立系統化記憶。')}
         ${modeCard('business','實用商務課程','10 章 × 20 題','按寒暄、電話、依賴、注文、會議等商務情境分章練習。')}
+        ${modeCard('phrases','商務定型表現 125','17 類 × 125 句','用完整商務句型做一覧、字卡、中文→日文主動回想與弱點複習，不計入一般題庫正確率。')}
       </div>`;
     bindStartButtons();
     document.getElementById('dashBattleBtn').onclick=()=>switchView('battle');document.getElementById('dashTitlesBtn').onclick=()=>switchView('titles');const dl=document.getElementById('dashListeningBtn');if(dl)dl.onclick=()=>switchView('listening');
@@ -500,7 +502,7 @@
   }
 
   function modeCard(mode,title,meta,desc){return `<button class="mode-card" data-start="${mode}"><h3>${esc(title)}</h3><p>${esc(desc)}</p><div class="meta">${esc(meta)}</div></button>`}
-  function bindStartButtons(){document.querySelectorAll('[data-start]').forEach(b=>b.addEventListener('click',()=>{const m=b.dataset.start;if(m==='system'){switchView('system');return}if(m==='knowledge'){switchView('knowledge');return}if(m==='business'){switchView('business');return}if(m==='listening'){switchView('listening');return}if(m==='original'){session=null;practiceLibraryMode='original';originalBookFocus=null;switchView('practice');return}startSession(m)}))}
+  function bindStartButtons(){document.querySelectorAll('[data-start]').forEach(b=>b.addEventListener('click',()=>{const m=b.dataset.start;if(m==='system'){switchView('system');return}if(m==='knowledge'){switchView('knowledge');return}if(m==='business'){switchView('business');return}if(m==='phrases'){switchView('phrases');return}if(m==='listening'){switchView('listening');return}if(m==='original'){session=null;practiceLibraryMode='original';originalBookFocus=null;switchView('practice');return}startSession(m)}))}
 
   function originalBookById(id){return ORIGINAL_READING_BOOKS.find(b=>b.id===id)||null}
   function originalBookIds(book){return (book?.sections||[]).flatMap(sec=>sec.ids||[]).filter(id=>QMAP[id])}
@@ -1080,15 +1082,15 @@
       <div class="setting-row"><div><b>延伸題每輪</b></div><select class="select" id="extSize">${[10,20,30,50,80].map(n=>`<option ${n===state.settings.extensionSize?'selected':''}>${n}</option>`).join('')}</select></div>
       <div class="setting-row"><div><b>綜合題每輪</b></div><select class="select" id="mixSize">${[10,20,30,50,80].map(n=>`<option ${n===state.settings.mixedSize?'selected':''}>${n}</option>`).join('')}</select></div>
     </div>
-    <div class="card"><h2>備份與還原</h2><p class="small">題目進度、系統課程、錯因標籤、收藏與個人筆記都保存在瀏覽器 localStorage。換裝置前建議匯出。</p><div class="actions"><button class="btn primary" id="exportBtn">匯出學習紀錄</button><button class="btn" id="importBtn">匯入紀錄</button></div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><button class="btn danger" id="resetBtn">清除全部學習紀錄</button></div>
+    <div class="card"><h2>備份與還原</h2><p class="small">題目進度、系統課程、錯因標籤、收藏、個人筆記與「商務定型表現 125」熟練度都保存在瀏覽器 localStorage。換裝置前建議匯出。</p><div class="actions"><button class="btn primary" id="exportBtn">匯出學習紀錄</button><button class="btn" id="importBtn">匯入紀錄</button></div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><button class="btn danger" id="resetBtn">清除全部學習紀錄</button></div>
     <div class="card"><h2>角色成長</h2><p>目前位階：<b>Lv.${gameLevel()} ${esc(mainTitleAt().name)}</b></p><p>累積 EXP：<b>${state.game.xp||0}</b></p><p>最高 Combo：<b>${state.game.maxCombo||0}</b></p><p>特殊異名：<b>${state.game.unlockedTitles.length}</b></p><p>Boss 擊破：<b>${(GAME.bosses||[]).filter(b=>!b.final&&bossState(b.id).cleared).length}/8</b></p><p class="small">Level 代表 App 內有效學習累積，不等同 BJT 官方 J1/J1+ 成績。</p></div>
-    <div class="card"><h2>題庫內容</h2><p>知識點：<b>${KNOW.length}</b></p><p>題目：<b>${QUESTIONS.length}</b></p><p>原題／原題型：<b>${QUESTIONS.filter(q=>q.source==='原題').length}</b></p><p>延伸題：<b>${QUESTIONS.filter(q=>q.source==='延伸').length}</b></p><p>實用商務課程：<b>${BUSINESS_QUESTIONS.length}</b></p><p>聽力真題：<b>${LISTENING_QUESTIONS.length}</b>（${LISTENING_PACKS.length} 題組）</p><p>系統學習：<b>${MODULES.length} 模組／${LESSONS.length} 課／${LESSONS.reduce((n,l)=>n+(l.quickChecks||[]).length,0)} Quick Check</b></p></div>
+    <div class="card"><h2>題庫內容</h2><p>知識點：<b>${KNOW.length}</b></p><p>題目：<b>${QUESTIONS.length}</b></p><p>原題／原題型：<b>${QUESTIONS.filter(q=>q.source==='原題').length}</b></p><p>延伸題：<b>${QUESTIONS.filter(q=>q.source==='延伸').length}</b></p><p>實用商務課程：<b>${BUSINESS_QUESTIONS.length}</b></p><p>商務定型表現：<b>${window.BJT_BUSINESS_PHRASES_125?.phrases?.length||0}</b> 句</p><p>聽力真題：<b>${LISTENING_QUESTIONS.length}</b>（${LISTENING_PACKS.length} 題組）</p><p>系統學習：<b>${MODULES.length} 模組／${LESSONS.length} 課／${LESSONS.reduce((n,l)=>n+(l.quickChecks||[]).length,0)} Quick Check</b></p></div>
     <div class="card"><h2>學習規則</h2><p class="small">題目完成標準：累積答對 5 次＝★★★★★ MASTERED。streak（連續答對）只用於間隔複習排程：答錯約 1 小時內再複習；連對 1 次約 1 天；連對 2 次約 3 天；連對 3 次以上約 7 天。</p></div>
   </div>`;
-    document.getElementById('shuffleSet').onchange=e=>{state.settings.shuffleOptions=e.target.checked;saveState()};document.getElementById('readingSet').onchange=e=>{state.settings.showReadings=e.target.checked;saveState()};document.getElementById('translationSet').onchange=e=>{state.settings.showTranslations=e.target.checked;saveState()};document.getElementById('businessMixSet').onchange=e=>{state.settings.includeBusinessInMixed=e.target.checked;saveState()};document.getElementById('extSize').onchange=e=>{state.settings.extensionSize=Number(e.target.value);saveState()};document.getElementById('mixSize').onchange=e=>{state.settings.mixedSize=Number(e.target.value);saveState()};document.getElementById('exportBtn').onclick=exportState;document.getElementById('importBtn').onclick=()=>document.getElementById('importFile').click();document.getElementById('resetBtn').onclick=()=>{if(confirm('確定清除所有作答紀錄、系統課程進度、筆記、收藏與錯題標記？')){localStorage.removeItem(STORAGE);window.BJT_QUESTION_NOTES?.clearAll?.();state=loadState();session=null;toast('已清除');renderSettings()}};
+    document.getElementById('shuffleSet').onchange=e=>{state.settings.shuffleOptions=e.target.checked;saveState()};document.getElementById('readingSet').onchange=e=>{state.settings.showReadings=e.target.checked;saveState()};document.getElementById('translationSet').onchange=e=>{state.settings.showTranslations=e.target.checked;saveState()};document.getElementById('businessMixSet').onchange=e=>{state.settings.includeBusinessInMixed=e.target.checked;saveState()};document.getElementById('extSize').onchange=e=>{state.settings.extensionSize=Number(e.target.value);saveState()};document.getElementById('mixSize').onchange=e=>{state.settings.mixedSize=Number(e.target.value);saveState()};document.getElementById('exportBtn').onclick=exportState;document.getElementById('importBtn').onclick=()=>document.getElementById('importFile').click();document.getElementById('resetBtn').onclick=()=>{if(confirm('確定清除所有作答紀錄、系統課程進度、筆記、收藏與錯題標記？')){localStorage.removeItem(STORAGE);window.BJT_QUESTION_NOTES?.clearAll?.();window.BJT_BUSINESS_PHRASES?.clearAll?.();state=loadState();session=null;toast('已清除');renderSettings()}};
   }
-  function exportState(){const payload={format:'bjt-deep-export-v14-7',appState:state,questionNotes:window.BJT_QUESTION_NOTES?.exportData?.()||{}};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`BJT學習紀錄_${today()}.json`;a.click();URL.revokeObjectURL(a.href)}
-  function importState(file){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);const appState=d?.appState||d;localStorage.setItem(STORAGE,JSON.stringify(appState));if(d?.questionNotes)window.BJT_QUESTION_NOTES?.importData?.(d.questionNotes);state=loadState();saveState();checkGameAchievements();toast('匯入完成');renderSettings()}catch(e){alert('檔案格式不正確')}};r.readAsText(file)}
+  function exportState(){const payload={format:'bjt-deep-export-v14-9',appState:state,questionNotes:window.BJT_QUESTION_NOTES?.exportData?.()||{},businessPhrases:window.BJT_BUSINESS_PHRASES?.exportData?.()||{}};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`BJT學習紀錄_${today()}.json`;a.click();URL.revokeObjectURL(a.href)}
+  function importState(file){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);const appState=d?.appState||d;localStorage.setItem(STORAGE,JSON.stringify(appState));if(d?.questionNotes)window.BJT_QUESTION_NOTES?.importData?.(d.questionNotes);if(d?.businessPhrases)window.BJT_BUSINESS_PHRASES?.importData?.(d.businessPhrases);state=loadState();saveState();checkGameAchievements();toast('匯入完成');renderSettings()}catch(e){alert('檔案格式不正確')}};r.readAsText(file)}
 
   document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.view)));
   document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));
