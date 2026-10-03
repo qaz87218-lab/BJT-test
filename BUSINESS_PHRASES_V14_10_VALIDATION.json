@@ -1,0 +1,42 @@
+{
+  "version": "v14.10",
+  "feature": "商務定型表現 125｜完整詳解",
+  "totalPhrases": 125,
+  "uniqueIds": 125,
+  "categories": 17,
+  "deepDetailPhrases": 125,
+  "totalStudySections": 264,
+  "emptyStudySections": 0,
+  "source26to125": {
+    "phrases": 100,
+    "range": "26-125",
+    "missingNumbers": 0
+  },
+  "missingJapanese": 0,
+  "missingKana": 0,
+  "missingTraditionalChinese": 0,
+  "correctedMainTargetsFromNewSource": {
+    "40": "ご存じですか",
+    "56": "お返事をお待ちしております",
+    "71": "ぜひご検討をお願いいたします",
+    "104": "今後の対応について、ご指示いただけますでしょうか",
+    "106": "いただいたご助言は、大変勉強になりました"
+  },
+  "naturalnessWarningsRetained": [18, 50, 65, 83, 93, 121],
+  "recommendedAlternativesRetained": [18, 50, 58, 65, 70, 83, 93, 113, 121],
+  "coreKeigoGuide": true,
+  "practiceModes": [
+    "一覧學習",
+    "日文→中文",
+    "中文→日文回想",
+    "弱點複習"
+  ],
+  "stateStorage": "bjtBusinessPhrasesV1",
+  "stateStorageChanged": false,
+  "affectsQuestionBankStats": false,
+  "notesAutosave": true,
+  "tts": "browser SpeechSynthesis ja-JP",
+  "exportImportIntegrated": true,
+  "exportFormat": "bjt-deep-export-v14-10",
+  "javascriptSyntaxCheck": "PASS"
+}
